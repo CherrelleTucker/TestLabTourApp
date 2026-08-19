@@ -171,12 +171,15 @@
             '</div>' +
           '</div>' +
 
-          '<div class="transcript" aria-label="Full narration transcript">' +
-            '<p>' +
-              '<span class="t-seg seg-active" data-seg="hook">' + stop.hook + '</span> ' +
-              '<span class="t-seg" data-seg="explainer">' + explainerText(stop) + '</span>' +
-            '</p>' +
-          '</div>' +
+          '<details style="margin-top:var(--space-md)">' +
+            '<summary>Show transcript</summary>' +
+            '<div class="inner transcript" aria-label="Full narration transcript">' +
+              '<p>' +
+                '<span class="t-seg seg-active" data-seg="hook">' + stop.hook + '</span> ' +
+                '<span class="t-seg" data-seg="explainer">' + explainerText(stop) + '</span>' +
+              '</p>' +
+            '</div>' +
+          '</details>' +
 
           '<div class="hero-section">' +
             '<div class="media photo hero-photo">' +

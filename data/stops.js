@@ -17,7 +17,7 @@ window.STOPS = [
   {
     "id": "stop",
     "qrFile": "01-flat-floor",
-    "title": "Flight Robotics Lab — \"Flat Floor\"",
+    "title": "Flight Robotics Lab: \"Flat Floor\"",
     "shortTitle": "Flat Floor",
     "location": "Building 4619 · Contact Dynamics Simulation Lab",
     "locationShort": "Building 4619",
@@ -143,7 +143,7 @@ window.STOPS = [
   {
     "id": "stop2",
     "qrFile": "02-struct",
-    "title": "Structural Test Stands — Testing to Failure",
+    "title": "Structural Test Stands: Testing to Failure",
     "shortTitle": "Structural Test Stands",
     "location": "Test Stands 4693 & 4697",
     "locationShort": "Test Stands 4693 & 4697",
@@ -352,7 +352,7 @@ window.STOPS = [
   {
     "id": "stop3",
     "qrFile": "03-thermal-vac",
-    "title": "Thermal Vacuum Testing — Space on Earth",
+    "title": "Thermal Vacuum Testing: Space on Earth",
     "shortTitle": "Thermal Vacuum Testing",
     "location": "Environmental test chamber (XRCF)",
     "locationShort": "Environmental chamber (XRCF)",
@@ -505,7 +505,7 @@ window.STOPS = [
   {
     "id": "stop4",
     "qrFile": "04-f1-engine",
-    "title": "F-1 Engine Test Stand — One Engine at a Time",
+    "title": "F-1 Engine Test Stand: One Engine at a Time",
     "shortTitle": "F-1 Engine Test Stand",
     "location": "Building 4696 · West Test Area",
     "locationShort": "Building 4696, West Test Area",
@@ -699,7 +699,7 @@ window.STOPS = [
   {
     "id": "stop5",
     "qrFile": "05-nbs",
-    "title": "Neutral Buoyancy Simulator — Rehearsing Weightlessness",
+    "title": "Neutral Buoyancy Simulator: Rehearsing Weightlessness",
     "shortTitle": "Neutral Buoyancy Simulator",
     "location": "Former Building 4705 (demolished, Dec 2025)",
     "locationShort": "Former Building 4705",
@@ -1080,7 +1080,7 @@ window.STOPS = [
   {
     "id": "stop6",
     "qrFile": "06-dynamic-test-stand",
-    "title": "Dynamic Test Stand — Shaking the Whole Stack",
+    "title": "Dynamic Test Stand: Shaking the Whole Stack",
     "shortTitle": "Dynamic Test Stand",
     "location": "Former Building 4550 (demolished, Jan 2026)",
     "locationShort": "Former Building 4550",
@@ -1355,7 +1355,7 @@ window.STOPS = [
   {
     "id": "stop7",
     "qrFile": "07-t-tower",
-    "title": "The T-Tower — Two Engines, Side by Side",
+    "title": "The T-Tower: Two Engines, Side by Side",
     "shortTitle": "The T-Tower",
     "location": "Former Building 4572 (demolished, Jan 2026)",
     "locationShort": "Former Building 4572",
@@ -1564,7 +1564,7 @@ window.STOPS = [
   {
     "id": "stop8",
     "qrFile": "08-solid-propulsion",
-    "title": "Solid Propulsion Test Area — Small Motors, Big Answers",
+    "title": "Solid Propulsion Test Area: Small Motors, Big Answers",
     "shortTitle": "Solid Propulsion Test Area",
     "location": "SPTA, East Test Area",
     "locationShort": "East Test Area (SPTA)",
@@ -2261,7 +2261,7 @@ window.STOPS = [
   {
     "id": "stop13",
     "qrFile": "13-test-stand-115",
-    "title": "Test Stand 115 — Small Enough to Be Wrong",
+    "title": "Test Stand 115: Small Enough to Be Wrong",
     "shortTitle": "Test Stand 115",
     "location": "East Test Area, MSFC",
     "locationShort": "East Test Area",
@@ -2388,7 +2388,7 @@ window.STOPS = [
   {
     "id": "stop14",
     "qrFile": "14-load-test-annex",
-    "title": "Load Test Annex (LTA) — Building 4619",
+    "title": "Load Test Annex (LTA): Building 4619",
     "shortTitle": "Load Test Annex",
     "location": "Building 4619 · Load Test Annex",
     "locationShort": "Building 4619",
@@ -2456,7 +2456,7 @@ window.STOPS = [
   {
     "id": "stop15",
     "qrFile": "15-load-test-annex-extension",
-    "title": "Load Test Annex Extension (LTAE) — Building 4619",
+    "title": "Load Test Annex Extension (LTAE): Building 4619",
     "shortTitle": "Load Test Annex Extension",
     "location": "Building 4619 · Load Test Annex Extension",
     "locationShort": "Building 4619",
@@ -2524,7 +2524,7 @@ window.STOPS = [
   {
     "id": "stop16",
     "qrFile": "16-vibe-table",
-    "title": "Structural Dynamics Test Capability — Building 4619",
+    "title": "Structural Dynamics Test Capability: Building 4619",
     "shortTitle": "Vibe Table",
     "location": "Building 4619 · Structural Dynamics Test Capability",
     "locationShort": "Building 4619",
