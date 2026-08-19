@@ -1661,7 +1661,7 @@ window.STOPS = [
   {
     "id": "stop9",
     "qrFile": "09-test-stand-4670",
-    "title": "Test Stand 4670 \u2014 Holding Down the Moon Rocket",
+    "title": "Test Stand 4670: Holding Down the Moon Rocket",
     "shortTitle": "Test Stand 4670",
     "location": "Building 4670 \u00b7 West Test Area",
     "locationShort": "Building 4670, West Test Area",
@@ -1711,7 +1711,7 @@ window.STOPS = [
     "deepDive": {
       "summary": "Go deeper: three careers, one stand",
       "open": true,
-      "html": "Documented by the Library of Congress's Historic American Engineering Record (HAER AL-129-K), this stand's only structural equivalent in the United States is at NASA's Stennis Space Center. After proving out the Saturn V's S-IC stage, it went on to support Space Shuttle external tank testing and Space Shuttle Main Engine (SSME) test campaigns \u2014 three very different programs sharing one very tall piece of steel."
+      "html": "Documented by the Library of Congress's Historic American Engineering Record (HAER AL-129-K), this stand's only structural equivalent in the United States is at NASA's Stennis Space Center. After proving out the Saturn V's S-IC stage, it went on to support Space Shuttle external tank testing and Space Shuttle Main Engine (SSME) test campaigns: three very different programs sharing one very tall piece of steel."
     },
     "detailImage": {
       "src": "img/detail-1.jpg",
@@ -1760,19 +1760,19 @@ window.STOPS = [
         "src": "img/drawing-6.jpg",
         "alt": "A HAER measured floor-plan drawing of the Saturn V S-IC Static Test Stand showing Level 15, Level 17, Level 22, and Level 27 (top of structure) platforms, including the 200-ton capacity derrick.",
         "credit": "Historic American Engineering Record, Library of Congress &middot; measured drawing, floor plans (upper levels), HAER No. AL-129-K, Sheet 6 of 9 &middot; <b>loc.gov</b>",
-        "caption": "The top of the stand, 267 feet up \u2014 Level 27 and the 200-ton derrick used to lower stage hardware into place."
+        "caption": "The top of the stand, 267 feet up: Level 27 and the 200-ton derrick used to lower stage hardware into place."
       },
       {
         "src": "img/drawing-7.jpg",
         "alt": "A HAER measured elevation drawing of the Saturn V S-IC Static Test Stand showing the West and South elevations.",
         "credit": "Historic American Engineering Record, Library of Congress &middot; measured drawing, building elevations (west/south), HAER No. AL-129-K, Sheet 7 of 9 &middot; <b>loc.gov</b>",
-        "caption": "The stand's west and south faces, drawn full height \u2014 derrick booms and all."
+        "caption": "The stand's west and south faces, drawn full height: derrick booms and all."
       },
       {
         "src": "img/drawing-8.jpg",
         "alt": "A HAER measured elevation drawing of the Saturn V S-IC Static Test Stand showing the East and North elevations, with the 200-ton and 150-ton capacity derricks labeled.",
         "credit": "Historic American Engineering Record, Library of Congress &middot; measured drawing, building elevations (east/north), HAER No. AL-129-K, Sheet 8 of 9 &middot; <b>loc.gov</b>",
-        "caption": "Two derricks, two capacities \u2014 200 tons and 150 tons, both dwarfed by the structure they served."
+        "caption": "Two derricks, two capacities: 200 tons and 150 tons, both dwarfed by the structure they served."
       },
       {
         "src": "img/drawing-9.jpg",
@@ -1781,7 +1781,7 @@ window.STOPS = [
         "caption": "A cutaway view straight through the stand, showing exactly where a rocket's exhaust was meant to go."
       }
     ],
-    "lookFor": "Picture a fully stacked Saturn V first stage bolted into this structure, all five engines lit at once \u2014 and the stand not moving.",
+    "lookFor": "Picture a fully stacked Saturn V first stage bolted into this structure, all five engines lit at once: and the stand not moving.",
     "askYourHost": [
       "How does the ground stay put when five F-1 engines fire at once, straight down?",
       "What was it like to stand nearby during an actual S-IC static fire?",
@@ -1794,7 +1794,7 @@ window.STOPS = [
         { "text": "Because engineers overestimated the Saturn V's thrust", "correct": false },
         { "text": "To make the stand look more impressive", "correct": false }
       ],
-      "correctFeedback": "&#10003; Exactly. Building in margin meant the stand could outlast any single program \u2014 which is exactly what let it move on to Shuttle external tank and SSME testing after Apollo ended.",
+      "correctFeedback": "&#10003; Exactly. Building in margin meant the stand could outlast any single program: which is exactly what let it move on to Shuttle external tank and SSME testing after Apollo ended.",
       "wrongFeedback": "Not quite &mdash; the extra capacity was deliberate margin, which is why the stand outlived the Saturn V program itself."
     },
     "video": null,
@@ -1808,7 +1808,7 @@ window.STOPS = [
   {
     "id": "stop10",
     "qrFile": "10-redstone",
-    "title": "Redstone Test Stand \u2014 Where It Starts",
+    "title": "Redstone Test Stand: Where It Starts",
     "shortTitle": "Redstone Test Stand",
     "location": "Dodd Road, MSFC / Redstone Arsenal",
     "locationShort": "Dodd Road",
@@ -1847,7 +1847,7 @@ window.STOPS = [
     },
     "hook": "Every test stand on this tour traces back to this one.",
     "cuePoints": { "hook": 0, "explainer": 4, "wowStat": 20, "media": 30, "why": 38 },
-    "whyItMatters": "Every rocket test program at Marshall has roots here. Before Saturn, before the Space Shuttle, this stand proved out the Redstone \u2014 the missile-turned-launch-vehicle that gave America its first astronaut in space. The static-fire test method itself, proven here first, shaped every stand built afterward.",
+    "whyItMatters": "Every rocket test program at Marshall has roots here. Before Saturn, before the Space Shuttle, this stand proved out the Redstone: the missile-turned-launch-vehicle that gave America its first astronaut in space. The static-fire test method itself, proven here first, shaped every stand built afterward.",
     "keyfactsTitle": "By the numbers",
     "wowStat": 1,
     "keyfacts": [
@@ -1934,7 +1934,7 @@ window.STOPS = [
         "caption": "A smaller, later portrait of the rocket team's leadership — the same group whose work led directly to this stand."
       }
     ],
-    "lookFor": "This modest stand looks nothing like the towering structures elsewhere on the tour \u2014 and that's the point. Everything here started small.",
+    "lookFor": "This modest stand looks nothing like the towering structures elsewhere on the tour: and that's the point. Everything here started small.",
     "askYourHost": [
       "What does it take for a test stand to earn National Historic Landmark status?",
       "How different was a Redstone static fire from what happens at the bigger stands on this tour?",
@@ -1961,7 +1961,7 @@ window.STOPS = [
   {
     "id": "stop11",
     "qrFile": "11-test-stand-116",
-    "title": "Test Stand 116 \u2014 Five Facilities, One Number",
+    "title": "Test Stand 116: Five Facilities, One Number",
     "shortTitle": "Test Stand 116",
     "location": "Building 116 \u00b7 East Test Area",
     "locationShort": "Building 116, East Test Area",
@@ -1992,15 +1992,15 @@ window.STOPS = [
       { "xPct": 90.0, "yPct": 45.0, "label": "Test stand support gantry" }
     ],
     "thumb": "img/hero.jpg",
-    "factbox": "One open steel structure plus three adjacent bays, doing the work of five separate facilities \u2014 from cheap engine prototypes to full turbopump testing.",
+    "factbox": "One open steel structure plus three adjacent bays, doing the work of five separate facilities: from cheap engine prototypes to full turbopump testing.",
     "narration": {
       "durationLabel": "~52 sec · produced narration",
       "audio": "audio/narration.mp3",
-      "text": "Not every test stand needs to be built for one job. Test Stand 116 is actually an open steel structure for subscale hardware, paired with three adjacent bays for large-scale work \u2014 high-pressure engines, cryogenic propellant systems, turbopumps, and turbine blades all pass through here. In the 1990s, this stand hosted duration and ignition tests of the Fastrac engine, a low-cost engine designed for the X-34 Reusable Launch Vehicle program. Engineers tested different metal alloys in the nozzle while a ring of water nozzles sprayed a continuous stream onto the stand and engine to reduce damage. The X-34 and Fastrac programs were cancelled in 2001, but the stand kept working \u2014 later supporting water flow testing for the Space Launch System."
+      "text": "Not every test stand needs to be built for one job. Test Stand 116 is actually an open steel structure for subscale hardware, paired with three adjacent bays for large-scale work: high-pressure engines, cryogenic propellant systems, turbopumps, and turbine blades all pass through here. In the 1990s, this stand hosted duration and ignition tests of the Fastrac engine, a low-cost engine designed for the X-34 Reusable Launch Vehicle program. Engineers tested different metal alloys in the nozzle while a ring of water nozzles sprayed a continuous stream onto the stand and engine to reduce damage. The X-34 and Fastrac programs were cancelled in 2001, but the stand kept working: later supporting water flow testing for the Space Launch System."
     },
     "hook": "Not every test stand needs to be built for one job.",
     "cuePoints": { "hook": 0, "explainer": 3, "wowStat": 23, "media": 35, "why": 45 },
-    "whyItMatters": "Not every propulsion question needs a purpose-built stand. Test Stand 116 proves a more flexible model works too \u2014 the same steel structure and bays have supported low-cost engine prototypes, turbopump development, and even scale-model acoustic testing for launch environments, adapting to whatever program needs it next.",
+    "whyItMatters": "Not every propulsion question needs a purpose-built stand. Test Stand 116 proves a more flexible model works too: the same steel structure and bays have supported low-cost engine prototypes, turbopump development, and even scale-model acoustic testing for launch environments, adapting to whatever program needs it next.",
     "keyfactsTitle": "By the numbers",
     "wowStat": 1,
     "keyfacts": [
@@ -2011,7 +2011,7 @@ window.STOPS = [
     "deepDive": {
       "summary": "Go deeper: the Fastrac engine, X-34, and what came after",
       "open": true,
-      "html": "The Fastrac engine was designed as a low-cost alternative propulsion system for the X-34 Reusable Launch Vehicle, an experimental program exploring cheaper access to space. Testing at Test Stand 116 let engineers evaluate different metal alloys in the engine\u2019s nozzle and determine the true capabilities of the design under repeated firings. Though the X-34 and Fastrac programs ended in 2001, the stand\u2019s flexible, multi-bay design meant it never sat idle.<br><br>What makes Test Stand 116 unusual is its range: the same open steel structure and three adjacent bays have hosted high-pressure engine development, cryogenic propellant systems, turbopump and turbine-blade testing, and, in a completely different mode, scale-model acoustic testing \u2014 firing small rocket models to measure the sound environment a full-size vehicle will generate at liftoff. In 2014, engineers ran water flow tests here for the Space Launch System\u2019s Scale Model Acoustic Test series, simulating the water deluge system that suppresses launch-pad sound loads on the real pad, using a scaled-down SLS-with-boosters model instead of the genuine multi-million-dollar hardware. The earliest of the Fastrac firings, in 1996, were actually run for a related program, the X-33 reusable launch vehicle demonstrator, a year before dedicated X-34 testing began — and not every test was a full-engine firing; some isolated just the solid-fuel torch igniter on its own, before an assembled engine ever got a shot at the stand. Five very different kinds of test facility, one steel structure, one number."
+      "html": "The Fastrac engine was designed as a low-cost alternative propulsion system for the X-34 Reusable Launch Vehicle, an experimental program exploring cheaper access to space. Testing at Test Stand 116 let engineers evaluate different metal alloys in the engine\u2019s nozzle and determine the true capabilities of the design under repeated firings. Though the X-34 and Fastrac programs ended in 2001, the stand\u2019s flexible, multi-bay design meant it never sat idle.<br><br>What makes Test Stand 116 unusual is its range: the same open steel structure and three adjacent bays have hosted high-pressure engine development, cryogenic propellant systems, turbopump and turbine-blade testing, and, in a completely different mode, scale-model acoustic testing: firing small rocket models to measure the sound environment a full-size vehicle will generate at liftoff. In 2014, engineers ran water flow tests here for the Space Launch System\u2019s Scale Model Acoustic Test series, simulating the water deluge system that suppresses launch-pad sound loads on the real pad, using a scaled-down SLS-with-boosters model instead of the genuine multi-million-dollar hardware. The earliest of the Fastrac firings, in 1996, were actually run for a related program, the X-33 reusable launch vehicle demonstrator, a year before dedicated X-34 testing began — and not every test was a full-engine firing; some isolated just the solid-fuel torch igniter on its own, before an assembled engine ever got a shot at the stand. Five very different kinds of test facility, one steel structure, one number."
     },
     "detailImage": {
       "src": "img/detail-1.jpg",
@@ -2093,7 +2093,7 @@ window.STOPS = [
         "caption": "Pulled back further, the same 2016 flight pass shows Test Stand 116 alongside a neighboring, now-decommissioned tower."
       }
     ],
-    "lookFor": "Notice the water nozzles ringing the test position \u2014 that continuous spray protected both the stand and the engine from damage during repeated firings.",
+    "lookFor": "Notice the water nozzles ringing the test position: that continuous spray protected both the stand and the engine from damage during repeated firings.",
     "askYourHost": [
       "What kind of hardware is being tested in this stand today?",
       "What made this stand adaptable enough to outlive the program it was built for?",
@@ -2106,7 +2106,7 @@ window.STOPS = [
         { "text": "It was the main engine for the Space Shuttle", "correct": false },
         { "text": "It was a backup engine for the Saturn V", "correct": false }
       ],
-      "correctFeedback": "&#10003; Exactly. Fastrac was built as a cheaper alternative propulsion system for the experimental X-34 program \u2014 testing here helped determine what alloys and designs could survive repeated firings.",
+      "correctFeedback": "&#10003; Exactly. Fastrac was built as a cheaper alternative propulsion system for the experimental X-34 program: testing here helped determine what alloys and designs could survive repeated firings.",
       "wrongFeedback": "Not quite &mdash; Fastrac was a low-cost engine developed for the X-34 Reusable Launch Vehicle program."
     },
     "video": null,
@@ -2120,7 +2120,7 @@ window.STOPS = [
   {
     "id": "stop12",
     "qrFile": "12-environmental-test",
-    "title": "Environmental Test Facility \u2014 Twenty-Eight Chambers",
+    "title": "Environmental Test Facility: Twenty-Eight Chambers",
     "shortTitle": "Environmental Test Facility",
     "location": "Building 4619 & East Test Area \u00b7 Environmental Test Facility",
     "locationShort": "Building 4619 & East Test Area",
@@ -2151,15 +2151,15 @@ window.STOPS = [
       { "xPct": 65.0, "yPct": 45.0, "label": "Thermal vacuum chamber wall" }
     ],
     "thumb": "img/hero.jpg",
-    "factbox": "Twenty-eight chambers simulate thermal vacuum, humidity, altitude, cryogenic, and corrosion environments \u2014 the unglamorous backbone behind almost everything else on this tour.",
+    "factbox": "Twenty-eight chambers simulate thermal vacuum, humidity, altitude, cryogenic, and corrosion environments: the unglamorous backbone behind almost everything else on this tour.",
     "narration": {
       "durationLabel": "~48 sec · produced narration",
       "audio": "audio/narration.mp3",
-      "text": "Not every test needs a rocket. This facility runs twenty-eight chambers that recreate almost any environment a spacecraft or lander might face \u2014 thermal vacuum, humidity, altitude, cryogenic cold, and corrosion. In 2025, a small company called Starpath brought a lunar rover here, set it on a concrete slab built to mimic the Moon's rugged surface, and slid the whole platform into the V20 Thermal Vacuum Chamber, where lamps switched on and off to simulate sunlight and shadow. Decades earlier, Skylab's Apollo Telescope Mount was shaken here on a vibration test unit, long before it ever reached orbit. Different eras, different hardware, same job: find out what breaks, here, before it counts."
+      "text": "Not every test needs a rocket. This facility runs twenty-eight chambers that recreate almost any environment a spacecraft or lander might face: thermal vacuum, humidity, altitude, cryogenic cold, and corrosion. In 2025, a small company called Starpath brought a lunar rover here, set it on a concrete slab built to mimic the Moon's rugged surface, and slid the whole platform into the V20 Thermal Vacuum Chamber, where lamps switched on and off to simulate sunlight and shadow. Decades earlier, Skylab's Apollo Telescope Mount was shaken here on a vibration test unit, long before it ever reached orbit. Different eras, different hardware, same job: find out what breaks, here, before it counts."
     },
-    "hook": "Not every test needs a rocket. This facility runs twenty-eight chambers that recreate almost any environment a spacecraft or lander might face \u2014 thermal vacuum, humidity, altitude, cryogenic cold, and corrosion.",
+    "hook": "Not every test needs a rocket. This facility runs twenty-eight chambers that recreate almost any environment a spacecraft or lander might face: thermal vacuum, humidity, altitude, cryogenic cold, and corrosion.",
     "cuePoints": { "hook": 0, "explainer": 15, "wowStat": 28, "media": 36, "why": 43 },
-    "whyItMatters": "Spacecraft and landers face brutal, varied environments \u2014 vacuum, extreme temperature swings, corrosive atmospheres, punishing vibration. No single chamber can recreate all of it, so this facility runs two dozen-plus specialized chambers side by side, letting almost any hardware prove it can survive its mission's specific environment before ever leaving Earth.",
+    "whyItMatters": "Spacecraft and landers face brutal, varied environments: vacuum, extreme temperature swings, corrosive atmospheres, punishing vibration. No single chamber can recreate all of it, so this facility runs two dozen-plus specialized chambers side by side, letting almost any hardware prove it can survive its mission's specific environment before ever leaving Earth.",
     "keyfactsTitle": "By the numbers",
     "wowStat": 1,
     "keyfacts": [
@@ -2170,7 +2170,7 @@ window.STOPS = [
     "deepDive": {
       "summary": "Go deeper: testing a Moon rover in 2025, and what the other chambers do",
       "open": true,
-      "html": "Starpath, a small technology startup, won second place overall at NASA's Break the Ice Lunar Challenge and brought its rover to Marshall's Environmental Test Facility for a real test in lunar-like conditions. Engineers built a concrete slab with sandy, rocky terrain to mimic the Moon's surface, slid it into the V20 Thermal Vacuum Chamber alongside the rover, and cycled the chamber's lamps on and off to recreate the harsh lighting changes of the lunar environment \u2014 a direct descendant of the same testing philosophy that once put Skylab hardware through vibration testing decades earlier.<br><br>Vacuum and temperature are only part of the job here. The complex’s West Vibe Lab runs shaker tables that bolt hardware directly to a vibrating platform and reproduce the rattling, buzzing loads of a rocket ride to orbit — a very different kind of stress test from a thermal vacuum chamber, but just as unforgiving. One recent resident was the NASA Docking System, the mechanism spacecraft use to physically link up with the International Space Station, put through vibration testing here to prove its latches and sensors would still work after the shaking of launch. Different hardware, different chamber, same underlying question: does it still work once it's been shaken, baked, frozen, or evacuated exactly like the real mission will?"
+      "html": "Starpath, a small technology startup, won second place overall at NASA's Break the Ice Lunar Challenge and brought its rover to Marshall's Environmental Test Facility for a real test in lunar-like conditions. Engineers built a concrete slab with sandy, rocky terrain to mimic the Moon's surface, slid it into the V20 Thermal Vacuum Chamber alongside the rover, and cycled the chamber's lamps on and off to recreate the harsh lighting changes of the lunar environment: a direct descendant of the same testing philosophy that once put Skylab hardware through vibration testing decades earlier.<br><br>Vacuum and temperature are only part of the job here. The complex’s West Vibe Lab runs shaker tables that bolt hardware directly to a vibrating platform and reproduce the rattling, buzzing loads of a rocket ride to orbit — a very different kind of stress test from a thermal vacuum chamber, but just as unforgiving. One recent resident was the NASA Docking System, the mechanism spacecraft use to physically link up with the International Space Station, put through vibration testing here to prove its latches and sensors would still work after the shaking of launch. Different hardware, different chamber, same underlying question: does it still work once it's been shaken, baked, frozen, or evacuated exactly like the real mission will?"
     },
     "detailImage": {
       "src": "img/detail-1.jpg",
@@ -2234,7 +2234,7 @@ window.STOPS = [
         "caption": "Lowering the rover onto its slab &mdash; the straps come off once it's settled."
       }
     ],
-    "lookFor": "Picture the same chamber holding wildly different hardware across decades \u2014 a Skylab component in the 1970s, a small company's lunar rover in 2025. The facility outlasts any single program.",
+    "lookFor": "Picture the same chamber holding wildly different hardware across decades: a Skylab component in the 1970s, a small company's lunar rover in 2025. The facility outlasts any single program.",
     "askYourHost": [
       "How do engineers decide which of the 28 chambers a piece of hardware actually needs?",
       "What was it like hosting a commercial lunar rover here in 2025?",
