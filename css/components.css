@@ -221,11 +221,11 @@ button.chip.grey.active{background:color-mix(in oklch, var(--ink-soft) 45%, blac
 .keyfacts .lbl{font-size:14px;color:var(--ink-soft)}
 
 details{background:var(--card);border:1px solid var(--line);border-radius:10px;margin:var(--space-xs) 0;overflow:hidden}
-summary{padding:14px 16px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary{padding:16px 20px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+";font-size:22px;color:var(--nasa-blue)}
 details[open] summary::after{content:"–"}
-details .inner{padding:0 16px 16px}
+details .inner{padding:4px 20px 20px}
 
 .info-row{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0}
 .info-row .cell{flex:1;min-width:130px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
