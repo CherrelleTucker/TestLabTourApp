@@ -39,10 +39,15 @@ function switchToTab(targetTab) {
     var tabBtn = e.target.closest('.tab-btn');
     if (!tabBtn) return;
 
+    e.preventDefault();
+    e.stopPropagation();
+
     var stopSection = tabBtn.closest('[data-stop-section]');
     if (!stopSection) return;
 
     var targetTab = tabBtn.dataset.tab;
+    if (!targetTab) return;
+
     switchToTab(targetTab);
   });
 })();
