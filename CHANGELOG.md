@@ -65,7 +65,7 @@
   - Removed redundant "How to take this tour" section
   - Increased spacing between sections for better readability
   - Changed to proper class name (inner) to pick up accordion styling
-- **Removed "Contact us" button** from header bar (contact page and hero CTA are sufficient)
+- **Removed "Contact us" button** from header bar (contact page and hero CTA are sufficient) — verified working
 
 ### Resources & External Links
 - **OnePagers folder added to repo** (11 PDF fact sheets for ET branches)
