@@ -166,7 +166,7 @@
               '<div class="audio-meta">' +
                 '<b>Listen to this stop</b>' +
                 '<span>' + stop.narration.durationLabel + '</span>' +
-                '<button type="button" class="transcript-toggle" onclick="toggleTranscript(this)" style="margin-left:auto;background:none;border:none;color:var(--nasa-blue);font-size:13px;font-weight:600;cursor:pointer;padding:0">Show transcript</button>' +
+                '<button type="button" class="transcript-toggle" onclick="toggleTranscript(this)" style="margin-left:auto;background:none;border:none;color:#fff;font-size:13px;font-weight:600;cursor:pointer;padding:0;text-decoration:underline">Show transcript</button>' +
               '</div>' +
             '</div>' +
             '<div class="scrub-row">' +
