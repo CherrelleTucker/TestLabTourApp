@@ -117,7 +117,7 @@
   }
 
   function tabNavButtonsHtml(currentTab) {
-    var tabs = ['about', 'science', 'history', 'people-projects', 'specs'];
+    var tabs = ['about', 'science', 'history', 'people-projects', 'specs', 'more-info'];
     var currentIndex = tabs.indexOf(currentTab);
     var prevTab = currentIndex > 0 ? tabs[currentIndex - 1] : null;
     var nextTab = currentIndex < tabs.length - 1 ? tabs[currentIndex + 1] : null;
@@ -127,7 +127,8 @@
       'science': 'Science',
       'history': 'History',
       'people-projects': 'People & Projects',
-      'specs': 'Specs'
+      'specs': 'Specs',
+      'more-info': 'More Info'
     };
 
     return (
@@ -281,8 +282,6 @@
             '<p style="font-size:11.5px;opacity:0.82;margin-top:9px">Monitored <b>role mailbox</b> (placeholder) — not an individual.</p>' +
           '</div>' +
 
-          onePagerLinksHtml(stop) +
-
           tabNavButtonsHtml('people-projects') +
 
         '</div>' +
@@ -319,6 +318,44 @@
     );
   }
 
+  function moreInfoTabHtml(stop) {
+    return (
+      '<div class="tab-panel" data-tab="more-info" role="tabpanel" hidden>' +
+        '<div class="pad">' +
+          '<h2>Resources & Follow-up</h2>' +
+
+          onePagerLinksHtml(stop) +
+
+          '<div style="margin-top:var(--space-xl)">' +
+            '<h3 style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--nasa-blue);margin:0 0 var(--space-sm)">External Links</h3>' +
+            '<a class="res" href="https://www.nasa.gov/marshall-space-flight-center-capabilities/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:11px;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:11px 13px;margin-bottom:8px;text-decoration:none;color:var(--ink);font-size:14px;font-weight:600">' +
+              '<span class="ri" style="font-size:18px;flex:0 0 auto;width:24px;text-align:center">🔗</span>' +
+              '<span>Marshall Space Flight Center Capabilities<span class="rd" style="font-weight:400;color:var(--muted);font-size:12px;display:block;margin-top:1px">nasa.gov · Browse all MSFC test capabilities</span></span>' +
+              '<span style="margin-left:auto;color:#c2c7cf">↗</span>' +
+            '</a>' +
+            '<a class="res" href="https://www.nasa.gov/marshall/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:11px;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:11px 13px;margin-bottom:8px;text-decoration:none;color:var(--ink);font-size:14px;font-weight:600">' +
+              '<span class="ri" style="font-size:18px;flex:0 0 auto;width:24px;text-align:center">🔗</span>' +
+              '<span>NASA Marshall Space Flight Center<span class="rd" style="font-weight:400;color:var(--muted);font-size:12px;display:block;margin-top:1px">nasa.gov · MSFC home page</span></span>' +
+              '<span style="margin-left:auto;color:#c2c7cf">↗</span>' +
+            '</a>' +
+          '</div>' +
+
+          '<div style="margin-top:var(--space-xl)">' +
+            '<h3 style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--nasa-blue);margin:0 0 var(--space-sm)">Work with Us</h3>' +
+            '<p class="muted" style="margin-top:0">Interested in testing your hardware at Marshall? Contact us to discuss your project needs.</p>' +
+            '<a class="btn" style="display:inline-block;text-decoration:none;margin-top:var(--space-sm)" ' +
+              'href="mailto:msfc-testlab-tours@mail.nasa.gov?subject=Test%20Lab%20inquiry%20-%20' + encodeURIComponent(stop.shortTitle) + '">' +
+              '📧 Get in touch' +
+            '</a>' +
+          '</div>' +
+
+          tabNavButtonsHtml('more-info') +
+
+        '</div>' +
+      '</div>'
+    );
+  }
+
   // ============ MAIN STOP SECTION BUILDER ============
 
   function stopSectionHtml(stop) {
@@ -340,6 +377,7 @@
           '<button class="tab-btn" data-tab="history" role="tab" aria-selected="false">History</button>' +
           '<button class="tab-btn" data-tab="people-projects" role="tab" aria-selected="false">People &amp; Projects</button>' +
           '<button class="tab-btn" data-tab="specs" role="tab" aria-selected="false">Specs</button>' +
+          '<button class="tab-btn" data-tab="more-info" role="tab" aria-selected="false">More Info</button>' +
         '</nav>' +
         '<div class="tab-content">' +
           aboutTabHtml(stop) +
@@ -347,6 +385,7 @@
           historyTabHtml(stop) +
           peopleProjectsTabHtml(stop) +
           specsTabHtml(stop) +
+          moreInfoTabHtml(stop) +
         '</div>' +
       '</section>'
     );

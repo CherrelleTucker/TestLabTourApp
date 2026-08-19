@@ -27,7 +27,6 @@
     </div>
     <div class="spacer"></div>
     <button class="barbtn" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
-    <button class="barbtn" onclick="show('brief')">📋 Brief</button>
     <button class="barbtn" onclick="show('contact')">Contact us</button>
   </header>
 
@@ -152,8 +151,9 @@
       </div>
     </section>
 
-    <!-- ============ PROJECT BRIEF (for reviewers) ============ -->
-    <section id="brief" class="view brief" aria-label="Project brief">
+    <!-- ============ PROJECT BRIEF - REMOVED ============ -->
+    <!-- Brief section removed - internal documentation not needed for public site -->
+    <section id="brief" class="view brief" aria-label="Project brief" style="display:none">
       <div class="pad">
         <p style="color:var(--nasa-blue);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin:0">For reviewers</p>
         <h1>Project Brief — Test Lab Self-Guided Tour</h1>
@@ -283,7 +283,6 @@ Phase 4  Scale content + renderers     Phase 5  Handoff &amp; Sustainment (along
     <button id="tab-welcome" class="active" onclick="show('welcome')"><span class="gi" aria-hidden="true">⌂</span>Home</button>
     <button id="tab-map" onclick="show('map')"><span class="gi" aria-hidden="true">≣</span>Stops</button>
     <button id="tab-contact" onclick="show('contact')"><span class="gi" aria-hidden="true">✉</span>Contact</button>
-    <button id="tab-brief" onclick="show('brief')"><span class="gi" aria-hidden="true">📋</span>Brief</button>
   </nav>
 
   <footer class="note">
