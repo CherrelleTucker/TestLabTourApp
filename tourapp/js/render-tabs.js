@@ -116,6 +116,32 @@
     }).join('');
   }
 
+  function tabNavButtonsHtml(currentTab) {
+    var tabs = ['about', 'science', 'history', 'people-projects', 'specs'];
+    var currentIndex = tabs.indexOf(currentTab);
+    var prevTab = currentIndex > 0 ? tabs[currentIndex - 1] : null;
+    var nextTab = currentIndex < tabs.length - 1 ? tabs[currentIndex + 1] : null;
+
+    var tabLabels = {
+      'about': 'About',
+      'science': 'Science',
+      'history': 'History',
+      'people-projects': 'People & Projects',
+      'specs': 'Specs'
+    };
+
+    return (
+      '<div class="tab-nav-buttons" style="display:flex;gap:var(--space-sm);margin-top:var(--space-xl);padding-top:var(--space-lg);border-top:1px solid var(--line)">' +
+        (prevTab
+          ? '<button type="button" class="btn secondary" style="flex:1" onclick="switchToTab(\'' + prevTab + '\')">← ' + tabLabels[prevTab] + '</button>'
+          : '<div style="flex:1"></div>') +
+        (nextTab
+          ? '<button type="button" class="btn" style="flex:1" onclick="switchToTab(\'' + nextTab + '\')">' + tabLabels[nextTab] + ' →</button>'
+          : '<div style="flex:1"></div>') +
+      '</div>'
+    );
+  }
+
   // ============ TAB CONTENT BUILDERS ============
   // About | Science | History | People & Projects | Specs
 
@@ -185,6 +211,8 @@
             '</div>' +
           '</div>' +
 
+          tabNavButtonsHtml('about') +
+
         '</div>' +
       '</div>'
     );
@@ -211,6 +239,8 @@
 
           videoSectionHtml(stop) +
 
+          tabNavButtonsHtml('science') +
+
         '</div>' +
       '</div>'
     );
@@ -224,6 +254,8 @@
           '<p class="muted">Historical content for this facility will be added here.</p>' +
 
           galleryHtml(stop) +
+
+          tabNavButtonsHtml('history') +
 
         '</div>' +
       '</div>'
@@ -251,6 +283,8 @@
 
           onePagerLinksHtml(stop) +
 
+          tabNavButtonsHtml('people-projects') +
+
         '</div>' +
       '</div>'
     );
@@ -277,6 +311,8 @@
           (stop.wayfindNext.nextStopId
             ? '<button type="button" class="btn" onclick="show(\'' + stop.wayfindNext.nextStopId + '\')">' + stop.wayfindNext.label + ' →</button>'
             : '<button type="button" class="btn" onclick="show(\'welcome\')">Tour complete ✓</button>') +
+
+          tabNavButtonsHtml('specs') +
 
         '</div>' +
       '</div>'
