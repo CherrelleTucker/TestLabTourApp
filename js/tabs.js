@@ -30,10 +30,10 @@ function switchToTab(targetTab) {
   // Scroll to top of tab content
   var stopTabs = stopSection.querySelector('.stop-tabs');
   if (stopTabs) {
-    try {
-      stopTabs.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } catch (e) {
-      // Ignore AbortError from interrupted smooth scroll
+    var scrollPromise = stopTabs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // scrollIntoView can return a promise in some browsers; catch any AbortError from interrupted scroll
+    if (scrollPromise && scrollPromise.catch) {
+      scrollPromise.catch(function() { /* ignore */ });
     }
   }
 }
