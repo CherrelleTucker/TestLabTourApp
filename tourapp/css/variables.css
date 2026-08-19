@@ -1,0 +1,144 @@
+/*
+  Design tokens — the single source of truth for color, spacing, radius,
+  and type scale. Every other CSS file references these; nothing should
+  hardcode a hex color or a bare px value for these properties.
+
+  Colors use oklch() instead of hex — perceptually uniform, so nudging
+  lightness/chroma shifts a color predictably without drifting its hue.
+
+  Light theme by default with dark theme toggle support. Light theme uses
+  NASA blue header on white/light gray backgrounds (NASAWDS approach).
+  Dark theme available via [data-theme="dark"] on html element.
+*/
+:root{
+  /* ---- brand ---- */
+  --nasa-blue:       oklch(47.6% 0.210 264.7);   /* #0b3d91 NASA blue — primary brand */
+  --nasa-blue-fill:  oklch(47.6% 0.210 264.7);   /* solid fills (buttons, header) */
+  --nasa-blue-dark:  oklch(38.0% 0.180 264.7);   /* #073381 — darker hover state */
+  --nasa-red:        oklch(60.1% 0.204 33.0);    /* #fc3d21 NASA red — CTA accent */
+  --good:            oklch(53.0% 0.153 163.2);   /* #00834a success green */
+  --amber:           oklch(75.0% 0.139 69.5);    /* gold highlight for stats */
+
+  /* ---- ink / surfaces (light theme) ---- */
+  --ink:             oklch(25.0% 0.013 266.7);   /* #1b1b1b — dark text */
+  --ink-soft:        oklch(50.0% 0.020 266.6);   /* #565c65 — muted text */
+  --line:            oklch(85.0% 0.010 266.3);   /* #dfe1e2 — borders */
+  --bg:              oklch(95.0% 0.005 266.4);   /* #eef0f2 — page background */
+  --card:            oklch(100% 0.000 0);        /* #ffffff — white cards */
+  --panel-2:         oklch(97.0% 0.005 266.4);   /* #f7f8f9 — subtle elevated surface */
+  --on-accent:       oklch(100% 0.000 0);        /* white text on colored buttons */
+
+  /* ---- hero gradient ramp (blue gradient backgrounds) ---- */
+  --hero-navy-1:     oklch(47.6% 0.210 264.7);   /* NASA blue start */
+  --hero-navy-2:     oklch(38.0% 0.180 264.7);   /* darker blue */
+  --hero-blue-1:     oklch(47.6% 0.210 264.7);   /* NASA blue */
+  --hero-blue-2:     oklch(57.0% 0.200 264.7);   /* lighter blue */
+  --hero-blue-3:     oklch(67.0% 0.180 263.0);   /* lightest blue */
+  --audio-navy:      oklch(45.0% 0.200 267.9);   /* audio player background */
+  --spine-bg:        oklch(94.0% 0.010 268.1);   /* light gray for roadmap spine */
+  --spine-ink:       oklch(47.6% 0.210 264.7);   /* NASA blue for spine text */
+
+  /* ---- tinted backgrounds (chips, badges, callouts) ---- */
+  --chip-blue-bg:    oklch(85.0% 0.050 264.7);   /* light blue chip background */
+  --chip-grey-bg:    oklch(90.0% 0.005 267.6);   /* light gray chip background */
+  --soon-bg:         oklch(95.0% 0.020 33.0);    /* light red/orange for "coming soon" */
+  --soon-ink:        oklch(45.0% 0.150 33.3);    /* dark red text */
+  --correct-bg:      oklch(93.0% 0.040 163.2);   /* light green for correct answers */
+  --correct-ink:     oklch(40.0% 0.120 163.2);   /* dark green text */
+  --wrong-bg:        oklch(95.0% 0.030 4.5);     /* light pink for wrong answers */
+  --warn-bg:         oklch(95.0% 0.030 56.2);    /* light yellow for warnings */
+  --table-head-bg:   oklch(92.0% 0.020 264.8);   /* light blue-gray table headers */
+  --opt-bg:          oklch(97.0% 0.005 268.9);   /* very light gray for options */
+  --code-bg:         oklch(95.0% 0.010 268.8);   /* light gray code background */
+  --thumb-locked-1:  oklch(88.0% 0.010 270.7);   /* light gray locked thumbnail */
+  --thumb-locked-2:  oklch(82.0% 0.015 270.5);   /* medium gray locked thumbnail */
+  --mockbanner-ink:  oklch(45.0% 0.150 33.3);    /* dark red text for banner */
+  --mockbanner-bg:   oklch(97.0% 0.020 33.0);    /* light pink banner background */
+
+  /* ---- shape ---- */
+  --radius:10px;
+  --radius-sm:6px;
+  --shadow:0 1px 3px rgba(0,0,0,.12), 0 6px 20px rgba(0,0,0,.06);
+
+  /* ---- data / utility face ----
+     Numeric readouts (key facts, stats, the brief's phase spine) use a
+     monospace face so figures read like instrument output rather than
+     prose — a deliberate nod to the test data this app is describing. */
+  --font-mono:ui-monospace,"Cascadia Mono","SF Mono",Consolas,"Roboto Mono",monospace;
+
+  /* ---- fluid space scale ----
+     clamp() gives continuous scaling with viewport instead of snapping at
+     a breakpoint. --space-gutter replaces the repeated 18px/20px/22px
+     page-edge paddings; new work should reach for these rather than a
+     bare px value. */
+  --space-3xs: 0.25rem;   /* 4px */
+  --space-2xs: 0.5rem;    /* 8px */
+  --space-xs:  0.75rem;   /* 12px */
+  --space-sm:  1rem;      /* 16px */
+  --space-md:  clamp(1rem, 0.85rem + 0.6vw, 1.5rem);      /* ~16-24px */
+  --space-lg:  clamp(1.25rem, 1rem + 1vw, 2rem);          /* ~20-32px */
+  --space-xl:  clamp(1.75rem, 1.3rem + 1.8vw, 3rem);      /* ~28-48px */
+  --space-gutter: clamp(1.1rem, 0.9rem + 1vw, 1.75rem);   /* page-edge padding */
+
+  /* ---- fluid type scale ---- */
+  --text-sm:   0.8125rem;                                  /* 13px, static */
+  --text-body: 1rem;                                       /* 16px, static */
+  --text-lg:   clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);    /* ~17-20px */
+  --text-h2:   clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);     /* ~20-24px */
+  --text-h1:   clamp(1.5rem, 1.2rem + 1.5vw, 2rem);        /* ~24-32px */
+  --text-display: clamp(1.75rem, 1.3rem + 2.5vw, 2.75rem); /* hero headline */
+
+  --font:"Public Sans","Source Sans Pro",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+/* ========================================================================
+   DARK THEME — activated via [data-theme="dark"] on <html>
+   ======================================================================== */
+[data-theme="dark"] {
+  /* ---- brand (dark mode adjustments) ---- */
+  --nasa-blue:       oklch(66.5% 0.167 263.0);   /* brighter beacon blue for dark backgrounds */
+  --nasa-blue-fill:  oklch(47.6% 0.210 264.7);   /* solid fills stay the same */
+  --nasa-blue-dark:  oklch(24.8% 0.087 268.3);   /* darker hover state */
+  --nasa-red:        oklch(60.1% 0.204 33.0);    /* red stays same */
+  --good:            oklch(77.3% 0.153 163.2);   /* brighter green for dark mode */
+  --amber:           oklch(82.4% 0.139 69.5);    /* brighter amber for readability */
+
+  /* ---- ink / surfaces (dark theme) ---- */
+  --ink:             oklch(94.3% 0.013 266.7);   /* starlight white text */
+  --ink-soft:        oklch(68.6% 0.039 266.6);   /* muted steel-blue text */
+  --line:            oklch(35.3% 0.062 266.3);   /* darker borders */
+  --bg:              oklch(12.9% 0.015 266.4);   /* near-black void */
+  --card:            oklch(21.2% 0.040 265.8);   /* console-panel surface */
+  --panel-2:         oklch(26.4% 0.056 269.3);   /* elevated surface */
+  --on-accent:       oklch(97.6% 0.006 264.5);   /* text on colored fills */
+
+  /* ---- hero gradient ramp (dark theme) ---- */
+  --hero-navy-1:     oklch(14.1% 0.021 267.2);
+  --hero-navy-2:     oklch(28.9% 0.100 268.0);
+  --hero-blue-1:     oklch(38.9% 0.141 264.5);
+  --hero-blue-2:     oklch(52.7% 0.165 264.8);
+  --hero-blue-3:     oklch(72.8% 0.119 263.0);
+  --audio-navy:      oklch(21.4% 0.068 267.9);
+  --spine-bg:        oklch(15.5% 0.037 268.1);
+  --spine-ink:       oklch(82.1% 0.089 265.4);
+
+  /* ---- tinted backgrounds (dark theme) ---- */
+  --chip-blue-bg:    oklch(30.3% 0.096 266.4);
+  --chip-grey-bg:    oklch(25.9% 0.041 267.6);
+  --soon-bg:         oklch(26.2% 0.052 31.9);
+  --soon-ink:        oklch(78.9% 0.123 33.3);
+  --correct-bg:      oklch(29.0% 0.052 157.6);
+  --correct-ink:     oklch(84.3% 0.135 161.7);
+  --wrong-bg:        oklch(25.8% 0.058 4.5);
+  --warn-bg:         oklch(27.9% 0.047 56.2);
+  --table-head-bg:   oklch(25.4% 0.044 264.8);
+  --opt-bg:          oklch(22.7% 0.042 268.9);
+  --code-bg:         oklch(27.1% 0.052 268.8);
+  --thumb-locked-1:  oklch(32.8% 0.057 270.7);
+  --thumb-locked-2:  oklch(41.6% 0.062 270.5);
+  --mockbanner-ink:  oklch(89.3% 0.057 35.6);
+  --mockbanner-bg:   oklch(17.0% 0.035 31.9);
+
+  /* ---- shadow (dark mode) ---- */
+  --shadow:inset 0 1px 0 rgba(255,255,255,.05), 0 8px 20px rgba(0,0,0,.45);
+}

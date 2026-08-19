@@ -1,0 +1,190 @@
+/* Lab Categories - Bento Grid Layout */
+
+.lab-section {
+  margin-top: var(--space-2xl);
+  padding: 0 var(--space-md);
+}
+
+.lab-section h2 {
+  font-size: 1.8rem;
+  color: var(--nasa-blue);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+  font-weight: 700;
+}
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  gap: var(--space-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Lab Cards */
+.lab-card {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: var(--space-lg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.lab-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* Lab card hero image */
+.lab-card-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.lab-card-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.lab-card-content h3 {
+  color: var(--nasa-blue);
+  font-size: 1.3rem;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 3px solid var(--nasa-red);
+  font-weight: 700;
+}
+
+.lab-card-content .stop-list {
+  list-style: none;
+  margin: 0 0 var(--space-md) 0;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.lab-card-content .stop-list li {
+  margin-bottom: var(--space-xs);
+}
+
+.lab-card-content .stop-list a {
+  color: var(--on-surface);
+  text-decoration: none;
+  display: block;
+  padding: var(--space-xs) 0;
+  transition: color 0.2s ease;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.lab-card-content .stop-list a:hover {
+  color: var(--nasa-blue);
+  text-decoration: underline;
+}
+
+.lab-card-content .see-all {
+  color: var(--nasa-blue);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  margin-top: auto;
+}
+
+.lab-card-content .see-all:hover {
+  text-decoration: underline;
+}
+
+.lab-card-content .see-all::after {
+  content: " →";
+  margin-left: 4px;
+}
+
+/* Bento Layout - Asymmetric sizes for visual hierarchy */
+.lab-card:nth-child(1) {
+  /* Propulsion - Large hero card */
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+.lab-card:nth-child(2) {
+  /* Structural Dynamics - Tall card */
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.lab-card:nth-child(3) {
+  /* Structural Strength - Medium card */
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+.lab-card:nth-child(4) {
+  /* Experimental Fluids & Environmental - Medium card */
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+.lab-card:nth-child(5) {
+  /* Special Test Equipment - Wide card */
+  grid-column: span 6;
+  grid-row: span 1;
+}
+
+/* Tablet/Medium screens */
+@media (max-width: 968px) {
+  .lab-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(180px, auto);
+  }
+
+  .lab-card:nth-child(1),
+  .lab-card:nth-child(2),
+  .lab-card:nth-child(3),
+  .lab-card:nth-child(4),
+  .lab-card:nth-child(5) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .lab-section {
+    margin-top: var(--space-xl);
+    padding: 0 var(--space-sm);
+  }
+
+  .lab-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .lab-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .lab-card {
+    padding: var(--space-md);
+  }
+
+  .lab-card h3 {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,172 @@
+/* Tab navigation for stop pages */
+
+.stop-header {
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+
+.stop-header .pad {
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+}
+
+.stop-header h1 {
+  margin-bottom: var(--space-3xs);
+}
+
+.stop-tabs {
+  display: flex;
+  gap: 0;
+  background: var(--card);
+  border-bottom: 2px solid var(--line);
+  position: sticky;
+  top: 57px; /* below the app header */
+  z-index: 15;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .stop-tabs {
+    background: color-mix(in oklch, var(--card) 90%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+.tab-btn {
+  flex: 1;
+  min-width: 80px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: var(--space-sm) var(--space-xs);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  background: color-mix(in oklch, var(--nasa-blue) 8%, transparent);
+  color: var(--nasa-blue);
+}
+
+.tab-btn.active {
+  color: var(--nasa-blue);
+  border-bottom-color: var(--nasa-blue);
+  background: color-mix(in oklch, var(--nasa-blue) 5%, transparent);
+}
+
+.tab-btn:focus-visible {
+  outline: 2px solid var(--nasa-blue);
+  outline-offset: -2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-btn {
+    transition: none;
+  }
+}
+
+/* Tab panels */
+
+.tab-content {
+  position: relative;
+}
+
+.tab-panel {
+  animation: fadeInTab 0.25s ease;
+}
+
+.tab-panel[hidden] {
+  display: none;
+}
+
+@keyframes fadeInTab {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-panel {
+    animation: none;
+  }
+}
+
+/* Ensure tab content sections have proper spacing */
+
+.tab-panel .pad {
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-xl);
+}
+
+.tab-panel h2:first-of-type {
+  margin-top: 0;
+}
+
+/* Why it matters - three-part structure */
+
+.why-matters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.why-section {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--nasa-blue);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+}
+
+.why-section h3 {
+  font-size: var(--text-lg);
+  margin: 0 0 var(--space-2xs);
+  color: var(--nasa-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.why-section p {
+  margin: 0;
+  color: var(--ink);
+}
+
+@media (min-width: 768px) {
+  .why-matters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+}
+
+/* Mobile refinements */
+
+@media (max-width: 600px) {
+  .tab-btn {
+    font-size: 13px;
+    padding: var(--space-xs) var(--space-3xs);
+    min-width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-btn {
+    font-size: 12px;
+    padding: var(--space-2xs) var(--space-3xs);
+    min-width: 50px;
+  }
+}

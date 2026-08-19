@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSFC Test Lab Tour — Mockup</title>
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/brief.css">
+<link rel="stylesheet" href="css/tabs.css">
+<link rel="stylesheet" href="css/search.css">
+<link rel="stylesheet" href="css/lab-cards.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell">
+  <div class="starfield" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="mockbanner">INTERNAL MOCKUP — not an approved tour release · photos are real cleared images.nasa.gov assets (NASA/Charles Beason) · video embeds the official NASA Marshall channel (placeholder clip) · narration is text-to-speech stand-in</div>
+
+  <header class="appbar">
+    <div class="badge" aria-hidden="true"><img src="media/shared/img/NASA-Logo-Large.png" alt=""></div>
+    <div class="titles">
+      <b>Test Laboratory Tour</b>
+      <span>Marshall Space Flight Center</span>
+    </div>
+    <div class="spacer"></div>
+    <button class="barbtn" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+    <button class="barbtn" onclick="show('brief')">📋 Brief</button>
+    <button class="barbtn" onclick="show('contact')">Contact us</button>
+  </header>
+
+  <main id="main">
+    <!-- ============ WELCOME / ENTRY ============ -->
+    <section id="welcome" class="view active" aria-label="Welcome">
+      <div class="hero bg-floor" style="--hero-bg-url:url('media/flat-floor/img/hero-alt.jpg')">
+        <div class="stars" aria-hidden="true"></div>
+        <p class="eyebrow">Self-Guided Tour</p>
+        <h1>Explore the engineering behind the mission.</h1>
+        <p>Step inside the NASA Marshall Test Laboratory — where the hardware bound for the Moon and Mars is pushed to its limits. Walk at your own pace. Scan a code at each stop, or browse below.</p>
+        <div class="cta-row">
+          <button class="btn red" onclick="show('map')">Start the tour →</button>
+          <button class="btn secondary" style="background:transparent;color:var(--on-accent);border-color:rgba(255,255,255,.6)" onclick="show('contact')">Work with the Test Lab</button>
+        </div>
+      </div>
+
+      <!-- Lab Categories Section -->
+      <div class="lab-section">
+        <h2>Browse by Test Lab</h2>
+        <div class="lab-grid" id="lab-grid">
+          <!-- Populated by js/render.js from data/stops.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TOUR DIRECTORY / MAP ============ -->
+    <section id="map" class="view" aria-label="Tour stops">
+      <div class="pad">
+        <h1>Tour stops</h1>
+        <p class="muted">Marshall Test Laboratory facilities · Browse all stops or choose a curated tour below</p>
+
+        <div class="search-box" style="margin:var(--space-lg) 0">
+          <input type="search" id="stop-search" placeholder="Search by building, name, or tag..." aria-label="Search stops">
+        </div>
+
+        <div class="filter-row">
+          <div class="filter-group">
+            <label class="filter-label">Curated Tours</label>
+            <div id="tour-chips" class="chips">
+              <!-- populated from data/tours.js by js/render.js; empty/hidden if no tours defined -->
+            </div>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label">Status</label>
+            <div id="directory-chips" class="chips">
+              <!-- Active/Legacy toggle + Campus Map, populated by js/render.js -->
+            </div>
+          </div>
+        </div>
+
+        <div id="directory-list">
+          <!-- one .stopcard per entry in data/stops.js, populated by js/render.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MSFC CAMPUS MAP ============ -->
+    <section id="campus-map" class="view" aria-label="MSFC campus map">
+      <div class="stop-head">
+        <button class="crumbs" onclick="show('map')">← All stops</button>
+      </div>
+      <div class="pad" style="padding-top:0">
+        <h1>Campus map</h1>
+        <p class="muted">Tap a pin to jump to that stop.</p>
+        <div id="campus-map-mount">
+          <!-- populated from data/stops.js by js/render.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TOUR STOPS (generated) ============ -->
+    <!--
+      Every <section class="view" id="..."> for a tour stop is built at
+      runtime by js/render.js from data/stops.js. Add a facility by adding
+      an object to that file — nothing here needs to change.
+    -->
+    <span id="stops-mount" style="display:contents"></span>
+
+    <!-- ============ WORK WITH THE TEST LAB ============ -->
+    <section id="contact" class="view" aria-label="Work with the Test Lab">
+      <div class="hero bg-floor" style="padding:34px 22px 28px;--hero-bg-url:url('media/flat-floor/img/bg.jpg')">
+        <div class="stars" aria-hidden="true"></div>
+        <p class="eyebrow" style="position:relative">Partner with us</p>
+        <h1 style="position:relative;font-size:26px">Work with the Test Laboratory</h1>
+        <p style="position:relative">From a single test to a long-term partnership — here's how to bring your hardware to Marshall.</p>
+      </div>
+      <div class="pad">
+        <h2 style="margin-top:8px">What we offer</h2>
+
+        <div class="svc"><div class="ic">🛰</div><div><h3>Docking &amp; contact dynamics</h3><div class="muted" style="font-size:14px">Proximity-operations and capture testing on the Flat Floor.</div></div></div>
+        <div class="svc"><div class="ic">🌗</div><div><h3>Dynamic lighting simulation</h3><div class="muted" style="font-size:14px">Recreate solar and lunar South Pole lighting conditions.</div></div></div>
+        <div class="svc"><div class="ic">🤖</div><div><h3>Robotic &amp; GN&amp;C simulation</h3><div class="muted" style="font-size:14px">Man-in-the-loop simulation for guidance, navigation &amp; control.</div></div></div>
+
+        <div class="cta-card" style="margin-top:20px">
+          <h3>Get in touch</h3>
+          <p>Tell us about your test needs and a Test Lab representative will follow up.</p>
+          <a class="btn red small" style="margin-top:8px" href="mailto:msfc-testlab-tours@example.nasa.gov?subject=Test%20Lab%20inquiry">✉ Email the Test Lab team</a>
+          <p style="margin-top:12px;font-size:12px;opacity:.8">Placeholder: a monitored <b>role mailbox</b>, not an individual — so inquiries route reliably and survive staff changes.</p>
+        </div>
+
+        <h2>Ways to partner</h2>
+        <div class="info-row">
+          <div class="cell"><div class="k">Agreement</div><div class="v">Space Act</div></div>
+          <div class="cell"><div class="k">Funded</div><div class="v">Reimbursable</div></div>
+          <div class="cell"><div class="k">Collab</div><div class="v">Gov &amp; Industry</div></div>
+        </div>
+        <p class="muted" style="font-size:13px;margin-top:10px">Partnering details above are placeholders for the planning mock — replace with cleared, reviewed content.</p>
+      </div>
+    </section>
+
+    <!-- ============ PROJECT BRIEF (for reviewers) ============ -->
+    <section id="brief" class="view brief" aria-label="Project brief">
+      <div class="pad">
+        <p style="color:var(--nasa-blue);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin:0">For reviewers</p>
+        <h1>Project Brief — Test Lab Self-Guided Tour</h1>
+        <p class="muted">The thinking behind the prototype: the concept, the decisions and <em>why</em>, the roadmap, and what research says makes a tour great. The interactive prototype is the <b>Home / Stops / Contact</b> tabs; this brief is the plan.</p>
+
+        <div class="callout"><b>How to review:</b> (1) Click through the prototype — Home → Stops → Flat Floor → Contact; try <b>Listen</b>, the <b>quiz</b>, and the <b>video</b>. (2) Read this brief. (3) Anything marked “placeholder” is illustrative — real media and content go through clearance. Full write-ups live in the project folder’s <code>.md</code> files (listed at the end).</div>
+
+        <h2>1 · The concept</h2>
+        <ul>
+          <li><b>What:</b> a self-guided tour visitors reach by QR at each stop (or on a loaner tablet) — facts, images, video, and a way to contact us.</li>
+          <li><b>Two goals at once:</b> <em>educate</em> (the engineering) and <em>advertise</em> (our testing services). Every stop carries a “Work with the Test Lab” call-to-action.</li>
+          <li><b>One repository, many outputs:</b> the same cleared content feeds the on-site tour <em>and</em> static presentations for captive audiences. Build the content once; render it many ways.</li>
+        </ul>
+
+        <h2>2 · Key decisions &amp; why</h2>
+        <table>
+          <thead><tr><th>#</th><th>Decision</th><th>Why</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>D1</td><td>A <b>new public content store, air-gapped</b> from the existing CUI “Capabilities &amp; Tours” app — that app is a reference for authors, never a data source</td><td>It’s a CUI system; the gap prevents spillage and brittle coupling</td><td><span class="pill">Decided</span></td></tr>
+            <tr><td>D2</td><td>Mirror capability <b>names by convention</b>, no live integration</td><td>Only real overlap is identity; avoids coupling to an app we can’t change</td><td><span class="pill">Decided</span></td></tr>
+            <tr><td>D3</td><td><b>Tablet-first, offline-first;</b> pilot = one loaner iPad (check-in/out)</td><td>Cell likely unavailable at stops; visitors can’t join NASA Wi-Fi</td><td><span class="pill">Decided</span></td></tr>
+            <tr><td>D4</td><td><b>One content model → many renderers</b> (tablet, web, presentations)</td><td>The tour and the presentations are the same content in different contexts</td><td><span class="pill">Decided</span></td></tr>
+            <tr><td>D5</td><td><b>Clearance stored as an auditable per-item record;</b> fail-closed publish gate</td><td>A yes/no boolean can’t tell “un-reviewed” from “rejected,” and leaves no audit trail</td><td><span class="pill">Decided</span></td></tr>
+            <tr><td>D6</td><td><b>Content store = a team-owned SharePoint List;</b> publish via Power Automate</td><td>Non-developer editable, versioned, native audit trail; fits our M365 skills</td><td><span class="pill">Confirmed</span></td></tr>
+            <tr><td>D7</td><td><b>Prefer already-public NASA sources</b> (NTRS, nasa.gov, images.nasa.gov) as cleared inputs</td><td>NASA already made the release call by publishing — lightens our review</td><td><span class="pill">Decided</span></td></tr>
+          </tbody>
+        </table>
+
+        <h2>3 · Design principles (12)</h2>
+        <ul>
+          <li>1 · <b>Content is data, not code</b> — one repository, two products</li>
+          <li>2 · <b>Static-first, server-light</b> — minimize attack surface &amp; cost</li>
+          <li>3 · <b>Clearance before publish</b> — nothing ships un-reviewed</li>
+          <li>4 · <b>Accessibility is the floor</b> (Section 508 / WCAG 2.1 AA)</li>
+          <li>5 · <b>Works on the worst phone, worst signal</b></li>
+          <li>6 · <b>Maintainable by a non-developer</b> — design for handoff</li>
+          <li>7 · <b>Dual-purpose by construction</b> — educate <em>and</em> advertise</li>
+          <li>8 · <b>Approved resources only</b> (NASAWDS, images.nasa.gov, official video)</li>
+          <li>9 · <b>Engage through progressive disclosure</b>, not volume</li>
+          <li>10 · <b>Measure intent, respect privacy</b> — anonymous, no PII</li>
+          <li>11 · <b>Story over inventory</b> — don’t let the database shape the tour</li>
+          <li>12 · <b>The screen serves the room</b> — point attention to the real hardware</li>
+        </ul>
+
+        <h2>4 · Roadmap</h2>
+        <div class="callout warn"><b>The critical path is governance &amp; people, not software.</b> The build is the easy part. This fails — if it fails — because content can’t get cleared, no hosting path materializes, or maintenance collapses at handoff. So discovery is front-loaded and the build sits downstream of it.</div>
+        <div class="spine">Phase 0  Discovery &amp; Governance  ───────────────┐  (gates everything public-facing)
+                                              │
+Phase 1  Content Model &amp; Store  ── partly ────┤  (can start before Phase 0 closes)
+            parallel to Phase 0               ▼
+Phase 2  Single-Stop Pilot (Flat Floor)  ── first live test of the clearance gate
+                                              ▼
+Phase 3  Evaluate  ── GO / NO-GO ─────────────┐
+                                              ▼
+Phase 4  Scale content + renderers     Phase 5  Handoff &amp; Sustainment (alongside 4)</div>
+        <ul>
+          <li><b>Phase 0 — Discovery &amp; Governance:</b> find the public-release authority + turnaround, the Comms/OCIO hosting path, and how an approval is recorded. <em>Critical path.</em></li>
+          <li><b>Phase 1 — Content model &amp; store:</b> stand up the SharePoint List with the clearance fields; design a simple publish step. May overlap Phase 0.</li>
+          <li><b>Phase 2 — Single-stop pilot (Flat Floor):</b> author from already-public sources, run it through the <em>real</em> clearance process, load the iPad, and walk the actual stop to test connectivity + UX.</li>
+          <li><b>Phase 3 — Evaluate:</b> explicit GO/NO-GO before scaling.</li>
+          <li><b>Phase 4 — Scale:</b> remaining stops + the presentation renderer + (if a path exists) public web reach.</li>
+          <li><b>Phase 5 — Handoff &amp; sustainment:</b> document the publish step where it lives; a &lt;30-min, no-developer update path; clearance re-review cadence.</li>
+        </ul>
+        <h3>Top risks</h3>
+        <table>
+          <thead><tr><th>Risk</th><th>Mitigation</th></tr></thead>
+          <tbody>
+            <tr><td><b>CUI / export spillage</b> (highest consequence)</td><td>Air gap (D1), fail-closed gate (D5), already-public sources (D7); the tablet bundle is 100% cleared</td></tr>
+            <tr><td>No viable hosting / authority path</td><td>Phase 0 finds it first; the offline on-site tour doesn’t depend on public hosting</td></tr>
+            <tr><td>Connectivity worse than assumed</td><td>Offline-first (D3); Phase 2 walks the actual stop to verify</td></tr>
+            <tr><td>Publish step = single point of human failure</td><td>Keep it simple; document where it lives (D6 / Phase 5)</td></tr>
+            <tr><td>Scope creep to a device fleet</td><td>Pilot is one loaner iPad; a fleet is a Phase 3 decision, not an assumption</td></tr>
+          </tbody>
+        </table>
+
+        <h2>5 · What makes a great tour (research)</h2>
+        <p><b>Benchmark to copy: Bloomberg Connects</b> — the free digital guide behind 1,500+ museums. Praised for exactly our constraints: downloadable <b>offline</b> guides, audio/video/text mix, <b>accessibility built in</b> (VoiceOver, captions, transcripts, zoom, font scaling, translation), a no-download route, and <b>wayfinding maps</b>. For space storytelling, <b>Kennedy Space Center</b> (Atlantis / Shuttle Launch Experience) is the model — it makes engineering <em>feel</em> like a mission.</p>
+        <h3>What the winners do</h3>
+        <ul>
+          <li><b>Story over inventory</b> — people, place, purpose, plot; emotion, not a spec catalog.</li>
+          <li><b>Guide, don’t dump</b> — a clear path beats a wall of options.</li>
+          <li><b>Give the visitor a goal</b> — a thing to find/answer raises dwell time. (→ the quiz on each stop.)</li>
+          <li><b>Design for sound-off</b> — captions/text-first; serves engagement <em>and</em> 508.</li>
+          <li><b>Audio is the on-site superpower</b> — lets eyes stay on the real hardware. (→ the “Listen” player.)</li>
+          <li><b>Offline + no-download</b> — exactly our model (validates the offline tablet).</li>
+          <li><b>Wayfinding</b> — visitors get lost; orientation matters.</li>
+        </ul>
+        <h3>The honest counter-evidence</h3>
+        <div class="callout"><b>Nielsen Norman Group:</b> virtual tours have “high interaction cost, moderate usefulness,” and in real estate 82% still said in-person was decisive. <b>But that’s the case against <em>remote</em> tours — our job is the inverse and the strong one:</b> we augment a real visit, not replace it. North-star that follows: <b>the screen serves the room</b> — the device points attention <em>outward</em> to the real hardware, never competing with it. And avoid over-immersion (gyroscope AR / fast 360 pans are nauseating).</div>
+        <h3>Gaps this prototype closes (and one it doesn’t)</h3>
+        <ul>
+          <li>✅ <b>Audio</b> — added (“Listen,” text-to-speech stand-in).</li>
+          <li>✅ <b>Interaction / goal</b> — added (“Look for it” + quiz).</li>
+          <li>✅ <b>Video</b> — added (cleared NASA file, plays offline; placeholder for the Flat Floor clip).</li>
+          <li>⬜ <b>Wayfinding / orientation</b> — still open (needs real floor/location info).</li>
+        </ul>
+
+        <h2>6 · Status &amp; open questions</h2>
+        <p><b>Done:</b> the full planning corpus (principles, content model, decisions, roadmap, research) and this interactive prototype with real cleared images, a working offline video, audio, and an interaction — now backed by a single-source-of-truth content file (<code>data/stops.js</code>) instead of hand-written HTML per stop.</p>
+        <p><b>Open — and these are people/governance, not code:</b></p>
+        <ul>
+          <li><span class="pill open">Open</span> Who holds <b>public-release authority</b>, what’s the turnaround, and does export review issue a trackable determination ID?</li>
+          <li><span class="pill open">Open</span> Who is the MSFC <b>Comms / OCIO hosting contact</b>, and what’s the real path to a public surface?</li>
+          <li><span class="pill open">Open</span> <b>POC contact model</b> — recommendation: a monitored <b>role mailbox</b>, not individuals (privacy + survives staff changes).</li>
+          <li><span class="pill open">Open</span> <b>Wayfinding</b> design for the tour.</li>
+        </ul>
+
+        <h2>7 · Files in this package</h2>
+        <ul>
+          <li><code>design-principles.md</code> — the 12 principles in full</li>
+          <li><code>content-model.md</code> — the schema (stops, items, clearance record)</li>
+          <li><code>decisions.md</code> — D1–D7 with rejected alternatives</li>
+          <li><code>roadmap.md</code> — phases, dependencies, risk register</li>
+          <li><code>reference-great-tours.md</code> — the research with sources</li>
+          <li><code>lessons-learned.md</code> — running log</li>
+          <li><code>tourapp/index.html</code> — this app shell (open in any browser)</li>
+          <li><code>tourapp/data/stops.js</code> — every stop's content, one place to edit</li>
+          <li><code>tourapp/media/&lt;stop-id&gt;/</code> — that stop's images/video</li>
+        </ul>
+        <div class="callout" style="margin-top:22px"><b>To share:</b> zip the whole <code>tourapp</code> folder (keeps <code>media/</code>, <code>css/</code>, <code>js/</code>, and <code>data/</code> next to <code>index.html</code>) and send it. Your teammate just opens <code>index.html</code> in a browser — no install, no internet required.</div>
+      </div>
+    </section>
+
+  </main>
+
+  <nav class="tabbar" aria-label="Primary">
+    <button id="tab-welcome" class="active" onclick="show('welcome')"><span class="gi" aria-hidden="true">⌂</span>Home</button>
+    <button id="tab-map" onclick="show('map')"><span class="gi" aria-hidden="true">≣</span>Stops</button>
+    <button id="tab-contact" onclick="show('contact')"><span class="gi" aria-hidden="true">✉</span>Contact</button>
+    <button id="tab-brief" onclick="show('brief')"><span class="gi" aria-hidden="true">📋</span>Brief</button>
+  </nav>
+
+  <footer class="note">
+    Planning mockup · screens map to <code>content-model.md</code> and Principle 7 (every stop carries a contact CTA).
+  </footer>
+
+  <dialog id="lightbox" aria-label="Photo">
+    <div class="lb-frame">
+      <button type="button" class="lb-close" aria-label="Close">&times;</button>
+      <img alt="">
+      <div class="lb-body">
+        <p class="lb-caption"></p>
+        <p class="lb-credit"></p>
+      </div>
+    </div>
+  </dialog>
+</div>
+
+<script src="data/stops.js"></script>
+<script src="data/tours.js"></script>
+<script src="js/render-tabs.js"></script>
+<script src="js/render.js"></script>
+<script src="js/app.js"></script>
+<script src="js/tabs.js"></script>
+<script src="js/search.js"></script>
+<script src="js/lightbox.js"></script>
+<script src="js/narration.js"></script>
+<script src="js/beats.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>

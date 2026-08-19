@@ -1,0 +1,18 @@
+/* Styles used only by the reviewer "Project Brief" view.
+   Safe to drop this file (and the #brief section) entirely for a production build. */
+.brief .pad{max-width:780px;margin:0 auto}
+.brief h1{margin-top:6px}
+.brief h2{border-bottom:2px solid var(--nasa-blue);padding-bottom:6px;margin-top:32px;font-size:21px}
+.brief h3{margin-top:18px;font-size:16px}
+.brief p{font-size:15px}
+.brief ul{padding-left:20px;margin:8px 0}
+.brief li{margin-bottom:7px;font-size:15px}
+.brief code{background:var(--code-bg);padding:1px 5px;border-radius:4px;font-size:13px}
+.callout{background:var(--chip-blue-bg);border-left:5px solid var(--nasa-blue);border-radius:var(--radius-sm);padding:14px 16px;margin:16px 0;font-size:14px}
+.callout.warn{background:var(--warn-bg);border-left-color:var(--nasa-red)}
+.brief table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}
+.brief th,.brief td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+.brief th{background:var(--table-head-bg);font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+.pill{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--correct-bg);color:var(--correct-ink);white-space:nowrap}
+.pill.open{background:var(--warn-bg);color:var(--soon-ink)}
+.spine{font-family:var(--font-mono);font-size:12px;background:var(--spine-bg);color:var(--spine-ink);padding:16px;border-radius:var(--radius);overflow-x:auto;white-space:pre;line-height:1.55;margin:14px 0}

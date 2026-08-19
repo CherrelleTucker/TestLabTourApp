@@ -1,0 +1,373 @@
+.btn{
+  display:inline-flex;align-items:center;gap:var(--space-2xs);justify-content:center;
+  background:var(--nasa-blue-fill);color:var(--on-accent);border:none;border-radius:10px;
+  padding:var(--space-xs) var(--space-sm);font-size:var(--text-body);font-weight:700;cursor:pointer;
+  font-family:inherit;text-decoration:none;width:100%;
+  min-height:48px;
+}
+.btn:hover{background:var(--nasa-blue-dark)}
+.btn.secondary{background:var(--card);color:var(--nasa-blue);border:2px solid var(--nasa-blue)}
+.btn.red{background:var(--nasa-red)}
+.btn.red:hover{filter:brightness(.93)}
+.btn.small{width:auto;padding:var(--space-2xs) var(--space-sm);font-size:var(--text-sm);min-height:44px}
+
+/* HERO (welcome / contact) */
+.hero{
+  background:
+    radial-gradient(1200px 400px at 20% -10%, rgba(252,61,33,.35), transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(31,90,200,.55), transparent 60%),
+    linear-gradient(160deg,var(--hero-navy-1) 0%, var(--nasa-blue-fill) 60%, var(--hero-navy-2) 100%);
+  color:var(--on-accent);padding:var(--space-xl) var(--space-gutter) var(--space-lg);position:relative;overflow:hidden;
+}
+.hero .stars{position:absolute;inset:0;background-image:
+  radial-gradient(1.5px 1.5px at 10% 20%,#fff,transparent),
+  radial-gradient(1.5px 1.5px at 30% 60%,#fff,transparent),
+  radial-gradient(1px 1px at 55% 30%,#fff,transparent),
+  radial-gradient(1.5px 1.5px at 75% 70%,#fff,transparent),
+  radial-gradient(1px 1px at 85% 25%,#fff,transparent),
+  radial-gradient(1px 1px at 45% 80%,#fff,transparent);
+  opacity:.7}
+.hero .eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.85;margin:0 0 var(--space-xs);position:relative}
+.hero h1{font-size:var(--text-display);position:relative;margin-bottom:var(--space-xs)}
+.hero p{font-size:var(--text-lg);opacity:.95;position:relative;max-width:46ch}
+.hero .cta-row{position:relative;margin-top:var(--space-lg);display:flex;flex-direction:column;gap:var(--space-xs)}
+.hero.bg-floor{background:linear-gradient(160deg,rgba(6,26,63,.84),rgba(11,61,145,.80)),var(--hero-bg-url);background-size:cover;background-position:center}
+
+/* IMAGE / VIDEO placeholders */
+.media{
+  border-radius:12px;overflow:hidden;background:var(--nasa-blue-fill);color:var(--on-accent);
+  aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
+  text-align:center;position:relative;border:1px solid var(--line);
+}
+.media.photo{background:linear-gradient(135deg,var(--hero-blue-1),var(--hero-blue-2) 60%,var(--hero-blue-3));padding:0}
+.media .ph-label{font-size:12px;opacity:.9;padding:8px 12px;background:rgba(0,0,0,.35);border-radius:20px;display:inline-flex;gap:6px;align-items:center}
+.media.photo.hero-photo::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg, var(--hero-navy-1) 0%, transparent 22%, transparent 78%, var(--hero-navy-2) 100%);
+  opacity:.32;
+}
+/* signature element — a targeting-reticle frame on the one photo per stop
+   that's doing the real work of showing the hardware. Drawn as plain
+   gradient bars (no SVG, no new asset), corners only so it reads as an
+   instrument readout around the subject rather than a decorative border. */
+.media.photo.hero-photo::before{
+  content:"";position:absolute;inset:10px;pointer-events:none;z-index:1;
+  background-repeat:no-repeat;
+  background-image:
+    linear-gradient(var(--on-accent) 0 0), linear-gradient(var(--on-accent) 0 0),
+    linear-gradient(var(--on-accent) 0 0), linear-gradient(var(--on-accent) 0 0),
+    linear-gradient(var(--on-accent) 0 0), linear-gradient(var(--on-accent) 0 0),
+    linear-gradient(var(--on-accent) 0 0), linear-gradient(var(--on-accent) 0 0);
+  background-size:
+    18px 2px, 2px 18px, 18px 2px, 2px 18px,
+    18px 2px, 2px 18px, 18px 2px, 2px 18px;
+  background-position:
+    top left, top left, top right, top right,
+    bottom left, bottom left, bottom right, bottom right;
+  opacity:.8;
+}
+/* orient beat — the callout markers below are positioned by xPct/yPct
+   against the full source image, so this variant must show that image
+   uncropped (letterboxed if needed) rather than the usual object-fit:cover;
+   cover would crop portrait HAER drawings and shift every marker off-target. */
+.orient-photo{aspect-ratio:auto}
+.orient-photo .shot{height:auto;object-fit:contain;background:var(--bg)}
+
+/* zoomable photos — hero, detail, and gallery shots all share this trigger.
+   A real <button> wrapper (not a click handler on the <img>) is what makes
+   it keyboard-operable and gets a free focus ring; the "Enlarge" hint stays
+   hidden until hover/focus so it doesn't compete with the reticle framing. */
+button.zoomable{
+  display:block;width:100%;height:100%;padding:0;margin:0;border:none;
+  background:none;cursor:zoom-in;font:inherit;text-align:left;
+  position:relative;align-self:stretch;
+}
+button.zoomable .zoom-hint{
+  position:absolute;right:8px;bottom:8px;z-index:2;
+  font-size:11px;font-weight:600;color:var(--on-accent);
+  background:color-mix(in oklch, var(--bg) 55%, transparent);
+  border-radius:20px;padding:3px 9px;opacity:0;transition:opacity .15s ease;
+}
+button.zoomable:hover .zoom-hint,
+button.zoomable:focus-visible .zoom-hint{opacity:1}
+@media (prefers-reduced-motion: reduce){button.zoomable .zoom-hint{transition:none}}
+
+/* lightbox — one native <dialog>, reused for every photo. showModal() gives
+   it top-layer rendering (no z-index needed against the appbar/tabbar) plus
+   built-in focus trapping and Escape-to-close for free. */
+dialog#lightbox{
+  border:none;padding:0;background:transparent;
+  max-width:min(94vw, 920px);width:100%;border-radius:var(--radius);
+}
+dialog#lightbox::backdrop{background:color-mix(in oklch, var(--bg) 85%, transparent)}
+dialog#lightbox .lb-frame{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);position:relative;
+}
+dialog#lightbox .lb-close{
+  position:absolute;top:8px;right:8px;z-index:2;
+  background:color-mix(in oklch, var(--bg) 60%, transparent);color:var(--on-accent);
+  border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+}
+dialog#lightbox img{display:block;width:100%;max-height:65vh;object-fit:contain;background:#000}
+dialog#lightbox .lb-body{padding:var(--space-sm) var(--space-sm) var(--space-xs)}
+dialog#lightbox .lb-caption{font-size:var(--text-body);color:var(--ink);font-weight:600;margin:0 0 6px}
+dialog#lightbox .lb-credit{font-size:12px;color:var(--ink-soft);line-height:1.4;margin:0}
+
+.media.video::after{
+  content:"►";position:absolute;width:60px;height:60px;border-radius:50%;
+  background:rgba(255,255,255,.9);color:var(--nasa-blue-fill);display:flex;align-items:center;
+  justify-content:center;font-size:22px;padding-left:4px;
+}
+.cap{font-size:12px;color:var(--ink-soft);margin:6px 2px 0;display:flex;gap:6px;align-items:center}
+img.shot{display:block;width:100%;height:100%;object-fit:cover}
+.credit{font-size:11px;color:var(--ink-soft);margin:6px 2px 14px;line-height:1.4}
+.stopcard .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.media iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.media video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+
+/* audio + interaction */
+.audio{display:flex;align-items:center;gap:var(--space-xs);background:var(--audio-navy);color:var(--on-accent);border-radius:12px;padding:var(--space-xs) var(--space-sm);margin:var(--space-sm) 0}
+/* the one place amber fills a whole control rather than just a numeral —
+   reads as a lit "power on" button on the console, the audio player's
+   signature moment. */
+.audio-btn{background:var(--nasa-red);color:white;border:none;border-radius:50px;padding:var(--space-xs) var(--space-sm);font-weight:800;font-size:15px;cursor:pointer;font-family:inherit;flex:0 0 auto;min-height:44px}
+.audio-btn:hover{filter:brightness(.93)}
+.audio-meta{display:flex;flex-direction:column;line-height:1.3}
+.audio-meta span{font-size:12px;opacity:.85}
+.interact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:18px 0}
+.interact h3{margin-bottom:6px}
+.interact .look{color:var(--ink-soft);font-size:14px;margin:0}
+.quiz{margin-top:14px;border-top:1px solid var(--line);padding-top:14px}
+.quiz .q{font-weight:700;margin:0 0 10px}
+/* native <button> text doesn't inherit color the way other elements do —
+   without this, quiz answers rendered as near-black UA default text on
+   the dark panel background instead of following --ink. */
+.opt{display:block;width:100%;text-align:left;background:var(--opt-bg);color:var(--ink);border:1.5px solid var(--line);border-radius:var(--radius-sm);padding:var(--space-sm) var(--space-md);margin-bottom:var(--space-xs);font-family:inherit;font-size:15px;cursor:pointer;min-height:48px;line-height:1.4}
+.opt:hover{border-color:var(--nasa-blue)}
+.opt:disabled{cursor:default}
+.opt.correct{background:var(--correct-bg);border-color:var(--good);color:var(--correct-ink);font-weight:700}
+.opt.wrong{background:var(--wrong-bg);border-color:var(--nasa-red);color:var(--soon-ink)}
+.quiz-result{margin:6px 2px 0;font-size:14px;font-weight:600;line-height:1.4}
+
+/* cards / directory */
+/* the array order in data/stops.js *is* the walking order of the tour —
+   a real sequence, not a decorative list — so a plate-style index number
+   is legitimate wayfinding here, not a generic 01/02/03 template flourish. */
+#directory-list{counter-reset:stop}
+.stopcard{
+  counter-increment:stop;position:relative;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);margin-bottom:14px;cursor:pointer;
+  display:flex;gap:0;flex-direction:column;text-align:left;width:100%;padding:0;font-family:inherit;
+}
+.stopcard:hover{border-color:var(--nasa-blue)}
+.stopcard:focus-visible{outline:2px solid var(--nasa-blue);outline-offset:2px}
+.stopcard::before{
+  content:counter(stop, decimal-leading-zero);
+  position:absolute;top:8px;left:8px;z-index:2;
+  font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--on-accent);
+  background:color-mix(in oklch, var(--bg) 65%, transparent);
+  padding:2px 7px;border-radius:20px;letter-spacing:.5px;
+}
+.stopcard .thumb{height:120px;background:linear-gradient(135deg,var(--hero-blue-1),var(--hero-blue-2));position:relative}
+.stopcard .thumb.locked{background:linear-gradient(135deg,var(--thumb-locked-1),var(--thumb-locked-2));filter:grayscale(.2)}
+.stopcard .body{padding:14px 16px}
+.stopcard h3{font-size:17px;margin:0 0 4px;color:var(--ink)}
+.stopcard .meta{font-size:13px;color:var(--ink-soft)}
+/* .stopcard's real available width comes from .shell, which can render
+   narrower than a phone or as wide as 900px on the iPad — a container
+   query lets a wide-enough card go horizontal instead of stacked. */
+@container (min-width:480px){
+  .stopcard{flex-direction:row}
+  .stopcard .thumb{width:140px;height:auto;flex:0 0 auto}
+}
+
+.chips{display:flex;flex-wrap:wrap;gap:var(--space-3xs);margin:var(--space-2xs) 0 0}
+.chip{font-size:11px;background:var(--chip-blue-bg);color:var(--nasa-blue);border-radius:20px;padding:4px 10px;font-weight:600}
+.chip.grey{background:var(--chip-grey-bg);color:var(--ink-soft)}
+/* button.chip only matches the directory filter row — the per-stop tags
+   render as <span class="chip"> and stay purely decorative/read-only. */
+button.chip{
+  border:1.5px solid transparent;cursor:pointer;font-family:inherit;
+  padding:6px 12px;min-height:36px;
+  transition:background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+button.chip:hover{border-color:var(--nasa-blue)}
+button.chip.active{background:var(--nasa-blue-fill);color:var(--on-accent)}
+button.chip.grey.active{background:color-mix(in oklch, var(--ink-soft) 45%, black);color:var(--on-accent)}
+@media (prefers-reduced-motion: reduce){button.chip{transition:none}}
+.badge-soon{font-size:11px;background:var(--soon-bg);color:var(--soon-ink);border-radius:20px;padding:4px 10px;font-weight:700}
+.badge-cleared{font-size:11px;color:var(--good);font-weight:700;display:inline-flex;align-items:center;gap:5px}
+/* demolished-facility stops (Neutral Buoyancy Simulator, Dynamic Test Stand,
+   T-Tower) are still visitable and full of content — just not a standing
+   structure — so this reads as a neutral status label, not a warning. */
+.badge-legacy{font-size:11px;color:var(--ink-soft);font-weight:700;display:inline-flex;align-items:center;gap:5px}
+
+/* stop detail */
+.stop-head{padding:18px 18px 6px}
+.crumbs{font-size:13px;color:var(--ink-soft);margin-bottom:8px;cursor:pointer;display:inline-flex;gap:6px;align-items:center;background:none;border:none;font-family:inherit;padding:0}
+.crumbs:hover{color:var(--nasa-blue)}
+.factbox{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--nasa-red);border-radius:10px;padding:var(--space-xs) var(--space-sm);margin:var(--space-sm) 0;font-size:var(--text-lg);font-weight:600}
+.keyfacts{list-style:none;padding:0;margin:0}
+.keyfacts li{display:flex;gap:12px;padding:12px 2px;border-bottom:1px solid var(--line)}
+.keyfacts li:last-child{border-bottom:none}
+/* the app's one recurring "lit instrument readout" signature — key facts
+   are the numbers a visitor actually came to learn, so they get the
+   telemetry-amber treatment with a faint glow instead of the general
+   blue accent used everywhere else. */
+.keyfacts .num{font-size:20px;font-weight:800;color:var(--amber);min-width:100px;font-family:var(--font-mono);text-shadow:0 0 14px color-mix(in oklch, var(--amber) 55%, transparent);padding-right:var(--space-sm)}
+.keyfacts .lbl{font-size:14px;color:var(--ink-soft)}
+
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;margin:var(--space-xs) 0;overflow:hidden}
+summary{padding:14px 16px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:22px;color:var(--nasa-blue)}
+details[open] summary::after{content:"–"}
+details .inner{padding:0 16px 16px}
+
+.info-row{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0}
+.info-row .cell{flex:1;min-width:130px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.info-row .cell .k{font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.5px}
+.info-row .cell .v{font-size:16px;font-weight:700;margin-top:2px}
+
+.cta-card{background:linear-gradient(135deg,var(--nasa-blue-fill),var(--hero-navy-2));color:var(--on-accent);border-radius:var(--radius);padding:var(--space-lg);margin:var(--space-xl) 0}
+.cta-card h3{color:var(--on-accent);font-size:var(--text-lg)}
+.cta-card p{opacity:.92;font-size:14px}
+
+.stop-nav{display:flex;gap:10px;margin-top:22px}
+.stop-nav .btn.secondary{width:auto;flex:1}
+
+/* scroll reveal — keyfacts / gallery / interact fade+rise into place as the
+   page scrolls. @supports guards Safari (no scroll-driven animations yet):
+   without it those browsers would ship elements stuck at opacity:0. */
+@media (prefers-reduced-motion: no-preference){
+  @supports (animation-timeline: view()){
+    .keyfacts li, .gallery-item, .interact{
+      animation:reveal-up .5s linear both;
+      animation-timeline:view();
+      animation-range:entry 0% cover 40%;
+    }
+    @keyframes reveal-up{
+      from{opacity:0;transform:translateY(16px)}
+      to{opacity:1;transform:none}
+    }
+  }
+}
+
+/* photo gallery */
+/* .gallery-grid renders inside .stop-detail content at whatever width
+   .shell allows it — a container query, not a viewport query, is what
+   actually describes its available space. */
+.gallery-grid{display:grid;grid-template-columns:1fr;gap:10px;margin:10px 0}
+.gallery-item{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.gallery-item img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.gallery-item figcaption{font-size:11px;color:var(--ink-soft);padding:8px 10px;line-height:1.35;display:flex;flex-direction:column;gap:3px}
+.gallery-item .cap-text{color:var(--ink);font-weight:600;font-size:12px}
+.gallery-item .cap-credit{opacity:.85}
+@container (min-width:420px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+@container (min-width:640px){.gallery-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* contact / work-with-us */
+.svc{display:flex;gap:var(--space-xs);align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:var(--space-xs) var(--space-sm);margin-bottom:var(--space-xs)}
+.svc .ic{width:38px;height:38px;border-radius:9px;background:var(--chip-blue-bg);color:var(--nasa-blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex:0 0 auto}
+
+/* beat sequence (Arrive -> Orient -> Narrate -> Branch -> Advance) --
+   js/beats.js toggles which .beat is active; this file only says what
+   "active" looks like. */
+.beat{display:none}
+.beat.active{display:block}
+
+.beat-progress{
+  display:flex;gap:var(--space-3xs);padding:0 var(--space-gutter);margin-bottom:var(--space-xs);
+  overflow-x:auto;
+}
+.beat-step{
+  display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;min-width:0;min-height:44px;
+  background:none;border:none;font-family:inherit;cursor:pointer;color:var(--ink-soft);
+  padding:var(--space-3xs) var(--space-2xs);
+}
+.beat-step .step-num{
+  width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;font-family:var(--font-mono);
+  background:var(--panel-2);color:var(--ink-soft);
+}
+.beat-step .step-label{font-size:10px;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}
+.beat-step.active{color:var(--ink)}
+.beat-step.active .step-num{background:var(--nasa-blue-fill);color:var(--on-accent)}
+
+.arrive-photo{margin-top:var(--space-sm)}
+
+.look{color:var(--ink-soft);font-size:14px;margin:0 0 var(--space-sm)}
+
+.hazard-chips{display:flex;flex-wrap:wrap;gap:var(--space-3xs);margin:var(--space-xs) 0}
+.chip.hazard{background:var(--warn-bg);color:var(--soon-ink)}
+
+/* orient callout hotspots -- tap-toggle rather than hover-reveal, since the
+   iPad this app targets has no hover. Separate sibling <button>s layered
+   over the photo (not a button-in-button) so each hotspot stays its own
+   focusable, keyboard-operable control. */
+.callout-marker{
+  position:absolute;transform:translate(-50%,-50%);z-index:2;
+  background:none;border:none;padding:0;cursor:pointer;font-family:inherit;
+  display:flex;align-items:center;gap:6px;
+}
+.callout-marker .dot{
+  width:20px;height:20px;border-radius:50%;flex:0 0 auto;
+  background:color-mix(in oklch, var(--nasa-blue) 55%, transparent);
+  border:2px solid var(--nasa-blue);
+  box-shadow:0 0 0 4px color-mix(in oklch, var(--nasa-blue) 22%, transparent);
+}
+.callout-marker .callout-label{
+  font-size:12px;font-weight:600;color:var(--on-accent);white-space:nowrap;pointer-events:none;
+  background:color-mix(in oklch, var(--bg) 55%, transparent);
+  border-radius:20px;padding:3px 10px;
+  opacity:0;transform:translateX(-4px);transition:opacity .15s ease, transform .15s ease;
+}
+.callout-marker.shown .callout-label,
+.callout-marker:focus-visible .callout-label{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.callout-marker .callout-label{transition:none}}
+
+/* campus map -- reuses .callout-marker, but a map pin's label should be
+   glanceable up front (unlike a photo hotspot's tap-to-reveal caption). */
+.campus-map-frame{aspect-ratio:1/1}
+.campus-pin .callout-label{opacity:1;transform:none}
+
+/* arrive locator -- small non-interactive preview of the shared campus map
+   with a highlight box over this stop, paired above the zoomed-in detail
+   photo (the establishing-shot/detail-shot pattern). */
+.locator-frame{aspect-ratio:1/1;max-width:220px;margin:0 auto var(--space-sm)}
+.locator-box{
+  position:absolute;transform:translate(-50%,-50%);pointer-events:none;
+  border:2px solid var(--nasa-blue);border-radius:3px;
+  background:color-mix(in oklch, var(--nasa-blue) 18%, transparent);
+}
+
+/* narrate: always-visible transcript + reveal cards. Cue points only ever
+   highlight -- nothing here is ever hidden behind playback, so the panel
+   is just as usable with the sound off. */
+.transcript{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--space-sm);margin:var(--space-sm) 0;font-size:var(--text-lg);line-height:1.5;
+}
+.t-seg{color:var(--ink-soft);transition:color .2s ease}
+.t-seg.seg-active{color:var(--ink)}
+@media (prefers-reduced-motion: reduce){.t-seg{transition:none}}
+
+.reveal-card{
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--space-xs) var(--space-sm);margin:var(--space-xs) 0;
+  transition:border-color .2s ease, background-color .2s ease;
+}
+.reveal-card.seen{background:var(--card)}
+.reveal-card.active{border-color:var(--nasa-blue)}
+@media (prefers-reduced-motion: reduce){.reveal-card{transition:none}}
+
+.scrub-row{display:flex;align-items:center;gap:var(--space-xs);margin:var(--space-2xs) 0 var(--space-sm)}
+.scrub-bar{flex:1;accent-color:var(--nasa-blue);min-height:24px}
+.scrub-bar:disabled{opacity:.4}
+.time-readout{display:flex;gap:4px;font-size:11px;font-family:var(--font-mono);color:var(--ink-soft);white-space:nowrap}
+
+.ask-list{margin:0;padding-left:1.1em}
+.ask-list li{margin-bottom:6px;color:var(--ink-soft);font-size:14px}
