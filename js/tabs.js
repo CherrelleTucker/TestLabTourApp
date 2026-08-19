@@ -30,7 +30,11 @@ function switchToTab(targetTab) {
   // Scroll to top of tab content
   var stopTabs = stopSection.querySelector('.stop-tabs');
   if (stopTabs) {
-    stopTabs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    try {
+      stopTabs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (e) {
+      // Ignore AbortError from interrupted smooth scroll
+    }
   }
 }
 
