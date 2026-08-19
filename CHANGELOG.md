@@ -65,6 +65,7 @@
   - Removed redundant "How to take this tour" section
   - Increased spacing between sections for better readability
   - Changed to proper class name (inner) to pick up accordion styling
+- **Removed "Work with the Test Lab" button** from hero CTA row (contact page at bottom is sufficient)
 
 ### Resources & External Links
 - **OnePagers folder added to repo** (11 PDF fact sheets for ET branches)
