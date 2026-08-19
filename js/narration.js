@@ -19,6 +19,18 @@ function _resetNarrationBtn(btn) {
   btn.textContent = '\u25B6 Listen';
 }
 
+function toggleTranscript(btn) {
+  var audioPlayer = btn.closest('.audio-player');
+  if (!audioPlayer) return;
+
+  var transcript = audioPlayer.querySelector('.transcript');
+  if (!transcript) return;
+
+  var isHidden = transcript.hidden;
+  transcript.hidden = !isHidden;
+  btn.textContent = isHidden ? 'Hide transcript' : 'Show transcript';
+}
+
 function _stopAudioPlayback(btn) {
   if (_narrationAudio) {
     _narrationAudio.pause();

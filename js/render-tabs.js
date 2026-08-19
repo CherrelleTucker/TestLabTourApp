@@ -163,23 +163,23 @@
                 (stop.narration.audio ? ' data-audio-src="' + media + '/' + stop.narration.audio + '"' : '') +
                 ' data-stop-id="' + stop.id + '"' +
                 ' data-narration="' + stop.narration.text.replace(/"/g, '&quot;') + '">▶ Listen</button>' +
-              '<div class="audio-meta"><b>Listen to this stop</b><span>' + stop.narration.durationLabel + '</span></div>' +
+              '<div class="audio-meta">' +
+                '<b>Listen to this stop</b>' +
+                '<span>' + stop.narration.durationLabel + '</span>' +
+                '<button type="button" class="transcript-toggle" onclick="toggleTranscript(this)" style="margin-left:auto;background:none;border:none;color:var(--nasa-blue);font-size:13px;font-weight:600;cursor:pointer;padding:0">Show transcript</button>' +
+              '</div>' +
             '</div>' +
             '<div class="scrub-row">' +
               '<input type="range" class="scrub-bar" min="0" max="1000" value="0" step="1" aria-label="Seek narration" disabled>' +
               '<div class="time-readout"><span class="elapsed">0:00</span><span class="sep">/</span><span class="remaining">' + remainingText + '</span></div>' +
             '</div>' +
-          '</div>' +
-
-          '<details style="margin-top:var(--space-md)">' +
-            '<summary>Show transcript</summary>' +
-            '<div class="inner transcript" aria-label="Full narration transcript">' +
+            '<div class="transcript" aria-label="Full narration transcript" hidden>' +
               '<p>' +
                 '<span class="t-seg seg-active" data-seg="hook">' + stop.hook + '</span> ' +
                 '<span class="t-seg" data-seg="explainer">' + explainerText(stop) + '</span>' +
               '</p>' +
             '</div>' +
-          '</details>' +
+          '</div>' +
 
           '<div class="hero-section">' +
             '<div class="media photo hero-photo">' +
