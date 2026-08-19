@@ -544,11 +544,11 @@
 
     // Define the 5 lab categories matching ET10, ET20, ET30, ET40, ET50
     var labs = [
-      { id: 'propulsion', name: 'Propulsion', key: 'Propulsion', heroImage: 'media/test-stand-116/img/hero.jpg' },
-      { id: 'dynamics', name: 'Structural Dynamics', key: 'Structural Dynamics', heroImage: 'media/flat-floor/img/hero.jpg' },
-      { id: 'strength', name: 'Structural Strength', key: 'Structural Strength', heroImage: 'media/structural-test-stands/img/hero.jpg' },
-      { id: 'fluids', name: 'Experimental Fluids & Environmental', key: 'Experimental Fluids & Environmental', heroImage: 'media/thermal-vacuum/img/hero.jpg' },
-      { id: 'special', name: 'Special Test Equipment', key: 'Special Test Equipment', heroImage: 'media/shared/img/nasa-logo.png' }
+      { id: 'propulsion', name: 'Propulsion', key: 'Propulsion', heroImage: 'media/test-stand-116/img/hero.jpg', onePager: 'OnePagers/ET10_PTL 3_1_21.pdf', etCode: 'ET10' },
+      { id: 'dynamics', name: 'Structural Dynamics', key: 'Structural Dynamics', heroImage: 'media/flat-floor/img/hero.jpg', onePager: 'OnePagers/ET40 SDT _3_1_21.pdf', etCode: 'ET40' },
+      { id: 'strength', name: 'Structural Strength', key: 'Structural Strength', heroImage: 'media/structural-test-stands/img/hero.jpg', onePager: 'OnePagers/ET30_SSTL _3_1_21.pdf', etCode: 'ET30' },
+      { id: 'fluids', name: 'Experimental Fluids & Environmental', key: 'Experimental Fluids & Environmental', heroImage: 'media/thermal-vacuum/img/hero.jpg', onePager: 'OnePagers/ET20_FD_3_1_21.pdf', etCode: 'ET20' },
+      { id: 'special', name: 'Special Test Equipment', key: 'Special Test Equipment', heroImage: 'media/shared/img/nasa-logo.png', onePager: 'OnePagers/ET50_STE_3_1_21.pdf', etCode: 'ET50' }
     ];
 
     // Group stops by lab
@@ -580,12 +580,21 @@
         ? '<a href="#map" class="see-all" onclick="filterByLab(\'' + lab.key + '\'); show(\'map\'); return false;">See all ' + lab.name.toLowerCase() + ' facilities</a>'
         : '';
 
+      var onePagerHtml = lab.onePager
+        ? '<a href="' + lab.onePager + '" target="_blank" rel="noopener" class="one-pager-link" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--nasa-blue);text-decoration:none;margin-top:8px;font-weight:600">' +
+            '<span>📄</span>' +
+            '<span>' + lab.etCode + ' One-Pager</span>' +
+            '<span style="font-size:10px">↗</span>' +
+          '</a>'
+        : '';
+
       var cardHtml = '<div class="lab-card">' +
         '<div class="lab-card-hero" style="background-image: url(\'' + lab.heroImage + '\')"></div>' +
         '<div class="lab-card-content">' +
           '<h3>' + lab.name + '</h3>' +
           stopListHtml +
           seeAllHtml +
+          onePagerHtml +
         '</div>' +
         '</div>';
 

@@ -129,12 +129,12 @@ window.STOPS = [
       {
         "title": "Test Lab capability one-pager (PDF)",
         "description": "Official NASA fact sheet · cleared for public release",
-        "path": "../OnePagers/ET01_TEST LAB_3_1_21 .pdf"
+        "path": "OnePagers/ET01_TEST LAB_3_1_21 .pdf"
       },
       {
         "title": "Structural Dynamics Test Lab (ET40) one-pager (PDF)",
         "description": "Official NASA fact sheet · cleared for public release",
-        "path": "../OnePagers/ET40 SDT _3_1_21.pdf"
+        "path": "OnePagers/ET40 SDT _3_1_21.pdf"
       }
     ],
     "wayfindNext": { "nextStopId": "stop2", "label": "Next: Structural Test Stands" },
@@ -338,12 +338,12 @@ window.STOPS = [
       {
         "title": "Test Lab capability one-pager (PDF)",
         "description": "Official NASA fact sheet · cleared for public release",
-        "path": "../OnePagers/ET01_TEST LAB_3_1_21 .pdf"
+        "path": "OnePagers/ET01_TEST LAB_3_1_21 .pdf"
       },
       {
         "title": "Structural Strength Test Lab (ET30) one-pager (PDF)",
         "description": "Official NASA fact sheet · cleared for public release",
-        "path": "../OnePagers/ET30_SSTL _3_1_21.pdf"
+        "path": "OnePagers/ET30_SSTL _3_1_21.pdf"
       }
     ],
     "wayfindNext": { "nextStopId": "stop3", "label": "Next: Thermal Vacuum Testing" },
@@ -486,17 +486,17 @@ window.STOPS = [
       {
         "title": "Test Lab capability one-pager (PDF)",
         "description": "Official NASA fact sheet · cleared for public release",
-        "path": "../OnePagers/ET01_TEST LAB_3_1_21 .pdf"
+        "path": "OnePagers/ET01_TEST LAB_3_1_21 .pdf"
       },
       {
         "title": "V-20 Thermal Vacuum Chamber one-pager (PDF)",
         "description": "Official NASA fact sheet · cleared for public release",
-        "path": "../OnePagers/V-20 One Pager 100323.pdf"
+        "path": "OnePagers/V-20 One Pager 100323.pdf"
       },
       {
         "title": "Environmental Test Facility one-pager (PDF)",
         "description": "Official ET20 fact sheet · cleared for public release",
-        "path": "../OnePagers/ET20_ETF_6_13_23.pdf"
+        "path": "OnePagers/ET20_ETF_6_13_23.pdf"
       }
     ],
     "wayfindNext": { "nextStopId": "stop4", "label": "Next: F-1 Engine Test Stand" },
@@ -685,12 +685,12 @@ window.STOPS = [
       {
         "title": "Test Lab capability one-pager (PDF)",
         "description": "Official NASA fact sheet · cleared for public release",
-        "path": "../OnePagers/ET01_TEST LAB_3_1_21 .pdf"
+        "path": "OnePagers/ET01_TEST LAB_3_1_21 .pdf"
       },
       {
         "title": "Propulsion Test Lab (ET10) one-pager (PDF)",
         "description": "Official NASA fact sheet · cleared for public release",
-        "path": "../OnePagers/ET10_PTL 3_1_21.pdf"
+        "path": "OnePagers/ET10_PTL 3_1_21.pdf"
       }
     ],
     "wayfindNext": { "nextStopId": "stop5", "label": "Next: Neutral Buoyancy Simulator" },
