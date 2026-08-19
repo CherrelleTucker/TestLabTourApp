@@ -4,8 +4,11 @@
 */
 
 // Global function for programmatic tab switching (called from nav buttons)
-function switchToTab(targetTab) {
-  var stopSection = document.querySelector('[data-stop-section]:not([hidden])');
+// If stopSection is provided, use it; otherwise find the currently active stop
+function switchToTab(targetTab, stopSection) {
+  if (!stopSection) {
+    stopSection = document.querySelector('[data-stop-section]:not([hidden])');
+  }
   if (!stopSection) return;
 
   // Update tab buttons
@@ -40,18 +43,22 @@ function switchToTab(targetTab) {
 
 (function() {
   document.addEventListener('click', function(e) {
+    // Handle both tab buttons and tab navigation buttons (Previous/Next)
     var tabBtn = e.target.closest('.tab-btn');
-    if (!tabBtn) return;
+    var navBtn = e.target.closest('.tab-nav-btn');
+    var btn = tabBtn || navBtn;
+
+    if (!btn) return;
 
     e.preventDefault();
     e.stopPropagation();
 
-    var stopSection = tabBtn.closest('[data-stop-section]');
+    var stopSection = btn.closest('[data-stop-section]');
     if (!stopSection) return;
 
-    var targetTab = tabBtn.dataset.tab;
+    var targetTab = btn.dataset.tab || btn.dataset.targetTab;
     if (!targetTab) return;
 
-    switchToTab(targetTab);
+    switchToTab(targetTab, stopSection);
   });
 })();

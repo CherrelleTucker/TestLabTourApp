@@ -134,10 +134,10 @@
     return (
       '<div class="tab-nav-buttons" style="display:flex;gap:var(--space-sm);margin-top:var(--space-xl);padding-top:var(--space-lg);border-top:1px solid var(--line)">' +
         (prevTab
-          ? '<button type="button" class="btn secondary" style="flex:1" onclick="switchToTab(\'' + prevTab + '\')">← ' + tabLabels[prevTab] + '</button>'
+          ? '<button type="button" class="btn secondary tab-nav-btn" data-target-tab="' + prevTab + '" style="flex:1">← ' + tabLabels[prevTab] + '</button>'
           : '<div style="flex:1"></div>') +
         (nextTab
-          ? '<button type="button" class="btn" style="flex:1" onclick="switchToTab(\'' + nextTab + '\')">' + tabLabels[nextTab] + ' →</button>'
+          ? '<button type="button" class="btn tab-nav-btn" data-target-tab="' + nextTab + '" style="flex:1">' + tabLabels[nextTab] + ' →</button>'
           : '<div style="flex:1"></div>') +
       '</div>'
     );
