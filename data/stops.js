@@ -2586,7 +2586,191 @@ window.STOPS = [
       "heading": "Need vibration testing?",
       "body": "The Structural Dynamics Test Capability at Building 4619 supports vibration qualification testing for NASA programs and partners."
     },
+    "wayfindNext": { "nextStopId": "stop17", "label": "Next: Special Test Equipment" },
+    "nextStopId": "stop17"
+  },
+  {
+    "id": "stop17",
+    "qrFile": "17-et50-special-test-equipment",
+    "title": "Special Test Equipment & Design: Engineering the Infrastructure",
+    "shortTitle": "Special Test Equipment",
+    "location": "Building 4666 · ET50",
+    "locationShort": "Building 4666",
+    "subtitle": "Special Test Equipment & Design Branch · Building 4666",
+    "lab": "Special Test Equipment",
+    "tourTime": "~45 min",
+    "groupSize": null,
+    "accessible": true,
+    "chips": ["Engineering", "Infrastructure"],
+    "available": true,
+    "hazards": [],
+    "campusPin": { "xPct": 52.0, "yPct": 50.0 },
+    "arrivePhoto": {
+      "src": "img/arrive.jpg",
+      "alt": "Aerial view of Building 4666 at NASA Marshall Space Flight Center.",
+      "credit": "USDA/USGS · National Agriculture Imagery Program (NAIP), public domain"
+    },
+    "media": "media/special-test-equipment",
+    "hero": {
+      "src": "img/nasa-logo.png",
+      "alt": "NASA logo placeholder",
+      "credit": "Placeholder · awaiting cleared imagery"
+    },
+    "thumb": "img/nasa-logo.png",
+    "factbox": "ET50 doesn't have tour stops of its own — they design and build the infrastructure that makes everyone else's testing possible.",
+    "narration": {
+      "durationLabel": "~50 sec",
+      "text": "The historic F-1 stand was demolished November 30, 2012, the same day as the Ground Support Equipment Internal Design Review Dry-Run, held in the new building 4602. This was very much in the early phases of the SLS Program, and on the heels of Ares cancellation. The demo happened during the review. A large boom was heard, and the NASA GSE Design Lead acknowledged that the noise was the F-1 demo. At the time, SLS's future was far from assured, and the loss of such a historic stand alongside an uncertain future felt bittersweet. Ultimately, the demo of the F-1 stand enabled buildup of necessary test capabilities for SLS."
+    },
+    "hook": "The historic F-1 stand was demolished November 30, 2012, the same day as the Ground Support Equipment Internal Design Review Dry-Run.",
+    "cuePoints": { "hook": 0, "explainer": 12, "wowStat": 30, "media": 38, "why": 45 },
+    "whyItMatters": "ET50 is the backbone of Marshall's test capabilities. They design the custom hardware, build the test stands, and maintain the infrastructure that enables breakthrough testing across every other branch. Without ET50's ingenuity and institutional memory, Marshall's leadership in test would not exist.",
+    "whyItMattersToYou": "When you see a rocket tested at Marshall, you're watching ET50's infrastructure at work. The strand jacks, mast climbers, common floor patterns, and reusable hardware are all engineered here. ET50 turns impossible test requirements into physical reality.",
+    "whyItMattersToWorld": "ET50's work enables NASA's missions and commercial partners to validate hardware before it flies. Their innovations — from the 221-foot test stand at 4693 to modular shear towers that move between facilities — save time and money while ensuring mission success.",
+    "keyfactsTitle": "What ET50 Does",
+    "wowStat": 1,
+    "keyfacts": [
+      { "num": "221'", "label": "tall test stand at 4693", "detail": "Slightly taller than the historic F-1 stand, built for SLS testing" },
+      { "num": "100yr", "label": "Blue Origin lease at WTA", "detail": "ET50 coordinates West Test Area activities around Blue Origin testing" },
+      { "num": "4 years", "label": "to build 4693", "detail": "Bulk structure contracted through Facilities; specialty interface hardware designed by ET50" },
+      { "num": "Multiple", "label": "facilities supported", "detail": "ET50 designs and maintains hardware across 4693, 4670, 4697, 4699, 4550, and more" }
+    ],
+    "deepDive": {
+      "summary": "Go deeper: ET50's engineering philosophy",
+      "open": true,
+      "html": "Few things in test ever 'go away.' Hardware is re-used and updated all the time. Customers are frequently delighted to save cost and schedule by re-using hardware from previous programs.<br><br>Example: The mast climbers at 4693 were originally purchased as part of Ares Dynamic Test buildup over in 4550. The common floor anchor pattern used in LTA, at 4693, and 4697 cost slightly more for SLS project to implement upfront, but it took people advocating for the common pattern for it to be implemented. Now it's a long-term value add to NASA mission — it saves money for future projects because different hardware (shear towers, other STE) can be moved modularly across those locations.<br><br>ET50's documentation goes back to MSFC's beginning days. It is fascinating to trace different hardware across different project applications — from Apollo through Shuttle, Ares, SLS, and future missions."
+    },
+    "detailImage": {
+      "src": "img/nasa-logo.png",
+      "alt": "Placeholder image",
+      "credit": "Placeholder · awaiting cleared imagery"
+    },
+    "lookFor": "ET50 doesn't have a single stop to visit — their work is everywhere. Look for the 'blue stuff' (specialty interface hardware) on test stands, the strand jacks at the top of 4693, and the common floor patterns that enable hardware to move between facilities.",
+    "galleryTitle": "ET50's Work Across Marshall",
+    "gallery": [],
+    "askYourHost": [
+      "How does ET50 decide whether to build new hardware or re-use existing equipment?",
+      "What's the most challenging piece of test infrastructure ET50 has designed?",
+      "How does ET50 balance project-specific needs with long-term NASA capability investments?",
+      "What hardware from Apollo or Shuttle is still in use today?"
+    ],
+    "quiz": {
+      "question": "Why is ET50 called 'Special' Test Equipment?",
+      "options": [
+        { "text": "They test classified programs", "correct": false },
+        { "text": "They design custom infrastructure that enables all other test branches", "correct": true },
+        { "text": "They have the largest building", "correct": false }
+      ],
+      "correctFeedback": "Exactly. ET50 designs and builds the custom hardware that makes testing possible across every other branch.",
+      "wrongFeedback": "Not quite — ET50 is special because they engineer the infrastructure that enables all other testing at Marshall."
+    },
+    "cta": {
+      "heading": "Need custom test infrastructure?",
+      "body": "ET50 specializes in designing and building unique test hardware for complex programs. From test stands to Ground Support Equipment, they turn requirements into reality."
+    },
+    "wayfindNext": { "nextStopId": "stop18", "label": "Next: Marshall History Tour" },
+    "nextStopId": "stop18",
+    "onePagers": [
+      {
+        "title": "ET50 Special Test Equipment one-pager (PDF)",
+        "description": "Official NASA fact sheet · cleared for public release",
+        "path": "OnePagers/ET50_STE_3_1_21.pdf"
+      }
+    ]
+  },
+  {
+    "id": "stop18",
+    "qrFile": "18-marshall-history",
+    "title": "Marshall History Tour: From Redstone to the Stars",
+    "shortTitle": "Marshall History",
+    "location": "Redstone Arsenal · Marshall Space Flight Center",
+    "locationShort": "Redstone Arsenal",
+    "subtitle": "Institutional history · ABMA to NASA",
+    "lab": "Special Test Equipment",
+    "tourTime": "~60 min",
+    "groupSize": null,
+    "accessible": true,
+    "chips": ["History"],
+    "available": true,
+    "legacySite": true,
+    "hazards": [],
+    "campusPin": { "xPct": 45.0, "yPct": 45.0 },
+    "arrivePhoto": {
+      "src": "img/arrive.jpg",
+      "alt": "Aerial view of Redstone Arsenal and Marshall Space Flight Center.",
+      "credit": "USDA/USGS · National Agriculture Imagery Program (NAIP), public domain"
+    },
+    "media": "media/marshall-history",
+    "hero": {
+      "src": "img/nasa-logo.png",
+      "alt": "NASA logo placeholder",
+      "credit": "Placeholder · awaiting cleared imagery"
+    },
+    "thumb": "img/nasa-logo.png",
+    "factbox": "From Operation Paperclip and the Army Ballistic Missile Agency to NASA's premier propulsion and test center, Marshall's story is the story of America's reach for space.",
+    "narration": {
+      "durationLabel": "~90 sec",
+      "text": "Von Braun and his team were instrumental to Saturn V's ultimate success in reaching the moon. The ABMA team developed Redstone to 'test nosecones,' even after being explicitly told to stop development of a rocket to send a satellite into orbit. The Navy's Vanguard rocket was selected to pursue launching a satellite, but it exploded on the pad December 1957. Ultimately, Juno 1, the ABMA rocket, successfully lifted the first American satellite into orbit — Explorer 1 — in 1958. When NASA was formed in 1958, von Braun opposed transfer. He was loyal to his army colleague Medaris and feared loss of funding and support. The Army continued to cooperate with NASA. Eventually, in 1960, ABMA team became Marshall. At its peak, Marshall was HUGE — 22,000 people. Marshall's Launch Operations Center eventually became Kennedy Space Center. Stennis Space Center and Michoud Assembly Facility are part of MSFC today. Marshall was named for General George C. Marshall because of his 'image of a military man greatly dedicated to the cause of peace.'"
+    },
+    "hook": "Von Braun and his team were instrumental to Saturn V's ultimate success in reaching the moon.",
+    "cuePoints": { "hook": 0, "explainer": 10, "wowStat": 40, "media": 60, "why": 75 },
+    "whyItMatters": "Marshall's history is institutional memory made physical. The cultural emphasis on getting hands dirty, keeping in-house work, and building for the long term shaped American spaceflight. Understanding this history explains why Marshall remains NASA's engineering center.",
+    "keyfactsTitle": "Marshall Through Time",
+    "wowStat": 1,
+    "keyfacts": [
+      { "num": "1958", "label": "Explorer 1 launch", "detail": "ABMA's Juno 1 lifted America's first satellite after Vanguard failed" },
+      { "num": "1960", "label": "ABMA becomes Marshall", "detail": "Army Ballistic Missile Agency transferred to NASA" },
+      { "num": "22,000", "label": "people at peak", "detail": "Marshall was massive during Apollo — owned KSC and SSC" },
+      { "num": "300+", "label": "aerospace companies", "detail": "Alabama (Top 3 state for aerospace) hosts companies from 30+ countries" }
+    ],
+    "deepDive": {
+      "summary": "Go deeper: the Redstone Test Stand story",
+      "open": true,
+      "html": "The Redstone Test Stand is 'where it all started' — built from scraps on the cheap, it was used for many years even after investment into a 'better' stand. It's an example of Marshall's ingenuity and creativity, applied to 'do the right thing' despite obstacles.<br><br>The Jordan Cemetery is the only remnant of the families who lived on this land before it became Redstone Arsenal. Only one tombstone is inscribed: 'Beulah Love, born Apr. 17, 1880, died Jan. 3, 1925,' but there are several older graves. Folks had to move over the summer, and some could not even afford a place to move to (even with government compensation). One silver lining: when property becomes federal land, it is a requirement to document artifacts. Many artifacts have been preserved, including some from indigenous peoples. Redstone land hosted two plantations in the past as well.<br><br><a href='https://huntsvillehistorycollection.org/hhc/docs/pdf/rankin/JordanCemetery_45_1_SummaryReport.pdf' target='_blank' rel='noopener'>Jordan Cemetery Summary Report (PDF)</a><br><a href='https://huntsvillehistorycollection.org/hhc/docs/pdf/book2/People_of_Redstone_Arsenal.pdf' target='_blank' rel='noopener'>The People Who Lived on the Land that is Now Redstone Arsenal (PDF)</a>"
+    },
+    "detailImage": {
+      "src": "img/nasa-logo.png",
+      "alt": "Placeholder image",
+      "credit": "Placeholder · awaiting cleared imagery"
+    },
+    "lookFor": "Look for the bunker near 4693 — von Braun watched tests from there. The Redstone Test Stand still stands as a monument to where American spaceflight began.",
+    "galleryTitle": "Marshall's Historical Sites",
+    "gallery": [],
+    "askYourHost": [
+      "Why did von Braun oppose transferring from Army to NASA?",
+      "What happened to the families who lived on Redstone Arsenal land?",
+      "How did Marshall's culture of hands-on engineering shape NASA?",
+      "What's the T-Tower's connection to LBJ and live rocket testing broadcasts?"
+    ],
+    "quiz": {
+      "question": "What was the ABMA team told NOT to do before launching Explorer 1?",
+      "options": [
+        { "text": "Test rocket engines", "correct": false },
+        { "text": "Develop a rocket to send a satellite into orbit", "correct": true },
+        { "text": "Work with NASA", "correct": false }
+      ],
+      "correctFeedback": "Exactly. They developed Redstone anyway, and when Vanguard failed, ABMA's Juno 1 successfully launched America's first satellite.",
+      "wrongFeedback": "Not quite — the ABMA team was told to stop developing a satellite launch rocket, but they did it anyway and succeeded when the Navy's Vanguard failed."
+    },
+    "cta": {
+      "heading": "Explore Marshall's history",
+      "body": "From Operation Paperclip to SLS, Marshall's institutional memory runs deep. ET50 preserves this history through documentation that traces hardware and capabilities across decades."
+    },
     "wayfindNext": { "nextStopId": null, "label": "Tour complete" },
-    "nextStopId": null
+    "nextStopId": null,
+    "externalLinks": [
+      {
+        "title": "Test Stand 4670: Building on a Legacy (YouTube)",
+        "url": "https://www.youtube.com/watch?v=rUr18OkIkYM"
+      },
+      {
+        "title": "Propulsion and Structural Test Facility (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Propulsion_and_Structural_Test_Facility"
+      },
+      {
+        "title": "Redstone Test Stand (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Redstone_Test_Stand"
+      }
+    ]
   }
 ];
