@@ -2692,7 +2692,6 @@ window.STOPS = [
     "accessible": true,
     "chips": ["History"],
     "available": true,
-    "legacySite": true,
     "hazards": [],
     "campusPin": { "xPct": 45.0, "yPct": 45.0 },
     "arrivePhoto": {
