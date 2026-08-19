@@ -1,5 +1,20 @@
 # Changelog — MSFC Test Lab Tour App
 
+## 2026-08-19 — Major Redesign, GitHub Pages Deployment, ET50 & History Tour
+
+### New Stops Added
+- **stop17: Special Test Equipment & Design (ET50)** — Building 4666
+  - Focus on ET50's role designing infrastructure that enables all other test branches
+  - Sarah's F-1 demolition story as narration
+  - Highlights hardware reuse, common floor patterns, institutional memory
+  - Links to facilities they support (4693, 4670, 4697, 4699, 4550, etc.)
+  - ET50 now shows as active on home page instead of "Coming soon"
+- **stop18: Marshall History Tour** — Institutional history Easter egg
+  - ABMA to NASA transition, von Braun's story, Explorer 1 launch
+  - Redstone Test Stand origins, Jordan Cemetery history
+  - External links to YouTube, Wikipedia, Huntsville History Collection
+  - Listed under ET50 lab category as historical deep-dive
+
 ## 2026-08-19 — Major Redesign & GitHub Pages Deployment
 
 ### Theme & Design
@@ -23,6 +38,9 @@
 ### Navigation Improvements
 - **Previous/Next buttons at bottom of each tab panel** for easier navigation without scrolling
 - Buttons scroll to tab bar (not page top) for better UX
+- **Tab switching fixed** for all stops (previously only worked on Flat Floor)
+  - switchToTab now correctly targets the active stop section instead of always targeting the first stop in DOM
+  - Previous/Next buttons use event delegation instead of inline onclick
 - Removed "Brief" section (internal documentation)
 - Removed Brief button from header and bottom navigation
 
@@ -42,7 +60,11 @@
   - Experimental Fluids & Environmental (ET20)
   - Special Test Equipment (ET50)
 - Each lab card shows: hero image, lab name, up to 4 stops, "See all" link, **OnePager PDF link**
-- **Tour instructions accordion** (expandable, opens by default)
+- **"Before you go" tour instructions** with actual parking, PPE, photography rules
+  - Replaced generic placeholder text with real MSFC tour procedures
+  - Removed redundant "How to take this tour" section
+  - Increased spacing between sections for better readability
+  - Changed to proper class name (inner) to pick up accordion styling
 
 ### Resources & External Links
 - **OnePagers folder added to repo** (11 PDF fact sheets for ET branches)
@@ -95,6 +117,11 @@ TestLabTourApp/
 - "Ask your host" questions populated for stops
 - "Why it matters" structured as two-part (To you / To NASA and the world)
 - Terminology: "Virtual" → "Legacy", "canned tours" → "curated tours"
+- **Em-dashes replaced with colons** in welcome hero text and all 16 stop titles
+- **Transcript moved to collapsible dropdown** within audio player
+  - "Show transcript" button integrated into Listen bar (white text with underline)
+  - Transcript expands/collapses below audio controls instead of separate container
+  - Toggle updates button text between "Show/Hide transcript"
 
 ---
 
