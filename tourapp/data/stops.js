@@ -125,6 +125,18 @@ window.STOPS = [
       "heading": "Could your hardware use this floor?",
       "body": "The Test Lab partners with NASA programs, other agencies, and industry for docking, proximity-operations, and robotic simulation testing."
     },
+    "onePagers": [
+      {
+        "title": "Test Lab capability one-pager (PDF)",
+        "description": "Official NASA fact sheet · cleared for public release",
+        "path": "../OnePagers/ET01_TEST LAB_3_1_21 .pdf"
+      },
+      {
+        "title": "Structural Dynamics Test Lab (ET40) one-pager (PDF)",
+        "description": "Official NASA fact sheet · cleared for public release",
+        "path": "../OnePagers/ET40 SDT _3_1_21.pdf"
+      }
+    ],
     "wayfindNext": { "nextStopId": "stop2", "label": "Next: Structural Test Stands" },
     "nextStopId": "stop2"
   },
@@ -322,6 +334,18 @@ window.STOPS = [
       "heading": "Need to qualify a structure?",
       "body": "The Test Lab runs static and dynamic structural testing for launch vehicles and spacecraft — to flight loads and beyond."
     },
+    "onePagers": [
+      {
+        "title": "Test Lab capability one-pager (PDF)",
+        "description": "Official NASA fact sheet · cleared for public release",
+        "path": "../OnePagers/ET01_TEST LAB_3_1_21 .pdf"
+      },
+      {
+        "title": "Structural Strength Test Lab (ET30) one-pager (PDF)",
+        "description": "Official NASA fact sheet · cleared for public release",
+        "path": "../OnePagers/ET30_SSTL _3_1_21.pdf"
+      }
+    ],
     "wayfindNext": { "nextStopId": "stop3", "label": "Next: Thermal Vacuum Testing" },
     "nextStopId": "stop3"
   },
@@ -458,6 +482,23 @@ window.STOPS = [
       "heading": "Headed for space?",
       "body": "The Test Lab provides thermal-vacuum and environmental testing to qualify spacecraft and payloads for the conditions of orbit and beyond."
     },
+    "onePagers": [
+      {
+        "title": "Test Lab capability one-pager (PDF)",
+        "description": "Official NASA fact sheet · cleared for public release",
+        "path": "../OnePagers/ET01_TEST LAB_3_1_21 .pdf"
+      },
+      {
+        "title": "V-20 Thermal Vacuum Chamber one-pager (PDF)",
+        "description": "Official NASA fact sheet · cleared for public release",
+        "path": "../OnePagers/V-20 One Pager 100323.pdf"
+      },
+      {
+        "title": "Environmental Test Facility one-pager (PDF)",
+        "description": "Official ET20 fact sheet · cleared for public release",
+        "path": "../OnePagers/ET20_ETF_6_13_23.pdf"
+      }
+    ],
     "wayfindNext": { "nextStopId": "stop4", "label": "Next: F-1 Engine Test Stand" },
     "nextStopId": "stop4"
   },
@@ -640,6 +681,18 @@ window.STOPS = [
       "heading": "Testing propulsion hardware?",
       "body": "The Test Lab's West Test Area heritage runs from the F-1 through today's SLS and commercial engine programs &mdash; static-fire testing at scale."
     },
+    "onePagers": [
+      {
+        "title": "Test Lab capability one-pager (PDF)",
+        "description": "Official NASA fact sheet · cleared for public release",
+        "path": "../OnePagers/ET01_TEST LAB_3_1_21 .pdf"
+      },
+      {
+        "title": "Propulsion Test Lab (ET10) one-pager (PDF)",
+        "description": "Official NASA fact sheet · cleared for public release",
+        "path": "../OnePagers/ET10_PTL 3_1_21.pdf"
+      }
+    ],
     "wayfindNext": { "nextStopId": "stop5", "label": "Next: Neutral Buoyancy Simulator" },
     "nextStopId": "stop5"
   },

@@ -87,6 +87,25 @@
     );
   }
 
+  function onePagerLinksHtml(stop) {
+    var onePagers = stop.onePagers || [];
+    if (!onePagers.length) return '';
+    return (
+      '<div style="margin-top:var(--space-lg)">' +
+        '<h3 style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--nasa-blue);margin:0 0 var(--space-sm)">Resources</h3>' +
+        onePagers.map(function (pdf) {
+          return (
+            '<a class="res dl" href="' + pdf.path + '" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:11px;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:11px 13px;margin-bottom:8px;text-decoration:none;color:var(--ink);font-size:14px;font-weight:600">' +
+              '<span class="ri" style="font-size:18px;flex:0 0 auto;width:24px;text-align:center">📄</span>' +
+              '<span>' + pdf.title + '<span class="rd" style="font-weight:400;color:var(--muted);font-size:12px;display:block;margin-top:1px">' + pdf.description + '</span></span>' +
+              '<span style="margin-left:auto;color:#c2c7cf">⤓</span>' +
+            '</a>'
+          );
+        }).join('') +
+      '</div>'
+    );
+  }
+
   function quizOptionsHtml(quiz) {
     return quiz.options.map(function (opt, i) {
       return (
@@ -222,8 +241,15 @@
           '<div class="cta-card" style="margin-top:var(--space-lg)">' +
             '<h3>' + stop.cta.heading + '</h3>' +
             '<p>' + stop.cta.body + '</p>' +
-            '<button class="btn red small" style="margin-top:8px" onclick="show(\'contact\')">Talk to the Test Lab →</button>' +
+            '<a class="btn red small" style="margin-top:8px; display:inline-block; text-decoration:none" ' +
+              'href="mailto:msfc-testlab-tours@mail.nasa.gov?subject=Test%20Lab%20inquiry%20-%20' +
+              encodeURIComponent(stop.shortTitle) + '">' +
+              '📧 Work with the Test Lab' +
+            '</a>' +
+            '<p style="font-size:11.5px;opacity:0.82;margin-top:9px">Monitored <b>role mailbox</b> (placeholder) — not an individual.</p>' +
           '</div>' +
+
+          onePagerLinksHtml(stop) +
 
         '</div>' +
       '</div>'
