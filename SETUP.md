@@ -24,6 +24,92 @@ iPads are pre-authenticated with a **shared read-only GitHub account** (`TestLab
 - [ ] 10 iPads (iOS 14+ recommended) with Safari
 - [ ] NASA Guest WiFi access
 
+## Accounts Summary
+
+This deployment requires **three distinct accounts** working together:
+
+| Account | Purpose | Who Uses It | Where It's Used |
+|---------|---------|-------------|-----------------|
+| **Test Lab Apple ID** | Device unlock & management | Tour guides (setup only) | iPad Settings → Sign in |
+| **TestLabTours GitHub** | App authentication | All 10 iPads (pre-configured) | Safari → github.com |
+| **NASA Guest WiFi** | Network connectivity | All devices | iPad Settings → Wi-Fi |
+
+### Account Relationships
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        DEPLOYMENT OVERVIEW                       │
+└─────────────────────────────────────────────────────────────────┘
+
+┌──────────────────┐
+│  Tour Guide      │  Unlocks iPad with Test Lab Apple ID
+│  (Setup Phase)   │  password: MSFCet01
+└────────┬─────────┘
+         │
+         ↓
+┌──────────────────────────────────────────────────────────────────┐
+│  iPad (10 devices)                                               │
+│  ┌────────────────────────────────────────────────────────────┐  │
+│  │  iOS Settings                                              │  │
+│  │  • Signed in with: Test Lab Apple ID                      │  │
+│  │  • Connected to: NASA Guest WiFi                          │  │
+│  └────────────────────────────────────────────────────────────┘  │
+│  ┌────────────────────────────────────────────────────────────┐  │
+│  │  Safari Browser                                            │  │
+│  │  • Logged into GitHub as: TestLabTours                    │  │
+│  │  • Session stays active (cookies persist)                 │  │
+│  └────────────────────────────────────────────────────────────┘  │
+└───────────────────────────────┬──────────────────────────────────┘
+                                │
+                                │ HTTPS request over NASA Guest WiFi
+                                ↓
+┌──────────────────────────────────────────────────────────────────┐
+│  GitHub Enterprise Cloud                                         │
+│  ┌────────────────────────────────────────────────────────────┐  │
+│  │  CTuckerSolutions Organization                             │  │
+│  │  └─ TestLabTourApp Repository (Private)                    │  │
+│  │     • TestLabTours has Read access                         │  │
+│  │     • GitHub checks authentication                         │  │
+│  └────────────────────────────────────────────────────────────┘  │
+│  ┌────────────────────────────────────────────────────────────┐  │
+│  │  GitHub Pages (Private)                                    │  │
+│  │  • URL: ctuckersolutions.github.io/TestLabTourApp          │  │
+│  │  • Serves HTML, CSS, JS, images, audio                    │  │
+│  │  • Only accessible to authenticated users                 │  │
+│  └────────────────────────────────────────────────────────────┘  │
+└───────────────────────────────┬──────────────────────────────────┘
+                                │
+                                │ App content delivered
+                                ↓
+┌──────────────────────────────────────────────────────────────────┐
+│  Visitor Experience                                              │
+│  • Opens "Test Lab Tour" icon from iPad home screen              │
+│  • No login required (iPad already authenticated)                │
+│  • Browses tour stops, watches videos, takes quizzes             │
+│  • App works offline after first load (service worker caching)  │
+└──────────────────────────────────────────────────────────────────┘
+```
+
+### Data Flow
+
+1. **Initial Setup** (one-time per iPad):
+   - Tour guide unlocks iPad → Test Lab Apple ID
+   - iPad connects → NASA Guest WiFi
+   - Safari logs into → GitHub (TestLabTours account)
+   - Safari navigates to → GitHub Pages URL
+   - App loads and caches → Service Worker stores assets locally
+
+2. **Visitor Use** (every tour):
+   - Visitor taps app icon → Safari opens pre-authenticated session
+   - If online → Fresh content from GitHub Pages
+   - If offline → Cached content from Service Worker
+   - No visitor login required (iPad session persists)
+
+3. **Content Updates** (developer workflow):
+   - Developer commits to `main` branch → GitHub Pages rebuilds (2-3 min)
+   - Next time iPad loads app → Fetches updated content
+   - Service Worker caches new version → Works offline
+
 ## Actual Hardware Configuration
 
 ### Apple ID Account (Device Management)
@@ -52,6 +138,47 @@ iPads are pre-authenticated with a **shared read-only GitHub account** (`TestLab
 - Apple ID: Controls device access, should be known only to tour guides
 - GitHub account: Read-only access to one private repo, no write permissions
 - Credentials documented here for operational continuity (not visitor-facing)
+
+### Quick Reference Card (Tour Guides)
+
+Print and keep with iPads:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│           MSFC TEST LAB TOUR APP — QUICK REFERENCE          │
+├─────────────────────────────────────────────────────────────┤
+│  ACCOUNTS NEEDED                                            │
+│  ──────────────────────────────────────────────────────────│
+│  ① iPad Unlock:                                            │
+│     Apple ID: Test Lab                                      │
+│     Password: MSFCet01                                      │
+│                                                             │
+│  ② WiFi:                                                    │
+│     Network: NASA Guest                                     │
+│                                                             │
+│  ③ App Access:                                             │
+│     GitHub: TestLabTours                                    │
+│     Password: GettinNASA26                                  │
+│     (Usually stays logged in)                              │
+│  ──────────────────────────────────────────────────────────│
+│  VISITOR INSTRUCTIONS                                       │
+│  • Tap "Test Lab Tour" icon on home screen                 │
+│  • Browse, watch videos, take quizzes                      │
+│  • No login needed (already authenticated)                 │
+│  • Works offline after first visit                         │
+│  • Return iPad to tour guide desk when finished            │
+│  ──────────────────────────────────────────────────────────│
+│  TROUBLESHOOTING                                            │
+│  Problem: "Sign in to GitHub" prompt                       │
+│  Fix: Enter TestLabTours / GettinNASA26                    │
+│                                                             │
+│  Problem: Content not loading                              │
+│  Fix: Check NASA Guest WiFi connection                     │
+│                                                             │
+│  Problem: App frozen                                        │
+│  Fix: Force-quit Safari, reopen app                        │
+└─────────────────────────────────────────────────────────────┘
+```
 
 ## One-Time Setup
 
