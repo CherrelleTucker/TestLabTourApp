@@ -85,6 +85,7 @@
     <!-- ============ TOUR DIRECTORY / MAP ============ -->
     <section id="map" class="view" aria-label="Tour stops">
       <div class="pad">
+        <button class="back-btn" onclick="show('welcome')" aria-label="Back to home">← Back</button>
         <h1>Tour stops</h1>
         <p class="muted">Marshall Test Laboratory facilities · Browse all stops or choose a curated tour below</p>
 
@@ -105,7 +106,7 @@
               <!-- Active/Legacy toggle + Campus Map, populated by js/render.js -->
             </div>
           </div>
-          <button type="button" class="btn secondary" id="clear-filters-btn" style="align-self:flex-end;margin-left:auto" onclick="clearAllFilters()">Clear filters</button>
+          <a href="#" id="clear-filters-btn" style="align-self:flex-end;margin-left:auto;font-size:0.9rem;color:var(--link);text-decoration:underline;cursor:pointer" onclick="clearAllFilters(); return false;">Clear filters</a>
         </div>
 
         <div id="directory-list">

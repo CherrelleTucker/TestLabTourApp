@@ -11,6 +11,14 @@
 .btn.red:hover{filter:brightness(.93)}
 .btn.small{width:auto;padding:var(--space-2xs) var(--space-sm);font-size:var(--text-sm);min-height:44px}
 
+.back-btn{
+  background:none;border:none;color:var(--link);font-size:var(--text-body);
+  cursor:pointer;padding:var(--space-2xs) 0;margin-bottom:var(--space-sm);
+  font-family:inherit;font-weight:600;text-decoration:none;display:inline-flex;
+  align-items:center;gap:var(--space-3xs);
+}
+.back-btn:hover{text-decoration:underline}
+
 /* HERO (welcome / contact) */
 .hero{
   background:
