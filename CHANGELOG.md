@@ -1,5 +1,61 @@
 # Changelog — MSFC Test Lab Tour App
 
+## 2026-08-20 — Private Hosting, PWA, Documentation, UI Polish
+
+### Private GitHub Enterprise Deployment
+- **Migrated to GitHub Enterprise Cloud** with private repository and private GitHub Pages
+- **Access control**: Repository and live site accessible only to invited collaborators
+- **Authentication**: TestLabTours shared read-only account for iPad authentication
+- **10 iPad deployment model**: All iPads pre-authenticated on NASA Guest WiFi
+- **Internal use only**: Training and on-site visitor resource, not public-facing
+
+### Progressive Web App (PWA) Features
+- **Offline capability**: Service worker caches assets for offline use after first load
+- **Installable app**: "Add to Home Screen" creates native-like app experience on iPads
+- **App manifest**: Proper PWA configuration with Test Lab branding
+- **App icon**: Square Test Lab icon hosted in public assets repo for iOS compatibility
+
+### Branding Updates
+- **Test Lab logo** replaces NASA meatball in header
+- **Pill-shaped badge** container for horizontal logo (was circular)
+- **Simplified header**: Logo + theme toggle only, removed redundant text
+- **App icon**: Custom Test Lab square icon for home screen (via public TestLabAssets repo)
+
+### UI Improvements
+- **Back button**: Added to Tour stops page (upper left, returns to home)
+- **Clear filters**: Discrete text link below filter chips (was full-width button)
+- **Page navigation scroll fix**: Bottom nav now scrolls to top when clicked
+- **Cleaner hero**: Removed "Self-Guided Tour" eyebrow and redundant instructional text
+
+### Documentation
+- **README.md**: Project overview, private hosting model, access control, deployment guide
+- **SETUP.md**: Complete iPad setup with actual credentials, accounts summary, workflow diagrams
+- **CONTRIBUTING.md**: Content authoring guide for adding/updating tour stops
+- **Issue templates**: Created backlog for content priorities and feature requests
+- **Quick reference card**: Printable guide for tour guides with all credentials
+
+### Content Planning
+- **ET40 priorities identified**: East Vibration Lab (65klbf shaker - 80% guest interest), Anechoic Acoustic, Impact Modal
+- **OnePagers received**: East Vibration Lab and Structural Dynamics testing (April 2026)
+- **Content backlog**: ETF V20, Flat Floor review, West Test Area, historical timeline recovery
+- **Feature requests**: "Build Your Own Tour" interactive tool, Auburn lidar virtual tours
+
+### Infrastructure
+- **Three repositories**:
+  - `CherrelleTucker/TestLabTourApp` — Personal development repo (public)
+  - `CTuckerSolutions/TestLabTourApp` — Production app (private Pages)
+  - `CTuckerSolutions/TestLabAssets` — Public assets for icons/logos
+- **Hardware accounts documented**:
+  - Test Lab Apple ID (device unlock): MSFCet01
+  - TestLabTours GitHub (app access): GettinNASA26
+  - NASA Guest WiFi (network connectivity)
+
+### Bug Fixes
+- Service worker cache version management for updates
+- Badge shape rendering (circle → pill/oblong)
+- Filter positioning and spacing adjustments
+- GitHub Pages deployment queue conflicts resolved
+
 ## 2026-08-19 — Major Redesign, GitHub Pages Deployment, ET50 & History Tour
 
 ### New Stops Added
