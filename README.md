@@ -1,0 +1,160 @@
+# MSFC Test Lab Tour App
+
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://ctuckersolutions.github.io/TestLabTourApp)
+
+A self-guided Progressive Web App (PWA) for exploring NASA Marshall Space Flight Center's Test Laboratory facilities. Designed for iPad deployment on internal WiFi with offline capability.
+
+## Overview
+
+The MSFC Test Lab Tour App provides visitors with an immersive, self-paced exploration of NASA Marshall's world-class test facilities — where hardware bound for the Moon and Mars is pushed to its limits. The app features:
+
+- **18 tour stops** across multiple test laboratories
+- **Rich multimedia content** — photos, videos, narration, technical specs
+- **Curated tours** for different audience types and time constraints
+- **Offline-first design** for reliable operation without internet dependency
+- **Progressive Web App** that installs on iPads as a native-like experience
+
+## Key Features
+
+### Content Structure
+- **Multi-tab navigation per stop**: About, Science, History, People & Projects, Specs, More Info
+- **Interactive quizzes** to test understanding of key concepts
+- **Historical context** with photo galleries and institutional memory
+- **Technical specifications** for engineering-minded visitors
+- **Contact CTAs** on every stop to facilitate collaboration
+
+### User Experience
+- **Search & filter** by building, test capability, or curated tour
+- **Light/dark theme** with persistent preference
+- **Responsive design** optimized for iPad portrait orientation
+- **Accessibility features** including skip links, ARIA labels, semantic HTML
+- **Deep linking** via QR codes for direct navigation to specific stops
+
+### Technical Capabilities
+- **Offline operation** via service worker caching
+- **Installable** as standalone app on iOS/Android
+- **Fast performance** with local asset caching
+- **View transitions** for smooth navigation (where supported)
+
+## Project Structure
+
+```
+tourapp-GitHubhosted/
+├── index.html              # Main app shell
+├── manifest.json           # PWA manifest for installation
+├── service-worker.js       # Offline caching strategy
+├── css/                    # Stylesheets
+│   ├── variables.css       # Design tokens
+│   ├── base.css           # Global styles
+│   ├── components.css     # Reusable components
+│   ├── tabs.css           # Tab navigation
+│   ├── search.css         # Search & filters
+│   └── lab-cards.css      # Lab category cards
+├── js/                     # JavaScript modules
+│   ├── app.js             # View switching & routing
+│   ├── render.js          # Dynamic content rendering
+│   ├── render-tabs.js     # Stop detail tabs
+│   ├── search.js          # Search functionality
+│   ├── beats.js           # Tab state management
+│   └── narration.js       # Audio playback
+├── data/                   # Content data
+│   ├── stops.js           # Tour stop definitions
+│   └── tours.js           # Curated tour configurations
+├── media/                  # Images, videos, audio
+│   └── [stop-specific folders]
+├── OnePagers/              # PDF fact sheets per facility
+└── content/                # Markdown source content
+```
+
+## Tech Stack
+
+- **Frontend**: Vanilla JavaScript (ES5+ compatible for broad device support)
+- **Styling**: CSS custom properties, flexbox, grid
+- **Hosting**: GitHub Pages with private repository access control
+- **PWA**: Service Worker API, Web App Manifest
+- **Media**: Images (JPEG/PNG), MP4 video, MP3/TTS audio
+
+## Deployment
+
+The app is hosted on **GitHub Pages** with **private visibility** (GitHub Enterprise Cloud feature). Access is controlled via GitHub authentication — only users with read access to the repository can view the live site.
+
+**Live URL**: `https://ctuckersolutions.github.io/TestLabTourApp` (authentication required)
+
+### iPad Deployment Model
+1. **10 iPads in rotation** across the organization
+2. All logged into a **shared guest GitHub account** with read-only access
+3. Visitors browse the app in Safari (logged-in session persists)
+4. **Offline-capable** after first load via service worker caching
+5. Updates push automatically — no need to touch individual devices
+
+See [SETUP.md](./SETUP.md) for detailed iPad configuration instructions.
+
+## Development
+
+### Adding New Tour Stops
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed instructions on adding content.
+
+Quick overview:
+1. Add stop definition to `data/stops.js`
+2. Add media assets to `media/[stop-name]/`
+3. Test locally by opening `index.html` in a browser
+4. Commit and push to deploy
+
+### Local Development
+```bash
+# Clone the repo
+git clone https://github.com/CTuckerSolutions/TestLabTourApp.git
+cd TestLabTourApp
+
+# Open in browser (service worker requires localhost or HTTPS)
+python -m http.server 8080
+# or
+npx serve
+```
+
+Then navigate to `http://localhost:8080`
+
+### Making Changes
+```bash
+# Create a branch for your changes
+git checkout -b feature/your-feature-name
+
+# Make edits, test locally
+
+# Commit and push
+git add .
+git commit -m "Description of changes"
+git push org feature/your-feature-name
+
+# Create PR for review
+```
+
+## Browser Support
+
+- **iOS Safari 14+** (primary target)
+- **Chrome/Edge 90+** (desktop testing)
+- **Firefox 88+** (graceful degradation)
+
+Progressive enhancement approach: core functionality works everywhere, enhanced features (view transitions, service worker) activate where supported.
+
+## Content Sources
+
+- **Photos**: Cleared assets from images.nasa.gov (credit: NASA/Charles Beason)
+- **Video**: NASA Marshall official YouTube channel
+- **Narration**: Text-to-speech placeholders (production will use recorded voice talent)
+- **Technical specs**: Test Laboratory Compendium (internal reference)
+
+## License
+
+Internal NASA Marshall use only. Photos/video subject to NASA media usage guidelines.
+
+## Contact
+
+**Project Coordinator**: Cherrelle Tucker  
+**Organization**: NASA Marshall Space Flight Center, Test Laboratory
+
+For questions about the tour content or to request a facility visit, use the "Work with the Test Lab" contact form in the app.
+
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for version history and recent updates.
