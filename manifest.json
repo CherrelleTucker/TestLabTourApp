@@ -1,0 +1,20 @@
+{
+  "name": "MSFC Test Lab Tour",
+  "short_name": "Test Lab Tour",
+  "description": "Self-guided tour of NASA Marshall Space Flight Center Test Laboratory",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#FC3D21",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "media/shared/img/NASA-Logo-Large.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "travel"],
+  "screenshots": []
+}

@@ -619,6 +619,25 @@
     });
   };
 
+  // Clear all filters and show all stops
+  window.clearAllFilters = function () {
+    // Clear search input
+    var searchInput = document.getElementById('stop-search');
+    if (searchInput) searchInput.value = '';
+
+    // Clear all active chips
+    var host = document.getElementById('directory-chips');
+    if (host) host.querySelectorAll('.chip').forEach(function (b) { b.classList.remove('active'); });
+    var tourHost = document.getElementById('tour-chips');
+    if (tourHost) tourHost.querySelectorAll('.chip').forEach(function (b) { b.classList.remove('active'); });
+
+    // Restore master order and show all cards
+    _restoreMasterOrder();
+    document.querySelectorAll('#directory-list .stopcard').forEach(function (card) {
+      card.style.display = '';
+    });
+  };
+
   document.addEventListener('DOMContentLoaded', function () {
     renderDirectory();
     renderStops();

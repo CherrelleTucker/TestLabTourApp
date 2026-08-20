@@ -30,8 +30,9 @@ function show(id) {
       try { history.replaceState(null, '', location.pathname + location.search + '#' + id); }
       catch (e) { /* file:// in some browsers blocks replaceState — safe to ignore */ }
     }
-    window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
   }
+  // Scroll to top immediately before transition starts
+  window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
   // Progressive enhancement: morphs a tapped .stopcard thumbnail into the
   // stop's hero photo (matching view-transition-name, set in render.js).
   // Unsupported browsers (partial Safari support) just run swap() directly.
