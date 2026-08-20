@@ -1,8 +1,10 @@
 # MSFC Test Lab Tour App
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://ctuckersolutions.github.io/TestLabTourApp)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Private-orange)](https://ctuckersolutions.github.io/TestLabTourApp) [![Internal Use Only](https://img.shields.io/badge/Use-Internal%20Only-red)]()
 
-A self-guided Progressive Web App (PWA) for exploring NASA Marshall Space Flight Center's Test Laboratory facilities. Designed for iPad deployment on internal WiFi with offline capability.
+A self-guided Progressive Web App (PWA) for exploring NASA Marshall Space Flight Center's Test Laboratory facilities. **Internal training and visitor resource only** — designed for iPad deployment on internal WiFi with offline capability.
+
+> **⚠️ Access Restricted**: This app is hosted on a private GitHub Enterprise repository. The live site is accessible only to invited collaborators who authenticate via GitHub. It is not publicly accessible and is intended solely for internal NASA Marshall Test Laboratory tours and training.
 
 ## Overview
 
@@ -74,20 +76,48 @@ tourapp-GitHubhosted/
 - **PWA**: Service Worker API, Web App Manifest
 - **Media**: Images (JPEG/PNG), MP4 video, MP3/TTS audio
 
-## Deployment
+## Deployment & Access Control
 
-The app is hosted on **GitHub Pages** with **private visibility** (GitHub Enterprise Cloud feature). Access is controlled via GitHub authentication — only users with read access to the repository can view the live site.
+### Private Hosting Model
 
-**Live URL**: `https://ctuckersolutions.github.io/TestLabTourApp` (authentication required)
+This app uses **GitHub Enterprise Cloud** with **private GitHub Pages** to ensure the content is accessible only to authorized users:
+
+| Feature | Configuration | Purpose |
+|---------|---------------|---------|
+| **Repository** | Private repository in `CTuckerSolutions` organization | Source code and content not publicly visible |
+| **GitHub Pages** | Private visibility enabled (Enterprise feature) | Live site requires GitHub authentication |
+| **Access Control** | Invite-only via repository collaborators | Only users with Read access can view the site |
+| **Authentication** | GitHub login required to view site | URL is shielded from public; no anonymous access |
+
+**Live URL**: `https://ctuckersolutions.github.io/TestLabTourApp`  
+**Access**: Authentication required — visitors must log in with a GitHub account that has been granted Read access to the repository
+
+### Why Private Hosting?
+
+1. **Internal use only**: This is a training and visitor resource for on-site NASA Marshall tours, not a public-facing application
+2. **Content control**: Photos, technical details, and facility information are cleared for guided tours but not for unrestricted public distribution
+3. **Change management**: Updates can be tested and validated before deployment without public visibility
+4. **Operational security**: Facility details, building numbers, and technical capabilities are contextual to guided tours with NASA personnel present
+
+### Who Has Access?
+
+- **Repository contributors**: NASA Marshall Test Laboratory staff with write access (can edit content)
+- **Collaborators**: Invited users with Read access (can view the live site)
+- **TestLabTours account**: Shared read-only account used by all tour iPads (see [SETUP.md](./SETUP.md))
+
+**To request access**: Contact the project coordinator (see Contact section below)
 
 ### iPad Deployment Model
-1. **10 iPads in rotation** across the organization
-2. All logged into a **shared guest GitHub account** with read-only access
-3. Visitors browse the app in Safari (logged-in session persists)
-4. **Offline-capable** after first load via service worker caching
-5. Updates push automatically — no need to touch individual devices
 
-See [SETUP.md](./SETUP.md) for detailed iPad configuration instructions.
+The app is deployed to **10 iPads in rotation** across the Test Laboratory:
+
+1. All iPads logged into a **shared GitHub account** (`TestLabTours`) with read-only access
+2. Visitors browse the app in Safari — no individual login required
+3. **Offline-capable** after first load via service worker caching
+4. Updates push automatically when developers commit to `main` branch
+5. iPads connect to **NASA Guest WiFi** (internal network only)
+
+See [SETUP.md](./SETUP.md) for detailed iPad configuration and credential management.
 
 ## Development
 
@@ -144,9 +174,24 @@ Progressive enhancement approach: core functionality works everywhere, enhanced 
 - **Narration**: Text-to-speech placeholders (production will use recorded voice talent)
 - **Technical specs**: Test Laboratory Compendium (internal reference)
 
-## License
+## Usage Restrictions & License
 
-Internal NASA Marshall use only. Photos/video subject to NASA media usage guidelines.
+**⚠️ INTERNAL USE ONLY**
+
+This application and its content are restricted to:
+- On-site guided tours at NASA Marshall Space Flight Center
+- Internal training for Test Laboratory personnel
+- Authorized facility visits coordinated through Test Laboratory staff
+
+**Not authorized for**:
+- Public distribution or sharing outside NASA Marshall
+- Reproduction or republishing of content without permission
+- Use on non-authorized devices or networks
+- Access by individuals without appropriate clearance/escort
+
+**Content**: Photos and videos are cleared NASA assets subject to NASA media usage guidelines. Technical specifications and facility details are contextual to guided tours with NASA personnel present.
+
+**Hosting**: Private GitHub Enterprise repository — unauthorized access attempts are logged and may be investigated.
 
 ## Contact
 

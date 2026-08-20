@@ -4,7 +4,16 @@ Complete instructions for deploying the MSFC Test Lab Tour App to iPads for visi
 
 ## Overview
 
-The app runs as a **private GitHub Pages site** accessible only to authenticated users. iPads are logged into a **shared guest GitHub account** so visitors can browse without individual authentication.
+The MSFC Test Lab Tour App is an **internal-only training and visitor resource** hosted on private GitHub Enterprise infrastructure. The app runs as a **private GitHub Pages site** accessible only to authenticated users — the URL is shielded from the public and requires GitHub login to access.
+
+iPads are pre-authenticated with a **shared read-only GitHub account** (`TestLabTours`) so visitors can browse the app during on-site tours without needing individual GitHub accounts. This controlled-access model ensures:
+
+- Content is visible only to authorized personnel and escorted visitors
+- Technical facility details remain contextual to guided tours
+- Updates can be validated before deployment
+- Access can be audited via GitHub's built-in logging
+
+**This is not a public-facing application.** It is designed exclusively for on-site NASA Marshall Test Laboratory tours and internal training.
 
 ## Prerequisites
 
@@ -56,9 +65,9 @@ The Test Lab Apple ID is already configured. For reference, the account was crea
 
 All 10 iPads should be signed into this Apple ID under Settings → [Your Name].
 
-### 2. Enable Private GitHub Pages
+### 2. Enable Private GitHub Pages (Already Complete)
 
-In the `TestLabTourApp` repository:
+The `TestLabTourApp` repository is configured with **private GitHub Pages** (a GitHub Enterprise Cloud feature):
 
 ```
 Settings → Pages → Build and deployment
@@ -66,18 +75,64 @@ Settings → Pages → Build and deployment
   Branch: main / (root)
   
 Settings → Pages → GitHub Pages visibility
-  Change visibility to: Private
+  Visibility: Private ✓
   ✓ Only people with access to this repository can view this site
 ```
 
-**Pages URL**: `https://ctuckersolutions.github.io/TestLabTourApp`
+**What this means**:
+- The repository is **private** (source code not publicly visible)
+- GitHub Pages is set to **private visibility** (requires authentication to view)
+- Anyone attempting to access the URL without a GitHub account with repository access is blocked
+- GitHub login prompt appears for unauthenticated visitors
+- Access is logged by GitHub for audit purposes
 
-### 3. Test Authentication
+**Pages URL**: `https://ctuckersolutions.github.io/TestLabTourApp`  
+**Access required**: GitHub account with Read permission to `CTuckerSolutions/TestLabTourApp`
+
+**Enterprise requirement**: Private GitHub Pages is only available with GitHub Enterprise Cloud ($21/month organization subscription). Without Enterprise, GitHub Pages sites are always public even if the repository is private.
+
+### 3. Managing Repository Access
+
+To grant or revoke access to the app, manage repository collaborators:
+
+**To add access** (e.g., new tour guide, temporary collaborator):
+```
+Repository Settings → Collaborators and teams
+  → Add people
+  Enter GitHub username or email
+  Role: Read (view-only access to app)
+  Send invitation
+```
+
+**To remove access** (e.g., person no longer needs access):
+```
+Repository Settings → Collaborators and teams
+  Find person in list
+  Click [...] → Remove
+```
+
+**Access audit**:
+```
+Repository → Insights → Traffic
+  View visitor count and referring sites
+  
+Organization → Settings → Audit log
+  Filter by TestLabTourApp repository
+  Review access events
+```
+
+**Best practices**:
+- Grant **Read** access only (never Write unless they edit content)
+- Use personal GitHub accounts for staff, shared account (`TestLabTours`) for iPads only
+- Review collaborator list quarterly and remove inactive users
+- Document reason for access in a separate tracking sheet (who, why, when added)
+
+### 4. Test Authentication
 
 1. Open an incognito/private browser window
 2. Navigate to the Pages URL
 3. Verify GitHub login prompt appears
-4. Log in with guest account credentials
+4. Log in with TestLabTours credentials
 5. Verify site loads correctly
 6. Confirm all media/assets load (check browser console for 404s)
 
@@ -341,6 +396,62 @@ If a deployment breaks the app:
 3. **Wait 2-3 minutes for Pages rebuild**
 
 4. **Test on one iPad before declaring fixed**
+
+## Security & Compliance
+
+### Access Control Model
+
+**Three-layer security**:
+1. **Private repository**: Source code and content not publicly visible on GitHub
+2. **Private Pages**: Live site requires GitHub authentication (Enterprise Cloud feature)
+3. **Invite-only collaborators**: Only explicitly granted accounts can access
+
+**What this protects**:
+- Technical facility details and specifications
+- Building layouts and equipment configurations  
+- Photos and videos cleared for guided tours (not unrestricted public use)
+- Internal operational procedures and contacts
+
+### Audit & Compliance
+
+**Access logging**:
+- GitHub automatically logs all repository access attempts
+- Audit log available: Organization → Settings → Audit log
+- Filter by `TestLabTourApp` repository to review access events
+- Logs retained per GitHub Enterprise retention policy
+
+**Quarterly review checklist**:
+- [ ] Review collaborator list, remove inactive users
+- [ ] Audit access logs for unusual activity
+- [ ] Verify TestLabTours account credentials still valid
+- [ ] Confirm all 10 iPads still authenticated
+- [ ] Check for unauthorized access attempts (GitHub will show failed logins)
+
+### Incident Response
+
+**If credentials are compromised**:
+1. Immediately change TestLabTours GitHub password
+2. Sign out all iPads and re-authenticate with new password
+3. Review GitHub audit log for unauthorized access
+4. Notify project coordinator and IT security
+
+**If unauthorized access detected**:
+1. Remove compromised collaborator from repository immediately
+2. Review what they accessed (GitHub shows page views, downloads)
+3. Consider rotating TestLabTours credentials as precaution
+4. Document incident for records
+
+### Content Sensitivity
+
+**Classification**: Unclassified but internal-use only  
+**Export control**: Not subject to ITAR/EAR (contains no controlled technical data)  
+**Media clearance**: All photos/videos are NASA public release assets (images.nasa.gov)  
+**Use restriction**: Content is contextual to on-site guided tours with NASA personnel present
+
+**Not authorized for**:
+- Public redistribution or posting to social media
+- Use by individuals without NASA escort or clearance
+- Reproduction in external presentations without permission
 
 ## Support Contacts
 
