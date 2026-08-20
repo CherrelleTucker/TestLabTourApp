@@ -9,15 +9,15 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "media/shared/img/Test-Lab-logo.png",
+      "src": "media/shared/img/TouAppIconSquare.jpg",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any"
     },
     {
-      "src": "media/shared/img/Test-Lab-logo.png",
+      "src": "media/shared/img/TouAppIconSquare.jpg",
       "sizes": "180x180",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any"
     }
   ],
