@@ -87,7 +87,7 @@ header.appbar{
    dropping the second red ring the badge drew around it) shows the whole
    mark, centered, once. */
 .badge{
-  height:48px;padding:0 12px;border-radius:8px;overflow:hidden;
+  width:auto;height:48px;padding:0 12px;border-radius:8px;overflow:hidden;
   background:var(--on-accent);color:var(--nasa-blue-fill);
   display:flex;align-items:center;justify-content:center;
   font-weight:800;font-size:13px;letter-spacing:.5px;flex:0 0 auto;
