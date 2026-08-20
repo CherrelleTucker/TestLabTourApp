@@ -34,7 +34,14 @@ The MSFC Test Lab Tour App provides visitors with an immersive, self-paced explo
 
 ### Technical Capabilities
 - **Offline operation** via service worker caching
+  - First visit requires WiFi to load app and assets
+  - Service worker automatically caches content in background
+  - After initial load, app works fully offline (no WiFi needed)
+  - Browsing any tour stop while online caches it for offline use
 - **Installable** as standalone app on iOS/Android
+  - "Add to Home Screen" creates native-like app experience
+  - Custom Test Lab icon on home screen
+  - Standalone window (no browser chrome)
 - **Fast performance** with local asset caching
 - **View transitions** for smooth navigation (where supported)
 
@@ -118,6 +125,43 @@ The app is deployed to **10 iPads in rotation** across the Test Laboratory:
 5. iPads connect to **NASA Guest WiFi** (internal network only)
 
 See [SETUP.md](./SETUP.md) for detailed iPad configuration and credential management.
+
+## Using the App Offline
+
+The app is designed to work without WiFi after initial setup. Here's how offline mode works:
+
+### First-Time Setup (Requires WiFi)
+1. **Connect to NASA Guest WiFi** on the iPad
+2. **Open the app** from home screen icon (or Safari if not yet installed)
+3. **Browse a few tour stops** — each stop visited is automatically cached
+4. **Service worker installs** in background (happens automatically on first load)
+
+### Offline Usage (No WiFi Needed)
+Once the app has loaded with WiFi at least once:
+- **Airplane mode**: App works fully offline
+- **No WiFi**: Previously visited stops load from cache
+- **New stops**: Must be visited online first to cache their content
+
+### What Gets Cached
+- ✅ Core app (HTML, CSS, JavaScript)
+- ✅ Tour stop pages you've visited
+- ✅ Images and media from visited stops
+- ✅ Search and filter functionality
+- ❌ New content added since last online visit (updates on next WiFi connection)
+
+### Testing Offline Mode
+1. Open app on WiFi
+2. Browse 2-3 tour stops (to cache their content)
+3. Enable Airplane Mode
+4. Reopen app — previously visited stops should load instantly
+5. Disable Airplane Mode when done
+
+### Updates While Offline
+- App checks for updates when WiFi reconnects
+- Service worker downloads new content in background
+- Next app launch uses updated content
+
+**For tour guides**: Ensure iPads are connected to WiFi at start of day so visitors can browse all stops offline during tours in areas with poor/no WiFi.
 
 ## Development
 
