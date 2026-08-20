@@ -10,25 +10,51 @@ The app runs as a **private GitHub Pages site** accessible only to authenticated
 
 - [ ] GitHub Enterprise Cloud organization (`CTuckerSolutions`)
 - [ ] Private repository with Pages enabled (`TestLabTourApp`)
-- [ ] Guest GitHub account created and invited with **Read** access
+- [ ] Test Lab Apple ID account (for device management)
+- [ ] TestLabTours GitHub account (for app access)
 - [ ] 10 iPads (iOS 14+ recommended) with Safari
-- [ ] Internal WiFi network with internet access
+- [ ] NASA Guest WiFi access
+
+## Actual Hardware Configuration
+
+### Apple ID Account (Device Management)
+**Name**: Test Lab  
+**Date of Birth**: 1/1/1960  
+**Email**: *(email address placeholder - document actual email)*  
+**Password**: `MSFCet01`
+
+**Purpose**: This Apple ID is used to unlock and sign in to all iPads. It provides device management and iCloud services.
+
+### GitHub Account (App Access)
+**Username**: `TestLabTours`  
+**Password**: `GettinNASA26`  
+**Organization**: CTuckerSolutions  
+**Repository Access**: Read-only to `TestLabTourApp`
+
+**Purpose**: This GitHub account authenticates iPads to view the private GitHub Pages site. Visitors never see this login — iPads stay signed in.
+
+### Network Access
+**WiFi Network**: NASA Guest  
+**Authentication**: *(document any required credentials or portal login)*
+
+**Purpose**: iPads must connect to NASA Guest WiFi to reach GitHub Pages. After first load, app works offline via service worker caching.
+
+### Security Note
+- Apple ID: Controls device access, should be known only to tour guides
+- GitHub account: Read-only access to one private repo, no write permissions
+- Credentials documented here for operational continuity (not visitor-facing)
 
 ## One-Time Setup
 
-### 1. Create Guest Account
+### 1. Apple ID Setup (Already Complete)
 
-If not already done:
+The Test Lab Apple ID is already configured. For reference, the account was created with:
+- Name: Test Lab
+- DOB: 1/1/1960
+- Email: *(document actual email)*
+- Password: `MSFCet01`
 
-```
-1. Create new Google/email account (e.g., msfc-tour-guest@gmail.com)
-2. Sign up for GitHub using that email
-3. Invite account to CTuckerSolutions org with Read access to TestLabTourApp repo
-4. Accept invitation
-5. Document credentials in secure location for tour guides
-```
-
-**Security note**: This account has read-only access to one private repo. Even if credentials leak, no write access exists.
+All 10 iPads should be signed into this Apple ID under Settings → [Your Name].
 
 ### 2. Enable Private GitHub Pages
 
@@ -59,13 +85,33 @@ Settings → Pages → GitHub Pages visibility
 
 Repeat for each of the 10 iPads:
 
-### Step 1: Update iOS (if needed)
+### Step 1: Verify Apple ID Login
+```
+Settings → [Your Name at top]
+  Verify signed in as "Test Lab"
+  
+If not signed in:
+  Settings → Sign in to your iPad
+  Apple ID: [Test Lab email]
+  Password: MSFCet01
+  Complete 2FA if prompted
+```
+
+### Step 2: Connect to NASA Guest WiFi
+```
+Settings → Wi-Fi
+  Select: NASA Guest
+  Enter credentials if prompted
+  Verify internet access (open Safari, test any website)
+```
+
+### Step 3: Update iOS (if needed)
 ```
 Settings → General → Software Update
   Install iOS 14 or later if available
 ```
 
-### Step 2: Configure Safari
+### Step 4: Configure Safari
 ```
 Settings → Safari
   ✓ Enable JavaScript
@@ -74,16 +120,18 @@ Settings → Safari
   ✓ Block All Cookies: OFF
 ```
 
-### Step 3: Log Into GitHub
+### Step 5: Log Into GitHub
 ```
 1. Open Safari
 2. Navigate to https://github.com/login
-3. Enter guest account credentials
+3. Enter credentials:
+   Username: TestLabTours
+   Password: GettinNASA26
 4. Complete 2FA if enabled (save device as trusted)
-5. Verify "Signed in as [guest-account-name]" in top-right
+5. Verify "Signed in as TestLabTours" in top-right
 ```
 
-### Step 4: Install as PWA
+### Step 6: Install as PWA
 ```
 1. Navigate to https://ctuckersolutions.github.io/TestLabTourApp
 2. Wait for site to fully load
@@ -94,7 +142,7 @@ Settings → Safari
 7. Verify app icon appears on home screen
 ```
 
-### Step 5: Configure for Kiosk Use
+### Step 7: Configure for Kiosk Use
 ```
 Settings → Screen Time → Content & Privacy Restrictions
   Screen Time: ON
@@ -122,7 +170,7 @@ To exit (tour guide only):
   Triple-click Side/Home → Enter passcode → End
 ```
 
-### Step 6: Test Offline Capability
+### Step 8: Test Offline Capability
 ```
 1. Open the app (from home screen icon or Safari)
 2. Browse 2-3 tour stops (ensures caching happens)
@@ -133,7 +181,7 @@ To exit (tour guide only):
 7. Disable Airplane Mode
 ```
 
-### Step 7: Set Homepage (Optional)
+### Step 9: Set Homepage (Optional)
 ```
 Settings → Safari → Homepage
   Enter: https://ctuckersolutions.github.io/TestLabTourApp
@@ -183,13 +231,14 @@ FOR VISITORS:
 FOR TOUR GUIDES:
 • App is already logged in — no visitor login needed
 • Session stays active unless browser is cleared
-• If login expires, credentials are in [secure location]
+• iPad unlock: Test Lab Apple ID / password: MSFCet01
+• GitHub login: TestLabTours / password: GettinNASA26
 • To factory reset: Settings → General → Reset → 
   Erase All Content and Settings (NOT recommended)
 
 TROUBLESHOOTING:
 • "Sign in to GitHub" prompt appears
-  → Session expired, re-enter guest credentials
+  → Session expired, re-enter: TestLabTours / GettinNASA26
 • Content not loading offline
   → Reconnect to WiFi, browse a few stops to re-cache
 • App frozen or unresponsive
@@ -300,14 +349,42 @@ If a deployment breaks the app:
 - **iPad hardware**: [Your IT support contact]
 - **Tour scheduling**: [Tour POC from agenda]
 
-## Appendix: Guest Account Credentials
+## Appendix: Account Credentials Reference
 
-**Location**: [Document where credentials are stored]  
-**Format**:
+### Apple ID (Device Management)
 ```
-GitHub Username: [guest-account-username]
-Password: [stored in password manager / secure location]
-2FA backup codes: [if enabled, stored separately]
+Name: Test Lab
+Date of Birth: 1/1/1960
+Email: [document actual email address]
+Password: MSFCet01
 ```
+**Purpose**: Unlock iPads, iCloud services, App Store access  
+**Who needs this**: Tour guides, IT support
 
-**Access audit**: Review who has accessed these credentials quarterly.
+### GitHub Account (App Access)
+```
+Username: TestLabTours
+Password: GettinNASA26
+Organization: CTuckerSolutions
+Repository: TestLabTourApp (Read-only access)
+```
+**Purpose**: Authenticate iPads to view private GitHub Pages site  
+**Who needs this**: Tour guides (for re-authentication if sessions expire)
+
+### WiFi Network
+```
+Network: NASA Guest
+Credentials: [document if portal login required]
+```
+**Purpose**: Internet access for initial app load and updates  
+**Note**: App works offline after first visit to each stop
+
+---
+
+**Security Considerations**:
+- Apple ID: Change password annually or if compromised
+- GitHub account: Read-only access limits damage from credential leak
+- This document: Store in secure location accessible to tour operations staff
+- Access audit: Review who has accessed these credentials quarterly
+
+**Last Updated**: 2026-08-20
