@@ -2120,16 +2120,16 @@ window.STOPS = [
   {
     "id": "stop12",
     "qrFile": "12-environmental-test",
-    "title": "Environmental Test Facility: Twenty-Eight Chambers",
-    "shortTitle": "Environmental Test Facility",
-    "location": "Building 4619 & East Test Area \u00b7 Environmental Test Facility",
-    "locationShort": "Building 4619 & East Test Area",
-    "subtitle": "Environmental Test Facility &middot; Building 4619",
+    "title": "V20 Lunar Surface Simulator",
+    "shortTitle": "V20 Chamber",
+    "location": "Building 4619 \u00b7 Environmental Test Facility",
+    "locationShort": "Building 4619",
+    "subtitle": "V20 Thermal Vacuum Chamber &middot; Building 4619",
     "lab": "Experimental Fluids & Environmental",
-    "tourTime": "~20 min",
+    "tourTime": "~15 min",
     "groupSize": null,
     "accessible": true,
-    "chips": ["Mission & Payload Ops"],
+    "chips": ["Mission & Payload Ops", "Artemis", "Commercial Access"],
     "available": true,
     "hazards": [],
     "campusPin": { "xPct": 74.5, "yPct": 80.4 },
@@ -2151,26 +2151,29 @@ window.STOPS = [
       { "xPct": 65.0, "yPct": 45.0, "label": "Thermal vacuum chamber wall" }
     ],
     "thumb": "img/hero.jpg",
-    "factbox": "Twenty-eight chambers simulate thermal vacuum, humidity, altitude, cryogenic, and corrosion environments: the unglamorous backbone behind almost everything else on this tour.",
+    "factbox": "A 20-foot thermal vacuum chamber that recreates the lunar surface environment — regolith, extreme temperatures, vacuum, and South Pole lighting — to test hardware before it ever leaves Earth.",
     "narration": {
-      "durationLabel": "~48 sec · produced narration",
+      "durationLabel": "~48 sec",
       "audio": "audio/narration.mp3",
-      "text": "Not every test needs a rocket. This facility runs twenty-eight chambers that recreate almost any environment a spacecraft or lander might face: thermal vacuum, humidity, altitude, cryogenic cold, and corrosion. In 2025, a small company called Starpath brought a lunar rover here, set it on a concrete slab built to mimic the Moon's rugged surface, and slid the whole platform into the V20 Thermal Vacuum Chamber, where lamps switched on and off to simulate sunlight and shadow. Decades earlier, Skylab's Apollo Telescope Mount was shaken here on a vibration test unit, long before it ever reached orbit. Different eras, different hardware, same job: find out what breaks, here, before it counts."
+      "text": "Before hardware ever sets foot on the Moon, it sets foot here. V20 is a twenty-foot thermal vacuum chamber that simulates the lunar surface environment — not just vacuum and temperature, but actual regolith and the harsh lighting of the South Pole. In 2025, a small company called Starpath brought a lunar rover here, set it on a concrete slab built to mimic the Moon's rugged surface, and slid the whole platform into the chamber, where lamps switched on and off to simulate sunlight and shadow. The chamber was expanded in 2022 specifically for this kind of work: full-scale hardware testing in lunar conditions. Different eras, different missions, same job: find out what breaks here, before it breaks on the Moon."
     },
-    "hook": "Not every test needs a rocket. This facility runs twenty-eight chambers that recreate almost any environment a spacecraft or lander might face: thermal vacuum, humidity, altitude, cryogenic cold, and corrosion.",
+    "hook": "Before hardware ever sets foot on the Moon, it sets foot here — in V20, where lunar regolith, vacuum, and that unforgiving South Pole sun are all recreated in one chamber.",
     "cuePoints": { "hook": 0, "explainer": 15, "wowStat": 28, "media": 36, "why": 43 },
-    "whyItMatters": "Spacecraft and landers face brutal, varied environments: vacuum, extreme temperature swings, corrosive atmospheres, punishing vibration. No single chamber can recreate all of it, so this facility runs two dozen-plus specialized chambers side by side, letting almost any hardware prove it can survive its mission's specific environment before ever leaving Earth.",
+    "whyItMatters": "Lunar hardware faces a brutal combination: hard vacuum, extreme temperature swings from sunlight to shadow, abrasive dust that gets into every mechanism, and lighting so harsh it can hide the ground itself. V20 recreates all of it in one chamber — not just thermal vacuum, but actual regolith simulant and lighting that mimics the South Pole sun — so rovers, landers, and equipment can prove they'll survive the Moon before they ever leave Earth.",
+    "lookFor": "Look for the regolith bed on the loading cart — that sandy, rocky surface is engineered to match lunar soil properties. Hardware doesn't just sit in vacuum here; it sits on the Moon.",
     "keyfactsTitle": "By the numbers",
-    "wowStat": 1,
+    "wowStat": 0,
     "keyfacts": [
-      { "num": "28", "label": "test chambers", "detail": "Thermal vacuum, humidity, altitude, cryogenic, and corrosion environments" },
-      { "num": "V20", "label": "vacuum chamber", "detail": "One of the facility's largest, used for full-scale rover and lander testing" },
-      { "num": "1971", "label": "Skylab-era heritage", "detail": "The Apollo Telescope Mount underwent vibration testing here before flight" }
+      { "num": "18", "label": "test chambers in ETF", "detail": "Thermal vacuum, humidity, altitude, cryogenic, and corrosion environments — V20 is the largest" },
+      { "num": "20×28", "label": "ft V20 chamber", "detail": "Large enough for full-scale rover and lander testing in lunar surface environment" },
+      { "num": "-170 to +200", "label": "°C temperature range", "detail": "V20 recreates the thermal extremes of sunlight and shadow on the lunar surface" },
+      { "num": "2022", "label": "lunar capability added", "detail": "V20 expanded to include regolith testing, lighting simulation, and dust containment" },
+      { "num": "60,000", "label": "lb cart capacity", "detail": "Heavy-duty rail system slides entire test setup — rover, regolith bed, concrete slab — into chamber" }
     ],
     "deepDive": {
-      "summary": "Go deeper: testing a Moon rover in 2025, and what the other chambers do",
+      "summary": "Go deeper: how V20 simulates the lunar surface",
       "open": true,
-      "html": "Starpath, a small technology startup, won second place overall at NASA's Break the Ice Lunar Challenge and brought its rover to Marshall's Environmental Test Facility for a real test in lunar-like conditions. Engineers built a concrete slab with sandy, rocky terrain to mimic the Moon's surface, slid it into the V20 Thermal Vacuum Chamber alongside the rover, and cycled the chamber's lamps on and off to recreate the harsh lighting changes of the lunar environment: a direct descendant of the same testing philosophy that once put Skylab hardware through vibration testing decades earlier.<br><br>Vacuum and temperature are only part of the job here. The complex’s West Vibe Lab runs shaker tables that bolt hardware directly to a vibrating platform and reproduce the rattling, buzzing loads of a rocket ride to orbit — a very different kind of stress test from a thermal vacuum chamber, but just as unforgiving. One recent resident was the NASA Docking System, the mechanism spacecraft use to physically link up with the International Space Station, put through vibration testing here to prove its latches and sensors would still work after the shaking of launch. Different hardware, different chamber, same underlying question: does it still work once it's been shaken, baked, frozen, or evacuated exactly like the real mission will?"
+      "html": "Starpath, a small technology startup, won second place overall at NASA’s Break the Ice Lunar Challenge and brought its rover to V20 for a real test in lunar-like conditions. Engineers built a concrete slab with sandy, rocky terrain to mimic the Moon’s surface, slid it into the chamber alongside the rover on V20’s 60,000-lb capacity cart, and cycled the chamber’s lamps on and off to recreate the harsh lighting changes of the lunar South Pole environment.<br><br>V20 was expanded in 2022 specifically for this mission. Two 32-inch diffusion pumps were added to handle the gas loads from regolith operations — sintering, additive manufacturing, and dust mitigation testing. A negative-pressure dust containment tent encloses the chamber’s working area, and respirator-trained technicians handle test articles in this deliberately \"dirty\" environment. The chamber can reach vacuum levels of 5×10⁻⁷ Torr while cycling temperatures from -170°C to +200°C, with a liquid nitrogen shroud and IR lamps recreating the thermal extremes of sunlight and shadow.<br><br>The regolith simulant itself is engineered to match lunar soil properties — particle size, abrasiveness, electrostatic behavior. Hardware doesn’t just experience vacuum and temperature here; it experiences the Moon: dust infiltrating seals, thermal cycling stressing joints, and lighting conditions that can hide obstacles and slopes.<br><br><strong>Context: V20 is the largest of 18 chambers in the Environmental Test Facility (ETF).</strong> The other 17 chambers handle thermal vacuum, humidity, altitude, vacuum bakeout, and launch simulation testing. ETF as a facility provides the full range of environmental qualification testing, but V20’s lunar regolith capability makes it unique."
     },
     "detailImage": {
       "src": "img/detail-1.jpg",
@@ -2234,20 +2237,19 @@ window.STOPS = [
         "caption": "Lowering the rover onto its slab &mdash; the straps come off once it's settled."
       }
     ],
-    "lookFor": "Picture the same chamber holding wildly different hardware across decades: a Skylab component in the 1970s, a small company's lunar rover in 2025. The facility outlasts any single program.",
     "askYourHost": [
-      "How do engineers decide which of the 28 chambers a piece of hardware actually needs?",
+      "How do engineers decide which of the 18 ETF chambers a piece of hardware actually needs?",
       "What was it like hosting a commercial lunar rover here in 2025?",
       "Has a chamber here ever caught a flaw that would've caused a mission failure?"
     ],
     "quiz": {
-      "question": "Quick one &mdash; why does this facility run 28 separate chambers instead of one general-purpose chamber?",
+      "question": "Quick one — why does ETF run 18 separate chambers instead of one general-purpose chamber?",
       "options": [
-        { "text": "Different missions face different combinations of vacuum, temperature, humidity, and vibration environments", "correct": true },
+        { "text": "Different missions face different combinations of vacuum, temperature, humidity, and altitude environments", "correct": true },
         { "text": "It's cheaper to build many small chambers than one large one", "correct": false },
         { "text": "Each chamber can only be used once", "correct": false }
       ],
-      "correctFeedback": "&#10003; Exactly. No single environment recreates every mission's challenges, so specialized chambers let engineers match testing to the specific conditions each spacecraft or lander will actually face.",
+      "correctFeedback": "✓ Exactly. No single environment recreates every mission's challenges, so specialized chambers let engineers match testing to the specific conditions each spacecraft or lander will actually face.",
       "wrongFeedback": "Not quite &mdash; the real reason is that different missions face very different combinations of environmental extremes."
     },
     "video": null,
