@@ -2394,10 +2394,10 @@ window.STOPS = [
     "locationShort": "Building 4619",
     "subtitle": "Building 4619 · Load Test Annex",
     "lab": "Structural Strength",
-    "tourTime": "~20 min",
+    "tourTime": "~15 min",
     "groupSize": null,
     "accessible": true,
-    "chips": ["Adv. Space Transportation"],
+    "chips": ["Adv. Space Transportation", "SLS"],
     "available": true,
     "hazards": [],
     "campusPin": { "xPct": 49.5, "yPct": 48.1 },
@@ -2414,37 +2414,50 @@ window.STOPS = [
     },
     "thumb": "img/NASA-Logo-Large.png",
     "heroBg": "img/NASA-Logo-Large.png",
-    "factbox": "Large-scale structural load testing capability within Building 4619.",
+    "factbox": "A 155-foot-tall high bay with an adjustable crosshead that can apply 30 million pounds of vertical force to prove rocket stages and spacecraft structures will survive the stresses of launch.",
     "narration": {
       "durationLabel": "~30 sec",
-      "text": "Content coming soon for the Load Test Annex."
+      "text": "The Load Test Annex is Marshall's original large-scale structural test capability, where hardware faces the crushing compression of stacked stages, the pulling tension of thrust, and the lateral loads of wind and vibration. The high bay soars 155 feet tall with a 60-foot-wide door — large enough to roll in rocket stages and spacecraft structures. The concrete reaction floor is 11 feet thick with 2,356 anchors on an 18-inch grid, each rated for 110,000 pounds axial force. An adjustable crosshead spans the bay at heights from 40 to 115 feet, capable of applying 30 million pounds vertical force. This is where structures prove they're strong enough for space."
     },
-    "hook": "Content coming soon.",
-    "whyItMatters": "The Load Test Annex provides large-scale structural testing capability for NASA programs.",
+    "hook": "When rocket stages need to prove they won't buckle under their own weight, they come here first.",
+    "cuePoints": { "hook": 0, "explainer": 10, "wowStat": 18, "media": 24, "why": 28 },
+    "whyItMatters": "Rocket stages stack hundreds of thousands of pounds on top of each other. Spacecraft structures must hold together while engines shake them and aerodynamic pressure tries to bend them. LTA recreates those exact forces on the ground — compression that would crush a building, tension that would tear steel, lateral loads that would topple towers. A failure here saves a mission. A crack discovered here prevents a disaster in flight.",
+    "lookFor": "Look up at the adjustable crosshead — that massive steel structure spanning the bay can position itself anywhere from 40 to 115 feet high, then apply 30 million pounds of downward force without budging.",
     "keyfactsTitle": "By the numbers",
-    "wowStat": 0,
+    "wowStat": 1,
     "keyfacts": [
-      { "num": "TBD", "label": "placeholder", "detail": "Content coming soon" }
+      { "num": "161×169×155", "label": "ft high bay", "detail": "Tall enough to test full-scale rocket stages standing upright" },
+      { "num": "30M", "label": "lb vertical force", "detail": "Adjustable crosshead can apply crushing compression or pulling tension" },
+      { "num": "2,356", "label": "anchors on 18-inch grid", "detail": "Universal pattern allows rapid reconfiguration — compatible with test stands 4693, 4697, and LTAE" },
+      { "num": "11", "label": "feet of concrete", "detail": "Reaction floor thickness required to handle tens of millions of pounds without deflecting" },
+      { "num": "40-115", "label": "ft adjustable crosshead", "detail": "Massive steel structure repositions to match any test article height" }
     ],
     "deepDive": {
-      "summary": "Go deeper: how it works",
+      "summary": "Go deeper: how LTA tests structures to their breaking point",
       "open": false,
-      "html": "Content coming soon."
+      "html": "Structural testing isn't about hoping hardware survives. It's about knowing exactly when and how it will fail — but only after proving it can survive far beyond the loads it will actually see in flight.<br><br>LTA uses a massive adjustable crosshead that spans the 161-foot width of the high bay. This steel structure weighs hundreds of tons and can position itself at any height from 40 to 115 feet, then lock in place to become an immovable reaction point. Hydraulic actuators attached to the crosshead can pull upward or push downward with 30 million pounds of vertical force. Side actuators apply 2.4 million pounds of lateral load, simulating wind pressure or aerodynamic forces.<br><br>Below, the test article sits bolted to Special Test Equipment (STE) fixtures anchored into the concrete reaction floor. That floor is 80 feet by 80 feet and 11 feet thick, with 2,356 anchor points on an 18-inch grid. Each anchor can handle 110,000 pounds axial force and 18,000 pounds shear. The floor itself won't deflect even a fraction of an inch under maximum load.<br><br>As hydraulic pressure builds, data systems monitor thousands of channels simultaneously — strain gauges bonded to the structure, displacement transducers measuring how far things move, load cells verifying exactly how much force is being applied. Video Image Correlation cameras capture the entire test article's surface, producing real-time color contour maps showing strain and deflection. Engineers watch for the moment when metal starts yielding, when composite starts delaminating, when welds begin to crack.<br><br>Environmental conditions can be layered on top of mechanical loads. A test article might be chilled to -423°F with liquid hydrogen flowing through it, then loaded to flight levels, simulating a cryogenic propellant tank under thrust loads. The test runs until one of three outcomes: the hardware passes at required loads (qualification), the hardware reaches its design limit load (verification), or the hardware fails (ultimate load testing). That failure is controlled, measured, and understood — exactly what engineers need to know."
     },
     "detailImage": {
       "src": "img/NASA-Logo-Large.png",
       "alt": "Placeholder image",
       "credit": "Placeholder · awaiting cleared imagery"
     },
-    "askYourHost": [],
+    "askYourHost": [
+      "What's the difference between LTA and LTAE — why do we need both?",
+      "How does the adjustable crosshead work? How long does it take to reposition?",
+      "What's the largest structure ever tested in LTA?",
+      "Has a test here ever caught a flaw that would've caused a mission failure?",
+      "How do you decide whether to test in LTA vs. the outdoor stands 4693/4697?"
+    ],
     "quiz": {
-      "question": "Content coming soon",
+      "question": "The Load Test Annex has an adjustable crosshead that can move between 40 and 115 feet high. Why adjustable instead of fixed?",
       "options": [
-        { "text": "Option A", "correct": true },
-        { "text": "Option B", "correct": false }
+        { "text": "Different test articles need load applied at different heights", "correct": true },
+        { "text": "The crosshead doubles as a crane for moving hardware", "correct": false },
+        { "text": "Adjusting height prevents building foundation damage", "correct": false }
       ],
-      "correctFeedback": "Correct!",
-      "wrongFeedback": "Not quite."
+      "correctFeedback": "✓ Exactly. A rocket stage might need compression from the top, a spacecraft bus might need tension from its mounting points, a lander might need lateral loads at leg attachment height. One adjustable crosshead handles all of them without rebuilding fixtures.",
+      "wrongFeedback": "Not quite. The adjustable height lets engineers apply loads at the exact location each test article needs — compression from above, tension from attachment points, lateral loads at critical joints — all with one versatile system."
     },
     "cta": {
       "heading": "Need structural load testing?",
@@ -2462,10 +2475,10 @@ window.STOPS = [
     "locationShort": "Building 4619",
     "subtitle": "Building 4619 · Load Test Annex Extension",
     "lab": "Structural Strength",
-    "tourTime": "~20 min",
+    "tourTime": "~15 min",
     "groupSize": null,
     "accessible": true,
-    "chips": ["Adv. Space Transportation"],
+    "chips": ["Adv. Space Transportation", "SLS", "Commercial Access"],
     "available": true,
     "hazards": [],
     "campusPin": { "xPct": 49.5, "yPct": 48.1 },
@@ -2482,37 +2495,50 @@ window.STOPS = [
     },
     "thumb": "img/NASA-Logo-Large.png",
     "heroBg": "img/NASA-Logo-Large.png",
-    "factbox": "Extended structural load testing capability within Building 4619.",
+    "factbox": "A 203-foot high bay with powerful overhead cranes and a concrete reaction floor where structures are tested under millions of pounds of force before they ever fly.",
     "narration": {
       "durationLabel": "~30 sec",
-      "text": "Content coming soon for the Load Test Annex Extension."
+      "text": "The Load Test Annex Extension is part of Marshall's Structural Strength Test Lab, where hardware faces compression, tension, and lateral loads measured in millions of pounds. This high bay housed the SLS core stage Engine Section structural test equipment — proving the rocket's backbone could handle the stresses of launch. The concrete reaction floor is built on a 10-foot grid with 106 anchor pads, each capable of 340,000 pounds axial force. Overhead cranes move test articles into place, then hydraulic actuators apply loads while data systems measure every strain, displacement, and deformation in real time."
     },
-    "hook": "Content coming soon.",
-    "whyItMatters": "The Load Test Annex Extension provides additional large-scale structural testing capability for NASA programs.",
+    "hook": "Before it holds rocket stages, it holds here — under millions of pounds of force.",
+    "cuePoints": { "hook": 0, "explainer": 8, "wowStat": 18, "media": 24, "why": 28 },
+    "whyItMatters": "Space hardware must survive forces that would crush ordinary structures — the compression of stacked stages, the tension of thrust, the lateral loads of wind and vibration. LTAE applies those exact forces on the ground, finding weak points before hardware ever leaves Earth. A crack discovered here saves a mission. A failure here prevents a disaster in flight.",
+    "lookFor": "Look for the 10-foot grid pattern in the concrete floor — those anchor pads can each hold 340,000 pounds, and 106 of them mean this facility can handle tens of millions of pounds of combined force.",
     "keyfactsTitle": "By the numbers",
-    "wowStat": 0,
+    "wowStat": 1,
     "keyfacts": [
-      { "num": "TBD", "label": "placeholder", "detail": "Content coming soon" }
+      { "num": "95×203×97", "label": "ft high bay", "detail": "Large enough to test full-scale rocket stages and large spacecraft structures" },
+      { "num": "106", "label": "anchor pads, 340k lb each", "detail": "10-foot grid pattern on concrete reaction floor — rapid reconfiguration for different test articles" },
+      { "num": "10", "label": "feet of concrete", "detail": "Reaction floor thickness required to handle millions of pounds of structural load" },
+      { "num": "SLS", "label": "Engine Section heritage", "detail": "Core stage structure connecting four RS-25 engines (2 million lb thrust) tested here" },
+      { "num": "17,808", "label": "data channels", "detail": "Real-time measurement of strain, deflection, temperature, pressure, load across ET30 SSTL" }
     ],
     "deepDive": {
-      "summary": "Go deeper: how it works",
+      "summary": "Go deeper: how LTAE applies millions of pounds of force",
       "open": false,
-      "html": "Content coming soon."
+      "html": "Structural testing is controlled violence. Engineers need to know exactly when and how hardware will fail — but only after proving it can survive far beyond the loads it will actually see in flight.<br><br>LTAE uses closed-loop hydraulic actuator systems with calibrated load cells to apply compression, tension, and lateral forces. The test article is bolted to Special Test Equipment (STE) fixtures anchored into the concrete reaction floor — 106 anchor pads on a 10-foot grid, each rated for 340,000 pounds axial force and 44,000 pounds shear. The floor itself is 70 feet by 160 feet and 10 feet thick.<br><br>Data systems measure strain, displacement, temperature, and pressure in real time — sometimes thousands of channels simultaneously. Video Image Correlation uses calibrated camera pairs to produce full field-of-view strain and deflection measurements, displayed as color contour maps during the test. Engineers watch for the moment when readings deviate from predictions, signaling the start of structural failure.<br><br>Environmental profiles can be simulated during load testing: heat, cryogenic temperatures, vacuum, humidity. A test might combine the thermal stresses of propellant at -423°F with the mechanical loads of thrust and aerodynamic pressure.<br><br>The SLS Engine Section test used this capability to verify the structure connecting the rocket's four RS-25 engines to the rest of the core stage. That's where 2 million pounds of thrust meets the vehicle — if it failed, the mission would be over before it began."
     },
     "detailImage": {
       "src": "img/NASA-Logo-Large.png",
       "alt": "Placeholder image",
       "credit": "Placeholder · awaiting cleared imagery"
     },
-    "askYourHost": [],
+    "askYourHost": [
+      "What's the difference between LTA and LTAE — why do we need both?",
+      "How do engineers know when a structure is about to fail during a test?",
+      "What's the largest or most impressive structure ever tested in LTAE?",
+      "Has a test here ever caught a flaw that would've caused a mission failure?",
+      "How long does a typical structural test campaign take from setup to completion?"
+    ],
     "quiz": {
-      "question": "Content coming soon",
+      "question": "Why does the LTAE reaction floor need to be 10 feet of solid concrete?",
       "options": [
-        { "text": "Option A", "correct": true },
-        { "text": "Option B", "correct": false }
+        { "text": "To handle millions of pounds of force without cracking or moving", "correct": true },
+        { "text": "To provide thermal insulation for cryogenic testing", "correct": false },
+        { "text": "To meet building code requirements for high bay structures", "correct": false }
       ],
-      "correctFeedback": "Correct!",
-      "wrongFeedback": "Not quite."
+      "correctFeedback": "✓ Exactly. When you're applying hundreds of thousands of pounds per anchor point — and potentially tens of millions of pounds across the entire floor — you need a foundation that won't budge. That 10 feet of concrete is the immovable object against the unstoppable force.",
+      "wrongFeedback": "Not quite. The real reason is structural — the floor must react millions of pounds of force without deflecting or cracking, providing a rigid foundation for precision load testing."
     },
     "cta": {
       "heading": "Need structural load testing?",
