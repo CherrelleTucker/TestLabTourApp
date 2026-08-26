@@ -1,0 +1,17 @@
+# Local tool/editor configuration (machine-specific, not project content)
+.claude/
+.continue/
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Env / secrets
+.env
+.env.local
