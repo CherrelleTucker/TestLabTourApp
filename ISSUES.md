@@ -239,11 +239,11 @@ Previous versions of the tour app included historical timeline information that 
 
 ---
 
-## Issue 6: Build-a-Tour Feature
+## Issue 6: Build-a-Tour Feature with Travel Time Calculation
 
-**Title**: Feature: Interactive "Build Your Own Tour" tool
+**Title**: Feature: Interactive "Build Your Own Tour" tool with travel time calculation
 
-**Labels**: `enhancement`, `feature-request`
+**Labels**: `enhancement`, `feature-request`, `priority`
 
 **Body**:
 ```markdown
@@ -252,6 +252,14 @@ Allow visitors (or tour coordinators) to dynamically create custom tours based o
 - **Interests/Topics**: (e.g., "propulsion testing", "space station hardware", "historical facilities")
 - **Location**: (e.g., "Building 4619 only", "East Test Area tour")
 - **Tags/Capabilities**: (e.g., "structural testing", "environmental simulation")
+
+**NEW REQUIREMENT**: Calculate **total tour time** including both stop durations AND travel time between stops.
+
+### Travel Time Examples
+- **Within Building 4619**: Flat Floor → LTA → LTAE = 1-3 minute walks between stops
+- **Across campus**: Building 4619 → West Test Area (WTA) = ~5 minute drive
+- **Same building, different labs**: Minimal travel time
+- **Different areas**: Must account for driving/walking distance
 
 This would complement existing curated tours with a personalized tour planning tool.
 
@@ -263,28 +271,72 @@ This would complement existing curated tours with a personalized tour planning t
 
 **As a tour guide**, I want to create a "greatest hits" tour combining stops from different labs, so I can tailor the experience to time constraints and group interests.
 
+## Data Model Requirements
+
+### Travel Time Matrix
+Each stop needs travel time data to other stops:
+
+```json
+{
+  "id": "stop",
+  "title": "Flat Floor",
+  "building": "4619",
+  "tourTime": "~30 min",
+  "travelTime": {
+    "stop14": {"minutes": 2, "mode": "walk"},  // to LTA
+    "stop15": {"minutes": 3, "mode": "walk"},  // to LTAE
+    "stop7": {"minutes": 5, "mode": "drive"},  // to T-Tower (WTA)
+    "stop9": {"minutes": 7, "mode": "drive"}   // to Test Stand 4670
+  }
+}
+```
+
+**Travel modes:**
+- `walk` - Within same building or adjacent buildings
+- `drive` - Requires vehicle transport across campus
+- `shuttle` - Campus shuttle required (if applicable)
+
+### Calculated Tour Time
+```
+Total Time = Σ(stop durations) + Σ(travel times between consecutive stops)
+```
+
+**Example calculation:**
+- Stop 1: Flat Floor (30 min)
+- Travel: Walk to LTA (2 min)
+- Stop 2: LTA (15 min)
+- Travel: Walk to LTAE (3 min)
+- Stop 3: LTAE (15 min)
+- **Total: 65 minutes**
+
 ## Proposed Implementation
 
 ### Option A: Enhanced Filtering (Low Effort)
 - Extend existing search/filter UI
 - Add multi-select filters (interest + location + tag)
 - Display filtered results as a custom tour
+- **Show total tour time** (sum of stop times + estimated travel)
 - Export custom tour as PDF or shareable link
 
-### Option B: Interactive Tour Builder (Medium Effort)
+### Option B: Interactive Tour Builder (Medium Effort) ⭐ RECOMMENDED
 - New "Build a Tour" screen with drag-and-drop interface
 - Select stops from directory, reorder them
-- Estimated tour time calculation
+- **Real-time tour time calculation** as stops are added/reordered
+- **Visual indicator** of travel time vs. stop time
+- Optimize route suggestion ("reorder to minimize travel time")
 - Save custom tour to local storage
-- Print custom tour itinerary
+- Print custom tour itinerary with travel directions
 
 ### Option C: Guided Tour Wizard (High Effort)
 - Step-by-step wizard: "What interests you?" → suggest stops
 - Map-based tour routing (optimize for walking distance)
 - Time-based constraints ("I have 90 minutes")
+- **Auto-calculate and show why stops were included/excluded based on time**
 - Integration with campus map for wayfinding
 
 ## Technical Considerations
+- **Travel time data storage**: Add `travelTime` object to each stop in `data/stops.js`
+- **Calculation algorithm**: Dijkstra's or simple linear path (depends on optimization needs)
 - Store custom tours in localStorage (persists on iPad)
 - OR server-side storage with shareable URLs (requires backend)
 - How do custom tours interact with existing curated tours?
@@ -294,6 +346,15 @@ This would complement existing curated tours with a personalized tour planning t
 - Where does "Build a Tour" entry point live? (Welcome screen? Map screen?)
 - How do users share custom tours? (QR code? URL? PDF export?)
 - Should we track popular custom tours to inform future curated tours?
+- **How to display travel time?** (e.g., "30 min tour + 5 min travel = 35 min total")
+- **Should we suggest route optimizations?** (e.g., "Swap stops 2 and 3 to save 8 minutes")
+
+## Data Collection Needed
+- [ ] **Document travel times between all stops** (walking times within buildings, driving times across campus)
+- [ ] Create travel time matrix or lookup table
+- [ ] Identify stop clusters (e.g., all Building 4619 stops are close together)
+- [ ] Document travel modes (walk vs. drive) for each connection
+- [ ] Consider weather/accessibility factors (outdoor walking routes)
 
 ## Out of Scope (for MVP)
 - Real-time availability checking (which facilities are open today)
@@ -312,6 +373,73 @@ This would complement existing curated tours with a personalized tour planning t
 - [ ] User testing with tour guides
 - [ ] Documentation in CONTRIBUTING.md
 - [ ] Committed to `main` branch
+```
+
+---
+
+## Issue 7: Update Account & Add Tour Calendar Integration
+
+**Title**: Infrastructure: Update primary account and integrate tour calendar
+
+**Labels**: `infrastructure`, `enhancement`
+
+**Body**:
+```markdown
+## Account Update
+
+**Primary account change**:
+- **Old**: cherrelle.j.tucker@nasa.gov (personal NASA account)
+- **New**: testlabtours@gmail.com (shared team account)
+
+**Required updates**:
+- [ ] Update `SETUP.md` to reference testlabtours@gmail.com as primary contact
+- [ ] Update any email addresses in app content
+- [ ] Update GitHub repository collaborator list if needed
+- [ ] Verify testlabtours@gmail.com has access to all necessary resources
+
+## Tour Calendar Feature
+
+**Goal**: Display scheduled tours in the app so visitors can see upcoming tour availability.
+
+**Requirements**:
+- [ ] Integrate with Test Lab tour calendar (Google Calendar at testlabtours@gmail.com?)
+- [ ] Display upcoming tours on welcome screen or dedicated calendar view
+- [ ] Show tour date/time, type, and availability status
+- [ ] Read-only display (visitors shouldn't book through app)
+- [ ] Update daily or on app load
+
+**Implementation Options**:
+
+### Option A: Embedded Google Calendar (Easiest)
+- Embed public calendar iframe in app
+- **Pros**: Zero code, auto-updates, familiar UI
+- **Cons**: Requires calendar to be public; iframe may not work offline
+
+### Option B: Calendar API Integration (Medium)
+- Use Google Calendar API to fetch events
+- Display in custom UI matching app design
+- **Pros**: Full control over display, can work offline with cache
+- **Cons**: Requires API key management, more complex
+
+### Option C: Static Calendar Updates (Manual)
+- Tour guide manually updates a "tours this week" section in app
+- **Pros**: No API dependencies, works offline
+- **Cons**: Requires manual updates, prone to being outdated
+
+**Questions to answer**:
+- [ ] Is tour calendar already maintained in Google Calendar?
+- [ ] Can calendar be public (viewable by anyone with link)?
+- [ ] What information should be shown? (date/time, tour type, guide name, capacity?)
+- [ ] Where in app should calendar appear? (welcome screen? dedicated tab?)
+- [ ] Should past tours be visible (history) or only upcoming?
+
+## Definition of Done
+- [ ] testlabtours@gmail.com is documented as primary account
+- [ ] All references to cherrelle.j.tucker@nasa.gov updated
+- [ ] Tour calendar integration approach decided and implemented
+- [ ] Calendar displays correctly on iPad
+- [ ] Documentation updated in README.md and SETUP.md
+- [ ] Changes committed to `main` branch
 ```
 
 ---
