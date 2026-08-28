@@ -635,9 +635,33 @@ The appbar includes a white badge with the Test Lab logo:
 
 ### Tone
 
-- **Technical but approachable** — not academic, not marketing fluff
+- **Technical but approachable**: not academic, not marketing fluff
 - Sentence case for body text, uppercase for labels/chips/eyebrows
 - Active voice: "This chamber simulates lunar South Pole lighting" (not "Lunar lighting is simulated by...")
+
+### Punctuation Rules
+
+**Never use em dashes (—).** Use these instead:
+
+- **Semicolon (;)** for connecting related independent clauses
+- **Colon (:)** for introducing lists or explanations
+- **Period (.)** to start a new sentence
+- **Regular dash (-)** for ranges or compound modifiers
+
+```
+❌ Wrong: "The modal displays help content — anyone can lead a tour."
+✅ Correct: "The modal displays help content; anyone can lead a tour."
+✅ Correct: "The modal displays help content: anyone can lead a tour."
+✅ Correct: "The modal displays help content. Anyone can lead a tour."
+
+❌ Wrong: "This app was built for Test Lab representatives — tour guides, engineers, and coordinators."
+✅ Correct: "This app was built for Test Lab representatives: tour guides, engineers, and coordinators."
+
+❌ Wrong: "The test chamber — 65 feet tall — simulates lunar gravity."
+✅ Correct: "The test chamber (65 feet tall) simulates lunar gravity."
+```
+
+**Why:** Em dashes create ambiguity in technical documentation. Semicolons, colons, and periods provide clearer structural meaning.
 
 ### Text Lengths
 

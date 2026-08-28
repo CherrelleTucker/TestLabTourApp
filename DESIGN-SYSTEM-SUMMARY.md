@@ -163,6 +163,22 @@ gap: 16px;
 
 ---
 
+## Writing & Punctuation Rules
+
+**Never use em dashes (—).** Use these instead:
+
+| Instead of em dash | Use this | Example |
+|-------------------|----------|---------|
+| Connecting clauses | Semicolon (;) | "The modal displays help; anyone can lead a tour." |
+| Introducing explanation | Colon (:) | "The app serves two goals: educate and advertise." |
+| Separating ideas | Period (.) | "The chamber is 65 feet tall. It simulates lunar gravity." |
+| Ranges or compounds | Regular dash (-) | "The 1960s-era test stand is still operational." |
+| Parenthetical info | Parentheses () | "The test chamber (65 feet tall) simulates gravity." |
+
+**Why:** Em dashes create ambiguity in technical documentation. Semicolons, colons, and periods provide clearer structural meaning.
+
+---
+
 ## Button Patterns (Copy These Exactly)
 
 ### Primary (NASA Blue)
