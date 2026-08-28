@@ -40,6 +40,10 @@ function showWizardStep() {
   const container = document.getElementById('wizard-container');
   if (!container) return;
 
+  // Force full width
+  container.style.width = '100%';
+  container.style.maxWidth = 'none';
+
   // Mode toggle at top
   const modeToggleHTML = `
     <div style="display:flex;gap:var(--space-xs);margin-bottom:var(--space-lg);padding:var(--space-sm);background:var(--panel-2);border-radius:var(--radius)">
@@ -65,7 +69,7 @@ function showInputStep(container, modeToggleHTML) {
   const interestTags = extractInterestTags();
 
   container.innerHTML = modeToggleHTML + `
-    <div class="wizard-step">
+    <div class="wizard-step" style="width:100%;box-sizing:border-box">
       <h2 class="wizard-section-header" style="margin-top:var(--space-md)">Time Budget</h2>
       <p style="color:var(--ink-soft);margin-bottom:var(--space-sm);font-size:var(--text-sm)">How much time do you have?</p>
 
@@ -253,7 +257,7 @@ function showResultsStep(container, modeToggleHTML) {
   const interests = window.selectedInterests || [];
 
   container.innerHTML = modeToggleHTML + `
-    <div class="wizard-step">
+    <div class="wizard-step" style="width:100%;box-sizing:border-box">
       <button class="btn secondary" onclick="wizardStep='input'; showWizardStep()" style="margin-bottom:var(--space-md)">
         ← Back to Search
       </button>
@@ -272,12 +276,12 @@ function showResultsStep(container, modeToggleHTML) {
         const isBest = index === 0;
 
         return `
-          <div class="tour-recommendation ${isBest ? 'best-match' : ''}" style="margin-bottom:var(--space-lg);padding:var(--space-md);background:var(--card);border:2px solid ${isBest ? 'var(--nasa-blue)' : 'var(--line)'};border-radius:var(--radius);position:relative">
+          <div class="tour-recommendation ${isBest ? 'best-match' : ''}" style="width:100%;max-width:none;margin-bottom:var(--space-lg);padding:var(--space-md);background:var(--card);border:2px solid ${isBest ? 'var(--nasa-blue)' : 'var(--line)'};border-radius:var(--radius);position:relative;box-sizing:border-box">
             ${isBest ? '<div style="position:absolute;top:-12px;left:20px;background:linear-gradient(135deg, var(--nasa-red) 0%, oklch(55% 0.18 33.0) 100%);color:var(--on-accent);padding:0.25rem 1rem;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;box-shadow: 0 2px 8px rgba(252,61,33,0.4), inset 0 1px 0 rgba(255,255,255,0.2)">BEST MATCH</div>' : ''}
 
             <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:var(--space-sm);flex-wrap:wrap;gap:var(--space-xs)">
               <div>
-                <h3 style="margin:0 0 var(--space-3xs) 0;font-size:var(--text-h2);color:var(--ink)">Tour Option ${index + 1}</h3>
+                <h3 style="margin:0 0 var(--space-3xs) 0;font-size:var(--text-lg);color:var(--ink)">Tour Option ${index + 1}</h3>
                 <div style="font-size:var(--text-sm);color:var(--ink-soft)">
                   ${tour.tour.length} stops · <span class="tour-time-display" style="font-size:16px">${timeStr}</span> total
                 </div>

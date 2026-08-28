@@ -13,11 +13,11 @@ function showManualStep(container, modeToggleHTML) {
   const timeStr = hours > 0 ? `${hours}h ${mins}m` : `${mins} min`;
 
   container.innerHTML = modeToggleHTML + `
-    <div class="wizard-step">
+    <div class="wizard-step" style="width:100%;box-sizing:border-box">
       <!-- Current Tour Summary -->
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-lg);padding:var(--space-md);background:var(--panel-2);border-radius:var(--radius);border:2px solid var(--line)">
         <div>
-          <h2 style="margin:0;font-size:var(--text-h2);color:var(--ink)">${customTour.length} Stops Selected</h2>
+          <h2 style="margin:0;font-size:var(--text-lg);color:var(--ink)">${customTour.length} Stops Selected</h2>
           <div style="font-size:var(--text-sm);color:var(--ink-soft);margin-top:var(--space-2xs)">
             Total time: <span class="tour-time-display" style="font-size:16px">${timeStr}</span>
           </div>
@@ -73,18 +73,20 @@ function showManualStep(container, modeToggleHTML) {
         style="width:100%;padding:var(--space-sm);border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:var(--text-body);font-family:var(--font);color:var(--ink);background:var(--card);margin-bottom:var(--space-md)"
         oninput="filterManualStops(this.value)">
 
-      <div id="manual-stops-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-sm);max-height:400px;overflow-y:auto">
+      <div id="manual-stops-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-xs) var(--space-md)">
         ${activeStops.map(stop => {
           const isSelected = customTour.some(s => s.id === stop.id);
           return `
-            <div class="manual-stop-card" data-stop-id="${stop.id}" data-title="${(stop.shortTitle || stop.title).toLowerCase()}" data-location="${(stop.location || '').toLowerCase()}"
-              style="padding:var(--space-sm);border:2px solid ${isSelected ? 'var(--nasa-blue)' : 'var(--line)'};border-radius:var(--radius-sm);cursor:pointer;background:${isSelected ? 'var(--chip-blue-bg)' : 'var(--card)'};transition:all 0.15s"
-              onclick="toggleStop('${stop.id}')">
-              <div style="font-weight:600;color:var(--ink);font-size:var(--text-sm);margin-bottom:var(--space-2xs)">${stop.shortTitle || stop.title}</div>
-              <div style="font-size:var(--text-xs);color:var(--ink-soft)">${stop.locationShort || stop.location}</div>
-              <div style="font-size:var(--text-xs);color:var(--nasa-blue);margin-top:var(--space-2xs)">${stop.tourTime || '~15 min'}</div>
-              ${isSelected ? '<div style="position:absolute;top:8px;right:8px;color:var(--nasa-blue);font-weight:700">✓</div>' : ''}
-            </div>
+            <label class="manual-stop-card" data-stop-id="${stop.id}" data-title="${(stop.shortTitle || stop.title).toLowerCase()}" data-location="${(stop.location || '').toLowerCase()}"
+              style="display:flex;align-items:start;gap:var(--space-xs);padding:var(--space-xs);cursor:pointer;transition:background 0.15s;border-radius:var(--radius-sm);background:${isSelected ? 'var(--chip-blue-bg)' : 'transparent'}"
+              onmouseover="this.style.background='var(--panel-2)'" onmouseout="this.style.background='${isSelected ? 'var(--chip-blue-bg)' : 'transparent'}'">
+              <input type="checkbox" ${isSelected ? 'checked' : ''} onchange="toggleStop('${stop.id}')"
+                style="margin-top:2px;width:16px;height:16px;cursor:pointer;flex-shrink:0">
+              <div style="flex:1;min-width:0">
+                <div style="font-weight:600;color:var(--ink);font-size:var(--text-sm)">${stop.shortTitle || stop.title}</div>
+                <div style="font-size:var(--text-xs);color:var(--ink-soft)">${stop.locationShort || stop.location} · ${stop.tourTime || '~15 min'}</div>
+              </div>
+            </label>
           `;
         }).join('')}
       </div>

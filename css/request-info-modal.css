@@ -69,7 +69,7 @@
 }
 
 /* Form layout */
-.quickstart-body {
+#request-info-modal .quickstart-body {
   flex: 1;
   overflow-y: auto;
   display: flex;
@@ -397,7 +397,7 @@
 /* Wizard section headers */
 .wizard-section-header {
   color: var(--nasa-blue);
-  font-size: var(--text-h2);
+  font-size: var(--text-body);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
