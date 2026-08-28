@@ -8,7 +8,7 @@
 
   const GITHUB_OWNER = 'CTuckerSolutions';
   const GITHUB_REPO = 'TestLabTourApp';
-  const GITHUB_TOKEN = 'REPLACE_WITH_YOUR_TOKEN'; // Personal Access Token with 'repo' or 'public_repo' scope
+  const GITHUB_TOKEN = ''; // Configure via environment or secure method
 
   // Show modal
   function showRequestInfo() {
@@ -99,7 +99,7 @@
     }
 
     // Check if token is configured
-    if (GITHUB_TOKEN === 'REPLACE_WITH_YOUR_TOKEN') {
+    if (!GITHUB_TOKEN || GITHUB_TOKEN === '') {
       alert('GitHub token not configured. Please contact the administrator.');
       return;
     }
