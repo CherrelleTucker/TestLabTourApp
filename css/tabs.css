@@ -28,7 +28,7 @@
 
 @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
   .stop-tabs {
-    background: color-mix(in oklch, var(--card) 90%, transparent);
+    background: color-mix(in oklch, var(--card) 98%, transparent);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }

@@ -59,7 +59,9 @@
   function handleSubmit(e) {
     e.preventDefault();
 
+    var nameInput = document.getElementById('requester-name');
     var emailInput = document.getElementById('requester-email');
+    var orgInput = document.getElementById('requester-org');
     var commentsInput = document.getElementById('requester-comments');
     var submitBtn = document.getElementById('submit-request-btn');
 
@@ -78,9 +80,21 @@
       return;
     }
 
+    if (!nameInput.value.trim()) {
+      alert('Please enter your name.');
+      nameInput.focus();
+      return;
+    }
+
     if (!emailInput.value || !emailInput.validity.valid) {
       alert('Please enter a valid email address.');
       emailInput.focus();
+      return;
+    }
+
+    if (!orgInput.value.trim()) {
+      alert('Please enter your organization and role.');
+      orgInput.focus();
       return;
     }
 
@@ -98,9 +112,11 @@
     var payload = {
       event_type: 'information-request',
       client_payload: {
-        email: emailInput.value,
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+        organization: orgInput.value.trim(),
         pdfs: selectedPdfs,
-        comments: commentsInput.value || 'No additional comments',
+        comments: commentsInput.value.trim() || 'No additional comments',
         timestamp: new Date().toISOString()
       }
     };

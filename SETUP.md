@@ -115,10 +115,10 @@ This deployment requires **three distinct accounts** working together:
 ### Apple ID Account (Device Management)
 **Name**: Test Lab  
 **Date of Birth**: 1/1/1960  
-**Email**: *(email address placeholder - document actual email)*  
+**Email**: testlabtours@gmail.com  
 **Password**: `MSFCet01`
 
-**Purpose**: This Apple ID is used to unlock and sign in to all iPads. It provides device management and iCloud services.
+**Purpose**: This Apple ID is used to unlock and sign in to all iPads. It provides device management and iCloud services. The Gmail account also serves as the tour scheduling calendar — see Tour Calendar Setup below.
 
 ### GitHub Account (App Access)
 **Username**: `TestLabTours`  
@@ -151,6 +151,7 @@ Print and keep with iPads:
 │  ──────────────────────────────────────────────────────────│
 │  ① iPad Unlock:                                            │
 │     Apple ID: Test Lab                                      │
+│     Email: testlabtours@gmail.com                          │
 │     Password: MSFCet01                                      │
 │                                                             │
 │  ② WiFi:                                                    │
@@ -160,6 +161,11 @@ Print and keep with iPads:
 │     GitHub: TestLabTours                                    │
 │     Password: GettinNASA26                                  │
 │     (Usually stays logged in)                              │
+│  ──────────────────────────────────────────────────────────│
+│  TOUR CALENDAR                                              │
+│  • Schedule tours in Google Calendar: testlabtours@gmail.com│
+│  • Calendar syncs to all iPads via iCloud automatically    │
+│  • Calendar widget on home screen shows upcoming tours     │
 │  ──────────────────────────────────────────────────────────│
 │  VISITOR INSTRUCTIONS                                       │
 │  • Tap "Test Lab Tour" icon on home screen                 │
@@ -177,6 +183,9 @@ Print and keep with iPads:
 │                                                             │
 │  Problem: App frozen                                        │
 │  Fix: Force-quit Safari, reopen app                        │
+│                                                             │
+│  Problem: Calendar not updating                            │
+│  Fix: Check WiFi, wait 15min for iCloud sync               │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -371,6 +380,27 @@ Settings → Safari → Homepage
 Now Safari opens directly to tour app on launch
 ```
 
+### Step 10: Add Tour Calendar Widget
+```
+1. From home screen, long-press empty space until apps jiggle
+2. Tap + button (top-left corner)
+3. Search for "Calendar" widget
+4. Select widget size (Medium or Large recommended)
+5. Tap "Add Widget"
+6. Position widget on home screen near Tour App icon
+7. Tap "Done"
+
+The widget will display upcoming events from the testlabtours@gmail.com calendar,
+which syncs automatically via iCloud to the Test Lab Apple ID.
+```
+
+**Tour Calendar Setup**:
+- Tours are scheduled in **Google Calendar** at testlabtours@gmail.com
+- The Gmail account is synced to the **Test Lab Apple ID**
+- Calendar events automatically sync to all 10 iPads via iCloud
+- The iOS Calendar widget displays upcoming tours without opening the app
+- Visitors can see tour schedule at a glance on iPad home screen
+
 ## Physical iPad Preparation
 
 ### Recommended Accessories
@@ -434,6 +464,7 @@ TROUBLESHOOTING:
 - [ ] Check all iPads for charged battery
 - [ ] Verify app still loads on 2-3 sample iPads
 - [ ] Clean screens with microfiber cloth
+- [ ] Update tour schedule in testlabtours@gmail.com Google Calendar (syncs automatically to iPads)
 
 ### Monthly
 - [ ] Test GitHub session on all iPads (spot-check login status)

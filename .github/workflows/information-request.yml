@@ -40,7 +40,9 @@ jobs:
           cat > issue_body.md <<'EOF'
           ## Information Request
 
-          **Requester Email:** ${{ github.event.client_payload.email }}
+          **Name:** ${{ github.event.client_payload.name }}
+          **Email:** ${{ github.event.client_payload.email }}
+          **Organization/Role:** ${{ github.event.client_payload.organization }}
 
           **Requested Materials:**
           EOF
@@ -72,7 +74,7 @@ jobs:
             const issue = await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `Information Request: ${{ github.event.client_payload.email }}`,
+              title: `Information Request: ${{ github.event.client_payload.name }} (${{ github.event.client_payload.organization }})`,
               body: issueBody,
               labels: ['information-request']
             });
@@ -82,5 +84,5 @@ jobs:
 
       - name: Log Success
         run: |
-          echo "✅ Successfully created issue for ${{ github.event.client_payload.email }}"
+          echo "✅ Successfully created issue for ${{ github.event.client_payload.name }} (${{ github.event.client_payload.email }})"
           echo "Issue: #${{ steps.create-issue.outputs.issue_number }}"

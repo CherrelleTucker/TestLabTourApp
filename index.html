@@ -128,10 +128,24 @@
 
     <div class="quickstart-body">
       <form id="request-info-form">
+        <div class="form-row">
+          <div class="form-section">
+            <label class="form-label" for="requester-name">Name</label>
+            <input type="text" id="requester-name" required
+              placeholder="Your name" class="form-input">
+          </div>
+
+          <div class="form-section">
+            <label class="form-label" for="requester-email">Email Address</label>
+            <input type="email" id="requester-email" required
+              placeholder="name@example.com" class="form-input">
+          </div>
+        </div>
+
         <div class="form-section">
-          <label class="form-label" for="requester-email">Your Email Address</label>
-          <input type="email" id="requester-email" required
-            placeholder="name@example.com" class="form-input">
+          <label class="form-label" for="requester-org">Organization / Role</label>
+          <input type="text" id="requester-org" required
+            placeholder="e.g., NASA MSFC / Project Manager" class="form-input">
         </div>
 
         <div class="form-section">
@@ -143,7 +157,7 @@
 
         <div class="form-section">
           <label class="form-label" for="requester-comments">Additional Comments (Optional)</label>
-          <textarea id="requester-comments" rows="3"
+          <textarea id="requester-comments" rows="2"
             placeholder="Tell us about your testing needs..."
             class="form-textarea"></textarea>
         </div>
@@ -297,15 +311,10 @@
         <div class="cta-card" style="margin-top:20px">
           <h3>Get in touch</h3>
           <p>Tell us about your test needs and a Test Lab representative will follow up.</p>
-          <div style="display:flex;gap:var(--space-xs);margin-top:8px;flex-wrap:wrap">
-            <a class="btn red small" href="mailto:msfc-testlab-tours@example.nasa.gov?subject=Test%20Lab%20inquiry">
-              ✉ Email the Test Lab team
-            </a>
-            <button class="btn secondary small" onclick="showRequestInfo()">
-              📄 Request Information
-            </button>
-          </div>
-          <p style="margin-top:12px;font-size:12px;opacity:.8">Placeholder: a monitored <b>role mailbox</b>, not an individual — so inquiries route reliably and survive staff changes.</p>
+          <button class="btn red" style="margin-top:8px;width:100%" onclick="showRequestInfo()">
+            📄 Request Information
+          </button>
+          <p style="margin-top:12px;font-size:12px;opacity:.8">Select capability documents and we'll send them to you within 1-2 business days.</p>
         </div>
 
         <h2>Ways to partner</h2>

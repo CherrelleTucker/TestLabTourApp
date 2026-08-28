@@ -66,7 +66,7 @@ function toggleTheme() {
   var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
   html.setAttribute('data-theme', newTheme);
-  btn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+  btn.textContent = newTheme === 'dark' ? '🚀' : '🌙';
   btn.setAttribute('aria-label', newTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
 
   // Save preference

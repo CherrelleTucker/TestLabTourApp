@@ -123,6 +123,7 @@ The app is deployed to **10 iPads in rotation** across the Test Laboratory:
 3. **Offline-capable** after first load via service worker caching
 4. Updates push automatically when developers commit to `main` branch
 5. iPads connect to **NASA Guest WiFi** (internal network only)
+6. **Tour calendar widget** on home screen displays upcoming scheduled tours (synced from testlabtours@gmail.com via iCloud)
 
 See [SETUP.md](./SETUP.md) for detailed iPad configuration and credential management.
 
