@@ -260,8 +260,8 @@ function showResultsStep(container) {
                   ${tour.tour.length} stops · <span class="tour-time-display" style="font-size:16px">${timeStr}</span> total
                 </div>
               </div>
-              <button class="btn ${isBest ? 'red' : ''}" onclick="downloadTourPDF(${index})" style="min-height:44px">
-                📄 Download PDF
+              <button class="btn ${isBest ? 'red' : ''}" onclick="previewTourPDF(${index})" style="min-height:44px">
+                📄 View PDF
               </button>
             </div>
 
@@ -548,14 +548,3 @@ function formatTime(totalMinutes) {
   return `${hours12}:${mins.toString().padStart(2, '0')} ${ampm}`;
 }
 
-// Download tour as PDF
-function downloadTourPDF(tourIndex) {
-  const tourData = recommendedTours[tourIndex];
-  if (!tourData) {
-    alert('Tour not found');
-    return;
-  }
-
-  const stopTimes = window.tourStartTime ? calculateStopTimes(tourData, window.tourStartTime) : null;
-  generateTourPDF(tourData.tour, tourIndex, stopTimes);
-}
