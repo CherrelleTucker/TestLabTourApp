@@ -279,12 +279,10 @@
               <!-- Active/Legacy toggle + Campus Map, populated by js/render.js -->
             </div>
           </div>
-          <div style="align-self:end;margin-bottom:var(--space-2xs)">
-            <a href="#" id="clear-filters-btn" style="font-size:0.875rem;color:var(--link);text-decoration:underline;cursor:pointer" onclick="clearAllFilters(); return false;">Clear filters</a>
-          </div>
         </div>
-        <div style="margin-top:var(--space-sm);margin-bottom:var(--space-lg)">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:var(--space-xs);margin-bottom:var(--space-lg);gap:var(--space-md);flex-wrap:wrap">
           <button class="btn" onclick="openBuildATour()" style="font-size:0.875rem;padding:0.5rem 1rem;background:var(--nasa-blue);color:white;border:none;border-radius:10px;cursor:pointer;min-height:44px">🛠️ Build Your Own Tour</button>
+          <a href="#" id="clear-filters-btn" style="font-size:0.875rem;color:var(--link);text-decoration:underline;cursor:pointer" onclick="clearAllFilters(); return false;">Clear filters</a>
         </div>
 
         <div id="directory-list">
