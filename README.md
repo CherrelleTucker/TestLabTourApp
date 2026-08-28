@@ -23,7 +23,7 @@ The MSFC Test Lab Tour App provides visitors with an immersive, self-paced explo
 - **Interactive quizzes** to test understanding of key concepts
 - **Historical context** with photo galleries and institutional memory
 - **Technical specifications** for engineering-minded visitors
-- **Contact CTAs** on every stop to facilitate collaboration
+- **Request Information**: Visitors can request Test Lab capability documents (one-pagers) via integrated form
 
 ### User Experience
 - **Search & filter** by building, test capability, or curated tour
@@ -163,6 +163,49 @@ Once the app has loaded with WiFi at least once:
 - Next app launch uses updated content
 
 **For tour guides**: Ensure iPads are connected to WiFi at start of day so visitors can browse all stops offline during tours in areas with poor/no WiFi.
+
+## Request Information Feature
+
+The app includes an integrated information request system that allows visitors to request Test Lab capability documents (one-pagers/PDFs).
+
+### How It Works
+
+1. **Visitor submits request**: Contact page → "Request Information" button → Modal form
+2. **Form collects**: Name, Email, Organization/Role, Selected PDFs, Optional comments
+3. **GitHub Action triggered**: Form submission triggers server-side workflow via GitHub API
+4. **Issue created**: Workflow automatically creates a GitHub Issue with request details
+5. **Email notification**: Issue creation triggers email to `cherrelle.j.tucker@nasa.gov`
+6. **Manual fulfillment**: Recipient sends PDFs from OnePagers/ directory to requester
+7. **Close issue**: Mark issue as resolved when fulfilled
+
+### Setup (First-Time Configuration)
+
+This feature requires one-time setup. **See [SETUP.md](./SETUP.md#request-information-setup)** for detailed step-by-step instructions.
+
+**Quick checklist:**
+- [ ] GitHub Personal Access Token created and configured
+- [ ] `information-request` label added to repository
+- [ ] Email notifications enabled for `cherrelle.j.tucker@nasa.gov`
+- [ ] Test submission verified (issue created, email received)
+
+### For Administrators
+
+**Fulfilling Requests:**
+1. Check email for GitHub issue notification
+2. Open issue to see which PDFs were requested
+3. Send PDFs from `OnePagers/` directory to requester's email
+4. Close the GitHub issue when complete
+
+**Available PDFs** (as of 2026-08):
+- Test Lab Overview (ET01)
+- Propulsion Test Lab (ET10)
+- Environmental Test Facility (ET20)
+- Structural Strength Test Lab (ET30)
+- Structural Dynamics Test Lab (ET40)
+- Special Test Equipment (ET50)
+- V-20 Lunar Surface Simulator
+- East Vibration Lab Capabilities
+- And more (see `data/onepagers.js` for complete list)
 
 ## Development
 

@@ -611,12 +611,226 @@ If a deployment breaks the app:
 - Use by individuals without NASA escort or clearance
 - Reproduction in external presentations without permission
 
+## Request Information Setup
+
+The app includes a feature that allows visitors to request Test Lab capability documents (one-pagers/PDFs). When a visitor submits a request, a GitHub Issue is automatically created and an email notification is sent to `cherrelle.j.tucker@nasa.gov`.
+
+### First-Time Configuration
+
+This feature requires one-time setup before it will work in production.
+
+#### Step 1: Create GitHub Personal Access Token
+
+1. Go to: https://github.com/settings/tokens
+2. Click **"Generate new token (classic)"**
+3. Configure the token:
+   - **Note**: `TestLabTourApp Workflow Trigger`
+   - **Expiration**: 90 days (or 1 year, but set calendar reminder to renew)
+   - **Scopes**: Check `repo` (includes all sub-scopes)
+     - For private repositories: `repo` is required
+     - For public repositories: `public_repo` is sufficient
+4. Click **"Generate token"**
+5. **Copy the token immediately** (you won't see it again)
+   - Token format: `ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
+
+#### Step 2: Add Token to Application
+
+1. Open file: `js/request-info.js`
+2. Find line 11: `const GITHUB_TOKEN = 'REPLACE_WITH_YOUR_TOKEN';`
+3. Replace `'REPLACE_WITH_YOUR_TOKEN'` with your actual token:
+   ```javascript
+   const GITHUB_TOKEN = 'ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+   ```
+4. Save, commit, and push:
+   ```bash
+   git add js/request-info.js
+   git commit -m "Configure GitHub token for Request Information feature"
+   git push org main
+   ```
+
+**Security Note**: The token is visible in the JavaScript source code. This is acceptable because:
+- Repository is private (source not publicly visible)
+- Token only has permission to trigger workflows (narrow scope)
+- No sensitive operations can be performed with this token
+- Token can be regenerated if compromised
+
+#### Step 3: Configure Receiving Email for Notifications
+
+1. Go to: https://github.com/settings/emails
+2. Check if `cherrelle.j.tucker@nasa.gov` is listed as a verified email
+3. If not:
+   - Click **"Add email address"**
+   - Enter: `cherrelle.j.tucker@nasa.gov`
+   - Click **"Add"**
+   - Check your NASA email inbox for verification email from GitHub
+   - Click the verification link
+4. Go to: https://github.com/settings/notifications
+5. Under **"Default notifications email"**:
+   - Select: `cherrelle.j.tucker@nasa.gov`
+6. Under **"Participating, @mentions and custom"**:
+   - Check: ✓ **Email**
+7. Under **"Watching"**:
+   - Check: ✓ **Email**
+8. Scroll down and click **"Save"**
+
+#### Step 4: Watch the Repository for Issues
+
+1. Go to: https://github.com/CTuckerSolutions/TestLabTourApp
+2. Click **"Watch"** button (top-right, next to Star)
+3. Select **"Custom"**
+4. Check: ✓ **Issues** (uncheck others if you only want issue notifications)
+5. Click **"Apply"**
+
+#### Step 5: Add Issue Label
+
+1. Stay on: https://github.com/CTuckerSolutions/TestLabTourApp
+2. Click **"Issues"** tab
+3. Click **"Labels"** button (next to Milestones)
+4. Click **"New label"**
+5. Configure label:
+   - **Name**: `information-request`
+   - **Description**: `Visitor requested Test Lab capability documents`
+   - **Color**: `#d93f0b` (orange) or `#fbca04` (yellow)
+6. Click **"Create label"**
+
+#### Step 6: Test the Feature
+
+1. Open the tour app: https://ctuckersolutions.github.io/TestLabTourApp
+2. Navigate to **Contact** page
+3. Click **"Request Information"** button
+4. Fill out the test form:
+   - **Name**: Test User
+   - **Email**: cherrelle.j.tucker@nasa.gov
+   - **Organization/Role**: NASA MSFC / Test
+   - **Select 1-2 PDFs** (e.g., Test Lab Overview, Propulsion Test Lab)
+   - **Comments**: Testing information request feature
+5. Click **"Submit Request"**
+6. Verify success message appears
+
+Within 1-2 minutes, verify:
+- **GitHub Actions**: Go to repo → Actions tab → Should see "Process Information Request" workflow running/completed
+- **GitHub Issues**: Go to repo → Issues tab → Should see new issue with title "Information Request: Test User (NASA MSFC / Test)"
+- **Email**: Check `cherrelle.j.tucker@nasa.gov` inbox → Should receive GitHub issue notification
+
+If any step fails, see Troubleshooting section below.
+
+### Fulfilling Information Requests
+
+When a visitor submits a request, you will receive an email notification from GitHub. Here's the workflow:
+
+#### Step 1: Receive Notification
+- Email from: `notifications@github.com`
+- Subject: `[CTuckerSolutions/TestLabTourApp] Information Request: [Name] ([Organization]) #[issue number]`
+- Body contains: Name, Email, Organization, List of requested PDFs, Comments
+
+#### Step 2: Gather PDFs
+1. Open the GitHub issue (click link in email or go to Issues tab)
+2. Note which PDFs were requested (checklist format)
+3. Navigate to `OnePagers/` directory in the repository
+4. Download the requested PDF files to your computer
+   - Option A: GitHub web interface → Navigate to file → Click "Download"
+   - Option B: Clone/pull repo locally → Copy files from `OnePagers/` folder
+
+#### Step 3: Send to Requester
+1. Compose email to requester's address (listed in issue)
+2. Subject: `MSFC Test Lab Information Request`
+3. Attach requested PDF files
+4. Example body:
+   ```
+   Hello [Name],
+
+   Thank you for your interest in NASA Marshall Space Flight Center's Test Laboratory capabilities.
+
+   Attached are the capability documents you requested:
+   - [List PDFs attached]
+
+   If you have any questions or would like to discuss testing opportunities, please feel free to reply to this email.
+
+   Best regards,
+   Cherrelle Tucker
+   Project Coordinator
+   NASA Marshall Test Laboratory
+   ```
+5. Send email
+
+#### Step 4: Close Issue
+1. Return to GitHub issue
+2. Check off the boxes for PDFs you sent: `- [x] Test Lab Overview`
+3. Add comment: "Materials sent to requester on [date]"
+4. Click **"Close issue"** button
+
+### Troubleshooting Request Information Feature
+
+#### Issue: Form submits but no GitHub Issue created
+
+**Possible causes:**
+- GitHub token not configured or invalid
+- Token expired (need to regenerate)
+- GitHub Actions workflow file missing or broken
+- Network connectivity issue
+
+**Debugging steps:**
+1. Check GitHub Actions tab → Look for failed workflow runs
+2. Click failed run → View error logs
+3. Verify token in `js/request-info.js` is correct (not placeholder text)
+4. Check token expiration: GitHub Settings → Tokens → Check expiration date
+5. Verify workflow file exists: `.github/workflows/information-request.yml`
+
+#### Issue: GitHub Issue created but no email received
+
+**Possible causes:**
+- Email not verified on GitHub account
+- Notifications not enabled
+- Repository not being watched
+- Email caught in spam filter
+
+**Resolution:**
+1. Verify email: GitHub Settings → Emails → Check for verification status
+2. Check notification settings: GitHub Settings → Notifications → Ensure "Email" checked
+3. Check repository watch: Repo page → Watch → Ensure "Issues" is checked
+4. Check spam folder in `cherrelle.j.tucker@nasa.gov` inbox
+5. Check GitHub notification delivery: GitHub Settings → Notifications → "Notification delivery" section
+
+#### Issue: Visitor sees "GitHub token not configured" error
+
+**Cause**: Token in `js/request-info.js` is still set to placeholder value
+
+**Resolution:**
+1. Open `js/request-info.js`
+2. Verify line 11 has actual token (starts with `ghp_`)
+3. If still placeholder, follow Step 2 above to add real token
+4. Commit and push changes
+
+#### Issue: Form validation errors
+
+**Cause**: Required fields not filled out
+
+**Resolution**: User must provide:
+- Name (required)
+- Email (required, must be valid format)
+- Organization/Role (required)
+- At least one PDF selected (required)
+- Comments are optional
+
+### Token Rotation
+
+GitHub Personal Access Tokens expire based on the expiration date you set. When the token is about to expire:
+
+1. **3 days before expiration**: Set calendar reminder
+2. **Generate new token**: Follow Step 1 above
+3. **Update application**: Follow Step 2 above
+4. **Test**: Follow Step 6 above
+5. **Revoke old token**: GitHub Settings → Tokens → Click old token → "Delete"
+
+**Best practice**: Set 90-day expiration and rotate quarterly, or 1-year expiration with annual rotation and calendar reminder.
+
 ## Support Contacts
 
-- **App issues**: Cherrelle Tucker (project coordinator)
+- **App issues**: Cherrelle Tucker (project coordinator) - cherrelle.j.tucker@nasa.gov
 - **GitHub access**: CTuckerSolutions org admin
 - **iPad hardware**: [Your IT support contact]
 - **Tour scheduling**: [Tour POC from agenda]
+- **Information requests**: cherrelle.j.tucker@nasa.gov (receives all visitor requests)
 
 ## Appendix: Account Credentials Reference
 
