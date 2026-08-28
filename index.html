@@ -266,23 +266,27 @@
           <input type="search" id="stop-search" placeholder="Search by building, name, or tag..." aria-label="Search stops">
         </div>
 
-        <div class="filter-row">
-          <div class="filter-group">
-            <label class="filter-label">Curated Tours</label>
-            <div id="tour-chips" class="chips">
-              <!-- populated from data/tours.js by js/render.js; empty/hidden if no tours defined -->
+        <div style="display:flex;justify-content:space-between;align-items:start;gap:var(--space-lg);margin:var(--space-lg) 0">
+          <div style="display:flex;gap:var(--space-lg);flex-wrap:wrap;flex:1">
+            <div class="filter-group">
+              <label class="filter-label">Curated Tours</label>
+              <div id="tour-chips" class="chips">
+                <!-- populated from data/tours.js by js/render.js; empty/hidden if no tours defined -->
+              </div>
+            </div>
+            <div class="filter-group">
+              <label class="filter-label">Status</label>
+              <div id="directory-chips" class="chips">
+                <!-- Active/Legacy toggle + Campus Map, populated by js/render.js -->
+              </div>
             </div>
           </div>
-          <div class="filter-group">
-            <label class="filter-label">Status</label>
-            <div id="directory-chips" class="chips">
-              <!-- Active/Legacy toggle + Campus Map, populated by js/render.js -->
-            </div>
+          <div style="padding-top:var(--space-md)">
+            <a href="#" id="clear-filters-btn" style="font-size:0.875rem;color:var(--link);text-decoration:underline;cursor:pointer;white-space:nowrap" onclick="clearAllFilters(); return false;">Clear filters</a>
           </div>
         </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:var(--space-xs);margin-bottom:var(--space-lg);gap:var(--space-md);flex-wrap:wrap">
+        <div style="margin-bottom:var(--space-lg)">
           <button class="btn" onclick="openBuildATour()" style="font-size:0.875rem;padding:0.5rem 1rem;background:var(--nasa-blue);color:white;border:none;border-radius:10px;cursor:pointer;min-height:44px">🛠️ Build Your Own Tour</button>
-          <a href="#" id="clear-filters-btn" style="font-size:0.875rem;color:var(--link);text-decoration:underline;cursor:pointer" onclick="clearAllFilters(); return false;">Clear filters</a>
         </div>
 
         <div id="directory-list">
