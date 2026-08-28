@@ -1,20 +1,20 @@
 /*
   Build-a-Tour Feature
-  Allows users to select tour stops and calculates total time including travel between locations
+  Smart tour recommendation wizard based on time and interests
 */
 
 let customTour = [];
+let wizardStep = 'input'; // 'input' or 'results'
+let recommendedTours = [];
 
 function openBuildATour() {
   const modal = document.getElementById('build-a-tour-modal');
   modal.classList.add('show');
   document.body.style.overflow = 'hidden';
 
-  // Populate available stops
-  populateAvailableStops();
-
-  // Update display
-  renderCustomTour();
+  // Reset to wizard input step
+  wizardStep = 'input';
+  showWizardStep();
 }
 
 function closeBuildATour() {
@@ -23,27 +23,209 @@ function closeBuildATour() {
   document.body.style.overflow = 'auto';
 }
 
-function populateAvailableStops() {
-  const grid = document.getElementById('available-stops-grid');
-  if (!grid) return;
+function showWizardStep() {
+  const container = document.getElementById('wizard-container');
+  if (!container) return;
 
-  // Filter to active stops only (skip legacy/demolished)
-  const activeStops = window.STOPS.filter(stop => !stop.legacySite && stop.available !== false);
+  if (wizardStep === 'input') {
+    showInputStep(container);
+  } else if (wizardStep === 'results') {
+    showResultsStep(container);
+  }
+}
 
-  grid.innerHTML = activeStops.map(stop => {
-    const isSelected = customTour.some(s => s.id === stop.id);
-    const buttonClass = isSelected ? 'onepager-card selected' : 'onepager-card';
+function showInputStep(container) {
+  const interestTags = extractInterestTags();
 
-    return `
-      <div class="${buttonClass}" onclick="toggleStop('${stop.id}')" style="cursor:pointer">
-        <div style="font-size:2rem;margin-bottom:0.5rem">${getStopIcon(stop)}</div>
-        <div style="font-weight:bold;margin-bottom:0.25rem">${stop.shortTitle || stop.title}</div>
-        <div style="font-size:0.8rem;color:#666">${stop.locationShort || stop.location}</div>
-        <div style="font-size:0.8rem;color:var(--nasa-blue);margin-top:0.25rem">${stop.tourTime || '~15 min'}</div>
-        ${isSelected ? '<div style="margin-top:0.5rem;color:green">✓ Added</div>' : ''}
+  container.innerHTML = `
+    <div class="wizard-step">
+      <h3 style="margin-bottom:1.5rem">Let's build your perfect tour</h3>
+
+      <!-- Time Budget -->
+      <div class="form-section">
+        <label class="form-label" for="time-budget">How much time do you have?</label>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+          <button class="time-chip" onclick="selectTime(30)">30 min</button>
+          <button class="time-chip" onclick="selectTime(60)">1 hour</button>
+          <button class="time-chip active" onclick="selectTime(90)">90 min</button>
+          <button class="time-chip" onclick="selectTime(120)">2 hours</button>
+          <button class="time-chip" onclick="selectTime(180)">3 hours</button>
+        </div>
+        <input type="number" id="time-budget-custom" placeholder="Or enter custom minutes..."
+          style="margin-top:1rem;width:100%;padding:0.5rem;border:1px solid #ccc;border-radius:4px">
       </div>
-    `;
-  }).join('');
+
+      <!-- Interests -->
+      <div class="form-section" style="margin-top:2rem">
+        <label class="form-label">What are you interested in? (optional)</label>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.5rem">
+          ${interestTags.map(tag => `
+            <button class="interest-chip" onclick="toggleInterest('${tag}')" data-interest="${tag}">
+              ${tag}
+            </button>
+          `).join('')}
+        </div>
+        <p style="font-size:0.85rem;color:#666;margin-top:0.5rem">
+          Leave blank for a general tour covering different capabilities
+        </p>
+      </div>
+
+      <!-- Starting Location (optional) -->
+      <div class="form-section" style="margin-top:2rem">
+        <label class="form-label">Starting location (optional)</label>
+        <select id="start-location" style="width:100%;padding:0.5rem;border:1px solid #ccc;border-radius:4px">
+          <option value="">Any location</option>
+          <option value="4619-north">Building 4619 (North door - ET30 labs)</option>
+          <option value="4619-west">Building 4619 (West door - V20/ET20 labs)</option>
+          <option value="eta">East Test Area</option>
+          <option value="wta">West Test Area</option>
+        </select>
+      </div>
+
+      <!-- Generate Button -->
+      <div style="margin-top:2rem;text-align:center">
+        <button class="btn red" onclick="generateRecommendations()" style="padding:1rem 2rem;font-size:1.1rem">
+          ✨ Recommend Tours
+        </button>
+      </div>
+    </div>
+  `;
+
+  // Set default time to 90 minutes
+  window.selectedTime = 90;
+  window.selectedInterests = [];
+}
+
+function selectTime(minutes) {
+  window.selectedTime = minutes;
+
+  // Update UI
+  document.querySelectorAll('.time-chip').forEach(chip => chip.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('time-budget-custom').value = '';
+}
+
+function toggleInterest(interest) {
+  if (!window.selectedInterests) window.selectedInterests = [];
+
+  const index = window.selectedInterests.indexOf(interest);
+  if (index >= 0) {
+    window.selectedInterests.splice(index, 1);
+    event.target.classList.remove('active');
+  } else {
+    window.selectedInterests.push(interest);
+    event.target.classList.add('active');
+  }
+}
+
+function generateRecommendations() {
+  // Get time from custom input or selected button
+  const customTime = document.getElementById('time-budget-custom').value;
+  const timeLimit = customTime ? parseInt(customTime) : window.selectedTime;
+
+  if (!timeLimit || timeLimit < 15) {
+    alert('Please enter a time of at least 15 minutes');
+    return;
+  }
+
+  const interests = window.selectedInterests || [];
+  const startLocation = document.getElementById('start-location').value;
+
+  // Generate recommendations
+  recommendedTours = recommendTours(timeLimit, interests, startLocation, 3);
+
+  if (recommendedTours.length === 0) {
+    alert('No tours found matching your criteria. Try increasing your time budget or removing some interest filters.');
+    return;
+  }
+
+  // Show results
+  wizardStep = 'results';
+  showWizardStep();
+}
+
+function showResultsStep(container) {
+  const timeLimit = window.selectedTime;
+  const interests = window.selectedInterests || [];
+
+  container.innerHTML = `
+    <div class="wizard-step">
+      <button class="btn secondary" onclick="wizardStep='input'; showWizardStep()" style="margin-bottom:1rem">
+        ← Back to Search
+      </button>
+
+      <h3 style="margin-bottom:0.5rem">Recommended Tours</h3>
+      <p style="color:#666;margin-bottom:2rem">
+        Based on ${timeLimit} min ${interests.length > 0 ? `· ${interests.join(', ')}` : ''}
+      </p>
+
+      ${recommendedTours.map((tour, index) => {
+        const reasons = explainRecommendation(tour, timeLimit, interests);
+        const hours = Math.floor(tour.totalMinutes / 60);
+        const mins = tour.totalMinutes % 60;
+        const timeStr = hours > 0 ? `${hours}h ${mins}m` : `${mins} min`;
+
+        return `
+          <div class="tour-recommendation" style="margin-bottom:2rem;padding:1.5rem;background:white;border:2px solid ${index === 0 ? 'var(--nasa-blue)' : '#ddd'};border-radius:8px;position:relative">
+            ${index === 0 ? '<div style="position:absolute;top:-12px;left:20px;background:var(--nasa-blue);color:white;padding:0.25rem 1rem;border-radius:20px;font-size:0.85rem;font-weight:bold">BEST MATCH</div>' : ''}
+
+            <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:1rem">
+              <div>
+                <h4 style="margin:0 0 0.5rem 0">Tour Option ${index + 1}</h4>
+                <div style="font-size:0.9rem;color:#666">
+                  ${tour.tour.length} stops · ${timeStr} total
+                </div>
+              </div>
+              <button class="btn ${index === 0 ? 'red' : ''}" onclick="selectTour(${index})">
+                Select This Tour
+              </button>
+            </div>
+
+            <!-- Why this tour -->
+            <div style="background:#f8f9fa;padding:1rem;border-radius:4px;margin-bottom:1rem">
+              <strong style="font-size:0.9rem">Why this tour:</strong>
+              <ul style="margin:0.5rem 0 0 1.2rem;font-size:0.9rem;color:#555">
+                ${reasons.map(r => `<li>${r}</li>`).join('')}
+              </ul>
+            </div>
+
+            <!-- Stop list -->
+            <div style="font-size:0.9rem">
+              ${tour.tour.map((stop, i) => {
+                const travel = tour.breakdown[i];
+                return `
+                  <div style="display:flex;align-items:center;gap:0.75rem;padding:0.5rem 0;border-bottom:1px solid #eee">
+                    <div style="font-weight:bold;color:var(--nasa-blue);min-width:20px">${i + 1}.</div>
+                    <div style="flex:1">
+                      <div style="font-weight:bold">${stop.shortTitle || stop.title}</div>
+                      <div style="font-size:0.85rem;color:#666">${stop.locationShort || stop.location}</div>
+                    </div>
+                    <div style="text-align:right;font-size:0.85rem;color:#666">
+                      ${stop.tourTime || '~15 min'}
+                      ${travel.travelTime > 0 ? `<br><span style="color:#999">+ ${travel.travelTime} min ${travel.mode}</span>` : ''}
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      }).join('')}
+
+      <div style="text-align:center;margin-top:2rem">
+        <button class="btn secondary" onclick="wizardStep='input'; showWizardStep()">
+          Try Different Criteria
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+function selectTour(index) {
+  const tour = recommendedTours[index];
+  customTour = tour.tour;
+  wizardStep = 'manual';
+  renderCustomTour();
 }
 
 function getStopIcon(stop) {

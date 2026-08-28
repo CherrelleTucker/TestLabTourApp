@@ -181,38 +181,15 @@
     <button class="quickstart-close" onclick="closeBuildATour()" aria-label="Close">×</button>
 
     <div class="quickstart-header">
-      <div class="quickstart-icon">🛠️</div>
-      <h1 class="quickstart-title">Build Your Own Tour</h1>
-      <p class="quickstart-subtitle">Select stops and calculate total tour time with travel between locations</p>
+      <div class="quickstart-icon">✨</div>
+      <h1 class="quickstart-title">Smart Tour Builder</h1>
+      <p class="quickstart-subtitle">Tell us your time and interests — we'll suggest the perfect tour</p>
     </div>
 
     <div class="quickstart-body">
-      <!-- Selected Stops List -->
-      <div class="form-section">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
-          <label class="form-label">Your Custom Tour</label>
-          <div style="font-size:1.25rem;font-weight:bold;color:var(--nasa-blue)" id="tour-total-time">0 min</div>
-        </div>
-        <div id="custom-tour-list" class="custom-tour-list" style="min-height:100px;border:1px dashed #ccc;border-radius:8px;padding:1rem">
-          <p style="color:#999;text-align:center">Click stops below to add them to your tour</p>
-        </div>
+      <div id="wizard-container">
+        <!-- Wizard steps rendered by JavaScript -->
       </div>
-
-      <!-- Available Stops Grid -->
-      <div class="form-section">
-        <label class="form-label">Available Stops (click to add)</label>
-        <div id="available-stops-grid" class="onepagers-grid" style="max-height:400px;overflow-y:auto">
-          <!-- Populated by JavaScript from stops.js -->
-        </div>
-      </div>
-
-      <div class="form-actions">
-        <button type="button" class="btn secondary" onclick="clearCustomTour()">Clear All</button>
-        <button type="button" class="btn" onclick="exportCustomTour()">Export Tour</button>
-        <button type="button" class="btn red" onclick="closeBuildATour()">Done</button>
-      </div>
-
-      <p class="form-note"><strong>Travel times include:</strong> Driving between areas, badging through gates for ETA/WTA, walking within Building 4619</p>
     </div>
   </div>
 </div>
@@ -535,6 +512,7 @@ Phase 4  Scale content + renderers     Phase 5  Handoff &amp; Sustainment (along
 <script src="js/quiz.js"></script>
 <script src="js/quickstart.js"></script>
 <script src="js/request-info.js"></script>
+<script src="js/tour-recommender.js"></script>
 <script src="js/build-a-tour.js"></script>
 <script>
 // Register service worker for offline capability
