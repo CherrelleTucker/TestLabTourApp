@@ -239,11 +239,13 @@ Previous versions of the tour app included historical timeline information that 
 
 ---
 
-## Issue 6: Build-a-Tour Feature with Travel Time Calculation
+## ✅ Issue 6: Build-a-Tour Feature with Travel Time Calculation — COMPLETE (2026-08-28)
 
 **Title**: Feature: Interactive "Build Your Own Tour" tool with travel time calculation
 
 **Labels**: `enhancement`, `feature-request`, `priority`
+
+**Status**: ✅ **IMPLEMENTED**
 
 **Body**:
 ```markdown
@@ -367,12 +369,38 @@ Total Time = Σ(stop durations) + Σ(travel times between consecutive stops)
 - Most commonly combined stops (informs future curated tours)
 
 ## Definition of Done
-- [ ] Design mockup approved
-- [ ] Implementation approach selected (Option A/B/C)
-- [ ] Feature implemented and tested
-- [ ] User testing with tour guides
-- [ ] Documentation in CONTRIBUTING.md
-- [ ] Committed to `main` branch
+- [x] Design mockup approved — **Option B: Interactive Tour Builder selected**
+- [x] Implementation approach selected (Option A/B/C)
+- [x] Feature implemented and tested
+  - GPS-based travel time system with verified coordinates
+  - Interactive modal with stop selection
+  - Real-time tour time calculation (stop time + travel time)
+  - Export to downloadable text itinerary
+- [ ] User testing with tour guides — **Next step**
+- [x] Documentation in CONTRIBUTING.md
+- [x] Committed to `main` branch
+
+## Implementation Details
+
+**Files Added:**
+- `data/gpsCoordinates.js` — GPS coordinate database + Haversine calculator
+- `js/build-a-tour.js` — Interactive tour builder UI and logic
+- `test-travel-times.html` — Test tool for verifying calculations
+- `VERIFIED-TRAVEL-TIMES.md` — Complete travel time matrix
+
+**Travel Time Model:**
+- Building 4619: 1-4 min walks (adjacent bays vs. end-to-end)
+- ETA: 4 min drives between stands (includes badge-through)
+- WTA: 3 min drives, except 4697↔4699 is 2 min walk
+- Cross-campus: GPS-calculated with parking/badge overhead
+
+**Access:**
+- Button on tour stops page: "🛠️ Build Your Own Tour"
+- Modal with available stops grid + custom tour list
+- Real-time time calculation as stops are added
+- Export generates printable itinerary
+
+**Status:** Ready for user testing with tour coordinators
 ```
 
 ---
