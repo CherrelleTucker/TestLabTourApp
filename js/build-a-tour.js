@@ -42,15 +42,16 @@ function showInputStep(container) {
       <h2 class="wizard-section-header">Time Budget</h2>
       <p style="color:var(--ink-soft);margin-bottom:var(--space-md)">How much time do you have for this tour?</p>
 
-      <div style="display:flex;gap:var(--space-xs);flex-wrap:wrap;margin-bottom:var(--space-sm)">
+      <div style="display:flex;gap:var(--space-xs);flex-wrap:wrap;align-items:center;margin-bottom:var(--space-sm)">
         <button class="time-chip" onclick="selectTime(30)">30 min</button>
         <button class="time-chip" onclick="selectTime(60)">1 hour</button>
         <button class="time-chip active" onclick="selectTime(90)">90 min</button>
         <button class="time-chip" onclick="selectTime(120)">2 hours</button>
         <button class="time-chip" onclick="selectTime(180)">3 hours</button>
+        <span style="color:var(--ink-soft);margin:0 var(--space-2xs)">or</span>
+        <input type="number" id="time-budget-custom" placeholder="Custom minutes"
+          style="width:140px;padding:var(--space-xs);border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:var(--text-body);font-family:var(--font);color:var(--ink);background:var(--card);min-height:44px">
       </div>
-      <input type="number" id="time-budget-custom" placeholder="Or enter custom minutes..."
-        style="width:100%;padding:var(--space-xs);border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:var(--text-body);font-family:var(--font);color:var(--ink);background:var(--card);min-height:44px">
 
       <!-- Interests -->
       <h2 class="wizard-section-header">Interests</h2>
