@@ -77,7 +77,7 @@ function showManualStep(container, modeToggleHTML) {
         ${activeStops.map(stop => {
           const isSelected = customTour.some(s => s.id === stop.id);
           return `
-            <label class="manual-stop-card" data-stop-id="${stop.id}" data-title="${(stop.shortTitle || stop.title).toLowerCase()}" data-location="${(stop.location || '').toLowerCase()}"
+            <label class="manual-stop-card" data-stop-id="${stop.id}" data-title="${(stop.shortTitle || stop.title).toLowerCase()}" data-location="${(stop.location || '').toLowerCase()}" data-subtitle="${(stop.subtitle || '').toLowerCase()}"
               style="display:flex;align-items:start;gap:var(--space-xs);padding:var(--space-xs);cursor:pointer;transition:background 0.15s;border-radius:var(--radius-sm);background:${isSelected ? 'var(--chip-blue-bg)' : 'transparent'}"
               onmouseover="this.style.background='var(--panel-2)'" onmouseout="this.style.background='${isSelected ? 'var(--chip-blue-bg)' : 'transparent'}'">
               <input type="checkbox" ${isSelected ? 'checked' : ''} onchange="toggleStop('${stop.id}')"
@@ -142,7 +142,8 @@ function filterManualStops(query) {
   cards.forEach(card => {
     const title = card.dataset.title || '';
     const location = card.dataset.location || '';
-    const matches = title.includes(lowerQuery) || location.includes(lowerQuery);
+    const subtitle = card.dataset.subtitle || '';
+    const matches = title.includes(lowerQuery) || location.includes(lowerQuery) || subtitle.includes(lowerQuery);
     card.style.display = matches ? 'block' : 'none';
   });
 }

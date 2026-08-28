@@ -1808,8 +1808,8 @@ window.STOPS = [
   {
     "id": "stop10",
     "qrFile": "10-redstone",
-    "title": "Redstone Test Stand: Where It Starts",
-    "shortTitle": "Redstone Test Stand",
+    "title": "Redstone Historic Test Stand: Where It Starts",
+    "shortTitle": "Redstone Historic Test Stand",
     "location": "Dodd Road, MSFC / Redstone Arsenal",
     "locationShort": "Dodd Road",
     "subtitle": "National Historic Landmark &middot; Dodd Road",
@@ -1858,7 +1858,7 @@ window.STOPS = [
     "deepDive": {
       "summary": "Go deeper: from missile to Mercury-Redstone",
       "open": true,
-      "html": "Assembled and tested at what became Marshall Space Flight Center, the Mercury-Redstone launch vehicle was derived directly from the Army's Redstone missile, itself proven on this stand. Engineers here installed a Mercury capsule and its escape system atop the booster and test-fired the assembly before it was ever trusted to carry a human being. The stand is documented by the Library of Congress's Historic American Engineering Record (HAER AL-129-A).<br><br>With almost all of the stand's $25,000 construction budget sunk into its concrete foundation, there was no money left to build a proper instrumentation bunker &mdash; so Test Lab engineers cleaned out two decommissioned railroad tank cars that had once hauled chemicals at the arsenal during World War II, packed them with recording and control equipment, and buried them under a mound of earth about 100 yards from the stand (HAER AL-129-A)."
+      "html": "Assembled and tested at what became Marshall Space Flight Center, the Mercury-Redstone launch vehicle was derived directly from the Army's Redstone missile, itself proven on this stand. Engineers here installed a Mercury capsule and its escape system atop the booster and test-fired the assembly before it was ever trusted to carry a human being. The stand is documented by the Library of Congress's Historic American Engineering Record (HAER AL-129-A).<br><br>With almost all of the stand's $25,000 construction budget sunk into its concrete foundation, there was no money left to build a proper instrumentation bunker &mdash; so Test Lab engineers cleaned out two decommissioned railroad tank cars that had once hauled chemicals at the arsenal during World War II, packed them with recording and control equipment, and buried them under a mound of earth about 100 yards from the stand (HAER AL-129-A).<br><br><strong>Preservation and Legacy:</strong> In 2023, the Redstone Test Stand underwent extensive preservation, with all components receiving a fresh coat of paint. \"The Redstone Test Stand was truly the beginning of Marshall's propulsion testing legacy,\" said Marshall Associate Director, Technical, Larry Leopard. \"This pivotal piece of American space history will continue to engage and inspire many generations of future explorers.\" <em>(Source: <a href=\"https://nasa.sharepoint.com/sites/MSFC/SitePages/Still-Standing--Marshall%27s-Historic-Test-Stands-Launch-Humankind-to-New-Frontiers.aspx\" target=\"_blank\">NASA Marshall Space Flight Center</a>)</em>"
     },
     "detailImage": {
       "src": "img/detail-1.jpg",
