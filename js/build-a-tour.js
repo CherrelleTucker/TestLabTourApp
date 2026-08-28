@@ -39,52 +39,49 @@ function showInputStep(container) {
 
   container.innerHTML = `
     <div class="wizard-step">
-      <h3 style="margin-bottom:1.5rem">Let's build your perfect tour</h3>
+      <h2 class="wizard-section-header">Time Budget</h2>
+      <p style="color:var(--ink-soft);margin-bottom:var(--space-md)">How much time do you have for this tour?</p>
 
-      <!-- Time Budget -->
-      <div class="form-section">
-        <label class="form-label" for="time-budget">How much time do you have?</label>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap">
-          <button class="time-chip" onclick="selectTime(30)">30 min</button>
-          <button class="time-chip" onclick="selectTime(60)">1 hour</button>
-          <button class="time-chip active" onclick="selectTime(90)">90 min</button>
-          <button class="time-chip" onclick="selectTime(120)">2 hours</button>
-          <button class="time-chip" onclick="selectTime(180)">3 hours</button>
-        </div>
-        <input type="number" id="time-budget-custom" placeholder="Or enter custom minutes..."
-          style="margin-top:1rem;width:100%;padding:0.5rem;border:1px solid #ccc;border-radius:4px">
+      <div style="display:flex;gap:var(--space-xs);flex-wrap:wrap;margin-bottom:var(--space-sm)">
+        <button class="time-chip" onclick="selectTime(30)">30 min</button>
+        <button class="time-chip" onclick="selectTime(60)">1 hour</button>
+        <button class="time-chip active" onclick="selectTime(90)">90 min</button>
+        <button class="time-chip" onclick="selectTime(120)">2 hours</button>
+        <button class="time-chip" onclick="selectTime(180)">3 hours</button>
       </div>
+      <input type="number" id="time-budget-custom" placeholder="Or enter custom minutes..."
+        style="width:100%;padding:var(--space-xs);border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:var(--text-body);font-family:var(--font);color:var(--ink);background:var(--card);min-height:44px">
 
       <!-- Interests -->
-      <div class="form-section" style="margin-top:2rem">
-        <label class="form-label">What are you interested in? (optional)</label>
-        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.5rem">
-          ${interestTags.map(tag => `
-            <button class="interest-chip" onclick="toggleInterest('${tag}')" data-interest="${tag}">
-              ${tag}
-            </button>
-          `).join('')}
-        </div>
-        <p style="font-size:0.85rem;color:#666;margin-top:0.5rem">
-          Leave blank for a general tour covering different capabilities
-        </p>
-      </div>
+      <h2 class="wizard-section-header">Interests</h2>
+      <p style="color:var(--ink-soft);margin-bottom:var(--space-md)">Select test capabilities you'd like to see (optional)</p>
 
-      <!-- Starting Location (optional) -->
-      <div class="form-section" style="margin-top:2rem">
-        <label class="form-label">Starting location (optional)</label>
-        <select id="start-location" style="width:100%;padding:0.5rem;border:1px solid #ccc;border-radius:4px">
-          <option value="">Any location</option>
-          <option value="4619-north">Building 4619 (North door - ET30 labs)</option>
-          <option value="4619-west">Building 4619 (West door - V20/ET20 labs)</option>
-          <option value="eta">East Test Area</option>
-          <option value="wta">West Test Area</option>
-        </select>
+      <div style="display:flex;gap:var(--space-2xs);flex-wrap:wrap;margin-bottom:var(--space-xs)">
+        ${interestTags.map(tag => `
+          <button class="interest-chip" onclick="toggleInterest('${tag}')" data-interest="${tag}">
+            ${tag}
+          </button>
+        `).join('')}
       </div>
+      <p style="font-size:var(--text-sm);color:var(--ink-soft);margin-top:var(--space-xs)">
+        Leave blank for a general tour covering different test capabilities
+      </p>
+
+      <!-- Starting Location -->
+      <h2 class="wizard-section-header">Starting Location</h2>
+      <p style="color:var(--ink-soft);margin-bottom:var(--space-md)">Where will your tour begin? (optional)</p>
+
+      <select id="start-location" style="width:100%;padding:var(--space-xs);border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:var(--text-body);font-family:var(--font);color:var(--ink);background:var(--card);min-height:44px">
+        <option value="">Any location</option>
+        <option value="4619-north">Building 4619 (North door - ET30 labs)</option>
+        <option value="4619-west">Building 4619 (West door - V20/ET20 labs)</option>
+        <option value="eta">East Test Area</option>
+        <option value="wta">West Test Area</option>
+      </select>
 
       <!-- Generate Button -->
-      <div style="margin-top:2rem;text-align:center">
-        <button class="btn red" onclick="generateRecommendations()" style="padding:1rem 2rem;font-size:1.1rem">
+      <div style="margin-top:var(--space-xl);text-align:center">
+        <button class="btn red" onclick="generateRecommendations()" style="min-height:48px;font-size:var(--text-body);font-weight:700">
           ✨ Recommend Tours
         </button>
       </div>
@@ -150,13 +147,14 @@ function showResultsStep(container) {
 
   container.innerHTML = `
     <div class="wizard-step">
-      <button class="btn secondary" onclick="wizardStep='input'; showWizardStep()" style="margin-bottom:1rem">
+      <button class="btn secondary" onclick="wizardStep='input'; showWizardStep()" style="margin-bottom:var(--space-md)">
         ← Back to Search
       </button>
 
-      <h3 style="margin-bottom:0.5rem">Recommended Tours</h3>
-      <p style="color:#666;margin-bottom:2rem">
-        Based on ${timeLimit} min ${interests.length > 0 ? `· ${interests.join(', ')}` : ''}
+      <h2 class="wizard-section-header">Recommended Tours</h2>
+      <p style="color:var(--ink-soft);margin-bottom:var(--space-lg)">
+        Based on <span class="tour-time-display" style="font-size:18px">${timeLimit} min</span>
+        ${interests.length > 0 ? `<br><span style="font-size:var(--text-sm)">Interests: ${interests.join(', ')}</span>` : ''}
       </p>
 
       ${recommendedTours.map((tour, index) => {
@@ -164,45 +162,46 @@ function showResultsStep(container) {
         const hours = Math.floor(tour.totalMinutes / 60);
         const mins = tour.totalMinutes % 60;
         const timeStr = hours > 0 ? `${hours}h ${mins}m` : `${mins} min`;
+        const isBest = index === 0;
 
         return `
-          <div class="tour-recommendation" style="margin-bottom:2rem;padding:1.5rem;background:white;border:2px solid ${index === 0 ? 'var(--nasa-blue)' : '#ddd'};border-radius:8px;position:relative">
-            ${index === 0 ? '<div style="position:absolute;top:-12px;left:20px;background:var(--nasa-blue);color:white;padding:0.25rem 1rem;border-radius:20px;font-size:0.85rem;font-weight:bold">BEST MATCH</div>' : ''}
+          <div class="tour-recommendation ${isBest ? 'best-match' : ''}" style="margin-bottom:var(--space-lg);padding:var(--space-md);background:var(--card);border:2px solid ${isBest ? 'var(--nasa-blue)' : 'var(--line)'};border-radius:var(--radius);position:relative">
+            ${isBest ? '<div style="position:absolute;top:-12px;left:20px;background:linear-gradient(135deg, var(--nasa-red) 0%, oklch(55% 0.18 33.0) 100%);color:var(--on-accent);padding:0.25rem 1rem;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;box-shadow: 0 2px 8px rgba(252,61,33,0.4), inset 0 1px 0 rgba(255,255,255,0.2)">BEST MATCH</div>' : ''}
 
-            <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:1rem">
+            <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:var(--space-sm);flex-wrap:wrap;gap:var(--space-xs)">
               <div>
-                <h4 style="margin:0 0 0.5rem 0">Tour Option ${index + 1}</h4>
-                <div style="font-size:0.9rem;color:#666">
-                  ${tour.tour.length} stops · ${timeStr} total
+                <h3 style="margin:0 0 var(--space-3xs) 0;font-size:var(--text-h2);color:var(--ink)">Tour Option ${index + 1}</h3>
+                <div style="font-size:var(--text-sm);color:var(--ink-soft)">
+                  ${tour.tour.length} stops · <span class="tour-time-display" style="font-size:16px">${timeStr}</span> total
                 </div>
               </div>
-              <button class="btn ${index === 0 ? 'red' : ''}" onclick="selectTour(${index})">
+              <button class="btn ${isBest ? 'red' : ''}" onclick="selectTour(${index})" style="min-height:44px">
                 Select This Tour
               </button>
             </div>
 
             <!-- Why this tour -->
-            <div style="background:#f8f9fa;padding:1rem;border-radius:4px;margin-bottom:1rem">
-              <strong style="font-size:0.9rem">Why this tour:</strong>
-              <ul style="margin:0.5rem 0 0 1.2rem;font-size:0.9rem;color:#555">
+            <div class="tour-reasoning" style="margin-bottom:var(--space-md)">
+              <strong style="font-size:var(--text-sm);color:var(--nasa-blue);text-transform:uppercase;letter-spacing:0.5px">Why this tour:</strong>
+              <ul>
                 ${reasons.map(r => `<li>${r}</li>`).join('')}
               </ul>
             </div>
 
             <!-- Stop list -->
-            <div style="font-size:0.9rem">
+            <div style="font-size:var(--text-body)">
               ${tour.tour.map((stop, i) => {
                 const travel = tour.breakdown[i];
                 return `
-                  <div style="display:flex;align-items:center;gap:0.75rem;padding:0.5rem 0;border-bottom:1px solid #eee">
-                    <div style="font-weight:bold;color:var(--nasa-blue);min-width:20px">${i + 1}.</div>
+                  <div style="display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-xs) 0;border-bottom:1px solid var(--line)">
+                    <div style="font-weight:700;color:var(--nasa-blue);min-width:20px;font-family:var(--font-mono)">${i + 1}.</div>
                     <div style="flex:1">
-                      <div style="font-weight:bold">${stop.shortTitle || stop.title}</div>
-                      <div style="font-size:0.85rem;color:#666">${stop.locationShort || stop.location}</div>
+                      <div style="font-weight:600;color:var(--ink)">${stop.shortTitle || stop.title}</div>
+                      <div style="font-size:var(--text-sm);color:var(--ink-soft)">${stop.locationShort || stop.location}</div>
                     </div>
-                    <div style="text-align:right;font-size:0.85rem;color:#666">
+                    <div style="text-align:right;font-size:var(--text-sm);color:var(--ink-soft);font-family:var(--font-mono)">
                       ${stop.tourTime || '~15 min'}
-                      ${travel.travelTime > 0 ? `<br><span style="color:#999">+ ${travel.travelTime} min ${travel.mode}</span>` : ''}
+                      ${travel.travelTime > 0 ? `<br><span style="color:var(--ink-soft);opacity:0.7">+ ${travel.travelTime} min ${travel.mode}</span>` : ''}
                     </div>
                   </div>
                 `;
@@ -212,8 +211,8 @@ function showResultsStep(container) {
         `;
       }).join('')}
 
-      <div style="text-align:center;margin-top:2rem">
-        <button class="btn secondary" onclick="wizardStep='input'; showWizardStep()">
+      <div style="text-align:center;margin-top:var(--space-lg)">
+        <button class="btn secondary" onclick="wizardStep='input'; showWizardStep()" style="min-height:44px">
           Try Different Criteria
         </button>
       </div>

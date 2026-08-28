@@ -316,33 +316,111 @@
 
 /* Smart Tour Builder wizard */
 .time-chip, .interest-chip {
-  padding: 0.75rem 1.5rem;
-  background: white;
-  border: 2px solid #ddd;
-  border-radius: 8px;
+  padding: var(--space-xs) var(--space-md);
+  background: var(--card);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 1rem;
-  font-weight: 500;
+  transition: all 0.15s ease;
+  font-size: var(--text-body);
+  font-weight: 600;
+  font-family: var(--font);
+  color: var(--ink);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .time-chip:hover, .interest-chip:hover {
   border-color: var(--nasa-blue);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(11, 61, 145, 0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(11, 61, 145, 0.12);
 }
 
-.time-chip.active, .interest-chip.active {
-  background: var(--nasa-blue);
-  color: white;
+.time-chip.active {
+  background: var(--nasa-blue-fill);
+  color: var(--on-accent);
   border-color: var(--nasa-blue);
+  box-shadow: 0 2px 12px rgba(11, 61, 145, 0.3), inset 0 1px 0 rgba(255,255,255,0.2);
 }
 
+.interest-chip.active {
+  background: var(--chip-blue-bg);
+  color: var(--nasa-blue);
+  border-color: var(--nasa-blue);
+  font-weight: 700;
+}
+
+/* Tour recommendation cards with console panel look */
 .tour-recommendation {
   transition: all 0.2s ease;
+  position: relative;
+  box-shadow: var(--shadow);
 }
 
 .tour-recommendation:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
+}
+
+/* Console corner brackets on best match */
+.tour-recommendation.best-match::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  pointer-events: none;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(rgba(252,61,33,0.7) 0 0), linear-gradient(rgba(252,61,33,0.7) 0 0),
+    linear-gradient(rgba(252,61,33,0.7) 0 0), linear-gradient(rgba(252,61,33,0.7) 0 0),
+    linear-gradient(rgba(252,61,33,0.7) 0 0), linear-gradient(rgba(252,61,33,0.7) 0 0),
+    linear-gradient(rgba(252,61,33,0.7) 0 0), linear-gradient(rgba(252,61,33,0.7) 0 0);
+  background-size:
+    18px 2px, 2px 18px, 18px 2px, 2px 18px,
+    18px 2px, 2px 18px, 18px 2px, 2px 18px;
+  background-position:
+    top left, top left, top right, top right,
+    bottom left, bottom left, bottom right, bottom right;
+  opacity: 0.8;
+}
+
+/* Time display with amber glow */
+.tour-time-display {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--amber);
+  text-shadow: 0 0 14px color-mix(in oklch, var(--amber) 55%, transparent);
+}
+
+/* Wizard section headers */
+.wizard-section-header {
+  color: var(--nasa-blue);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-left: 3px solid var(--nasa-red);
+  padding-left: var(--space-sm);
+  margin: var(--space-lg) 0 var(--space-md);
+}
+
+/* Why this tour callout */
+.tour-reasoning {
+  background: var(--panel-2);
+  border-left: 3px solid var(--nasa-blue);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+}
+
+.tour-reasoning ul {
+  margin: var(--space-2xs) 0 0 1.2rem;
+  font-size: var(--text-body);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.tour-reasoning li {
+  margin-bottom: var(--space-2xs);
 }
