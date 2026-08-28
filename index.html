@@ -175,6 +175,48 @@
   </div>
 </div>
 
+<!-- Build-a-Tour Modal -->
+<div class="quickstart-modal" id="build-a-tour-modal">
+  <div class="quickstart-content" style="max-width:900px">
+    <button class="quickstart-close" onclick="closeBuildATour()" aria-label="Close">×</button>
+
+    <div class="quickstart-header">
+      <div class="quickstart-icon">🛠️</div>
+      <h1 class="quickstart-title">Build Your Own Tour</h1>
+      <p class="quickstart-subtitle">Select stops and calculate total tour time with travel between locations</p>
+    </div>
+
+    <div class="quickstart-body">
+      <!-- Selected Stops List -->
+      <div class="form-section">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+          <label class="form-label">Your Custom Tour</label>
+          <div style="font-size:1.25rem;font-weight:bold;color:var(--nasa-blue)" id="tour-total-time">0 min</div>
+        </div>
+        <div id="custom-tour-list" class="custom-tour-list" style="min-height:100px;border:1px dashed #ccc;border-radius:8px;padding:1rem">
+          <p style="color:#999;text-align:center">Click stops below to add them to your tour</p>
+        </div>
+      </div>
+
+      <!-- Available Stops Grid -->
+      <div class="form-section">
+        <label class="form-label">Available Stops (click to add)</label>
+        <div id="available-stops-grid" class="onepagers-grid" style="max-height:400px;overflow-y:auto">
+          <!-- Populated by JavaScript from stops.js -->
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn secondary" onclick="clearCustomTour()">Clear All</button>
+        <button type="button" class="btn" onclick="exportCustomTour()">Export Tour</button>
+        <button type="button" class="btn red" onclick="closeBuildATour()">Done</button>
+      </div>
+
+      <p class="form-note"><strong>Travel times include:</strong> Driving between areas, badging through gates for ETA/WTA, walking within Building 4619</p>
+    </div>
+  </div>
+</div>
+
 <div class="shell">
   <div class="starfield" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
@@ -261,7 +303,8 @@
             </div>
           </div>
         </div>
-        <div style="text-align:right;margin-top:var(--space-3xs);margin-bottom:var(--space-lg)">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:var(--space-3xs);margin-bottom:var(--space-lg)">
+          <button class="btn" onclick="openBuildATour()" style="font-size:0.875rem;padding:0.5rem 1rem;background:var(--nasa-blue);color:white;border:none;border-radius:4px;cursor:pointer">🛠️ Build Your Own Tour</button>
           <a href="#" id="clear-filters-btn" style="font-size:0.875rem;color:var(--link);text-decoration:underline;cursor:pointer" onclick="clearAllFilters(); return false;">Clear filters</a>
         </div>
 
@@ -480,6 +523,7 @@ Phase 4  Scale content + renderers     Phase 5  Handoff &amp; Sustainment (along
 <script src="data/stops.js"></script>
 <script src="data/tours.js"></script>
 <script src="data/onepagers.js"></script>
+<script src="data/gpsCoordinates.js"></script>
 <script src="js/render-tabs.js"></script>
 <script src="js/render.js"></script>
 <script src="js/app.js"></script>
@@ -491,6 +535,7 @@ Phase 4  Scale content + renderers     Phase 5  Handoff &amp; Sustainment (along
 <script src="js/quiz.js"></script>
 <script src="js/quickstart.js"></script>
 <script src="js/request-info.js"></script>
+<script src="js/build-a-tour.js"></script>
 <script>
 // Register service worker for offline capability
 if ('serviceWorker' in navigator) {

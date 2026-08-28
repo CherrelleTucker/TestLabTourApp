@@ -292,3 +292,24 @@
     width: 100%;
   }
 }
+
+/* Build-a-Tour specific styles */
+.onepager-card.selected {
+  border: 2px solid var(--nasa-blue);
+  background: rgba(11, 61, 145, 0.1);
+}
+
+.custom-tour-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tour-stop-item {
+  transition: all 0.2s ease;
+}
+
+.tour-stop-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
