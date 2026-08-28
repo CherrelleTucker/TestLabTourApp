@@ -4,7 +4,8 @@
 */
 
 let customTour = [];
-let wizardStep = 'input'; // 'input' or 'results'
+let wizardStep = 'input'; // 'input', 'results', or 'manual'
+let wizardMode = 'smart'; // 'smart' or 'manual'
 let recommendedTours = [];
 
 function openBuildATour() {
@@ -13,7 +14,8 @@ function openBuildATour() {
   document.body.style.overflow = 'hidden';
 
   // Reset to wizard input step
-  wizardStep = 'input';
+  wizardStep = wizardMode === 'smart' ? 'input' : 'manual';
+  customTour = [];
   showWizardStep();
 }
 
@@ -23,21 +25,49 @@ function closeBuildATour() {
   document.body.style.overflow = 'auto';
 }
 
+function toggleWizardMode() {
+  if (wizardMode === 'smart') {
+    wizardMode = 'manual';
+    wizardStep = 'manual';
+  } else {
+    wizardMode = 'smart';
+    wizardStep = 'input';
+  }
+  showWizardStep();
+}
+
 function showWizardStep() {
   const container = document.getElementById('wizard-container');
   if (!container) return;
 
+  // Mode toggle at top
+  const modeToggleHTML = `
+    <div style="display:flex;gap:var(--space-xs);margin-bottom:var(--space-lg);padding:var(--space-sm);background:var(--panel-2);border-radius:var(--radius);align-items:center">
+      <button class="btn ${wizardMode === 'smart' ? 'red' : 'secondary'}" onclick="toggleWizardMode()" style="min-height:40px;font-size:var(--text-sm)">
+        ✨ Smart Builder
+      </button>
+      <button class="btn ${wizardMode === 'manual' ? 'red' : 'secondary'}" onclick="toggleWizardMode()" style="min-height:40px;font-size:var(--text-sm)">
+        🛠️ Manual Builder
+      </button>
+      <span style="color:var(--ink-soft);font-size:var(--text-sm);margin-left:var(--space-sm)">
+        ${wizardMode === 'smart' ? 'Get AI recommendations based on your time and interests' : 'Select and arrange stops yourself'}
+      </span>
+    </div>
+  `;
+
   if (wizardStep === 'input') {
-    showInputStep(container);
+    showInputStep(container, modeToggleHTML);
   } else if (wizardStep === 'results') {
-    showResultsStep(container);
+    showResultsStep(container, modeToggleHTML);
+  } else if (wizardStep === 'manual') {
+    showManualStep(container, modeToggleHTML);
   }
 }
 
-function showInputStep(container) {
+function showInputStep(container, modeToggleHTML) {
   const interestTags = extractInterestTags();
 
-  container.innerHTML = `
+  container.innerHTML = modeToggleHTML + `
     <div class="wizard-step">
       <h2 class="wizard-section-header">Time Budget</h2>
       <p style="color:var(--ink-soft);margin-bottom:var(--space-md)">How much time do you have for this tour?</p>
@@ -226,11 +256,11 @@ function generateRecommendations() {
   showWizardStep();
 }
 
-function showResultsStep(container) {
+function showResultsStep(container, modeToggleHTML) {
   const timeLimit = window.selectedTime;
   const interests = window.selectedInterests || [];
 
-  container.innerHTML = `
+  container.innerHTML = modeToggleHTML + `
     <div class="wizard-step">
       <button class="btn secondary" onclick="wizardStep='input'; showWizardStep()" style="margin-bottom:var(--space-md)">
         ← Back to Search
@@ -260,9 +290,14 @@ function showResultsStep(container) {
                   ${tour.tour.length} stops · <span class="tour-time-display" style="font-size:16px">${timeStr}</span> total
                 </div>
               </div>
-              <button class="btn ${isBest ? 'red' : ''}" onclick="previewTourPDF(${index})" style="min-height:44px">
-                📄 View PDF
-              </button>
+              <div style="display:flex;gap:var(--space-xs);flex-wrap:wrap">
+                <button class="btn secondary" onclick="selectTourForEdit(${index})" style="min-height:44px">
+                  ✏️ Customize
+                </button>
+                <button class="btn ${isBest ? 'red' : ''}" onclick="previewTourPDF(${index})" style="min-height:44px">
+                  📄 View PDF
+                </button>
+              </div>
             </div>
 
             <!-- Why this tour -->
@@ -308,93 +343,14 @@ function showResultsStep(container) {
   `;
 }
 
-function selectTour(index) {
+function selectTourForEdit(index) {
   const tour = recommendedTours[index];
-  customTour = tour.tour;
+  customTour = [...tour.tour]; // Copy the tour
+  wizardMode = 'manual';
   wizardStep = 'manual';
-  renderCustomTour();
+  showWizardStep();
 }
 
-function getStopIcon(stop) {
-  // Return emoji based on stop type
-  if (stop.lab === 'Structural Dynamics') return '🔨';
-  if (stop.lab === 'Environmental Test') return '🌡️';
-  if (stop.lab === 'Propulsion Test') return '🚀';
-  if (stop.chips && stop.chips.includes('History')) return '📜';
-  if (stop.location && stop.location.includes('Test Stand')) return '🔥';
-  return '🏢';
-}
-
-function toggleStop(stopId) {
-  const stop = window.STOPS.find(s => s.id === stopId);
-  if (!stop) return;
-
-  const index = customTour.findIndex(s => s.id === stopId);
-
-  if (index >= 0) {
-    // Remove from tour
-    customTour.splice(index, 1);
-  } else {
-    // Add to tour
-    customTour.push(stop);
-  }
-
-  // Re-render both lists
-  populateAvailableStops();
-  renderCustomTour();
-}
-
-function renderCustomTour() {
-  const container = document.getElementById('custom-tour-list');
-  const totalTimeDisplay = document.getElementById('tour-total-time');
-
-  if (customTour.length === 0) {
-    container.innerHTML = '<p style="color:#999;text-align:center">Click stops below to add them to your tour</p>';
-    totalTimeDisplay.textContent = '0 min';
-    return;
-  }
-
-  // Calculate total time
-  const { totalMinutes, breakdown } = calculateTourTime(customTour);
-
-  // Render tour list with drag handles and remove buttons
-  container.innerHTML = customTour.map((stop, index) => {
-    const travel = breakdown[index];
-    return `
-      <div class="tour-stop-item" style="display:flex;align-items:center;gap:1rem;padding:0.75rem;background:white;border:1px solid #ddd;border-radius:8px;margin-bottom:0.5rem">
-        <div style="font-size:1.5rem;color:#999;cursor:move" class="drag-handle">⋮⋮</div>
-        <div style="flex:1">
-          <div style="font-weight:bold">${index + 1}. ${stop.shortTitle || stop.title}</div>
-          <div style="font-size:0.85rem;color:#666">${stop.locationShort || stop.location}</div>
-          <div style="font-size:0.85rem;color:var(--nasa-blue);margin-top:0.25rem">
-            Tour: ${stop.tourTime || '~15 min'}
-            ${travel.travelTime > 0 ? ` + ${travel.travelTime} min ${travel.mode}` : ''}
-          </div>
-        </div>
-        <button onclick="removeStop(${index})" style="background:#dc3545;color:white;border:none;padding:0.5rem 1rem;border-radius:4px;cursor:pointer">Remove</button>
-      </div>
-    `;
-  }).join('');
-
-  // Update total time
-  const hours = Math.floor(totalMinutes / 60);
-  const mins = totalMinutes % 60;
-  const timeStr = hours > 0 ? `${hours}h ${mins}m` : `${mins} min`;
-  totalTimeDisplay.textContent = timeStr;
-
-  // Show breakdown
-  const stopTime = breakdown.reduce((sum, b) => sum + b.stopTime, 0);
-  const travelTime = breakdown.reduce((sum, b) => sum + b.travelTime, 0);
-
-  container.innerHTML += `
-    <div style="margin-top:1rem;padding:1rem;background:#f8f9fa;border-radius:8px;font-size:0.9rem">
-      <strong>Time Breakdown:</strong><br>
-      Tour stops: ${stopTime} min<br>
-      Travel time: ${travelTime} min<br>
-      <strong>Total: ${timeStr}</strong>
-    </div>
-  `;
-}
 
 function calculateTourTime(stops) {
   if (stops.length === 0) return { totalMinutes: 0, breakdown: [] };
@@ -433,70 +389,6 @@ function parseStopTime(timeStr) {
   return match ? parseInt(match[1]) : 15;
 }
 
-function removeStop(index) {
-  customTour.splice(index, 1);
-  populateAvailableStops();
-  renderCustomTour();
-}
-
-function clearCustomTour() {
-  if (customTour.length > 0 && !confirm('Clear all stops from your custom tour?')) {
-    return;
-  }
-  customTour = [];
-  populateAvailableStops();
-  renderCustomTour();
-}
-
-function exportCustomTour() {
-  if (customTour.length === 0) {
-    alert('Add stops to your tour first!');
-    return;
-  }
-
-  const { totalMinutes, breakdown } = calculateTourTime(customTour);
-  const hours = Math.floor(totalMinutes / 60);
-  const mins = totalMinutes % 60;
-  const timeStr = hours > 0 ? `${hours}h ${mins}m` : `${mins} min`;
-
-  // Generate tour itinerary text
-  let itinerary = `MSFC Test Lab Custom Tour\n`;
-  itinerary += `Total Time: ${timeStr}\n`;
-  itinerary += `Generated: ${new Date().toLocaleDateString()}\n\n`;
-  itinerary += `─────────────────────────────────────\n\n`;
-
-  customTour.forEach((stop, i) => {
-    const travel = breakdown[i];
-    itinerary += `${i + 1}. ${stop.title}\n`;
-    itinerary += `   Location: ${stop.location}\n`;
-    itinerary += `   Duration: ${stop.tourTime || '~15 min'}\n`;
-    if (travel.travelTime > 0) {
-      itinerary += `   → Travel to next stop: ${travel.travelTime} min (${travel.mode})\n`;
-    }
-    itinerary += `\n`;
-  });
-
-  const stopTime = breakdown.reduce((sum, b) => sum + b.stopTime, 0);
-  const travelTime = breakdown.reduce((sum, b) => sum + b.travelTime, 0);
-
-  itinerary += `─────────────────────────────────────\n`;
-  itinerary += `Tour stops: ${stopTime} min\n`;
-  itinerary += `Travel time: ${travelTime} min\n`;
-  itinerary += `Total: ${timeStr}\n`;
-
-  // Download as text file
-  const blob = new Blob([itinerary], { type: 'text/plain' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `custom-tour-${new Date().toISOString().split('T')[0]}.txt`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-
-  alert('Tour itinerary downloaded!');
-}
 
 // Close modal on Escape key
 document.addEventListener('keydown', function(e) {
