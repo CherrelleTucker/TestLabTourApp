@@ -42,16 +42,13 @@ function showWizardStep() {
 
   // Mode toggle at top
   const modeToggleHTML = `
-    <div style="display:flex;gap:var(--space-xs);margin-bottom:var(--space-lg);padding:var(--space-sm);background:var(--panel-2);border-radius:var(--radius);align-items:center">
+    <div style="display:flex;gap:var(--space-xs);margin-bottom:var(--space-lg);padding:var(--space-sm);background:var(--panel-2);border-radius:var(--radius)">
       <button class="btn ${wizardMode === 'smart' ? 'red' : 'secondary'}" onclick="toggleWizardMode()" style="min-height:40px;font-size:var(--text-sm)">
         ✨ Smart Builder
       </button>
       <button class="btn ${wizardMode === 'manual' ? 'red' : 'secondary'}" onclick="toggleWizardMode()" style="min-height:40px;font-size:var(--text-sm)">
         🛠️ Manual Builder
       </button>
-      <span style="color:var(--ink-soft);font-size:var(--text-sm);margin-left:var(--space-sm)">
-        ${wizardMode === 'smart' ? 'Get AI recommendations based on your time and interests' : 'Select and arrange stops yourself'}
-      </span>
     </div>
   `;
 
