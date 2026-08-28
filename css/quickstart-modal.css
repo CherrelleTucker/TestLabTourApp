@@ -462,19 +462,19 @@
 .tour-guide-btn {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
-  padding: var(--space-sm) var(--space-md);
+  gap: var(--space-2xs);
+  padding: var(--space-2xs) var(--space-sm);
   background: var(--nasa-red);
   color: var(--on-accent);
   border: none;
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
   transition: all 0.2s;
   white-space: nowrap;
   font-family: inherit;
-  min-height: 44px;
+  min-height: 36px;
 }
 
 .tour-guide-btn:hover {
@@ -484,18 +484,19 @@
 }
 
 .tour-guide-btn span {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1;
 }
 
 @media (max-width: 640px) {
   .tour-guide-btn {
-    padding: var(--space-xs) var(--space-sm);
+    padding: var(--space-2xs) var(--space-xs);
     font-size: 0;
+    min-height: 32px;
   }
 
   .tour-guide-btn span {
-    font-size: 20px;
+    font-size: 18px;
     margin: 0;
   }
 
