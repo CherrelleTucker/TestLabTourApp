@@ -49,8 +49,18 @@ function showInputStep(container) {
         <button class="time-chip" onclick="selectTime(120)">2 hours</button>
         <button class="time-chip" onclick="selectTime(180)">3 hours</button>
         <span style="color:var(--ink-soft);margin:0 var(--space-2xs)">or</span>
-        <input type="number" id="time-budget-custom" placeholder="Custom minutes"
+        <input type="number" id="time-budget-custom" placeholder="Custom minutes" oninput="handleCustomTime()"
           style="width:140px;padding:var(--space-xs);border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:var(--text-body);font-family:var(--font);color:var(--ink);background:var(--card);min-height:44px">
+      </div>
+
+      <div style="display:flex;gap:var(--space-xs);align-items:center;margin-bottom:var(--space-xs)">
+        <span style="color:var(--ink-soft)">or enter time window:</span>
+        <input type="time" id="time-start" onchange="calculateDuration()"
+          style="width:120px;padding:var(--space-xs);border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:var(--text-body);font-family:var(--font);color:var(--ink);background:var(--card);min-height:44px">
+        <span style="color:var(--ink-soft)">to</span>
+        <input type="time" id="time-end" onchange="calculateDuration()"
+          style="width:120px;padding:var(--space-xs);border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:var(--text-body);font-family:var(--font);color:var(--ink);background:var(--card);min-height:44px">
+        <span id="calculated-duration" style="color:var(--nasa-blue);font-weight:700;font-family:var(--font-mono);min-width:80px"></span>
       </div>
 
       <!-- Interests -->
@@ -100,7 +110,70 @@ function selectTime(minutes) {
   // Update UI
   document.querySelectorAll('.time-chip').forEach(chip => chip.classList.remove('active'));
   event.target.classList.add('active');
+
+  // Clear other inputs
   document.getElementById('time-budget-custom').value = '';
+  document.getElementById('time-start').value = '';
+  document.getElementById('time-end').value = '';
+  document.getElementById('calculated-duration').textContent = '';
+}
+
+function handleCustomTime() {
+  const customInput = document.getElementById('time-budget-custom');
+  const value = parseInt(customInput.value);
+
+  if (value && value > 0) {
+    window.selectedTime = value;
+
+    // Deselect chips
+    document.querySelectorAll('.time-chip').forEach(chip => chip.classList.remove('active'));
+
+    // Clear time window
+    document.getElementById('time-start').value = '';
+    document.getElementById('time-end').value = '';
+    document.getElementById('calculated-duration').textContent = '';
+  }
+}
+
+function calculateDuration() {
+  const startInput = document.getElementById('time-start');
+  const endInput = document.getElementById('time-end');
+  const durationDisplay = document.getElementById('calculated-duration');
+
+  if (!startInput.value || !endInput.value) {
+    durationDisplay.textContent = '';
+    return;
+  }
+
+  // Parse times
+  const [startHour, startMin] = startInput.value.split(':').map(Number);
+  const [endHour, endMin] = endInput.value.split(':').map(Number);
+
+  let startMinutes = startHour * 60 + startMin;
+  let endMinutes = endHour * 60 + endMin;
+
+  // Handle crossing midnight
+  if (endMinutes < startMinutes) {
+    endMinutes += 24 * 60;
+  }
+
+  const duration = endMinutes - startMinutes;
+
+  if (duration > 0) {
+    window.selectedTime = duration;
+
+    const hours = Math.floor(duration / 60);
+    const mins = duration % 60;
+    const timeStr = hours > 0 ? `${hours}h ${mins}m` : `${mins} min`;
+
+    durationDisplay.textContent = `= ${timeStr}`;
+
+    // Deselect chips and clear custom input
+    document.querySelectorAll('.time-chip').forEach(chip => chip.classList.remove('active'));
+    document.getElementById('time-budget-custom').value = '';
+  } else {
+    durationDisplay.textContent = '';
+  }
 }
 
 function toggleInterest(interest) {
@@ -124,6 +197,17 @@ function generateRecommendations() {
   if (!timeLimit || timeLimit < 15) {
     alert('Please enter a time of at least 15 minutes');
     return;
+  }
+
+  // Check if user entered time window
+  const startTime = document.getElementById('time-start').value;
+  const endTime = document.getElementById('time-end').value;
+
+  // Store time window if provided
+  if (startTime && endTime) {
+    window.tourStartTime = startTime;
+  } else {
+    window.tourStartTime = null;
   }
 
   const interests = window.selectedInterests || [];
@@ -176,8 +260,8 @@ function showResultsStep(container) {
                   ${tour.tour.length} stops · <span class="tour-time-display" style="font-size:16px">${timeStr}</span> total
                 </div>
               </div>
-              <button class="btn ${isBest ? 'red' : ''}" onclick="selectTour(${index})" style="min-height:44px">
-                Select This Tour
+              <button class="btn ${isBest ? 'red' : ''}" onclick="downloadTourPDF(${index})" style="min-height:44px">
+                📄 Download PDF
               </button>
             </div>
 
@@ -193,12 +277,15 @@ function showResultsStep(container) {
             <div style="font-size:var(--text-body)">
               ${tour.tour.map((stop, i) => {
                 const travel = tour.breakdown[i];
+                const stopTimes = window.tourStartTime ? calculateStopTimes(tour, window.tourStartTime) : null;
+
                 return `
                   <div style="display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-xs) 0;border-bottom:1px solid var(--line)">
                     <div style="font-weight:700;color:var(--nasa-blue);min-width:20px;font-family:var(--font-mono)">${i + 1}.</div>
                     <div style="flex:1">
                       <div style="font-weight:600;color:var(--ink)">${stop.shortTitle || stop.title}</div>
                       <div style="font-size:var(--text-sm);color:var(--ink-soft)">${stop.locationShort || stop.location}</div>
+                      ${stopTimes ? `<div style="font-size:var(--text-sm);color:var(--amber);font-family:var(--font-mono);font-weight:700;margin-top:2px">${stopTimes[i].start} – ${stopTimes[i].end}</div>` : ''}
                     </div>
                     <div style="text-align:right;font-size:var(--text-sm);color:var(--ink-soft);font-family:var(--font-mono)">
                       ${stop.tourTime || '~15 min'}
@@ -424,3 +511,51 @@ document.getElementById('build-a-tour-modal')?.addEventListener('click', functio
     closeBuildATour();
   }
 });
+
+// Calculate clock times for each stop
+function calculateStopTimes(tour, startTime) {
+  const [startHour, startMin] = startTime.split(':').map(Number);
+  let currentMinutes = startHour * 60 + startMin;
+
+  const stopTimes = [];
+
+  tour.tour.forEach((stop, index) => {
+    const travel = tour.breakdown[index];
+    const stopStart = currentMinutes;
+
+    // Add stop duration
+    currentMinutes += travel.stopTime;
+    const stopEnd = currentMinutes;
+
+    // Add travel time to next stop
+    currentMinutes += travel.travelTime;
+
+    stopTimes.push({
+      start: formatTime(stopStart),
+      end: formatTime(stopEnd)
+    });
+  });
+
+  return stopTimes;
+}
+
+// Format minutes since midnight to HH:MM AM/PM
+function formatTime(totalMinutes) {
+  const hours24 = Math.floor(totalMinutes / 60) % 24;
+  const mins = totalMinutes % 60;
+  const hours12 = hours24 === 0 ? 12 : hours24 > 12 ? hours24 - 12 : hours24;
+  const ampm = hours24 >= 12 ? 'PM' : 'AM';
+  return `${hours12}:${mins.toString().padStart(2, '0')} ${ampm}`;
+}
+
+// Download tour as PDF
+function downloadTourPDF(tourIndex) {
+  const tourData = recommendedTours[tourIndex];
+  if (!tourData) {
+    alert('Tour not found');
+    return;
+  }
+
+  const stopTimes = window.tourStartTime ? calculateStopTimes(tourData, window.tourStartTime) : null;
+  generateTourPDF(tourData.tour, tourIndex, stopTimes);
+}
