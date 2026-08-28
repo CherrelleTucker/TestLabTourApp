@@ -7,7 +7,7 @@ let customTour = [];
 
 function openBuildATour() {
   const modal = document.getElementById('build-a-tour-modal');
-  modal.classList.add('active');
+  modal.classList.add('show');
   document.body.style.overflow = 'hidden';
 
   // Populate available stops
@@ -19,7 +19,7 @@ function openBuildATour() {
 
 function closeBuildATour() {
   const modal = document.getElementById('build-a-tour-modal');
-  modal.classList.remove('active');
+  modal.classList.remove('show');
   document.body.style.overflow = 'auto';
 }
 
