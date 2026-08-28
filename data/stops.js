@@ -2408,17 +2408,18 @@ window.STOPS = [
       "alt": "Aerial view of Building 4619 at NASA Marshall Space Flight Center.",
       "credit": "USDA/USGS · National Agriculture Imagery Program (NAIP), public domain"
     },
-    "media": "media/shared",
+    "media": "media/load-test-annex",
     "hero": {
-      "src": "img/NASA-Logo-Large.png",
-      "alt": "NASA logo placeholder",
-      "credit": "Placeholder · awaiting cleared imagery"
+      "src": "img/hero.jpg",
+      "alt": "The SLS Intertank Test Article being installed on the Load Test Annex crosshead, Building 4619.",
+      "credit": "NASA/Emmett Given (2018) · Load Test Annex · images.nasa.gov · cleared for public release"
     },
-    "thumb": "img/NASA-Logo-Large.png",
-    "heroBg": "img/NASA-Logo-Large.png",
+    "thumb": "img/hero.jpg",
+    "heroBg": null,
     "factbox": "A 155-foot-tall high bay with an adjustable crosshead that can apply 30 million pounds of vertical force to prove rocket stages and spacecraft structures will survive the stresses of launch.",
     "narration": {
-      "durationLabel": "~30 sec",
+      "durationLabel": "~49 sec · produced narration",
+      "audio": "audio/narration.mp3",
       "text": "The Load Test Annex is Marshall's original large-scale structural test capability, where hardware faces the crushing compression of stacked stages, the pulling tension of thrust, and the lateral loads of wind and vibration. The high bay soars 155 feet tall with a 60-foot-wide door — large enough to roll in rocket stages and spacecraft structures. The concrete reaction floor is 11 feet thick with 2,356 anchors on an 18-inch grid, each rated for 110,000 pounds axial force. An adjustable crosshead spans the bay at heights from 40 to 115 feet, capable of applying 30 million pounds vertical force. This is where structures prove they're strong enough for space."
     },
     "hook": "When rocket stages need to prove they won't buckle under their own weight, they come here first.",
@@ -2440,9 +2441,9 @@ window.STOPS = [
       "html": "Structural testing isn't about hoping hardware survives. It's about knowing exactly when and how it will fail — but only after proving it can survive far beyond the loads it will actually see in flight.<br><br>LTA uses a massive adjustable crosshead that spans the 161-foot width of the high bay. This steel structure weighs hundreds of tons and can position itself at any height from 40 to 115 feet, then lock in place to become an immovable reaction point. Hydraulic actuators attached to the crosshead can pull upward or push downward with 30 million pounds of vertical force. Side actuators apply 2.4 million pounds of lateral load, simulating wind pressure or aerodynamic forces.<br><br>Below, the test article sits bolted to Special Test Equipment (STE) fixtures anchored into the concrete reaction floor. That floor is 80 feet by 80 feet and 11 feet thick, with 2,356 anchor points on an 18-inch grid. Each anchor can handle 110,000 pounds axial force and 18,000 pounds shear. The floor itself won't deflect even a fraction of an inch under maximum load.<br><br>As hydraulic pressure builds, data systems monitor thousands of channels simultaneously — strain gauges bonded to the structure, displacement transducers measuring how far things move, load cells verifying exactly how much force is being applied. Video Image Correlation cameras capture the entire test article's surface, producing real-time color contour maps showing strain and deflection. Engineers watch for the moment when metal starts yielding, when composite starts delaminating, when welds begin to crack.<br><br>Environmental conditions can be layered on top of mechanical loads. A test article might be chilled to -423°F with liquid hydrogen flowing through it, then loaded to flight levels, simulating a cryogenic propellant tank under thrust loads. The test runs until one of three outcomes: the hardware passes at required loads (qualification), the hardware reaches its design limit load (verification), or the hardware fails (ultimate load testing). That failure is controlled, measured, and understood — exactly what engineers need to know."
     },
     "detailImage": {
-      "src": "img/NASA-Logo-Large.png",
-      "alt": "Placeholder image",
-      "credit": "Placeholder · awaiting cleared imagery"
+      "src": "img/detail-1.jpg",
+      "alt": "Technicians observing the SLS Intertank Test Article as it is attached to the Load Test Annex crosshead.",
+      "credit": "NASA/Emmett Given (2018) · Load Test Annex · images.nasa.gov · cleared for public release"
     },
     "askYourHost": [
       "What's the difference between LTA and LTAE — why do we need both?",
@@ -2489,63 +2490,105 @@ window.STOPS = [
       "alt": "Aerial view of Building 4619 at NASA Marshall Space Flight Center.",
       "credit": "USDA/USGS · National Agriculture Imagery Program (NAIP), public domain"
     },
-    "media": "media/shared",
+    "media": "media/load-test-annex-extension",
     "hero": {
-      "src": "img/NASA-Logo-Large.png",
-      "alt": "NASA logo placeholder",
-      "credit": "Placeholder · awaiting cleared imagery"
+      "src": "img/hero.jpg",
+      "alt": "The SLS core stage engine section test article, wrapped in instrumentation cabling, being lowered by overhead crane into its blue steel reaction towers inside the Load Test Annex Extension high bay.",
+      "credit": "NASA/Emmett Given"
     },
-    "thumb": "img/NASA-Logo-Large.png",
-    "heroBg": "img/NASA-Logo-Large.png",
-    "factbox": "A 203-foot high bay with powerful overhead cranes and a concrete reaction floor where structures are tested under millions of pounds of force before they ever fly.",
+    "thumb": "img/hero.jpg",
+    "heroBg": null,
+    "factbox": "A 203-foot high bay with powerful overhead cranes and a concrete reaction floor where structures are tested under millions of pounds of force before they ever fly — and, on a reimbursable basis, a bay that commercial partners can book, fixture, and hand back to baseline.",
     "narration": {
-      "durationLabel": "~30 sec",
-      "text": "The Load Test Annex Extension is part of Marshall's Structural Strength Test Lab, where hardware faces compression, tension, and lateral loads measured in millions of pounds. This high bay housed the SLS core stage Engine Section structural test equipment — proving the rocket's backbone could handle the stresses of launch. The concrete reaction floor is built on a 10-foot grid with 106 anchor pads, each capable of 340,000 pounds axial force. Overhead cranes move test articles into place, then hydraulic actuators apply loads while data systems measure every strain, displacement, and deformation in real time."
+      "durationLabel": "~59 sec · produced narration",
+      "audio": "audio/narration.mp3",
+      "text": "The Load Test Annex Extension is part of Marshall's structural test lab, where hardware faces compression, tension, and lateral loads measured in millions of pounds. This high bay held the 50-foot SLS core stage Engine Section test structure — up to 96 hydraulic cylinders, some heavier than a car, pushing, pulling, twisting, and bending the article while roughly 4,000 data channels recorded every strain and deflection. That data doesn't just prove the hardware survives launch loads — it validates the computer models engineers used to predict them. LTAE isn't only a government facility, either: it's a schedulable resource. NASA has hosted commercial partners like ULA here for a separation-shock test on a payload fairing, then torn everything down and restored the bay to baseline for the next customer."
     },
     "hook": "Before it holds rocket stages, it holds here — under millions of pounds of force.",
-    "cuePoints": { "hook": 0, "explainer": 8, "wowStat": 18, "media": 24, "why": 28 },
-    "whyItMatters": "Space hardware must survive forces that would crush ordinary structures — the compression of stacked stages, the tension of thrust, the lateral loads of wind and vibration. LTAE applies those exact forces on the ground, finding weak points before hardware ever leaves Earth. A crack discovered here saves a mission. A failure here prevents a disaster in flight.",
-    "lookFor": "Look for the 10-foot grid pattern in the concrete floor — those anchor pads can each hold 340,000 pounds, and 106 of them mean this facility can handle tens of millions of pounds of combined force.",
+    "cuePoints": { "hook": 0, "explainer": 8, "wowStat": 20, "media": 27, "why": 32 },
+    "whyItMattersToYou": "If you've ever correlated a finite-element model against test data, the honest lesson from LTAE is humbling: the fixture isn't infinitely stiff. The reaction towers here are a 62-foot steel frame with their own flexibility, and the load distribution at every interface depends on it. Assume ideal boundary conditions and your correlation will quietly diverge from reality — get the Design branch's FEM of the fixture instead of the textbook version.",
+    "whyItMattersToWorld": "Space hardware must survive forces that would crush ordinary structures — the compression of stacked stages, the tension of thrust, the lateral loads of wind and vibration. LTAE applies those exact forces on the ground, on real flight-scale structures, and records enough data (thousands of channels per test) to prove both that the hardware holds and that the models predicting how it holds are correct. A crack found here saves a mission; a bad model caught here saves the next ten.",
+    "lookFor": "Look for the massive blue steel reaction towers bolted into the floor grid — built up from Weldall main tower panels and additional Steward Machine towers, they're what the hydraulic cylinders push and pull against. And look for the 10-foot grid of anchor pads in the concrete floor itself: 106 of them, each rated for 340,000 pounds.",
     "keyfactsTitle": "By the numbers",
     "wowStat": 1,
     "keyfacts": [
-      { "num": "95×203×97", "label": "ft high bay", "detail": "Large enough to test full-scale rocket stages and large spacecraft structures" },
-      { "num": "106", "label": "anchor pads, 340k lb each", "detail": "10-foot grid pattern on concrete reaction floor — rapid reconfiguration for different test articles" },
-      { "num": "10", "label": "feet of concrete", "detail": "Reaction floor thickness required to handle millions of pounds of structural load" },
-      { "num": "SLS", "label": "Engine Section heritage", "detail": "Core stage structure connecting four RS-25 engines (2 million lb thrust) tested here" },
-      { "num": "17,808", "label": "data channels", "detail": "Real-time measurement of strain, deflection, temperature, pressure, load across ET30 SSTL" }
+      { "num": "95×203×97", "label": "ft high bay", "detail": "Large enough to hold full-scale rocket stage sections and their reaction towers side by side" },
+      { "num": "106", "label": "anchor pads, 340k lb each", "detail": "10-foot grid pattern on a 10-ft-thick concrete reaction floor — rapid reconfiguration for different test articles" },
+      { "num": "96", "label": "hydraulic cylinders per article", "detail": "Electronically controlled to push, pull, twist, and bend a test structure — some cylinders outweigh a car" },
+      { "num": "~4,000", "label": "data channels per test", "detail": "Recorded during the SLS core stage campaign to verify both structural capability and the design/analysis models" },
+      { "num": "$868,180", "label": "reimbursable ULA test estimate", "detail": "Space Act Agreement SAA8-2543743.2: LTAE hosted a payload-fairing separation-shock test, then was restored to baseline" }
     ],
     "deepDive": {
-      "summary": "Go deeper: how LTAE applies millions of pounds of force",
+      "summary": "Go deeper: 96 actuators, 4,000 channels, and a bay you can rent",
       "open": false,
-      "html": "Structural testing is controlled violence. Engineers need to know exactly when and how hardware will fail — but only after proving it can survive far beyond the loads it will actually see in flight.<br><br>LTAE uses closed-loop hydraulic actuator systems with calibrated load cells to apply compression, tension, and lateral forces. The test article is bolted to Special Test Equipment (STE) fixtures anchored into the concrete reaction floor — 106 anchor pads on a 10-foot grid, each rated for 340,000 pounds axial force and 44,000 pounds shear. The floor itself is 70 feet by 160 feet and 10 feet thick.<br><br>Data systems measure strain, displacement, temperature, and pressure in real time — sometimes thousands of channels simultaneously. Video Image Correlation uses calibrated camera pairs to produce full field-of-view strain and deflection measurements, displayed as color contour maps during the test. Engineers watch for the moment when readings deviate from predictions, signaling the start of structural failure.<br><br>Environmental profiles can be simulated during load testing: heat, cryogenic temperatures, vacuum, humidity. A test might combine the thermal stresses of propellant at -423°F with the mechanical loads of thrust and aerodynamic pressure.<br><br>The SLS Engine Section test used this capability to verify the structure connecting the rocket's four RS-25 engines to the rest of the core stage. That's where 2 million pounds of thrust meets the vehicle — if it failed, the mission would be over before it began."
+      "html": "Structural testing is controlled violence, aimed twice: once at the hardware, once at the models that predicted how the hardware would behave.<br><br>For the SLS core stage campaign, engineers built a 62-foot-tall intertank test structure and a 50-foot-tall engine section test structure in separate bays here — twelve 55-foot main tower panels from Weldall plus four additional towers from Steward Machine, forming the reaction frame each article bolts into. Up to 96 hydraulic cylinders per test article, electronically controlled, then push, pull, twist, and bend it with millions of pounds of force; some individual cylinders weigh more than a car. Roughly 4,000 data channels record strain, deflection, load, and pressure through every load case.<br><br>That data serves two purposes. First, it proves the hardware can carry the loads of launch and ascent. Second — and this is the part that's easy to overlook — it validates that the design and analysis models engineers used to predict those loads were right in the first place. If you're ever correlating a model against 4619 data, remember the reaction towers themselves aren't infinitely stiff; the applied load at any interface depends on the fixture's own flexibility, not just the test article's.<br><br>The intertank structural test article arrived by Pegasus barge at the Marshall dock and was routed through the West Test Area to reach 4619 — a reminder that even 'ground testing' here starts with moving something the size of a building.<br><br>LTAE is also a schedulable, reimbursable resource, not just an in-house tool. Space Act Agreement SAA8-2543743.2 with United Launch Alliance is a clear public example: NASA provided the LTAE bay as a milestone deliverable, ULA supplied its own catch-and-restraint system and a 2-meter payload fairing test article, and Marshall handled installation, integration, the separation-shock test itself, then teardown and restoration of the bay to baseline afterward — a reimbursable job estimated at $868,180. That 'restoration' step is a real, budgeted milestone, not boilerplate: reserving LTAE means carrying the cost of putting it back the way you found it.<br><br>Names have shifted over the years, too — a 2016 profile of this building calls it the Structural and Environmental Test Laboratory; current fact sheets split it into separate Structural Strength and Structural Dynamics branches under the Test Laboratory. Worth confirming current ownership before routing any real request."
     },
     "detailImage": {
-      "src": "img/NASA-Logo-Large.png",
-      "alt": "Placeholder image",
-      "credit": "Placeholder · awaiting cleared imagery"
+      "src": "img/detail-1.jpg",
+      "alt": "The engine section test article suspended above its blue steel reaction tower, showing the scale of the tower panels the hydraulic cylinders push and pull against.",
+      "credit": "NASA/Emmett Given"
     },
+    "gallery": [
+      {
+        "src": "img/gallery-1.jpg",
+        "alt": "Technicians installing support stands beneath the instrumented SLS engine section test article after its arrival at Building 4619.",
+        "credit": "NASA/Emmett Given",
+        "caption": "Every visible wire is a data channel — strain gauges and instrumentation applied before the article ever sees a load."
+      },
+      {
+        "src": "img/gallery-2.jpg",
+        "alt": "Technicians and NASA personnel positioning the SLS engine section test article onto its support stands.",
+        "credit": "NASA/Emmett Given",
+        "caption": "Setup and fixturing can take weeks before the first load case runs."
+      },
+      {
+        "src": "img/gallery-3.jpg",
+        "alt": "A large cylindrical shell-buckling test article braced inside a white lattice test tower — part of Building 4619's historic 'can-crushing' test series.",
+        "credit": "NASA/Marshall Space Flight Center",
+        "caption": "Before SLS, this high bay was the hub for large-scale shell buckling — 'can-crushing' — tests aimed at lighter, more efficient launch vehicle structures."
+      },
+      {
+        "src": "img/gallery-4.jpg",
+        "alt": "An Ares I upper stage isogrid panel mounted in a structural buckling test fixture.",
+        "credit": "NASA/Marshall Space Flight Center",
+        "caption": "Panel-level buckling tests like this one refine the same shell-buckling knockdown factors used on SLS structures."
+      },
+      {
+        "src": "img/gallery-5.jpg",
+        "alt": "A Video Image Correlation display showing a full-field color strain contour map of a test article, next to a live camera feed of the calibration target.",
+        "credit": "NASA/Marshall Space Flight Center",
+        "caption": "Video Image Correlation turns paired camera views into a full field-of-view strain and deflection map, updated live during a test."
+      }
+    ],
+    "galleryTitle": "Inside a Load Test Campaign",
     "askYourHost": [
       "What's the difference between LTA and LTAE — why do we need both?",
       "How do engineers know when a structure is about to fail during a test?",
-      "What's the largest or most impressive structure ever tested in LTAE?",
-      "Has a test here ever caught a flaw that would've caused a mission failure?",
+      "What does it take to reserve LTAE for a commercial test, and what does 'restoration to baseline' actually involve?",
+      "Has a test here ever caught a flaw that would've caused a mission failure, or a bad assumption in a model?",
       "How long does a typical structural test campaign take from setup to completion?"
     ],
     "quiz": {
-      "question": "Why does the LTAE reaction floor need to be 10 feet of solid concrete?",
+      "question": "Besides proving hardware survives its loads, what's the other main purpose of a test like the SLS engine section campaign in LTAE?",
       "options": [
-        { "text": "To handle millions of pounds of force without cracking or moving", "correct": true },
-        { "text": "To provide thermal insulation for cryogenic testing", "correct": false },
-        { "text": "To meet building code requirements for high bay structures", "correct": false }
+        { "text": "Validating the design and analysis models used to predict those loads in the first place", "correct": true },
+        { "text": "Testing the paint and thermal coating for cosmetic defects", "correct": false },
+        { "text": "Training new crane operators on heavy-lift procedures", "correct": false }
       ],
-      "correctFeedback": "✓ Exactly. When you're applying hundreds of thousands of pounds per anchor point — and potentially tens of millions of pounds across the entire floor — you need a foundation that won't budge. That 10 feet of concrete is the immovable object against the unstoppable force.",
-      "wrongFeedback": "Not quite. The real reason is structural — the floor must react millions of pounds of force without deflecting or cracking, providing a rigid foundation for precision load testing."
+      "correctFeedback": "✓ Exactly. With ~4,000 data channels recording every load case, engineers aren't just checking whether the hardware holds — they're checking whether the model that predicted it would hold was actually correct.",
+      "wrongFeedback": "Not quite. The dual purpose here is verifying structural capability AND validating that the design and analysis models correctly predicted the launch and ascent loads in the first place."
     },
     "cta": {
-      "heading": "Need structural load testing?",
-      "body": "The Load Test Annex Extension at Building 4619 supports structural qualification testing for NASA programs and partners."
+      "heading": "Need structural load testing — government or commercial?",
+      "body": "The Load Test Annex Extension at Building 4619 supports structural qualification testing for NASA programs and, on a reimbursable Space Act Agreement basis, commercial partners."
     },
+    "onePagers": [
+      {
+        "title": "Structural Strength Test Lab (ET30)",
+        "description": "NASA fact sheet — LTA, LTAE, and outdoor structural test stands at Building 4619, NP-2021-03-10-MSFC",
+        "path": "OnePagers/ET30_SSTL _3_1_21.pdf"
+      }
+    ],
     "wayfindNext": { "nextStopId": "stop16", "label": "Next: Structural Dynamics Test Capability" },
     "nextStopId": "stop16"
   },
@@ -2570,52 +2613,117 @@ window.STOPS = [
       "alt": "Aerial view of Building 4619 at NASA Marshall Space Flight Center.",
       "credit": "USDA/USGS · National Agriculture Imagery Program (NAIP), public domain"
     },
-    "media": "media/shared",
+    "media": "media/vibe-table",
     "hero": {
-      "src": "img/NASA-Logo-Large.png",
-      "alt": "NASA logo placeholder",
-      "credit": "Placeholder · awaiting cleared imagery"
+      "src": "img/hero.jpg",
+      "alt": "The East Vibration Lab's electrodynamic shaker, showing its slip table and red armature housing, inside a Marshall high bay.",
+      "credit": "NASA/MSFC Test Laboratory · East Vibration Test Laboratory capability brochure · cleared for public release"
     },
-    "thumb": "img/NASA-Logo-Large.png",
-    "heroBg": "img/NASA-Logo-Large.png",
-    "factbox": "Vibration testing capability within Building 4619.",
+    "thumb": "img/hero.jpg",
+    "heroBg": null,
+    "factbox": "Building 4619 houses Marshall's Structural Dynamics Test Branch — an electrodynamic shaker rated to 67,500 lbf sine peak, plus reverberant/anechoic acoustic chambers, a pyrotechnic shock rig, modal survey instrumentation, and a newer mass-properties (CG/MOI) measurement capability, all under one roof.",
     "narration": {
-      "durationLabel": "~30 sec",
-      "text": "Content coming soon for the Structural Dynamics Test Capability."
+      "durationLabel": "~66 sec · produced narration",
+      "audio": "audio/narration.mp3",
+      "text": "Building 4619's electrodynamic shaker can put 67,500 pounds of peak sine force into an 11,023-pound test article, using a slip table nearly eight feet square. That's the headline number, but the Structural Dynamics Test Branch runs four more capabilities out of this same building: reverberant and anechoic acoustic testing, pyrotechnic shock to 50,000 g's, modal survey work using laser vibrometry, photogrammetry, and high-speed cameras running past 100,000 frames per second, and a newer mass-properties capability that spins a test article on a trifilar suspension to pin down its center of gravity and moment of inertia before it ever sees a shaker. One quirk worth knowing: a modal survey of the facility's horizontal shaker found a stretching mode near 577 hertz — above that, the table stops behaving like a rigid body, and where you bolt the control accelerometer starts to matter."
     },
-    "hook": "Content coming soon.",
-    "whyItMatters": "The Vibe Table provides structural dynamics and vibration testing capability for NASA programs.",
-    "keyfactsTitle": "By the numbers",
+    "hook": "Building 4619's electrodynamic shaker can put 67,500 pounds of peak sine force into an 11,023-pound test article, using a slip table nearly eight feet square.",
+    "cuePoints": { "hook": 0, "explainer": 9, "wowStat": 28, "media": 40, "why": 49 },
+    "whyItMatters": "The Structural Dynamics Test Branch qualifies hardware — from Skylab and Shuttle payloads through Space Station and SLS/Artemis flight elements — against the vibration, acoustic, and shock environments of launch, all under one roof in Building 4619.",
+    "whyItMattersToYou": "Every consumer satellite, national security payload, and crewed spacecraft component has to survive the vibration, shock, and acoustic environment of its own launch before anyone will fly it. This is where that proof happens — the shaker table, the acoustic chambers, and the shock rig all show up later as 'flight qualified' checkmarks on hardware you may never see again.",
+    "whyItMattersToWorld": "Marshall's Structural Dynamics Test Branch has qualified structures from Skylab and Shuttle payloads through Space Station hardware and SLS/Artemis flight elements. Its mix of vibration, acoustic, shock, modal, and now mass-properties testing under one roof means a program can characterize a structure's full dynamic environment without shipping hardware between test sites.",
+    "keyfactsTitle": "Inside the Shaker Complex",
     "wowStat": 0,
     "keyfacts": [
-      { "num": "TBD", "label": "placeholder", "detail": "Content coming soon" }
+      { "num": "67,500 lbf", "label": "peak shaker force", "detail": "Sine-peak force from the East Vibration Lab's electrodynamic shaker — enough to move an 11,023-lb test article" },
+      { "num": "98in x 98in", "label": "slip table (~8ft x 8ft)", "detail": "The mounting surface bolted to the shaker's armature for large integrated test articles" },
+      { "num": "250+", "label": "real-time channels", "detail": "Simultaneous acceleration, strain, and load channels feeding the facility's digital control and data-acquisition system" },
+      { "num": "50,000 g's", "label": "pyrotechnic shock, SRS at 10kHz", "detail": "Building 4619 also runs pyro-shock, reverberant/anechoic acoustic, and mass-properties (CG/MOI) testing alongside the shaker floor" },
+      { "num": "577 Hz", "label": "a mode worth knowing before you design a fixture", "detail": "A modal survey of the facility's horizontal shaker found a free-fixed stretching mode near 577 Hz — above that, the table isn't rigid-body, and control-accelerometer placement starts to matter. Verify against current hardware before specifying a test." }
     ],
     "deepDive": {
-      "summary": "Go deeper: how it works",
-      "open": false,
-      "html": "Content coming soon."
+      "summary": "Go deeper: how the shaker complex works",
+      "open": true,
+      "html": "The Structural Dynamics Test Branch runs five distinct capabilities out of Building 4619, most sharing the same instrumentation backbone.<br><br>The <b>vibration</b> floor centers on an electrodynamic shaker rated to 67,500 lbf sine peak and 60,000 lbf random rms, with a slip table roughly 98in x 98in (about 8ft x 8ft) and an armature resonance near 1,325 Hz — usable from DC to 1.7kHz. A digital control system runs sine sweep, broadband random, sine-on-random, random-on-random, and classical shock/SRS profiles across 250-plus real-time channels.<br><br><b>Acoustic</b> testing uses a reverberant chamber plus a progressive wave tube, reaching roughly 163dB diffuse-field and 172dB progressive-wave sound pressure, alongside an anechoic chamber for radiated-noise work.<br><br><b>Pyrotechnic shock</b> testing reaches 50,000 g's SRS at 10kHz, used to qualify hardware for the shock of stage separation, deployment, and pyro-actuated events.<br><br><b>Modal survey</b> work pairs small electrodynamic shakers and instrumented hammers with 500-plus channels, laser vibrometry, ESPI, photogrammetry, and high-speed cameras running past 100,000 frames per second to map how a structure actually deforms.<br><br>The newest addition, <b>mass-properties measurement</b>, uses a trifilar suspension to pin down a test article's center of gravity and moment of inertia — accurate to roughly ±0.1in CG and ±1% MOI — before it ever touches the shaker.<br><br>Worth knowing if you're designing a fixture: a modal survey of the facility's horizontal shaker, published as a university thesis, found a free-fixed stretching mode near 577 Hz, and found that controlling from about 20 inches from the shaker attachment point best captured that mode. Above roughly 500 Hz, the table isn't behaving like a rigid body anymore — control-accelerometer placement is doing real engineering work, not just recording a signal. Channel counts and control hardware turn over faster than any fact sheet, so it's worth confirming the current setup before writing a test spec against these numbers. If a program's envelope is bigger than this — three-axis independent sine control on a very large article — the next tier up is the Mechanical Vibration Facility at NASA's Armstrong Test Facility in Sandusky, Ohio: a 22-foot aluminum table riding on 16 hydraulic actuators."
     },
     "detailImage": {
-      "src": "img/NASA-Logo-Large.png",
-      "alt": "Placeholder image",
-      "credit": "Placeholder · awaiting cleared imagery"
+      "src": "img/detail-1.jpg",
+      "alt": "A top-down view of the East Vibration Lab shaker's slip table and armature head, showing the bolt-pattern mounting surface.",
+      "credit": "NASA/MSFC Test Laboratory · East Vibration Test Laboratory capability brochure · cleared for public release"
     },
-    "askYourHost": [],
+    "lookFor": "Look for the shaker's slip table — a flat steel plate roughly eight feet square bolted to a red armature housing — plus the reverberant and anechoic chambers nearby, the pyro-shock rig, and (newer) a trifilar suspension rig used for mass-properties measurements.",
+    "galleryTitle": "Structural Dynamics Test Capability at Work",
+    "gallery": [
+      {
+        "src": "img/gallery-1.jpg",
+        "alt": "A long instrumented truss structure wrapped in wiring and test protection during a modal test.",
+        "credit": "NASA · Modal Test of the International Space Station P3/P4 Truss · ET40 SDT_3_1_21.pdf fact sheet · cleared for public release",
+        "caption": "A modal test of the International Space Station P3/P4 Truss — mapping how a large flight structure actually vibrates."
+      },
+      {
+        "src": "img/gallery-2.jpg",
+        "alt": "A yellow test article suspended by cables above a fixture, used for mass-properties measurement.",
+        "credit": "NASA · Trifilar suspension for mass properties measurements · MSFC Structural Dynamics Testing (April 2026) fact sheet · cleared for public release",
+        "caption": "A trifilar suspension rig — the facility's newer capability for measuring center of gravity and moment of inertia."
+      },
+      {
+        "src": "img/gallery-3.jpg",
+        "alt": "A clear cylindrical tank mounted on a test fixture for a lateral slosh test.",
+        "credit": "NASA · Lateral slosh test · ET40 SDT_3_1_21.pdf fact sheet · cleared for public release",
+        "caption": "A lateral slosh test — characterizing how propellant moves inside a tank under vibration."
+      },
+      {
+        "src": "img/gallery-4.jpg",
+        "alt": "A drum-shaped Space Station locker mounted on a shaker table for vibration qualification testing.",
+        "credit": "NASA · Vibration qualification test of a Space Station locker · MSFC Structural Dynamics Testing (April 2026) fact sheet · cleared for public release",
+        "caption": "Vibration qualification testing of a Space Station stowage locker."
+      },
+      {
+        "src": "img/gallery-5.jpg",
+        "alt": "A technician on an aerial lift working near a large yellow plume cover during an acoustic acceptance test.",
+        "credit": "NASA · Acoustic acceptance test of a plume cover · MSFC Structural Dynamics Testing (April 2026) fact sheet · cleared for public release",
+        "caption": "An acoustic acceptance test of a plume cover in the facility's reverberant chamber."
+      }
+    ],
+    "askYourHost": [
+      "How does the digital control system decide where to place the control accelerometer on a big test article?",
+      "What's tested here that couldn't be tested anywhere else at Marshall?",
+      "How often does the shaker hardware get upgraded, and how do you requalify the facility afterward?",
+      "When does a customer get sent to Sandusky's Mechanical Vibration Facility instead of here?"
+    ],
     "quiz": {
-      "question": "Content coming soon",
+      "question": "Besides straight-up shaking, what else does Building 4619's Structural Dynamics Test Capability do?",
       "options": [
-        { "text": "Option A", "correct": true },
-        { "text": "Option B", "correct": false }
+        { "text": "Only electrodynamic vibration testing", "correct": false },
+        { "text": "Vibration, acoustic, pyrotechnic shock, modal survey, and mass-properties testing", "correct": true },
+        { "text": "Only satellite thermal-vacuum testing", "correct": false }
       ],
-      "correctFeedback": "Correct!",
-      "wrongFeedback": "Not quite."
+      "correctFeedback": "Right — the branch runs vibration, reverberant/anechoic acoustic, pyrotechnic shock, modal survey, and mass-properties (CG/MOI) testing out of the same building.",
+      "wrongFeedback": "Not quite — beyond the shaker, this building also runs acoustic, pyrotechnic shock, modal survey, and mass-properties (CG/MOI) testing."
     },
     "cta": {
-      "heading": "Need vibration testing?",
-      "body": "The Structural Dynamics Test Capability at Building 4619 supports vibration qualification testing for NASA programs and partners."
+      "heading": "Need vibration, acoustic, shock, or modal testing?",
+      "body": "The Structural Dynamics Test Branch runs vibration, acoustic, pyrotechnic shock, modal survey, and mass-properties testing out of Building 4619 for NASA programs and commercial partners."
     },
     "wayfindNext": { "nextStopId": "stop17", "label": "Next: Special Test Equipment" },
-    "nextStopId": "stop17"
+    "nextStopId": "stop17",
+    "onePagers": [
+      {
+        "title": "East Vibration Lab capability brochure (PDF)",
+        "description": "Official NASA capability brochure · cleared for public release",
+        "path": "OnePagers/East Vibration Lab Capability Brochure.pdf"
+      },
+      {
+        "title": "MSFC Structural Dynamics Testing fact sheet, April 2026 (PDF)",
+        "description": "Official NASA fact sheet · cleared for public release",
+        "path": "OnePagers/MSFC Structural Dynamics Testing April 2026.pdf"
+      },
+      {
+        "title": "ET40 Structural Dynamics Test one-pager, 2021 (PDF)",
+        "description": "Official NASA fact sheet · cleared for public release",
+        "path": "OnePagers/ET40 SDT _3_1_21.pdf"
+      }
+    ]
   },
   {
     "id": "stop17",
@@ -2640,57 +2748,90 @@ window.STOPS = [
     },
     "media": "media/special-test-equipment",
     "hero": {
-      "src": "img/nasa-logo.png",
-      "alt": "NASA logo placeholder",
-      "credit": "Placeholder · awaiting cleared imagery"
+      "src": "img/hero.jpg",
+      "alt": "An STE-designed shell buckling test fixture holding a test article in a Marshall high bay, viewed by engineers during the Shell Buckle Knockdown Factor workshop.",
+      "credit": "NASA/Emmett Given (2015) · Shell Buckle Knockdown Factor workshop, MSFC · images.nasa.gov · cleared for public release"
     },
-    "thumb": "img/nasa-logo.png",
-    "factbox": "ET50 doesn't have tour stops of its own — they design and build the infrastructure that makes everyone else's testing possible.",
+    "thumb": "img/hero.jpg",
+    "factbox": "Special Test Equipment (STE) isn't one piece of gear — it's the design branch that has engineered Marshall's ground-test hardware since the center's inception: test stands, fixtures, piping, and vacuum systems that make everyone else's testing possible.",
     "narration": {
-      "durationLabel": "~50 sec",
-      "text": "The historic F-1 stand was demolished November 30, 2012, the same day as the Ground Support Equipment Internal Design Review Dry-Run, held in the new building 4602. This was very much in the early phases of the SLS Program, and on the heels of Ares cancellation. The demo happened during the review. A large boom was heard, and the NASA GSE Design Lead acknowledged that the noise was the F-1 demo. At the time, SLS's future was far from assured, and the loss of such a historic stand alongside an uncertain future felt bittersweet. Ultimately, the demo of the F-1 stand enabled buildup of necessary test capabilities for SLS."
+      "durationLabel": "~74 sec · produced narration",
+      "audio": "audio/narration.mp3",
+      "text": "Special Test Equipment, or STE, is the term of art for any non-flight ground-test hardware Marshall designs and builds — test stands, cryogenic and high-pressure piping, vacuum chambers, load reaction structures, vibration fixtures, mockups, and handling equipment. STE Design has been Marshall's leading design organization for this hardware since the center's inception. The branch runs on three interlocking groups — Structural Design, Piping Design, and an Analysis team — deliberately co-located so design tasks neither team could finish alone get done together. Their portfolio includes the SLS intertank test fixture, at 2.5 million pounds of steel, shell buckling test fixtures, the 20-foot Universal Test Fixture, and a liquid-metal NaK loop flexibility model. Every design has to satisfy AISC, ASME, AWS, and NASA-STD-5005 — the standard governing ground support equipment, which drives safety factors on lifting and load-reaction hardware that surprise engineers used to flight-hardware margins."
     },
-    "hook": "The historic F-1 stand was demolished November 30, 2012, the same day as the Ground Support Equipment Internal Design Review Dry-Run.",
+    "hook": "Special Test Equipment isn't one piece of gear — it's the design branch behind nearly everything else on this tour.",
     "cuePoints": { "hook": 0, "explainer": 12, "wowStat": 30, "media": 38, "why": 45 },
-    "whyItMatters": "ET50 is the backbone of Marshall's test capabilities. They design the custom hardware, build the test stands, and maintain the infrastructure that enables breakthrough testing across every other branch. Without ET50's ingenuity and institutional memory, Marshall's leadership in test would not exist.",
-    "whyItMattersToYou": "When you see a rocket tested at Marshall, you're watching ET50's infrastructure at work. The strand jacks, mast climbers, common floor patterns, and reusable hardware are all engineered here. ET50 turns impossible test requirements into physical reality.",
-    "whyItMattersToWorld": "ET50's work enables NASA's missions and commercial partners to validate hardware before it flies. Their innovations — from the 221-foot test stand at 4693 to modular shear towers that move between facilities — save time and money while ensuring mission success.",
-    "keyfactsTitle": "What ET50 Does",
+    "whyItMatters": "STE Design is the backbone of Marshall's test capabilities. They design the custom test stands, fixtures, and piping systems that enable breakthrough testing across every other branch. Without STE's engineering and institutional memory, Marshall's leadership in test would not exist.",
+    "whyItMattersToYou": "When you see hardware tested anywhere on this tour — the crosshead at LTA, the fixtures in a shock or vibe test, the piping feeding a test stand — you're looking at STE's work. Structural, Piping, and Analysis teams turn a customer's test requirement into physical, code-compliant hardware.",
+    "whyItMattersToWorld": "STE's designs enable NASA's missions and commercial partners to validate hardware before it flies. Fixtures like the 2.5-million-pound SLS intertank test fixture and the 20-foot Universal Test Fixture get reused and modified across programs — from Apollo through Shuttle, Ares, and SLS — saving time and money while ensuring mission success.",
+    "keyfactsTitle": "What STE Design Does",
     "wowStat": 1,
     "keyfacts": [
-      { "num": "221'", "label": "tall test stand at 4693", "detail": "Slightly taller than the historic F-1 stand, built for SLS testing" },
-      { "num": "100yr", "label": "Blue Origin lease at WTA", "detail": "ET50 coordinates West Test Area activities around Blue Origin testing" },
-      { "num": "4 years", "label": "to build 4693", "detail": "Bulk structure contracted through Facilities; specialty interface hardware designed by ET50" },
-      { "num": "Multiple", "label": "facilities supported", "detail": "ET50 designs and maintains hardware across 4693, 4670, 4697, 4699, 4550, and more" }
+      { "num": "3", "label": "interlocking design teams", "detail": "Structural Design, Piping Design, and Analysis — co-located so no team designs alone" },
+      { "num": "2.5M", "label": "lb of steel", "detail": "The SLS intertank test fixture, one of STE's representative structural builds" },
+      { "num": "20-ft", "label": "Universal Test Fixture (UTF)", "detail": "A reusable structural rig designed to mount and load a wide range of test articles" },
+      { "num": "NASA-STD-5005", "label": "governing design standard", "detail": "Sets factors of safety for lifting and load-reaction structures — stricter in places than flight-hardware margins" },
+      { "num": "90M", "label": "drawing system", "detail": "STE's configuration-controlled drawing archive, tracing hardware back to Marshall's earliest days" }
     ],
     "deepDive": {
-      "summary": "Go deeper: ET50's engineering philosophy",
+      "summary": "Go deeper: how STE's three teams work together",
       "open": true,
-      "html": "Few things in test ever 'go away.' Hardware is re-used and updated all the time. Customers are frequently delighted to save cost and schedule by re-using hardware from previous programs.<br><br>Example: The mast climbers at 4693 were originally purchased as part of Ares Dynamic Test buildup over in 4550. The common floor anchor pattern used in LTA, at 4693, and 4697 cost slightly more for SLS project to implement upfront, but it took people advocating for the common pattern for it to be implemented. Now it's a long-term value add to NASA mission — it saves money for future projects because different hardware (shear towers, other STE) can be moved modularly across those locations.<br><br>ET50's documentation goes back to MSFC's beginning days. It is fascinating to trace different hardware across different project applications — from Apollo through Shuttle, Ares, SLS, and future missions."
+      "html": "STE Design's diverse customer base — every other branch at Marshall, plus outside industry — gives the team an unusual breadth of experience. What holds it together is the three-team structure.<br><br>The <b>Structural Design</b> team handles test stand design and modifications, stand-alone load test beds, load lines and reaction structures, mockups and simulators, lifting hardware, and vibration fixtures — multiaxis linear motion systems, mode-frequency-specific mounting hardware, and mass simulators.<br><br>The <b>Piping Design</b> team covers low- and high-pressure cryogenic, fuel, nitrogen, and water systems; test stand piping; flow, load, and growth/shrinkage analyses; and vacuum chamber hardware including in-chamber load application and feedthroughs.<br><br>The <b>Analysis</b> team ties both together with CAESAR II piping analysis, ANSYS finite element modeling, FEMAP, MathCAD, and hand calculations — all working to AISC, ASME, AWS, and NASA-STD-5005.<br><br>Few designs ever really 'go away.' Hardware gets reused and modified across programs, and STE's 90M drawing system — a configuration-controlled archive going back to the center's earliest days — makes it possible to trace a fixture's lineage from Apollo through Shuttle, Ares, and SLS."
     },
     "detailImage": {
-      "src": "img/nasa-logo.png",
-      "alt": "Placeholder image",
-      "credit": "Placeholder · awaiting cleared imagery"
+      "src": "img/detail-1.jpg",
+      "alt": "An engineer runs water-flow tests on a 6.4% scale acoustic model of the Space Launch System at Test Stand 116.",
+      "credit": "NASA/Emmett Given (2014) · 6.4% acoustic scale model, Test Stand 116 · images.nasa.gov · cleared for public release"
     },
-    "lookFor": "ET50 doesn't have a single stop to visit — their work is everywhere. Look for the 'blue stuff' (specialty interface hardware) on test stands, the strand jacks at the top of 4693, and the common floor patterns that enable hardware to move between facilities.",
-    "galleryTitle": "ET50's Work Across Marshall",
-    "gallery": [],
+    "lookFor": "STE doesn't have a single stop to visit — their work is everywhere on this tour. Look for the load-reaction fixtures bolted into test-stand floors, the vibration fixtures and mass simulators mounted on shaker tables, and the cryogenic and high-pressure piping snaking across every stand.",
+    "galleryTitle": "Representative STE Fixtures",
+    "gallery": [
+      {
+        "src": "img/gallery-1.jpg",
+        "alt": "The SLS intertank test fixture, 2.5 million pounds of steel, with the intertank test article suspended inside.",
+        "credit": "NASA · SLS Intertank Test Fixture · ET50_STE_3_1_21.pdf fact sheet · cleared for public release",
+        "caption": "The SLS intertank test fixture — 2.5 million pounds of steel, designed by STE's Structural Design team."
+      },
+      {
+        "src": "img/gallery-2.jpg",
+        "alt": "The 20-foot Universal Test Fixture, a large blue steel A-frame structure, in a Marshall high bay.",
+        "credit": "NASA · 20-ft Universal Test Fixture (UTF) · ET50_STE_3_1_21.pdf fact sheet · cleared for public release",
+        "caption": "The 20-foot Universal Test Fixture — reusable structural hardware designed to mount and load a wide range of test articles."
+      },
+      {
+        "src": "img/gallery-3.jpg",
+        "alt": "A colored 3D model of a liquid metal (NaK) loop cryogenic system vent flexibility model.",
+        "credit": "NASA · Liquid Metal (NaK) Loop flexibility model · ET50_STE_3_1_21.pdf fact sheet · cleared for public release",
+        "caption": "A liquid-metal (NaK) loop flexibility model — Piping Design team analysis work."
+      },
+      {
+        "src": "img/gallery-4.jpg",
+        "alt": "An Atlas II AR rocket engine (RD-180) hot-fire test at Building 4670.",
+        "credit": "NASA · Atlas II AR (RD-180 engine) hot fire, Building 4670 · ET50_STE_3_1_21.pdf fact sheet · cleared for public release",
+        "caption": "An RD-180 hot fire at Building 4670 — the test stand itself is STE-designed infrastructure."
+      },
+      {
+        "src": "img/gallery-5.jpg",
+        "alt": "A finite element model of a rotary motion device, shown as a pink-and-teal stress analysis render.",
+        "credit": "NASA · Rotary Motion Device FEM · ET50_STE_3_1_21.pdf fact sheet · cleared for public release",
+        "caption": "A finite element model of a rotary motion device — Analysis team work supporting the Structural Design team."
+      }
+    ],
     "askYourHost": [
-      "How does ET50 decide whether to build new hardware or re-use existing equipment?",
-      "What's the most challenging piece of test infrastructure ET50 has designed?",
-      "How does ET50 balance project-specific needs with long-term NASA capability investments?",
-      "What hardware from Apollo or Shuttle is still in use today?"
+      "How do the Structural, Piping, and Analysis teams divide up a single fixture design?",
+      "What's the most challenging piece of test infrastructure STE has designed?",
+      "How does NASA-STD-5005 change a design compared to flight-hardware margins?",
+      "What hardware from Apollo or Shuttle is still in use today, and how do you trace it through the 90M drawing system?"
     ],
     "quiz": {
-      "question": "Why is ET50 called 'Special' Test Equipment?",
+      "question": "What is \"Special Test Equipment\" at Marshall?",
       "options": [
-        { "text": "They test classified programs", "correct": false },
-        { "text": "They design custom infrastructure that enables all other test branches", "correct": true },
-        { "text": "They have the largest building", "correct": false }
+        { "text": "A single large piece of test gear", "correct": false },
+        { "text": "The design branch that engineers all non-flight ground-test hardware", "correct": true },
+        { "text": "A classified test program", "correct": false }
       ],
-      "correctFeedback": "Exactly. ET50 designs and builds the custom hardware that makes testing possible across every other branch.",
-      "wrongFeedback": "Not quite — ET50 is special because they engineer the infrastructure that enables all other testing at Marshall."
+      "correctFeedback": "Exactly. STE is a design branch — Structural, Piping, and Analysis teams — that engineers the test stands, fixtures, and piping used across every other branch at Marshall.",
+      "wrongFeedback": "Not quite — STE is the design branch (Structural, Piping, and Analysis teams) that engineers the ground-test hardware used everywhere else on this tour."
     },
     "cta": {
       "heading": "Need custom test infrastructure?",
@@ -2729,14 +2870,15 @@ window.STOPS = [
     },
     "media": "media/marshall-history",
     "hero": {
-      "src": "img/nasa-logo.png",
-      "alt": "NASA logo placeholder",
-      "credit": "Placeholder · awaiting cleared imagery"
+      "src": "img/hero.jpg",
+      "alt": "Wernher von Braun briefing President Eisenhower at the Marshall Space Flight Center dedication, September 8, 1960.",
+      "credit": "NASA (1960) · MSFC dedication ceremony · images.nasa.gov · cleared for public release"
     },
-    "thumb": "img/nasa-logo.png",
+    "thumb": "img/hero.jpg",
     "factbox": "From Operation Paperclip and the Army Ballistic Missile Agency to NASA's premier propulsion and test center, Marshall's story is the story of America's reach for space.",
     "narration": {
-      "durationLabel": "~90 sec",
+      "durationLabel": "~74 sec · produced narration",
+      "audio": "audio/narration.mp3",
       "text": "Von Braun and his team were instrumental to Saturn V's ultimate success in reaching the moon. The ABMA team developed Redstone to 'test nosecones,' even after being explicitly told to stop development of a rocket to send a satellite into orbit. The Navy's Vanguard rocket was selected to pursue launching a satellite, but it exploded on the pad December 1957. Ultimately, Juno 1, the ABMA rocket, successfully lifted the first American satellite into orbit — Explorer 1 — in 1958. When NASA was formed in 1958, von Braun opposed transfer. He was loyal to his army colleague Medaris and feared loss of funding and support. The Army continued to cooperate with NASA. Eventually, in 1960, ABMA team became Marshall. At its peak, Marshall was HUGE — 22,000 people. Marshall's Launch Operations Center eventually became Kennedy Space Center. Stennis Space Center and Michoud Assembly Facility are part of MSFC today. Marshall was named for General George C. Marshall because of his 'image of a military man greatly dedicated to the cause of peace.'"
     },
     "hook": "Von Braun and his team were instrumental to Saturn V's ultimate success in reaching the moon.",
@@ -2762,7 +2904,14 @@ window.STOPS = [
     },
     "lookFor": "Look for the bunker near 4693 — von Braun watched tests from there. The Redstone Test Stand still stands as a monument to where American spaceflight began.",
     "galleryTitle": "Marshall's Historical Sites",
-    "gallery": [],
+    "gallery": [
+      {
+        "src": "img/gallery-1.jpg",
+        "alt": "The German rocket team, including Wernher von Braun, at Fort Bliss, Texas, 1945.",
+        "credit": "NASA (1945) · Fort Bliss, TX · images.nasa.gov · cleared for public release",
+        "caption": "The German rocket team shortly after arriving in the United States under Operation Paperclip — years before the move to Redstone Arsenal and the founding of Marshall."
+      }
+    ],
     "askYourHost": [
       "Why did von Braun oppose transferring from Army to NASA?",
       "What happened to the families who lived on Redstone Arsenal land?",
