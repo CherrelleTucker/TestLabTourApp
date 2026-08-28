@@ -66,8 +66,8 @@ function showInputStep(container, modeToggleHTML) {
 
   container.innerHTML = modeToggleHTML + `
     <div class="wizard-step">
-      <h2 class="wizard-section-header">Time Budget</h2>
-      <p style="color:var(--ink-soft);margin-bottom:var(--space-md)">How much time do you have for this tour?</p>
+      <h2 class="wizard-section-header" style="margin-top:var(--space-md)">Time Budget</h2>
+      <p style="color:var(--ink-soft);margin-bottom:var(--space-sm);font-size:var(--text-sm)">How much time do you have?</p>
 
       <div style="display:flex;gap:var(--space-xs);flex-wrap:wrap;align-items:center;margin-bottom:var(--space-sm)">
         <button class="time-chip" onclick="selectTime(30)">30 min</button>
@@ -75,41 +75,36 @@ function showInputStep(container, modeToggleHTML) {
         <button class="time-chip active" onclick="selectTime(90)">90 min</button>
         <button class="time-chip" onclick="selectTime(120)">2 hours</button>
         <button class="time-chip" onclick="selectTime(180)">3 hours</button>
-        <span style="color:var(--ink-soft);margin:0 var(--space-2xs)">or</span>
+        <span style="color:var(--ink-soft);margin:0 var(--space-2xs);font-size:var(--text-sm)">or</span>
         <input type="number" id="time-budget-custom" placeholder="Custom minutes" oninput="handleCustomTime()"
-          style="width:140px;padding:var(--space-xs);border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:var(--text-body);font-family:var(--font);color:var(--ink);background:var(--card);min-height:44px">
+          style="width:130px;padding:var(--space-2xs) var(--space-xs);border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:var(--text-sm);font-family:var(--font);color:var(--ink);background:var(--card);min-height:40px">
       </div>
 
-      <div style="display:flex;gap:var(--space-xs);align-items:center;margin-bottom:var(--space-xs)">
-        <span style="color:var(--ink-soft)">or enter time window:</span>
+      <div style="display:flex;gap:var(--space-xs);align-items:center;margin-bottom:var(--space-md)">
+        <span style="color:var(--ink-soft);font-size:var(--text-sm)">or time window:</span>
         <input type="time" id="time-start" onchange="calculateDuration()"
-          style="width:120px;padding:var(--space-xs);border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:var(--text-body);font-family:var(--font);color:var(--ink);background:var(--card);min-height:44px">
-        <span style="color:var(--ink-soft)">to</span>
+          style="width:110px;padding:var(--space-2xs) var(--space-xs);border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:var(--text-sm);font-family:var(--font);color:var(--ink);background:var(--card);min-height:40px">
+        <span style="color:var(--ink-soft);font-size:var(--text-sm)">to</span>
         <input type="time" id="time-end" onchange="calculateDuration()"
-          style="width:120px;padding:var(--space-xs);border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:var(--text-body);font-family:var(--font);color:var(--ink);background:var(--card);min-height:44px">
-        <span id="calculated-duration" style="color:var(--nasa-blue);font-weight:700;font-family:var(--font-mono);min-width:80px"></span>
+          style="width:110px;padding:var(--space-2xs) var(--space-xs);border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:var(--text-sm);font-family:var(--font);color:var(--ink);background:var(--card);min-height:40px">
+        <span id="calculated-duration" style="color:var(--nasa-blue);font-weight:700;font-family:var(--font-mono);font-size:var(--text-sm);min-width:70px"></span>
       </div>
 
       <!-- Interests -->
-      <h2 class="wizard-section-header">Interests</h2>
-      <p style="color:var(--ink-soft);margin-bottom:var(--space-md)">Select test capabilities you'd like to see (optional)</p>
+      <h2 class="wizard-section-header" style="margin-top:var(--space-md)">Interests <span style="font-weight:400;font-size:var(--text-sm);color:var(--ink-soft)">(optional)</span></h2>
 
-      <div style="display:flex;gap:var(--space-2xs);flex-wrap:wrap;margin-bottom:var(--space-xs)">
+      <div style="display:flex;gap:var(--space-2xs);flex-wrap:wrap;margin-bottom:var(--space-md)">
         ${interestTags.map(tag => `
           <button class="interest-chip" onclick="toggleInterest('${tag}')" data-interest="${tag}">
             ${tag}
           </button>
         `).join('')}
       </div>
-      <p style="font-size:var(--text-sm);color:var(--ink-soft);margin-top:var(--space-xs)">
-        Leave blank for a general tour covering different test capabilities
-      </p>
 
       <!-- Starting Location -->
-      <h2 class="wizard-section-header">Starting Location</h2>
-      <p style="color:var(--ink-soft);margin-bottom:var(--space-md)">Where will your tour begin? (optional)</p>
+      <h2 class="wizard-section-header" style="margin-top:var(--space-md)">Starting Location <span style="font-weight:400;font-size:var(--text-sm);color:var(--ink-soft)">(optional)</span></h2>
 
-      <select id="start-location" style="width:100%;padding:var(--space-xs);border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:var(--text-body);font-family:var(--font);color:var(--ink);background:var(--card);min-height:44px">
+      <select id="start-location" style="width:100%;padding:var(--space-xs);border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:var(--text-sm);font-family:var(--font);color:var(--ink);background:var(--card);min-height:40px;margin-bottom:var(--space-md)">
         <option value="">Any location</option>
         <option value="4619-north">Building 4619 (North door - ET30 labs)</option>
         <option value="4619-west">Building 4619 (West door - V20/ET20 labs)</option>
@@ -118,8 +113,8 @@ function showInputStep(container, modeToggleHTML) {
       </select>
 
       <!-- Generate Button -->
-      <div style="margin-top:var(--space-xl);text-align:center">
-        <button class="btn red" onclick="generateRecommendations()" style="min-height:48px;font-size:var(--text-body);font-weight:700">
+      <div style="text-align:center">
+        <button class="btn red" onclick="generateRecommendations()" style="min-height:44px;font-size:var(--text-sm);font-weight:700">
           ✨ Recommend Tours
         </button>
       </div>
