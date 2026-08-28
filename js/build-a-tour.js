@@ -548,3 +548,22 @@ function formatTime(totalMinutes) {
   return `${hours12}:${mins.toString().padStart(2, '0')} ${ampm}`;
 }
 
+// Preview tour as PDF in new tab
+async function previewTourPDF(tourIndex) {
+  const tourData = recommendedTours[tourIndex];
+  if (!tourData) {
+    alert('Tour not found');
+    return;
+  }
+
+  const stopTimes = window.tourStartTime ? calculateStopTimes(tourData, window.tourStartTime) : null;
+  const userCriteria = window.userTourCriteria || null;
+
+  const pdfData = await generateTourPDF(tourData.tour, tourIndex, stopTimes, userCriteria);
+
+  // Open in new tab
+  const pdfBlob = pdfData.doc.output('blob');
+  const url = URL.createObjectURL(pdfBlob);
+  window.open(url, '_blank');
+}
+
