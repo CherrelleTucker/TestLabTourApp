@@ -1,0 +1,86 @@
+name: Process Information Request
+
+on:
+  repository_dispatch:
+    types: [information-request]
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Validate Request
+        id: validate
+        run: |
+          echo "Validating information request..."
+
+          # Get payload data
+          EMAIL="${{ github.event.client_payload.email }}"
+          PDF_COUNT=$(echo '${{ toJson(github.event.client_payload.pdfs) }}' | jq '. | length')
+
+          # Basic validation
+          if [ -z "$EMAIL" ]; then
+            echo "Error: No email provided"
+            exit 1
+          fi
+
+          if [ "$PDF_COUNT" -eq 0 ]; then
+            echo "Error: No PDFs selected"
+            exit 1
+          fi
+
+          echo "Validation passed: $EMAIL requested $PDF_COUNT PDFs"
+
+      - name: Format Issue Body
+        id: format
+        run: |
+          # Build issue body from payload
+          cat > issue_body.md <<'EOF'
+          ## Information Request
+
+          **Requester Email:** ${{ github.event.client_payload.email }}
+
+          **Requested Materials:**
+          EOF
+
+          # Add PDFs as checklist
+          echo '${{ toJson(github.event.client_payload.pdfs) }}' | jq -r '.[] | "- [ ] \(.title) (`\(.filename)`)"' >> issue_body.md
+
+          # Add comments
+          cat >> issue_body.md <<'EOF'
+
+          **Additional Comments:**
+          ${{ github.event.client_payload.comments }}
+
+          ---
+          **Action Required:** Send the checked materials to ${{ github.event.client_payload.email }} and close this issue.
+
+          **Files Location:** `OnePagers/` directory in this repository
+
+          **Submitted:** ${{ github.event.client_payload.timestamp }}
+          EOF
+
+      - name: Create GitHub Issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const issueBody = fs.readFileSync('issue_body.md', 'utf8');
+
+            const issue = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Information Request: ${{ github.event.client_payload.email }}`,
+              body: issueBody,
+              labels: ['information-request']
+            });
+
+            console.log(`Created issue #${issue.data.number}`);
+            core.setOutput('issue_number', issue.data.number);
+
+      - name: Log Success
+        run: |
+          echo "✅ Successfully created issue for ${{ github.event.client_payload.email }}"
+          echo "Issue: #${{ steps.create-issue.outputs.issue_number }}"

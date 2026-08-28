@@ -1,6 +1,6 @@
 /*
   Request Information Modal
-  Collects user email and selected PDFs, creates GitHub Issue
+  Collects user email and selected PDFs, triggers GitHub Action
 */
 
 (function() {
@@ -8,7 +8,7 @@
 
   const GITHUB_OWNER = 'CTuckerSolutions';
   const GITHUB_REPO = 'TestLabTourApp';
-  const GITHUB_TOKEN = 'REPLACE_WITH_YOUR_TOKEN'; // Personal Access Token with 'public_repo' scope
+  const GITHUB_TOKEN = 'REPLACE_WITH_YOUR_TOKEN'; // Personal Access Token with 'repo' or 'public_repo' scope
 
   // Show modal
   function showRequestInfo() {
@@ -94,15 +94,19 @@
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting...';
 
-    // Create GitHub Issue
-    var issueBody = formatIssueBody({
-      email: emailInput.value,
-      pdfs: selectedPdfs,
-      comments: commentsInput.value || 'No additional comments'
-    });
+    // Trigger GitHub Action via repository_dispatch
+    var payload = {
+      event_type: 'information-request',
+      client_payload: {
+        email: emailInput.value,
+        pdfs: selectedPdfs,
+        comments: commentsInput.value || 'No additional comments',
+        timestamp: new Date().toISOString()
+      }
+    };
 
     fetch(
-      'https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO + '/issues',
+      'https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO + '/dispatches',
       {
         method: 'POST',
         headers: {
@@ -110,20 +114,17 @@
           'Content-Type': 'application/json',
           'Accept': 'application/vnd.github.v3+json'
         },
-        body: JSON.stringify({
-          title: 'Information Request: ' + emailInput.value,
-          body: issueBody,
-          labels: ['information-request']
-        })
+        body: JSON.stringify(payload)
       }
     )
     .then(function(response) {
       if (!response.ok) {
         throw new Error('GitHub API error: ' + response.status);
       }
-      return response.json();
+      // repository_dispatch returns 204 No Content on success
+      return { success: true };
     })
-    .then(function(issue) {
+    .then(function() {
       // Success!
       alert('Request submitted successfully! You should receive the materials within 1-2 business days.');
       closeRequestInfo();
@@ -134,21 +135,6 @@
       submitBtn.disabled = false;
       submitBtn.textContent = 'Submit Request';
     });
-  }
-
-  // Format issue body
-  function formatIssueBody(data) {
-    var body = '## Information Request\n\n';
-    body += '**Requester Email:** ' + data.email + '\n\n';
-    body += '**Requested Materials:**\n';
-    data.pdfs.forEach(function(pdf) {
-      body += '- [ ] ' + pdf.title + ' (`' + pdf.filename + '`)\n';
-    });
-    body += '\n**Additional Comments:**\n' + data.comments + '\n\n';
-    body += '---\n';
-    body += '**Action Required:** Send the checked materials to ' + data.email + ' and close this issue.\n';
-    body += '**Files Location:** `OnePagers/` directory in this repository\n';
-    return body;
   }
 
   // Initialize
