@@ -1,4 +1,7 @@
-/* Tour Guide Quick Start Modal Styles */
+/* Tour Guide Quick Start Modal
+   Console-style modal with NASA blue gradient header, red corner brackets,
+   and structured content sections. Matches the mission-control interface
+   established in the main app. */
 
 .quickstart-modal {
   position: fixed;
@@ -8,6 +11,7 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.92);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 10000;
   display: none;
   align-items: center;
@@ -23,6 +27,13 @@
 
 @keyframes fadeIn {
   to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quickstart-modal.show {
+    animation: none;
+    opacity: 1;
+  }
 }
 
 .quickstart-content {
@@ -75,6 +86,12 @@
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quickstart-content {
+    animation: none;
   }
 }
 
@@ -153,16 +170,15 @@
   line-height: 1;
   cursor: pointer;
   color: rgba(255,255,255,0.8);
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: all 0.2s;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
   padding: 0;
   z-index: 2;
-  min-height: 44px;
 }
 
 .quickstart-close:hover {
@@ -170,6 +186,15 @@
   border-color: var(--nasa-red);
   color: var(--on-accent);
   transform: rotate(90deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quickstart-close {
+    transition: none;
+  }
+  .quickstart-close:hover {
+    transform: none;
+  }
 }
 
 .quickstart-body {
@@ -307,7 +332,7 @@
   border: 1px solid var(--line);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 1px 2px rgba(0,0,0,0.05);
   position: relative;
-  transition: all 0.2s;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .feature-card::before {
@@ -329,6 +354,12 @@
 
 .feature-card:hover::before {
   opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feature-card {
+    transition: none;
+  }
 }
 
 .feature-card strong {
@@ -458,7 +489,9 @@
   }
 }
 
-/* Tour Guide Help Button in Header */
+/* Tour Guide Help Button in Header
+   NASA red CTA button that triggers the quick start modal. Sits in the appbar
+   next to the theme toggle. Collapses to icon-only on mobile. */
 .tour-guide-btn {
   display: flex;
   align-items: center;
@@ -471,16 +504,26 @@
   font-weight: 700;
   font-size: 13px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: filter 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   white-space: nowrap;
   font-family: inherit;
-  min-height: 36px;
+  min-height: 44px; /* Touch-friendly minimum */
 }
 
 .tour-guide-btn:hover {
   filter: brightness(.93);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(252, 61, 33, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-guide-btn {
+    transition: none;
+  }
+  .tour-guide-btn:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }
 
 .tour-guide-btn span {
@@ -505,3 +548,64 @@
     font-size: 0;
   }
 }
+
+/* ============================================================================
+   DESIGN PATTERN NOTES
+   ============================================================================
+
+   This modal follows the app's mission-control console interface:
+
+   1. Console Corner Brackets (Red Hairlines)
+      - Applied via .quickstart-content::before pseudo-element
+      - Uses NASA red (rgba(252,61,33,0.7)) for targeting-reticle feel
+      - 8 gradient lines forming corner brackets at inset: 12px
+
+   2. NASA Blue Gradient Header
+      - Two radial gradients (red + blue glow) over linear gradient base
+      - 2px solid NASA red bottom border (structural signature)
+      - Subtle starfield overlay (opacity: 0.4)
+      - Grid layout for icon + title + subtitle alignment
+
+   3. White Card Body
+      - Clean white (var(--card)) for content legibility
+      - Sections use left red border (3px) + uppercase headings
+      - NASA blue headings with uppercase + letter-spacing
+
+   4. Numbered Steps
+      - CSS counter with circular badges
+      - NASA red gradient background + white text
+      - Inset light highlight for depth (console button feel)
+
+   5. Feature Cards
+      - Subtle gradient backgrounds (light blue-gray)
+      - Left blue accent bar (opacity transitions on hover)
+      - Hover state: blue border + deeper shadow
+
+   6. Buttons
+      - .btn.secondary: white card with blue border/text
+      - .btn.red: NASA red CTA (primary action)
+      - min-height: 48px for touch targets
+
+   7. Close Button
+      - 44px × 44px (touch-friendly)
+      - Hover: NASA red fill + 90deg rotate
+      - Reduced motion: no rotation transform
+
+   8. Accessibility
+      - All touch targets 44px+ minimum
+      - Color contrast meets WCAG 2.1 AA
+      - Focus indicators via browser defaults
+      - prefers-reduced-motion: reduce guards all transitions
+
+   9. Dark Mode
+      - All colors reference CSS custom properties
+      - Automatic theme switching via [data-theme="dark"]
+      - Darker surfaces, brighter text, adjusted shadows
+
+   Matches patterns in:
+   - css/components.css (buttons, hero sections)
+   - css/base.css (appbar gradient + red hairline)
+   - tour-guide-quickstart.html (standalone demo)
+
+   See DESIGN-GUIDELINES.md for full design system documentation.
+   ============================================================================ */
