@@ -1372,9 +1372,18 @@ window.STOPS = [
     ],
     "lookFor": "There's no stand here anymore &mdash; this marks where a full Space Shuttle stack was assembled and shaken on purpose, before the structure was imploded in January 2026.",
     "askYourHost": [
-      "What does deliberately shaking a full Shuttle stack actually look like in practice?",
-      "Did the 1978 vibration test turn up anything that changed the Shuttle's design?",
-      "Why was this stand demolished now, decades after its last test?"
+      {
+        "question": "What does deliberately shaking a full Shuttle stack actually look like in practice?",
+        "answer": "The test uses up to 96 electro-dynamic shakers attached to different points on the suspended stack, controlled electronically to apply sinusoidal and random vibration inputs. The stack doesn't shake violently — the motion is often subtle to the naked eye — but sensors and high-speed cameras capture every displacement, strain, and frequency response. The goal is to excite the structure's natural bending modes, measuring how the real hardware flexes compared to what the computer models predicted. It's a highly controlled, instrumented process."
+      },
+      {
+        "question": "Did the 1978 vibration test turn up anything that changed the Shuttle's design?",
+        "answer": "The Mated Vertical Ground Vibration Test validated the Shuttle stack's structural dynamics and confirmed that the design and analysis models were accurate. Any discrepancies between predicted and measured responses were used to refine those models for future missions. While no major design changes resulted from the MVGVT, the data it produced gave engineers confidence that the Shuttle's structure would survive the aerodynamic and thrust loads of ascent — confidence that couldn't have been earned any other way."
+      },
+      {
+        "question": "Why was this stand demolished now, decades after its last test?",
+        "answer": "The Dynamic Test Stand had been inactive since the early 2000s, and maintaining a 360-foot tower that was no longer serving an active test program was not cost-effective. NASA's infrastructure strategy prioritizes facilities that support current missions, and Marshall's structural dynamics capabilities had moved to other facilities. The implosion in January 2026 was part of a broader effort to remove obsolete structures and free up resources for active test programs. The stand's legacy — and the data it produced — lives on."
+      }
     ],
     "quiz": {
       "question": "Quick one &mdash; why deliberately vibrate a fully stacked launch vehicle on the ground?",
@@ -1581,9 +1590,18 @@ window.STOPS = [
     ],
     "lookFor": "There's no tower here anymore &mdash; this marks where NASA ran matched, side-by-side rocket stage tests for over three decades, before the structure was imploded in January 2026.",
     "askYourHost": [
-      "What exactly are engineers comparing when two rocket stages fire side by side?",
-      "Why was a dual-position stand unusual enough to earn its own nickname?",
-      "What was the last thing tested here before it came down?"
+      {
+        "question": "What exactly are engineers comparing when two rocket stages fire side by side?",
+        "answer": "Engineers compare thrust profiles, combustion stability, propellant flow rates, chamber pressure, vibration signatures, and thermal performance across two nominally identical stages under the same test conditions. This side-by-side testing reveals whether differences in performance are due to manufacturing variation, test setup, or genuine design issues. If one stage consistently outperforms the other, engineers can trace the difference back to specific components or assembly processes. That kind of controlled comparison is nearly impossible with single-position testing."
+      },
+      {
+        "question": "Why was a dual-position stand unusual enough to earn its own nickname?",
+        "answer": "Most test stands are built to handle one article at a time — duplicating infrastructure for two positions is expensive and operationally complex. The T-Tower's dual-position design was justified by the value of direct comparison testing during the Saturn program, but it represented a significant investment. Its T-shaped footprint and distinctive mission earned it the nickname long before anyone needed to consult official building records. The nickname stuck because the stand's purpose was immediately clear from its shape."
+      },
+      {
+        "question": "What was the last thing tested here before it came down?",
+        "answer": "The T-Tower's last recorded work was testing Space Shuttle solid rocket motor hardware in the 1990s, decades after its original Saturn I/IB mission ended. Like many Marshall test stands, it outlived its original program by finding new work. After that, it stood dormant for years before being imploded in January 2026 alongside the nearby Dynamic Test Stand. Both structures had served their purpose, and Marshall's infrastructure strategy shifted to maintaining active, multi-use facilities."
+      }
     ],
     "quiz": {
       "question": "Quick one &mdash; why build a stand that could test two rocket stages side by side?",
@@ -1684,9 +1702,18 @@ window.STOPS = [
     ],
     "lookFor": "Notice how small this stand is compared to the towering structural stands elsewhere on the tour &mdash; it doesn't need to be big to answer big questions about materials.",
     "askYourHost": [
-      "How do you scale down a solid rocket motor and still trust the results at full size?",
-      "What's the biggest material problem this stand ever caught early?",
-      "Why does insulation matter so much once a solid motor is burning?"
+      {
+        "question": "How do you scale down a solid rocket motor and still trust the results at full size?",
+        "answer": "Scaling is based on maintaining key dimensionless parameters — burn rate, pressure, and temperature — that govern combustion and material performance. The Modified NASA Motor uses the same propellant chemistry, the same internal insulation materials, and similar nozzle geometries as full-scale boosters, just at a smaller diameter. Engineers validate the scaling laws with test data, ensuring that what happens in a 48-inch motor correlates to what will happen in a much larger motor. It's not perfect, but it's reliable enough to catch material problems early and refine analysis models."
+      },
+      {
+        "question": "What's the biggest material problem this stand ever caught early?",
+        "answer": "Specific details of material failures are often proprietary to the programs involved, but the stand's role in NASA's Solid Propulsion Integrity Program centered on evaluating non-asbestos insulation materials and nozzle erosion behavior. Catching an insulation bondline separation or nozzle throat erosion rate that exceeded predictions on a subscale motor here is far cheaper — and safer — than discovering the same problem during a full-scale test or, worse, in flight. That's the stand's value: finding problems while they're still fixable."
+      },
+      {
+        "question": "Why does insulation matter so much once a solid motor is burning?",
+        "answer": "Solid rocket motors can't be shut off once ignited, so their internal insulation has to survive the full burn on the first try. The combustion chamber reaches temperatures exceeding 5,000°F, and without effective insulation, the motor case would fail catastrophically. Insulation also protects bondlines and structural joints from thermal degradation. If the insulation chars too quickly, ablates unevenly, or separates from the case wall, the motor's structural integrity is compromised. Testing insulation performance on subscale motors here validates that it will protect the case for the full duration of a flight motor's burn."
+      }
     ],
     "quiz": {
       "question": "Quick one &mdash; why test solid rocket motor materials on a small scale here instead of only on full-size boosters?",
@@ -1831,9 +1858,18 @@ window.STOPS = [
     ],
     "lookFor": "Picture a fully stacked Saturn V first stage bolted into this structure, all five engines lit at once: and the stand not moving.",
     "askYourHost": [
-      "How does the ground stay put when five F-1 engines fire at once, straight down?",
-      "What was it like to stand nearby during an actual S-IC static fire?",
-      "Why build in nearly double the thrust capacity the Saturn V would ever need?"
+      {
+        "question": "How does the ground stay put when five F-1 engines fire at once, straight down?",
+        "answer": "The stand's foundation is keyed deep into bedrock and designed to resist the 7.5 million pounds of thrust from a full S-IC stage. The flame deflector channels exhaust away from the structure, and the stand's steel superstructure is engineered to handle forces far exceeding the rocket's output. The entire system — concrete, steel, and flame deflector — works together to ensure the stand doesn't move. Designing a structure that can out-muscle a Saturn V is exactly what this stand's engineering was all about."
+      },
+      {
+        "question": "What was it like to stand nearby during an actual S-IC static fire?",
+        "answer": "Personnel were never nearby during a live firing — the stand was controlled remotely from a blockhouse hundreds of yards away, behind thick concrete walls and blast doors. Even at that distance, the roar of five F-1 engines was overwhelming. Engineers who witnessed S-IC tests describe the ground shaking, the deafening noise, and the sheer scale of the flame and exhaust plume. It was, by all accounts, a visceral reminder of the power required to send humans to the Moon. Camera footage and instrumentation data captured what human senses could not."
+      },
+      {
+        "question": "Why build in nearly double the thrust capacity the Saturn V would ever need?",
+        "answer": "Building margin into the stand's capacity ensured it could accommodate future, more powerful rockets without requiring a complete rebuild. That foresight proved correct: after the Saturn V program ended, Test Stand 4670 went on to support Space Shuttle external tank testing and Space Shuttle Main Engine campaigns, and it remains in Marshall's active test inventory today. Designing for 12 million pounds of thrust instead of just 7.5 million gave the stand a decades-long service life across multiple programs."
+      }
     ],
     "quiz": {
       "question": "Quick one &mdash; why build a stand designed for 12 million lbf when the Saturn V's S-IC stage only produced 7.5 million?",
@@ -2152,9 +2188,18 @@ window.STOPS = [
     ],
     "lookFor": "Notice the water nozzles ringing the test position: that continuous spray protected both the stand and the engine from damage during repeated firings.",
     "askYourHost": [
-      "What kind of hardware is being tested in this stand today?",
-      "What made this stand adaptable enough to outlive the program it was built for?",
-      "How do engineers decide which of the four test positions a new job needs?"
+      {
+        "question": "What kind of hardware is being tested in this stand today?",
+        "answer": "Test Stand 116 continues to support a mix of propulsion hardware testing — subscale engines, turbopumps, and combustion research for current NASA programs and commercial partners. Its flexible, multi-bay design means it can shift between very different test campaigns without major reconfiguration. The stand's heritage of rapid-turnaround testing makes it ideal for technology development work where you need to iterate quickly and learn from each test."
+      },
+      {
+        "question": "What made this stand adaptable enough to outlive the program it was built for?",
+        "answer": "Rather than being purpose-built for one test article, Test Stand 116 was designed as a flexible, multi-position facility from the start. Its open steel structure and three adjacent bays can be reconfigured for different hardware sizes and test objectives. The stand's instrumentation, data systems, and support infrastructure are modular enough to adapt to new programs. That flexibility — plus the relatively low cost of operating a smaller stand — has kept it in service long after the X-34 and Fastrac programs ended."
+      },
+      {
+        "question": "How do engineers decide which of the four test positions a new job needs?",
+        "answer": "The decision is based on the test article's size, thrust level, required instrumentation, and whether it needs high-pressure propellant feeds, cryogenic systems, or specialized data acquisition. The open steel structure is best for subscale hardware with modest thrust; the larger bays handle higher-pressure and higher-thrust tests. Some tests require acoustic or thermal environments that favor one position over another. Engineers work with the test stand operations team to match the test requirements to the position that can deliver the data most efficiently."
+      }
     ],
     "quiz": {
       "question": "Quick one &mdash; why was the Fastrac engine tested here in the 1990s?",
@@ -2295,9 +2340,18 @@ window.STOPS = [
       }
     ],
     "askYourHost": [
-      "How do engineers decide which of the 18 ETF chambers a piece of hardware actually needs?",
-      "What was it like hosting a commercial lunar rover here in 2025?",
-      "Has a chamber here ever caught a flaw that would've caused a mission failure?"
+      {
+        "question": "How do engineers decide which of the 18 ETF chambers a piece of hardware actually needs?",
+        "answer": "The decision is driven by the specific environmental conditions the hardware will face in its mission. Spacecraft headed for deep space need cryogenic thermal-vacuum with extreme temperature cycling. Cubesats and small satellites may only need basic thermal-vacuum qualification. Hardware destined for the lunar surface — like Starpath's rover — needs the full lunar environment: vacuum, regolith, and lighting simulation. Engineers match the mission's environmental requirements to the chamber's capabilities, and sometimes hardware goes through multiple chambers sequentially to cover all conditions."
+      },
+      {
+        "question": "What was it like hosting a commercial lunar rover here in 2025?",
+        "answer": "The Starpath rover test was a great example of how NASA's test facilities support the growing commercial space industry. Starpath's team brought their rover to Marshall, worked closely with ETF engineers to set up the regolith bed and thermal environment, and ran the test campaign under NASA oversight. The partnership model — NASA providing world-class test infrastructure, commercial partners providing innovative hardware — is exactly how facilities like V20 stay relevant and support national space goals beyond NASA's own missions."
+      },
+      {
+        "question": "Has a chamber here ever caught a flaw that would've caused a mission failure?",
+        "answer": "Environmental testing routinely finds issues that would have been catastrophic in flight — electronics that fail in vacuum, seals that leak under thermal cycling, mechanisms that jam when exposed to temperature extremes. The whole point of environmental qualification is to find those problems on the ground, where they can be fixed. Specific mission examples are often proprietary, but every space program has stories of hardware that passed initial inspections but failed spectacularly in the chamber. Finding those failures here saves missions."
+      }
     ],
     "quiz": {
       "question": "Quick one — why does ETF run 18 separate chambers instead of one general-purpose chamber?",
@@ -2407,9 +2461,18 @@ window.STOPS = [
     ],
     "lookFor": "Notice how modest this stand looks compared to the towering structures elsewhere on the tour — the hardware it fires is small on purpose, so the data comes back fast and cheap.",
     "askYourHost": [
-      "How closely do these small-scale results end up matching a full-size engine?",
-      "What made the self-cooled vortex chamber design worth thirty-plus tests?",
-      "Why did the J-2X program need subscale injector data before building the real thing?"
+      {
+        "question": "How closely do these small-scale results end up matching a full-size engine?",
+        "answer": "When the scaling is done correctly — maintaining key combustion parameters like mixture ratio, chamber pressure, and injector geometry — the correlation can be quite good. Engineers use the subscale test data to validate computational fluid dynamics (CFD) models, and those validated models are then trusted to predict full-scale behavior. There are always some differences due to scale effects, but the goal isn't perfect replication — it's validation of the physics and catching bad assumptions before committing to expensive, full-scale hardware."
+      },
+      {
+        "question": "What made the self-cooled vortex chamber design worth thirty-plus tests?",
+        "answer": "The vortex chamber concept promised a simpler, lighter engine by eliminating complex cooling jackets and using the propellant flow itself to cool the combustion chamber walls. Proving that concept required repeated tests across a range of operating conditions — different mixture ratios, thrust levels, and burn durations — to verify that the wall-cooling mechanism was stable and repeatable. Thirty-plus tests gave engineers the data to either validate the concept or understand why it wouldn't scale. That's exactly the kind of iterative, data-driven development that subscale stands enable."
+      },
+      {
+        "question": "Why did the J-2X program need subscale injector data before building the real thing?",
+        "answer": "Injector design — how fuel and oxidizer meet and mix at the top of the combustion chamber — is critical to engine performance and stability. Building and testing a subscale injector let engineers evaluate different injector element patterns, mixture ratio distributions, and combustion dynamics before committing to a full-scale, human-rated engine design. The subscale test data validated CFD models and gave designers confidence that the injector would perform as predicted when scaled up. It's a risk-reduction strategy that saves time and money in the long run."
+      }
     ],
     "quiz": {
       "question": "Quick one — why fire small-scale hardware here instead of only testing full-size engines?",
@@ -2503,11 +2566,26 @@ window.STOPS = [
       "credit": "NASA/Emmett Given (2018) · Load Test Annex · images.nasa.gov · cleared for public release"
     },
     "askYourHost": [
-      "What's the difference between LTA and LTAE — why do we need both?",
-      "How does the adjustable crosshead work? How long does it take to reposition?",
-      "What's the largest structure ever tested in LTA?",
-      "Has a test here ever caught a flaw that would've caused a mission failure?",
-      "How do you decide whether to test in LTA vs. the outdoor stands 4693/4697?"
+      {
+        "question": "What's the difference between LTA and LTAE — why do we need both?",
+        "answer": "LTA (Load Test Annex) and LTAE (Load Test Annex Extension) are adjacent high bays with slightly different capabilities. LTA has an adjustable crosshead that can move between 40 and 115 feet high, applying 30 million pounds of vertical force. LTAE is taller (203 feet) and is configured with fixed reaction towers for specific test articles. Both bays share the same universal grid floor pattern for rapid reconfiguration. Having both means Marshall can run two large structural test campaigns simultaneously, or handle different test article sizes and configurations without waiting for one bay to finish."
+      },
+      {
+        "question": "How does the adjustable crosshead work? How long does it take to reposition?",
+        "answer": "The adjustable crosshead is a massive steel structure that spans the width of the LTA high bay and rides on vertical guide rails. Hydraulic or mechanical jacks reposition the crosshead to the desired height, where it locks into place to become a rigid reaction point. Repositioning can take several hours to a full day, depending on how far it needs to move and how much inspection and alignment is required. Once locked, the crosshead becomes part of the load path — it doesn't move under load."
+      },
+      {
+        "question": "What's the largest structure ever tested in LTA?",
+        "answer": "LTA has hosted full-scale rocket stage sections, spacecraft bus structures, and large composite structures for programs ranging from Saturn through Shuttle, Ares, and SLS. The SLS core stage intertank and engine section test campaigns in LTAE (next door) are among the largest and most heavily instrumented structural tests Marshall has ever conducted. Exact size records depend on how you measure — height, mass, or test article complexity — but if it's a large structural element that needs to prove it can handle the compression, tension, or lateral loads of launch, it's probably been tested in Building 4619."
+      },
+      {
+        "question": "Has a test here ever caught a flaw that would've caused a mission failure?",
+        "answer": "Structural testing routinely finds design or manufacturing flaws before hardware flies. Welds that crack under load, joints that deform more than predicted, composite structures that delaminate — all of these have been caught during load testing at Marshall. The exact missions and programs are often not publicly disclosed, but the Test Lab's track record speaks for itself: finding failures here, on the ground, has prevented disasters in flight. That's the entire reason structural qualification testing exists."
+      },
+      {
+        "question": "How do you decide whether to test in LTA vs. the outdoor stands 4693/4697?",
+        "answer": "The decision is based on test article size, load requirements, environmental control, and schedule. LTA is indoors and climate-controlled, making it ideal for precision testing with thousands of instrumentation channels and when you need to protect sensitive hardware. The outdoor stands 4693 and 4697 are built for very large articles — like full-height SLS liquid hydrogen tanks — and can apply even higher loads. If a test article is too tall for LTA's ceiling or requires more load capacity than the crosshead can deliver, it goes to the outdoor stands."
+      }
     ],
     "quiz": {
       "question": "The Load Test Annex has an adjustable crosshead that can move between 40 and 115 feet high. Why adjustable instead of fixed?",
@@ -2619,11 +2697,26 @@ window.STOPS = [
     ],
     "galleryTitle": "Inside a Load Test Campaign",
     "askYourHost": [
-      "What's the difference between LTA and LTAE — why do we need both?",
-      "How do engineers know when a structure is about to fail during a test?",
-      "What does it take to reserve LTAE for a commercial test, and what does 'restoration to baseline' actually involve?",
-      "Has a test here ever caught a flaw that would've caused a mission failure, or a bad assumption in a model?",
-      "How long does a typical structural test campaign take from setup to completion?"
+      {
+        "question": "What's the difference between LTA and LTAE — why do we need both?",
+        "answer": "LTA has an adjustable crosshead for variable-height loading, while LTAE is taller (203 feet) and uses fixed reaction towers custom-built for specific test articles. The dual-bay configuration lets Marshall run two major structural test campaigns simultaneously or handle different article sizes without reconfiguring the same bay. Both share the universal floor grid pattern for rapid fixture installation. Having both bays gives Marshall flexibility and throughput that a single bay couldn't match."
+      },
+      {
+        "question": "How do engineers know when a structure is about to fail during a test?",
+        "answer": "Engineers monitor thousands of data channels in real time — strain gauges bonded to the structure, displacement transducers measuring deflection, load cells verifying applied force, and acoustic emission sensors detecting crack initiation. Video Image Correlation cameras produce live color contour maps showing where strain is concentrating. As load increases, engineers watch for non-linear behavior: strain gauges that stop tracking linearly with load, sudden jumps in displacement, or acoustic signatures indicating material yield or crack growth. If the data suggests imminent failure, the test is paused or terminated."
+      },
+      {
+        "question": "What does it take to reserve LTAE for a commercial test, and what does 'restoration to baseline' actually involve?",
+        "answer": "Reserving LTAE requires a Space Act Agreement defining the scope, schedule, reimbursable cost, and deliverables. The customer provides their test article and any specialized fixtures; NASA provides the bay, installation support, test execution, and data acquisition. 'Restoration to baseline' means removing all customer-provided hardware, returning the floor grid and anchor points to their standard configuration, and ensuring the bay is ready for the next test campaign. That restoration work is budgeted into the agreement — it's a real cost, not just a formality."
+      },
+      {
+        "question": "Has a test here ever caught a flaw that would've caused a mission failure, or a bad assumption in a model?",
+        "answer": "Yes, on both counts. Structural testing routinely finds manufacturing defects, design flaws, and modeling errors before hardware flies. Sometimes the test reveals that a weld or joint performs worse than the model predicted; other times the hardware outperforms expectations and the model is updated to reflect the real margin. Either way, the test data becomes the truth standard. Programs that skip full-scale structural testing to save money often regret it when a failure occurs in flight that would have been caught on the ground."
+      },
+      {
+        "question": "How long does a typical structural test campaign take from setup to completion?",
+        "answer": "Setup alone can take weeks to months, depending on test article complexity. Installing the test article, building or modifying the reaction towers, installing hydraulic cylinders and load lines, bonding thousands of strain gauges, calibrating sensors, and running checkout tests all take time. The actual load test series — running through dozens or hundreds of load cases — can take additional weeks. Post-test teardown, data reduction, and report writing add more time. A major campaign like the SLS core stage testing can span a year or more from first hardware arrival to final data delivery."
+      }
     ],
     "quiz": {
       "question": "Besides proving hardware survives its loads, what's the other main purpose of a test like the SLS engine section campaign in LTAE?",
@@ -2743,10 +2836,22 @@ window.STOPS = [
       }
     ],
     "askYourHost": [
-      "How does the digital control system decide where to place the control accelerometer on a big test article?",
-      "What's tested here that couldn't be tested anywhere else at Marshall?",
-      "How often does the shaker hardware get upgraded, and how do you requalify the facility afterward?",
-      "When does a customer get sent to Sandusky's Mechanical Vibration Facility instead of here?"
+      {
+        "question": "How does the digital control system decide where to place the control accelerometer on a big test article?",
+        "answer": "Control accelerometer placement is driven by the test specification and the test article's dynamics. Ideally, the control accelerometer is placed where it best represents the input motion to the test article — typically close to the mounting interface, but far enough from high-frequency local modes. For Test Stand 116's horizontal shaker, a modal survey found that placing the control accelerometer about 20 inches from the shaker attachment point best captured the table's stretching mode near 577 Hz. Above that frequency, accelerometer placement starts to matter significantly, and engineers verify control strategy during pre-test setup."
+      },
+      {
+        "question": "What's tested here that couldn't be tested anywhere else at Marshall?",
+        "answer": "Building 4619's Structural Dynamics Test Branch is unique at Marshall for combining vibration, acoustic, pyrotechnic shock, modal survey, and mass-properties testing under one roof. While other NASA centers have vibration tables, the integration of all five capabilities — especially the newer trifilar suspension for CG/MOI measurement — makes this facility a one-stop shop for dynamic qualification. If a program needs to characterize a structure's full dynamic environment without shipping hardware between sites, this is where it happens."
+      },
+      {
+        "question": "How often does the shaker hardware get upgraded, and how do you requalify the facility afterward?",
+        "answer": "Shaker systems are upgraded on a rolling basis as components age out or new capabilities are needed. When a major upgrade happens — new control software, additional channels, a replacement shaker armature — the facility is requalified by running calibration tests with known masses and verifying that the shaker's performance matches its rated specifications. Modal surveys are rerun to characterize any changes in the table's dynamics. The requalification data becomes part of the facility's documentation, so future test customers know exactly what they're getting."
+      },
+      {
+        "question": "When does a customer get sent to Sandusky's Mechanical Vibration Facility instead of here?",
+        "answer": "If a test article is too large for Building 4619's slip table (roughly 8 feet square), requires three-axis independent sine control, or needs capabilities beyond what a single electrodynamic shaker can deliver, the next tier up is NASA's Mechanical Vibration Facility at Armstrong Test Facility in Sandusky, Ohio. That facility has a 22-foot aluminum table riding on 16 hydraulic actuators, capable of handling much larger integrated spacecraft or launch vehicle sections. Marshall's shaker is ideal for components and subsystems; Sandusky handles full spacecraft-level testing."
+      }
     ],
     "quiz": {
       "question": "Besides straight-up shaking, what else does Building 4619's Structural Dynamics Test Capability do?",
@@ -2875,10 +2980,22 @@ window.STOPS = [
       }
     ],
     "askYourHost": [
-      "How do the Structural, Piping, and Analysis teams divide up a single fixture design?",
-      "What's the most challenging piece of test infrastructure STE has designed?",
-      "How does NASA-STD-5005 change a design compared to flight-hardware margins?",
-      "What hardware from Apollo or Shuttle is still in use today, and how do you trace it through the 90M drawing system?"
+      {
+        "question": "How do the Structural, Piping, and Analysis teams divide up a single fixture design?",
+        "answer": "The division depends on the fixture's complexity and dominant engineering challenges. Structural Design typically owns the load-bearing framework, reaction structures, and mounting interfaces. Piping Design owns any cryogenic, high-pressure, or vacuum systems integrated into the fixture. Analysis supports both teams with finite element models, stress calculations, and code compliance checks. In practice, the teams work together from the start — co-location in Building 4666 means designers and analysts can walk over and hash out interface issues in real time rather than waiting for formal reviews."
+      },
+      {
+        "question": "What's the most challenging piece of test infrastructure STE has designed?",
+        "answer": "That's subjective — different engineers would cite different projects — but the SLS intertank test fixture at 2.5 million pounds of steel is certainly among the largest and most complex. Designing a structure that can apply millions of pounds of force to a 27.6-foot-diameter tank without introducing spurious loads or deflecting itself requires deep structural analysis and careful attention to load paths. Similarly, designing piping systems that safely handle liquid hydrogen and high-pressure cryogenics in a test environment where failures aren't an option is engineering at the edge of what's possible."
+      },
+      {
+        "question": "How does NASA-STD-5005 change a design compared to flight-hardware margins?",
+        "answer": "NASA-STD-5005 governs ground support equipment and imposes stricter factors of safety than flight hardware in some areas — particularly for lifting and load-reaction structures. A lifting device might have a factor of safety of 5 or more, whereas flight hardware operates at factors of safety closer to 1.4 or 1.5. The rationale is that ground equipment is repeatedly used, often in hands-on environments where failures would endanger personnel. Flight hardware is designed for a single mission with exhaustive analysis and testing behind it. STE designers have to navigate both worlds."
+      },
+      {
+        "question": "What hardware from Apollo or Shuttle is still in use today, and how do you trace it through the 90M drawing system?",
+        "answer": "The 20-foot Universal Test Fixture (UTF) is a great example — originally designed for Apollo-era testing, it's been modified and reused across Shuttle, Ares, and SLS programs. STE's 90M drawing system is a configuration-controlled archive that traces every revision and modification to test hardware. When a fixture needs to be reused, engineers pull the as-built drawings, verify the structure's current condition, and design any necessary modifications. That institutional memory — captured in drawings going back decades — is what lets Marshall adapt old hardware to new missions without starting from scratch every time."
+      }
     ],
     "quiz": {
       "question": "What is \"Special Test Equipment\" at Marshall?",
@@ -2970,10 +3087,22 @@ window.STOPS = [
       }
     ],
     "askYourHost": [
-      "Why did von Braun oppose transferring from Army to NASA?",
-      "What happened to the families who lived on Redstone Arsenal land?",
-      "How did Marshall's culture of hands-on engineering shape NASA?",
-      "What's the T-Tower's connection to LBJ and live rocket testing broadcasts?"
+      {
+        "question": "Why did von Braun oppose transferring from Army to NASA?",
+        "answer": "Von Braun was loyal to his Army colleague General Medaris and feared that transferring to the newly formed NASA would mean loss of funding, autonomy, and the close-knit team structure that had made ABMA successful. The Army had supported his rocket development work for over a decade, and von Braun worried that NASA, still finding its footing in 1958, wouldn't provide the same level of support. Ultimately, the transfer happened in 1960, and Marshall Space Flight Center became NASA's premier propulsion and engineering center — proving those fears unfounded."
+      },
+      {
+        "question": "What happened to the families who lived on Redstone Arsenal land?",
+        "answer": "When the federal government acquired the land that became Redstone Arsenal, families were displaced — some with compensation, others without adequate resources to relocate. Only remnants like the Jordan Cemetery remain today, a stark reminder of the people who lived here before it became a military installation and later a NASA center. The federal acquisition process required documenting artifacts, which has preserved some history, including indigenous artifacts and remnants from two plantations that once occupied the land. It's a complex legacy that Marshall acknowledges as part of its history."
+      },
+      {
+        "question": "How did Marshall's culture of hands-on engineering shape NASA?",
+        "answer": "Marshall's culture — inherited from von Braun's team — emphasized getting hands dirty, keeping critical work in-house, and building for the long term. That philosophy influenced how NASA approached engineering across the agency. Marshall engineers didn't just design hardware; they built it, tested it, and understood every failure mode firsthand. That institutional knowledge became NASA's bedrock during Apollo and continues today. Marshall's test-driven, engineering-first culture is why the center remains NASA's go-to for propulsion and structural testing more than 60 years after its founding."
+      },
+      {
+        "question": "What's the T-Tower's connection to LBJ and live rocket testing broadcasts?",
+        "answer": "This question references Marshall lore — during the Saturn program, some test firings were broadcast live, and political figures including President Lyndon B. Johnson took a keen interest in Marshall's work. The T-Tower, as one of the most visible and active stands during that era, became a symbol of American rocket development. While specific LBJ visits or broadcasts tied to the T-Tower aren't universally documented, the stand's history is intertwined with the political and public relations aspects of the space race. If you're interested in the specifics, Marshall's archives or the Huntsville History Collection would have primary sources."
+      }
     ],
     "quiz": {
       "question": "What was the ABMA team told NOT to do before launching Explorer 1?",
