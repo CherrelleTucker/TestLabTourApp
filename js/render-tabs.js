@@ -260,11 +260,24 @@
   }
 
   function historyTabHtml(stop) {
+    // Show deepDive content if it exists, otherwise show placeholder
+    var historyContent = '';
+    if (stop.deepDive && stop.deepDive.html) {
+      historyContent = (
+        '<details' + (stop.deepDive.open ? ' open' : '') + '>' +
+          '<summary>' + stop.deepDive.summary + '</summary>' +
+          '<div class="inner muted">' + stop.deepDive.html + '</div>' +
+        '</details>'
+      );
+    } else {
+      historyContent = '<p class="muted">Historical content for this facility will be added here.</p>';
+    }
+
     return (
       '<div class="tab-panel" data-tab="history" role="tabpanel" hidden>' +
         '<div class="pad">' +
           '<h2>History</h2>' +
-          '<p class="muted">Historical content for this facility will be added here.</p>' +
+          historyContent +
 
           galleryHtml(stop) +
 
