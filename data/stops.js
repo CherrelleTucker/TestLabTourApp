@@ -145,14 +145,14 @@ window.STOPS = [
     "qrFile": "02-struct",
     "title": "Structural Test Stands: Testing to Failure",
     "shortTitle": "Structural Test Stands",
-    "location": "Test Stands 4693 & 4697",
+    "location": "Test Stands 4693 & 4697 · West Test Area",
     "locationShort": "Test Stands 4693 & 4697",
-    "subtitle": "Test Stands 4693 &amp; 4697",
+    "subtitle": "Test Stands 4693 &amp; 4697 · West Test Area",
     "lab": "Structural Strength",
     "tourTime": "~25 min",
     "groupSize": null,
     "accessible": true,
-    "chips": ["Adv. Space Transportation"],
+    "chips": ["Adv. Space Transportation", "West Test Area", "WTA"],
     "available": true,
     "hazards": [],
     "campusPin": { "xPct": 49.5, "yPct": 76.2 },
@@ -193,9 +193,9 @@ window.STOPS = [
       { "num": "1000s", "label": "of sensors", "detail": "Capturing stress, pressure and temperature at the instant of failure" }
     ],
     "deepDive": {
-      "summary": "Go deeper: the largest test-to-failure ever",
+      "summary": "Go deeper: history and the largest test-to-failure ever",
       "open": true,
-      "html": "On June 24, 2020, engineers ran the SLS liquid oxygen tank to its breaking point — the largest controlled test-to-failure of a NASA rocket-stage pressurized tank ever conducted. High-speed cameras and microphones recorded the exact moment of buckling, turning a deliberate failure into a precise map of the structure's true limits.<br><br>The two stands work as a matched pair with very different jobs. Test Stand 4693 is a 215-foot twin-tower structure built to bend and twist the SLS core stage's liquid hydrogen tank: 38 separate hydraulic load lines attach to the 149-foot test article and pull it through the tension, compression, and bending loads of a real ascent, all at once, in whatever combination a real launch would produce. Test Stand 4697, the shorter and wider L-shaped sibling with a 60×60-foot reaction floor and a 185,000-pound steel reaction ring at its base, squeezed the liquid oxygen tank with up to 9 million pounds of compression and 300,000 pounds of shear — numbers large enough that the stand itself, not just the tank, had to be engineered not to move. Construction on 4693 began in 2014; 4697 followed in 2015–2016. Both stands were retained after the Artemis I test campaign for future large-structure testing."
+      "html": "<strong>West Test Area Heritage:</strong> The West Test Area at Marshall has been home to structural testing since the Saturn V era. While earlier stands tested Apollo-era hardware, Test Stands 4693 and 4697 represent the modern evolution of that structural testing heritage — purpose-built for the Space Launch System (SLS) program starting in 2014. Construction on Test Stand 4693 began in 2014, with its 215-foot twin towers rising to accommodate full-height core-stage tanks. Test Stand 4697 followed in 2015–2016, bringing an L-shaped reaction floor and massive load capacity to the West Test Area.<br><br><strong>The Largest Test-to-Failure:</strong> On June 24, 2020, engineers ran the SLS liquid oxygen tank to its breaking point — the largest controlled test-to-failure of a NASA rocket-stage pressurized tank ever conducted. High-speed cameras and microphones recorded the exact moment of buckling, turning a deliberate failure into a precise map of the structure's true limits.<br><br><strong>How They Work Together:</strong> The two stands work as a matched pair with very different jobs. Test Stand 4693 is a 215-foot twin-tower structure built to bend and twist the SLS core stage's liquid hydrogen tank: 38 separate hydraulic load lines attach to the 149-foot test article and pull it through the tension, compression, and bending loads of a real ascent, all at once, in whatever combination a real launch would produce. Test Stand 4697, the shorter and wider L-shaped sibling with a 60×60-foot reaction floor and a 185,000-pound steel reaction ring at its base, squeezed the liquid oxygen tank with up to 9 million pounds of compression and 300,000 pounds of shear — numbers large enough that the stand itself, not just the tank, had to be engineered not to move.<br><br>Both stands were retained after the Artemis I test campaign for future large-structure testing, continuing the West Test Area's decades-long role in proving rocket structures are ready for flight."
     },
     "detailImage": {
       "src": "img/detail-1.jpg",
@@ -309,9 +309,18 @@ window.STOPS = [
     ],
     "lookFor": "Look up at the height of the stand around you — it has to be this big to grip a rocket tank end-to-end and pull with the force of liftoff.",
     "askYourHost": [
-      "What does it actually sound like when a tank buckles at 260% of its rated load?",
-      "Do engineers know roughly where a tank will fail before the test, or is that the whole point?",
-      "Has a tank ever failed sooner than expected — and what happened next?"
+      {
+        "question": "What does it actually sound like when a tank buckles at 260% of its rated load?",
+        "answer": "The sound varies depending on the failure mode. During the SLS LOX tank test-to-failure in June 2020, engineers placed high-speed microphones around the stand to capture the acoustic signature. Some failures produce a sharp crack as welds or seams give way; others create a low rumble as large structural sections buckle. The recordings help engineers understand failure progression and validate acoustic models used for future designs."
+      },
+      {
+        "question": "Do engineers know roughly where a tank will fail before the test, or is that the whole point?",
+        "answer": "Engineers have predictions from finite element analysis (FEA) models that suggest likely failure zones based on stress concentrations, weld patterns, and material properties. However, the test validates whether the model accurately captures reality — and often reveals secondary failure modes or cascading effects that the model didn't fully predict. Finding those surprises on the ground, not in flight, is indeed the whole point."
+      },
+      {
+        "question": "Has a tank ever failed sooner than expected — and what happened next?",
+        "answer": "Early-than-expected failures have occurred in structural testing programs. When this happens, engineers halt testing immediately, preserve all data and hardware, and conduct a failure review board. The team examines the test article, reviews sensor data, and compares results against pre-test predictions. The findings typically lead to design changes, manufacturing process improvements, or updated analysis methods — all captured before any flight hardware is built."
+      }
     ],
     "quiz": {
       "question": "Quick one — why deliberately test a tank to failure?",
@@ -1856,9 +1865,9 @@ window.STOPS = [
       { "num": "1985", "label": "National Historic Landmark", "detail": "Designated by the U.S. Department of the Interior" }
     ],
     "deepDive": {
-      "summary": "Go deeper: from missile to Mercury-Redstone",
+      "summary": "Go deeper: from ABMA to NASA, missile to Mercury-Redstone",
       "open": true,
-      "html": "Assembled and tested at what became Marshall Space Flight Center, the Mercury-Redstone launch vehicle was derived directly from the Army's Redstone missile, itself proven on this stand. Engineers here installed a Mercury capsule and its escape system atop the booster and test-fired the assembly before it was ever trusted to carry a human being. The stand is documented by the Library of Congress's Historic American Engineering Record (HAER AL-129-A).<br><br>With almost all of the stand's $25,000 construction budget sunk into its concrete foundation, there was no money left to build a proper instrumentation bunker &mdash; so Test Lab engineers cleaned out two decommissioned railroad tank cars that had once hauled chemicals at the arsenal during World War II, packed them with recording and control equipment, and buried them under a mound of earth about 100 yards from the stand (HAER AL-129-A).<br><br><strong>Preservation and Legacy:</strong> In 2023, the Redstone Test Stand underwent extensive preservation, with all components receiving a fresh coat of paint. \"The Redstone Test Stand was truly the beginning of Marshall's propulsion testing legacy,\" said Marshall Associate Director, Technical, Larry Leopard. \"This pivotal piece of American space history will continue to engage and inspire many generations of future explorers.\" <em>(Source: <a href=\"https://nasa.sharepoint.com/sites/MSFC/SitePages/Still-Standing--Marshall%27s-Historic-Test-Stands-Launch-Humankind-to-New-Frontiers.aspx\" target=\"_blank\">NASA Marshall Space Flight Center</a>)</em>"
+      "html": "<strong>The ABMA Era:</strong> In the early 1950s, this stand was built by the Army Ballistic Missile Agency (ABMA) under the direction of Dr. Wernher von Braun and his team of rocket engineers — many of whom had come to the United States from Germany after World War II. The Redstone missile program was America's first large-scale ballistic missile effort, and this test stand was where those missiles proved they could work. When NASA was created in 1958 and absorbed ABMA's rocket development work in 1960, this stand and the engineers who ran it became the foundation of what would become Marshall Space Flight Center.<br><br><strong>From Missile to Spaceflight:</strong> Assembled and tested at what became Marshall Space Flight Center, the Mercury-Redstone launch vehicle was derived directly from the Army's Redstone missile, itself proven on this stand. Engineers here installed a Mercury capsule and its escape system atop the booster and test-fired the assembly before it was ever trusted to carry a human being. The stand is documented by the Library of Congress's Historic American Engineering Record (HAER AL-129-A).<br><br>With almost all of the stand's $25,000 construction budget sunk into its concrete foundation, there was no money left to build a proper instrumentation bunker &mdash; so Test Lab engineers cleaned out two decommissioned railroad tank cars that had once hauled chemicals at the arsenal during World War II, packed them with recording and control equipment, and buried them under a mound of earth about 100 yards from the stand (HAER AL-129-A).<br><br><strong>Preservation and Legacy:</strong> In 2023, the Redstone Test Stand underwent extensive preservation, with all components receiving a fresh coat of paint. \"The Redstone Test Stand was truly the beginning of Marshall's propulsion testing legacy,\" said Marshall Associate Director, Technical, Larry Leopard. \"This pivotal piece of American space history will continue to engage and inspire many generations of future explorers.\" <em>(Source: <a href=\"https://nasa.sharepoint.com/sites/MSFC/SitePages/Still-Standing--Marshall%27s-Historic-Test-Stands-Launch-Humankind-to-New-Frontiers.aspx\" target=\"_blank\">NASA Marshall Space Flight Center</a>)</em>"
     },
     "detailImage": {
       "src": "img/detail-1.jpg",
@@ -1936,9 +1945,18 @@ window.STOPS = [
     ],
     "lookFor": "This modest stand looks nothing like the towering structures elsewhere on the tour: and that's the point. Everything here started small.",
     "askYourHost": [
-      "What does it take for a test stand to earn National Historic Landmark status?",
-      "How different was a Redstone static fire from what happens at the bigger stands on this tour?",
-      "Is this stand still usable today, or purely preserved now?"
+      {
+        "question": "What does it take for a test stand to earn National Historic Landmark status?",
+        "answer": "National Historic Landmark (NHL) status is the highest level of historic designation in the United States, reserved for sites of exceptional national significance. The Redstone Test Stand earned this designation in 1985 (later formalized in 1986) because it was the birthplace of America's crewed spaceflight program — the place where the Redstone missile that became the Mercury-Redstone launch vehicle was proven. Only a small percentage of historic sites achieve NHL status; the stand's role in launching Alan Shepard, America's first astronaut, made it nationally significant. It was previously added to the National Register of Historic Places in 1976 and recognized as an Alabama Historic Civil Engineering Landmark in 1979."
+      },
+      {
+        "question": "How different was a Redstone static fire from what happens at the bigger stands on this tour?",
+        "answer": "A Redstone static fire was much smaller in scale but used the same fundamental principles still used today. The Redstone's single A-7 engine produced about 78,000 pounds of thrust and burned for 2-3 minutes during tests. By comparison, modern stands like Test Stand 4693 apply millions of pounds of force to structures, and propulsion stands in the East Test Area can handle engines with over 400,000 pounds of thrust. But the core method — restraining the hardware, instrumenting it with sensors, firing or loading it, and measuring the results — was proven here first. The data collection was simpler (those buried railroad tank cars vs. today's digital systems), but the test philosophy remains the same."
+      },
+      {
+        "question": "Is this stand still usable today, or purely preserved now?",
+        "answer": "The Redstone Test Stand is primarily preserved as a National Historic Landmark and is no longer used for active propulsion testing. After the Mercury-Redstone program ended in the early 1960s, the stand was retired from regular service. The 2023 preservation work — including a complete repainting — was done to maintain the structure's historic integrity for future generations, not to return it to operational status. Modern test programs use newer, more capable stands elsewhere on Marshall's campus, but the Redstone stand remains as a monument to where it all began."
+      }
     ],
     "quiz": {
       "question": "Quick one &mdash; what launch vehicle was directly derived from the Redstone missile tested here?",

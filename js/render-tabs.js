@@ -79,10 +79,19 @@
   function askYourHostHtml(stop) {
     var qs = stop.askYourHost || [];
     if (!qs.length) return '';
+    var listItems = qs.map(function (q) {
+      // Support both string format and object format { question, answer }
+      if (typeof q === 'string') {
+        return '<li>' + q + '</li>';
+      } else if (q.question && q.answer) {
+        return '<li><details><summary>' + q.question + '</summary><p style="margin-top:var(--space-sm);color:var(--muted)">' + q.answer + '</p></details></li>';
+      }
+      return '';
+    }).join('');
     return (
       '<div class="interact ask-host">' +
         '<h3>🗣️ Ask your host</h3>' +
-        '<ul class="ask-list">' + qs.map(function (q) { return '<li>' + q + '</li>'; }).join('') + '</ul>' +
+        '<ul class="ask-list">' + listItems + '</ul>' +
       '</div>'
     );
   }

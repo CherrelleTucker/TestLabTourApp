@@ -24,7 +24,8 @@ function _setActiveBeat(section, beatName) {
       s.classList.toggle('active', on);
       s.setAttribute('aria-selected', on);
     });
-    window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+    // Scroll to top of the page smoothly when changing beats
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   if (typeof document.startViewTransition === 'function') {
     document.startViewTransition(swap);
