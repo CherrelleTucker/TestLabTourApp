@@ -99,10 +99,22 @@ window.STOPS = [
       }
     ],
     "askYourHost": [
-      "How do you keep a floating test article from drifting off the edge of the floor?",
-      "Has hardware bound for a real docking mission ever trained on this exact floor?",
-      "What happens if a test article gets too close to the lunar-Sun lights?",
-      "The in-space welding demo here was flown by a human pilot — what would it take to make that autonomous?"
+      {
+        "question": "How do you keep a floating test article from drifting off the edge of the floor?",
+        "answer": "Safety tethers and physical barriers define the operating envelope, but the real control comes from the test operators themselves. The air-bearing system can be adjusted to provide slight directional bias, and test engineers use handheld compressed-air thrusters to gently nudge articles back toward center. For autonomous tests, software-controlled thrusters provide station-keeping. The floor's 1/16,000 coefficient of friction means even a light touch goes a long way."
+      },
+      {
+        "question": "Has hardware bound for a real docking mission ever trained on this exact floor?",
+        "answer": "Yes. Through the 1980s and '90s, the overhead 8-degree-of-freedom manipulator flew simulated targets across this floor so engineers could test automatic rendezvous-and-capture algorithms for Space Shuttle and Space Station docking mechanisms — years before any of that hardware flew. The stand's original name, the Flight Robotics Laboratory, reflects that mission. More recently, in-space servicing and assembly demonstrations have used this floor to rehearse capture and docking operations."
+      },
+      {
+        "question": "What happens if a test article gets too close to the lunar-Sun lights?",
+        "answer": "The high-intensity lights recreating lunar South Pole conditions generate significant heat, but they're positioned and shielded to avoid direct thermal damage to test articles. Safety protocols define keep-out zones, and test conductors monitor article position continuously. If a test article drifts too close, operators halt the test and reposition the hardware. The lights themselves are designed for the harsh environment — they've been running simulations for Artemis III crews without incident."
+      },
+      {
+        "question": "The in-space welding demo here was flown by a human pilot — what would it take to make that autonomous?",
+        "answer": "Autonomous in-space assembly requires three layers beyond human piloting: computer vision for target recognition and relative navigation, force-feedback control to manage contact dynamics without breaking hardware, and path planning that adapts to real-time sensor data. The human pilot provided all three implicitly. Making it autonomous means validating those systems in the same air-bearing environment first, then progressively removing human oversight. The Flat Floor is ideal for that incremental testing — it's easier to catch a software mistake here than in orbit."
+      }
     ],
     "quiz": {
       "question": "Quick one — why simulate that harsh, low-angle light?",
@@ -472,9 +484,18 @@ window.STOPS = [
     ],
     "lookFor": "Notice the size and seal of the chamber door — it has to hold a perfect vacuum inside against the full weight of the atmosphere pushing in.",
     "askYourHost": [
-      "How long does it take to pump this chamber down to a near-vacuum before a test even starts?",
-      "Has anything ever gone wrong once a spacecraft was already sealed inside?",
-      "What's the closest a test here ever came to a real launch deadline?"
+      {
+        "question": "How long does it take to pump this chamber down to a near-vacuum before a test even starts?",
+        "answer": "Depending on the chamber size and target vacuum level, pumpdown can take anywhere from several hours to a full day. The XRCF's 20×60-foot chamber requires staged pumping — roughing pumps remove bulk atmosphere first, then cryogenic pumps and diffusion pumps drive toward the target vacuum of around 10^-6 Torr or better. The chamber walls themselves outgas during pumpdown, so achieving stable vacuum takes patience. Leak checks are run before every test campaign."
+      },
+      {
+        "question": "Has anything ever gone wrong once a spacecraft was already sealed inside?",
+        "answer": "Anomalies do occur, but that's exactly why we test. Hardware can experience unexpected thermal expansion, electronic components can behave differently in vacuum than in air, and contamination can appear from outgassing materials. When an anomaly is detected, engineers have access to real-time telemetry from inside the chamber. If it's serious enough, the test is halted, the chamber is vented, and the door is opened for inspection. Finding these issues here — not in space — is the entire point."
+      },
+      {
+        "question": "What's the closest a test here ever came to a real launch deadline?",
+        "answer": "Spacecraft schedules are always tight, and thermal-vacuum testing is often on the critical path. The James Webb Space Telescope's mirror testing at XRCF ran multiple campaigns to verify cryogenic performance before the observatory could be cleared to ship. IMAP's March 2025 chamber entry was similarly timed to support its launch window. When a chamber test is the last major milestone before hardware ships to the launch site, test teams work around the clock to meet the schedule — but never at the expense of catching a real problem."
+      }
     ],
     "quiz": {
       "question": "Quick one — why test a spacecraft in vacuum and temperature extremes?",
@@ -671,9 +692,18 @@ window.STOPS = [
     ],
     "lookFor": "Picture the stand gripping a single engine, alone &mdash; not the five-engine cluster you see on a Saturn V. Every engine that ever flew earned its place here first, by itself.",
     "askYourHost": [
-      "How many successful firings did a single F-1 engine need before it was cleared for a Saturn V?",
-      "What happened to an engine that failed a test in this stand?",
-      "Could people elsewhere on Marshall's campus feel or hear a test firing here?"
+      {
+        "question": "How many successful firings did a single F-1 engine need before it was cleared for a Saturn V?",
+        "answer": "Each F-1 underwent an acceptance test series — multiple static firings at varying thrust levels and durations — before it was cleared for flight. The exact number varied by engine, but a typical acceptance campaign included several short-duration startup/shutdown tests, a full-duration firing at rated thrust, and often a restart test. Engines that showed any anomaly during testing were held back for further investigation or rework. Only after an engine proved itself repeatedly in this stand was it bolted into a five-engine cluster."
+      },
+      {
+        "question": "What happened to an engine that failed a test in this stand?",
+        "answer": "A failed engine was removed from the flight queue and sent back for teardown inspection and failure analysis. Engineers would examine the combustion chamber, injector, turbopump, and all instrumentation data to determine the root cause. If the failure was due to a manufacturing defect, that engine might be repaired and retested. If it revealed a design flaw, the fix had to be validated across the entire production line. Either way, the failed engine never flew — but the data it produced made every subsequent engine safer."
+      },
+      {
+        "question": "Could people elsewhere on Marshall's campus feel or hear a test firing here?",
+        "answer": "Absolutely. The F-1 produced 1.5 million pounds of thrust, and even though the flame deflector channeled the exhaust away from the stand, the roar was audible for miles. Personnel in nearby buildings could feel the vibration through the ground and hear the deep rumble of the engine. The blockhouse where test conductors monitored the firing was specifically designed to protect operators from the noise and pressure waves. It was, by all accounts, an unforgettable experience — even from a distance."
+      }
     ],
     "quiz": {
       "question": "Quick one &mdash; why test the F-1 one engine at a time instead of testing a full five-engine cluster from the start?",
@@ -1064,9 +1094,18 @@ window.STOPS = [
     ],
     "lookFor": "There's no tank here anymore &mdash; this drawing is how the room was laid out before it came down: the 40-foot-deep tank on the left, the control room and support offices attached at right. Thirty years of spacewalk training happened inside that cutaway before the facility closed in 1997 and was demolished in late 2025.",
     "askYourHost": [
-      "What convinced NASA that a water tank was a good stand-in for weightlessness?",
-      "How did underwater training actually differ from a real spacewalk, according to the astronauts who did both?",
-      "Why was this facility retired instead of upgraded when Houston's larger lab opened?"
+      {
+        "question": "What convinced NASA that a water tank was a good stand-in for weightlessness?",
+        "answer": "The concept was proven after-hours in 1965 when engineers flooded a hollow gyroscope mockup inside an out-of-service metal-quenching tank until it hung neutrally buoyant. That improvised test convinced Marshall managers to fund a full-scale facility. The physics is straightforward: by carefully adjusting ballast weights and buoyancy aids on a suited astronaut, divers can make them neither sink nor float — effectively canceling out gravity for extended periods. No other ground-based method could provide hours of continuous weightlessness simulation."
+      },
+      {
+        "question": "How did underwater training actually differ from a real spacewalk, according to the astronauts who did both?",
+        "answer": "Astronauts consistently report that water provides excellent zero-g simulation for body positioning and tool handling, but the drag and resistance are nothing like the true vacuum of space. In orbit, once you set something in motion, it keeps moving — there's no water resistance to slow it down. The thermal environment is also different: space has extreme temperature swings between sunlight and shadow, while the NBS tank was kept at a comfortable temperature. Despite these differences, underwater training remains the best way to rehearse complex, multi-hour EVA tasks on Earth."
+      },
+      {
+        "question": "Why was this facility retired instead of upgraded when Houston's larger lab opened?",
+        "answer": "By 1997, NASA's Johnson Space Center had opened the Neutral Buoyancy Laboratory with a 6.2-million-gallon tank — more than four times the capacity of Marshall's 1.5-million-gallon facility. The larger tank could accommodate full-scale Space Station modules and larger crew teams training simultaneously. Rather than duplicate that investment, NASA consolidated neutral buoyancy operations at JSC, where astronaut training was already centered. Marshall's tank had served its purpose and earned its place in history, but operational efficiency dictated the move."
+      }
     ],
     "quiz": {
       "question": "Quick one &mdash; what made this facility possible as a weightlessness trainer?",
